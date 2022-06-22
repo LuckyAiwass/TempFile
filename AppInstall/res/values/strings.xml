@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AppInstall</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="str_source">Total: </string>
+    <string name="str_target">Target: </string>
+    <string name="str_copystop">Stop Install</string>
+    <string name="str_run_background">Run Back</string>
+    <string name="str_use">Enable AutoInstall</string>
+    <string name="str_check">Packages install or update</string>
+    <string name="str_check_content">Install or update packages in autoinstall directory</string>
+    <string name="str_add">Manage Directory</string>
+    <string name="str_add_content">Manage the directory for install or update </string>
+    <string name="str_powerboot">APP PowerBoot</string>
+    <string name="str_powerboot_content">Start the selected app when the system starts </string>
+    <string name="str_portinstall">Serial Port Installation</string>
+    <string name="str_portinstall_content">Install App through serial port </string>
+    <string name="overmax">Only 5 can be selected at most</string>
+    <string name="shared_storage">Internal shared storage</string>
+    <string name="sd_card">SD Card</string>
+    <string name="u_dist">U Dist</string>
+    <string name="start_install">Start Install</string>
+    <string name="installing">INSTALLING</string>
+    <string name="installcomp">INSTALL COMPLETE</string>
+    <string name="installerror">INSTALL FAILURE</string>
+    <string name="installpross">0%</string>
+    <string name="str_otginstall">Install From External Storage</string>
+    <string name="str_otginstall_content">Install the application of external storage</string>
+    <string name="str_control">Start to catch log</string>
+    <string name="str_title">Tips</string>
+    <string name="str_content">It is detected that the external U disk has been inserted. Please decide whether to copy the log to here.</string>
+    <string name="str_ok">OK</string>
+    <string name="str_cancel">Cancel</string>
+    <string name="str_copy_error">Copy Error!</string>
+    <string name="str_copy_finish">Copy Success!</string>
+    <string name="str_copy">Start Copy</string>
+    <string name="str_logcating">There is catching log,please stop and do it</string>
+    <string name="str_no_udist">Please detect the U dist</string>
+    <string name="str_copy_nofile">There is no file,please catch log first</string>
+    <string name="str_copy_start">Start to catch log</string>
+    <string name="scan_success">Scan successful.The APP will be installed automatically after downloading</string>
+    <string name="str_scan_install">Scan Install</string>
+    <string name="str_scan_install_content">Scan QR code to install APP</string>
+
+</resources>

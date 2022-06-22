@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="CustomSettingItem">
+        <attr name="custom_title" format="string" />
+        <attr name="custom_content" format="string" />
+        <attr name="custom_check" format="boolean" />
+        <attr name="custom_clickable" format="boolean" />
+    </declare-styleable>
+
+
+</resources>

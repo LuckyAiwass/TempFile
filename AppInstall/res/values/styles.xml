@@ -1,0 +1,41 @@
+<resources>
+
+    <!-- <style name="AppBaseTheme" parent="android:Theme.Light"> -->
+    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+    -->
+    <!-- </style> -->
+
+
+    <!-- Application theme. -->
+    <!-- <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"> -->
+    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+  <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- API 14 theme customizations can go here. -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="Theme.Settings" parent="@android:style/Theme.Material.Settings">
+    </style>
+
+
+    <style name="CustomCheckBoxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog"> <!-- 有无边框 -->
+        <item name="android:windowFrame">@null</item> <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">false</item> <!-- 是否透明 -->
+        <item name="android:windowIsTranslucent">false</item> <!-- 背景透明 -->
+        <item name="android:windowBackground">@color/white</item> <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">false</item> <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name = "android:windowFullscreen">true</item>
+    </style>
+
+</resources>
