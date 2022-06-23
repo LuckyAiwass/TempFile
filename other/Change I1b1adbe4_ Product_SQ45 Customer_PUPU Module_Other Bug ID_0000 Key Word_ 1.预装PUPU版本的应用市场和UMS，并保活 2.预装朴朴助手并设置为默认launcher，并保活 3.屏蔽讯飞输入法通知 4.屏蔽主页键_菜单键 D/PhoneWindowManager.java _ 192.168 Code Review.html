@@ -1,0 +1,2502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0132)http://192.168.8.215/#/c/NoUcode/SQ45/+/21061/1/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java -->
+<html style="overflow: hidden;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>PhoneWindowManager.java | 192.168 Code Review</title><meta content="locale=en_US" name="gwt:property"><style id="gerrit_sitecss" type="text/css"></style><link href="http://192.168.8.215/favicon.ico" rel="shortcut icon" type="image/x-icon"><link rel="stylesheet" href="./PhoneWindowManager.java _ 192.168 Code Review_files/7CF1DE6EF2AABFEFAE4D469A16D60071.cache.css"><script src="./PhoneWindowManager.java _ 192.168 Code Review_files/BBD9C334C28DA42BE4731D8DD20C9922.cache.js"></script><script src="./PhoneWindowManager.java _ 192.168 Code Review_files/reviewers.nocache.js"></script><style>/* @external gwt-Button; */
+/* @external gwt-DialogBox dialogMiddleCenter; */
+/* @external gwt-TabBar; */
+/* @external gwt-TabBarFirst; */
+/* @external gwt-TabBarItem; */
+/* @external gwt-TabBarItem-selected; */
+/* @external gwt-TabBarRest; */
+/* @external gwt-TabPanel; */
+/* @external gwt-TabPanelBottom; */
+/* CssEval */
+/* CssEval */
+/* CssEval */
+/* CssEval */
+body, .gwt-DialogBox .dialogMiddleCenter {
+  background : #FFFFFF;
+  color : #353535;
+}
+.gwt-Button {
+  white-space : nowrap;
+}
+.gwt-TabBar .gwt-TabBarItem, .gwt-TabBar .gwt-TabBarRest, .gwt-TabPanelBottom {
+  background : transparent;
+}
+.gwt-TabBar {
+  border-bottom : 1px solid black;
+}
+.gwt-TabBar .gwt-TabBarFirst {
+  display : none;
+}
+.gwt-TabBar .gwt-TabBarItem {
+  color : #353535;
+  margin : 0;
+  background : #EEEEEE;
+  padding-top : 0.5em;
+  padding-bottom : 1px;
+  padding-left : 1em;
+  padding-right : 1em;
+  border-bottom : 3px solid transparent;
+  border-right : 0;
+}
+.gwt-TabBar .gwt-TabBarItem-selected {
+  color : #900;
+  background : #D8EDF9;
+  border-bottom-color : #900;
+}
+.gwt-TabBar .gwt-TabBarRest {
+  background : #EEEEEE;
+  padding-top : 0.5em;
+  padding-bottom : 1px;
+}
+.gwt-TabBar .gwt-TabPanelBottom {
+  background : #EEEEEE;
+  border-top : 1px solid black;
+  border-left : none;
+  border-right : none;
+  border-bottom : none;
+  padding : 1px;
+}
+.gwt-TabPanel .gwt-TabPanelBottom {
+  border : none;
+}
+/* @external *; */
+/* CssDef */
+/* CssDef */
+/* CssDef */
+/* CssDef */
+/* CssEval */
+/* CssEval */
+/* CssEval */
+/* CssEval */
+/* CssEval */
+/* CssEval */
+/* CssEval */
+/* CssEval */
+.greenCheckClass {
+  height : 16px;
+  width : 16px;
+  overflow : hidden;
+  background : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABh0lEQVR42tXS2y+CYRwH8O7QX+Gif4DQgSyzMU2sdJCORBLvzGbppLeDV4uF95LJIWQzpyEXzOaydBp/g/knxNebrTbMlu58r5/P9/d79jws1r+LKial5VEJWTUmLs2YODNCQnc4/4QVO7301MUIVh8DoJIumOJqtFN8d2V4q5e2nZsQyfuxnCcxfDgIMSWAmBTXlg9N3hg7rdfase94gMHFlZdyJMI57+dkUYBX+IJtt/o2y7XuxXlPwHCsnC7jqIS2nhoQzs4jlPXAeKBCm7/lG74xdlkS2ufFlBORnA9DcVlBuds3LdvsWR4/0WEx4wGVdkK/r0Ar2fwVFzNzpKwzn2tgv5vE2tMCqJQLtgsTiCszgikHAmkHdHsDEJJNbz9wKZZLKZuZDCJh/rxnKOOG/8EOf8qOoZgcQm/T+6+4FOm6lC3b6MHosRaBhzl4k7PQ7MggmOcyuL62oucqlnSviJmVFVBv94Pvaawcl0t8XLYoyAPP3fDKITg1VX1ZLlNSNf5rPgAuk8WI5dcaoQAAAABJRU5ErkJggg==") -0px -0px  no-repeat;
+}
+.gerritTopMenu {
+  font-size : 9pt;
+  padding-left : 5px;
+  padding-right : 5px;
+  background : transparent;
+}
+body, table td, select {
+  font-family : sans-serif;
+}
+button {
+  padding : 1px 6px;
+}
+.gerritBody {
+  font-size : small;
+  padding-left : 5px;
+  padding-right : 5px;
+}
+a, a:visited {
+  color : #0654ac;
+  text-decoration : none;
+}
+a:hover {
+  color : #0654ac;
+  text-decoration : underline;
+}
+#gerrit_btmmenu {
+  clear : both;
+  color : #a0adcc;
+  text-align : right;
+  padding-right : 10px;
+}
+.version a, .version a:visited, .version a:hover {
+  color : #2a5db0;
+}
+.gwt-Button {
+  color : #000;
+}
+.accountLinkPanel {
+  display : inline;
+}
+.accountLinkPanel img {
+  margin-right : 0.2em;
+  position : relative;
+  top : 2px;
+  height : 16px !important;
+  width : 16px;
+}
+.accountLinkPanel a {
+  position : relative;
+  top : -1px;
+}
+.inputFieldTypeHint {
+  color : grey;
+}
+.smallHeading {
+  margin-top : 5px;
+  font-weight : bold;
+}
+.link {
+  cursor : pointer;
+}
+.extensionPanel {
+  padding-top : 10px;
+}
+.menuScreenMenuBar {
+  background : #FFFFFF;
+  padding-top : 0.5em;
+  padding-bottom : 10em;
+  padding-left : 0.5em;
+  padding-right : 0.5em;
+  border-right : 1px solid #000;
+  margin-right : 0.5em;
+}
+.menuScreenMenuBar .menuItem {
+  white-space : nowrap;
+  display : block;
+  border-right : none;
+  padding : 0.2em;
+}
+.menuScreenMenuBar .menuItem.activeRow, .menuItem.activeRow {
+  background : #D8EDF9;
+}
+.linkMenuBar {
+  font-size : 9pt;
+  display : inline;
+  white-space : nowrap;
+  padding-left : 6px;
+}
+.menuItem {
+  padding-left : 5px;
+  padding-right : 5px;
+}
+.linkMenuItemNotLast {
+  border-right : 1px solid #000;
+}
+.topmenu, .topmenuTDglue {
+  width : 100%;
+}
+.topmenuTDmenu {
+  vertical-align : top;
+}
+.topmenuMenuLeft {
+  width : 300px;
+  font-size : 9pt;
+  padding-top : 5px;
+  padding-left : 5px;
+  padding-right : 5px;
+  background : none;
+  position : relative;
+  top : 0;
+}
+.topmenuMenuLeft tbody tr td table {
+  border : 0;
+}
+.topmenuMenuLeft tbody tr td table.gwt-TabBar {
+  border-bottom : 1px solid #ddd;
+}
+.topmenuMenuLeft .gwt-TextBox {
+  width : 250px;
+}
+.topmenuMenuLeft .gwt-Button {
+  padding : 3px 6px;
+}
+.topmenuMenuLeft .gwt-TabBarFirst {
+  display : none;
+}
+.topmenuMenuLeft .gwt-TabBarItem {
+  margin : 0;
+  background : transparent;
+  padding-top : 0;
+  padding-bottom : 1px;
+  padding-left : 1em;
+  padding-right : 1em;
+}
+.topmenuMenuLeft .gwt-TabBarRest {
+  background : transparent;
+  padding-top : 0;
+}
+.topmenuMenuLeft .gwt-TabPanelBottom {
+  background : transparent;
+  border-top : none;
+  border-left : none;
+  border-right : none;
+  border-bottom : none;
+  padding : 1px;
+}
+.topmenuMenuLeft .menuItem {
+  padding-left : 1em;
+  padding-right : 1em;
+  border-right : none;
+}
+.topmenuMenuRight {
+  float : right;
+  text-align : right;
+}
+.menuBarUserName {
+  padding-left : 5px;
+  padding-right : 5px;
+  white-space : nowrap;
+}
+.menuBarUserNameAvatar {
+  vertical-align : middle;
+}
+.menuBarUserNameFocusPanel {
+  display : inline;
+}
+.menuBarUserNamePanel {
+  display : inline;
+  cursor : pointer;
+  font-weight : bold;
+}
+.userInfoPopup {
+  border : 1px solid #000;
+  background : #fff;
+  box-shadow : 3px 3px 5px #888;
+  z-index : 200;
+}
+.searchPanel {
+  white-space : nowrap;
+  display : inline;
+}
+.searchPanel .searchTextBox {
+  font-size : 9pt;
+  margin : 8.286px 3px 0 0;
+}
+.searchPanel .searchDropdown {
+  font-size : 8pt;
+  border : 2px solid;
+  border-color : rgba(0, 0, 0, 0.15);
+  height : 16px;
+  border-radius : 2px;
+  box-sizing : content-box;
+}
+.searchPanel .searchButton {
+  text-align : center;
+  font-size : 8pt;
+  font-weight : bold;
+  cursor : pointer;
+  border : 2px solid;
+  color : #fff;
+  border-color : rgba(0, 0, 0, 0.15);
+  height : 14px;
+  background-color : #53a93f;
+  border-radius : 2px;
+  box-sizing : content-box;
+}
+.suggestBoxPopup {
+  z-index : 200;
+}
+.rpcStatus {
+  position : fixed;
+  top : 6px;
+  left : 50%;
+  padding-top : 4px;
+  padding-bottom : 4px;
+  padding-left : 10px;
+  padding-right : 10px;
+  text-align : center;
+  font-weight : bold;
+  background : #fff1a8;
+  z-index : 200;
+}
+.errorDialog {
+  background : none;
+  border : none;
+  padding : 10px;
+  width : 600px;
+  color : #FFFFFF;
+  font-size : 15px;
+  font-family : verdana;
+  z-index : 200;
+}
+.errorDialogGlass {
+  opacity : 0.75;
+  z-index : 200;
+  opacity : 0.8;
+}
+.errorDialogTitle {
+  font-size : 30px;
+  font-weight : bold;
+  margin-bottom : 15px;
+}
+.errorDialogErrorType {
+  font-weight : bold;
+  white-space : nowrap;
+  margin-bottom : 15px;
+}
+.errorDialogButtons {
+  width : 100%;
+  margin-top : 15px;
+}
+.errorDialog a, .errorDialog a:visited, .errorDialog a:hover {
+  color : #fff;
+  font-weight : bold;
+  font-size : 15px;
+  font-family : verdana;
+}
+.loadingPluginsDialog {
+  background : #fff;
+  color : #000;
+  width : auto;
+}
+.screenHeader {
+  white-space : nowrap;
+  font-size : 16pt;
+  margin : 3px 0 8px;
+  text-overflow : ellipsis;
+  overflow : hidden;
+}
+.changeTable {
+  border-collapse : separate;
+  border-spacing : 0;
+}
+.changeTable tr:nth-child(even) {
+  background : transparent;
+}
+.changeTable tr:nth-child(odd) {
+  background : transparent;
+}
+.changeTable .iconCell {
+  width : 1px;
+  padding : 0;
+  vertical-align : middle;
+  border-bottom : 1px solid #EEEEEE;
+}
+.changeTable .leftMostCell {
+  border-left : 1px solid #EEEEEE;
+}
+.changeTable .dataCell {
+  padding-left : 5px;
+  padding-right : 5px;
+  border-right : 1px solid #EEEEEE;
+  border-bottom : 1px solid #EEEEEE;
+  vertical-align : middle;
+  height : 20px;
+}
+.changeTable .dataCellHidden {
+  display : none;
+}
+.changeTable a.gwt-InlineHyperlink, .changeTable a.gwt-Anchor {
+  color : #222 !important;
+}
+.changeTable .changeSize {
+  height : 10px;
+  display : inline-block;
+  opacity : 0.6;
+}
+.accountDashboard.changeTable tr {
+  color : #444;
+}
+.accountDashboard.changeTable tr a {
+  color : #444;
+  text-decoration : none;
+}
+.accountDashboard.changeTable .needsReview, .accountDashboard.changeTable .needsReview a {
+  font-weight : bold;
+  color : #353535;
+}
+.changeTable .activeRow, .accountDashboard.changeTable .activeRow, .accountDashboard.changeTable .activeRow a {
+  background : #D8EDF9 !important;
+}
+.changeTable .cSIZE {
+  width : 70px;
+  text-align : right;
+}
+.changeTable .cSUBJECT div {
+  text-overflow : ellipsis;
+  overflow : hidden;
+  white-space : nowrap;
+}
+.changeTable .cASSIGNEDTOME {
+  background : #ffe9d6 !important;
+}
+.changeTable .cASSIGNEE, .changeTable .cOWNER, .changeTable .cSTATUS {
+  white-space : nowrap;
+}
+.changeTable .cLastUpdate {
+  white-space : nowrap;
+  text-align : right;
+  width : 1em;
+}
+.changeTable .groupName, .changeTable .dataCell.singleLine {
+  white-space : nowrap;
+}
+.changeTable .cAPPROVAL {
+  width : 0.5em;
+  text-align : center;
+}
+.changeTable .dataCell.negscore {
+  color : red;
+}
+.changeTable .dataCell.posscore {
+  color : #08a400;
+}
+.changeTable .dataCell.labelNotApplicable {
+  background : #f5f5f5;
+}
+.changeTable .iconHeader {
+  border-top : 1px solid #FFFFFF;
+  border-bottom : 1px solid #FFFFFF;
+  background-color : #EEEEEE;
+}
+.changeTable .dataHeader {
+  border : 1px solid #FFFFFF;
+  padding : 2px 6px 1px;
+  background-color : #EEEEEE;
+  font-style : italic;
+  white-space : nowrap;
+  color : #353535;
+}
+.changeTable .dataHeaderHidden {
+  display : none;
+}
+.changeTable .sectionHeader {
+  border-top : 8px solid #FFFFFF;
+  padding : 2px 6px 1px;
+  background-color : #EEEEEE;
+  white-space : nowrap;
+  font-weight : bold;
+  color : #353535;
+}
+.changeTable .emptySection {
+  border-left : 1px solid #EEEEEE;
+  border-right : 1px solid #EEEEEE;
+  border-bottom : 1px solid #EEEEEE;
+  font-style : italic;
+  padding-left : 25px;
+}
+.changeTablePrevNextLinks {
+  float : right;
+  padding-right : 5px;
+}
+.changeTablePrevNextLinks td {
+  width : 5em;
+  text-align : right;
+}
+.changeTablePrevNextLinks .gwt-Hyperlink {
+  font-size : 9pt;
+  color : #2a5db0;
+}
+.avatarInfoPanel {
+  margin-right : 10px;
+}
+.avatarInfoPanel td {
+  text-align : center;
+}
+.infoBlock {
+  border-collapse : collapse;
+  border-spacing : 0;
+}
+.infoBlock td {
+  padding : 2px 4px 2px 6px;
+  border-right : 1px solid #EEEEEE;
+  border-bottom : 1px solid #EEEEEE;
+  text-align : left;
+  white-space : nowrap;
+}
+.infoBlock td td {
+  padding-left : 0;
+  border-right : 0;
+}
+.infoBlock td.topmost {
+  border-top : 1px solid #EEEEEE;
+}
+.infoBlock td.header {
+  background-color : #EEEEEE;
+  font-style : italic;
+  text-align : right;
+}
+.infoBlock td.bottomheader {
+  border-bottom : 1px solid #EEEEEE;
+}
+.patchSetActions {
+  margin-bottom : 10px;
+}
+.patchSetActions .gwt-Button {
+  margin-right : 30px;
+  font-size : 8pt;
+}
+.downloadBox {
+  min-width : 580px;
+  margin : 5px;
+  margin-right : 15px;
+}
+.downloadBoxTable {
+  border-spacing : 0;
+  width : 100%;
+}
+.downloadBoxTableCommandColumn {
+  text-align : left;
+  font-weight : normal;
+  white-space : nowrap;
+  max-height : 18px;
+  width : 80px;
+  padding-right : 5px;
+}
+.downloadBoxSpacer {
+  margin-left : 5px;
+  margin-right : 5px;
+}
+.downloadBoxScheme, .downloadBoxCopyLabel div {
+  float : right;
+}
+.downloadBoxCopyLabel {
+  font-size : smaller;
+  font-family : monospace;
+}
+.downloadBoxCopyLabel span {
+  width : 500px;
+  white-space : nowrap;
+  display : inline-block;
+  overflow : hidden;
+  text-overflow : ellipsis;
+}
+.downloadBoxCopyLabel .gwt-TextBox {
+  padding : 0;
+  margin : 0;
+  border : 0;
+  max-height : 18px;
+  width : 500px;
+}
+.downloadLinkHeader {
+  background : #EEEEEE;
+  white-space : nowrap;
+  border-bottom : 1px solid #000;
+}
+.downloadLinkHeaderGap {
+  margin-left : 5em;
+}
+.downloadLinkList {
+  display : inline;
+  white-space : nowrap;
+}
+.downloadLink {
+  color : #000;
+  text-decoration : none;
+  white-space : nowrap;
+  background : #EEEEEE;
+  border-right : 1px solid #000;
+  padding-left : 0.5em;
+  padding-right : 0.5em;
+}
+a:hover.downloadLink {
+  color : #000;
+}
+.downloadLink_Active {
+  background : #D8EDF9;
+}
+.downloadLinkCopyLabel {
+  white-space : pre;
+  font-family : monospace;
+  font-size : 12px;
+  margin-left : 0.5em;
+  margin-right : 0.5em;
+}
+.downloadLinkCopyLabel .gwt-TextBox {
+  width : 40em;
+}
+.downloadLinkCopyLabel span {
+  width : 40em;
+  white-space : nowrap;
+  display : inline-block;
+  overflow : hidden;
+  text-overflow : ellipsis;
+}
+.usernameField {
+  white-space : nowrap;
+}
+.accountUsername, .accountPassword {
+  font-family : monospace;
+  font-size : small;
+}
+.sshKeyPanelEncodedKey {
+  white-space : nowrap;
+  text-overflow : ellipsis;
+  overflow : hidden;
+  font-family : monospace;
+  font-size : small;
+}
+.sshKeyPanelInvalid, .identityUntrustedExternalId {
+  white-space : nowrap;
+  color : red;
+  font-weight : bold;
+}
+.accountInfoBlock {
+  margin-bottom : 10px;
+}
+.accountInfoBlock .gwt-Button {
+  margin-left : 10px;
+}
+.addWatchPanel {
+  margin-top : 10px;
+  padding : 5px 5px 5px 5px;
+}
+.watchedProjectFilter {
+  margin-left : 1em;
+  color : grey;
+}
+.addBranch, .addSshKeyPanel {
+  margin-top : 10px;
+  background-color : #EEEEEE;
+  padding : 5px 5px 5px 5px;
+}
+.addSshKeyPanel ol {
+  margin-top : 0;
+  margin-bottom : 5px;
+}
+.addSshKeyPanel td {
+  width : 100%;
+}
+.sshKeyTable td.dataCell, .sshKeyTable td.iconCell {
+  vertical-align : top;
+}
+.createProjectPanel {
+  margin-bottom : 10px;
+  background-color : #EEEEEE;
+  padding : 5px 5px 5px 5px;
+}
+.sshHostKeyPanel {
+  margin-top : 10px;
+  border : 1px solid #EEEEEE;
+  padding : 5px 5px 5px 5px;
+}
+.sshHostKeyPanelHeading {
+  white-space : nowrap;
+  margin-top : 5px;
+  margin-left : 1em;
+}
+.sshHostKeyPanelFingerprintData {
+  margin-left : 2em;
+  white-space : nowrap;
+  font-family : monospace;
+  font-size : small;
+}
+.sshHostKeyPanelKnownHostEntry {
+  margin-left : 2em;
+  white-space : nowrap;
+  font-family : monospace;
+  font-size : small;
+  width : 80em;
+}
+.contributorAgreementButton {
+  font-weight : bold;
+}
+.contributorAgreementShortDescription {
+  margin-left : 20px;
+  margin-right : 20px;
+  margin-bottom : 10px;
+  padding : 5px 5px 5px 5px;
+  border : 1px solid #b0bdcc;
+}
+.contributorAgreementAlreadySubmitted {
+  margin-left : 20px;
+  margin-right : 20px;
+  padding : 5px 5px 5px 5px;
+  color : red;
+}
+.contributorAgreementLegal {
+  margin-left : 20px;
+  margin-right : 20px;
+  padding : 5px 5px 5px 5px;
+  border : 1px solid #b0bdcc;
+}
+.registerScreenSection {
+  margin-top : 2em;
+}
+.registerScreenExplain {
+  margin-left : 10px;
+  margin-top : 5px;
+  margin-bottom : 5px;
+  width : 45em;
+}
+.registerScreenNextLinks {
+  margin-top : 2em;
+}
+.registerScreenNextLinks .gwt-InlineHyperlink {
+  margin-left : 2em;
+  white-space : nowrap;
+}
+.registerScreenSection .changeTable, .registerScreenSection .sshHostKeyPanel .sshHostKeyPanelKnownHostEntry {
+  width : 45em;
+}
+.registerScreenSection .addSshKeyPanel {
+  background : none;
+}
+.registerScreenSection .sshHostKeyPanel {
+  border : none;
+}
+.projectActions, .oauthInfoBlock, .groupUUIDPanel {
+  margin-bottom : 10px;
+}
+.oauthToken {
+  font-family : monospace;
+  font-size : small;
+  width : 40em;
+}
+.oauthToken span {
+  white-space : nowrap;
+  display : inline-block;
+  overflow : hidden;
+  text-overflow : ellipsis;
+  width : 38em;
+}
+.oauthExpires {
+  font-family : monospace;
+  font-size : small;
+  width : 40em;
+}
+.oauthPanel {
+  margin-top : 10px;
+  border : 1px solid #EEEEEE;
+  padding : 5px 5px 5px 5px;
+}
+.oauthPanelNetRCHeading {
+  margin-top : 5px;
+  margin-left : 1em;
+  white-space : nowrap;
+}
+.oauthPanelNetRCEntry {
+  margin-top : 5px;
+  margin-left : 2em;
+  font-family : monospace;
+  font-size : small;
+  width : 80em;
+}
+.oauthPanelNetRCEntry span {
+  white-space : nowrap;
+  display : inline-block;
+  overflow : hidden;
+  text-overflow : ellipsis;
+  width : 78em;
+}
+.oauthPanelCookieHeading {
+  margin-top : 15px;
+  margin-left : 1em;
+  white-space : nowrap;
+}
+.oauthPanelCookieEntry {
+  margin-top : 5px;
+  margin-left : 2em;
+  font-family : monospace;
+  font-size : small;
+  width : 80em;
+}
+.oauthPanelCookieEntry span {
+  white-space : nowrap;
+  display : inline-block;
+  overflow : hidden;
+  text-overflow : ellipsis;
+  width : 78em;
+}
+.commentedActionDialog .gwt-DisclosurePanel .header td {
+  font-weight : bold;
+  white-space : nowrap;
+}
+.commentedActionDialog .smallHeading {
+  font-size : small;
+  font-weight : bold;
+  white-space : nowrap;
+}
+.commentedActionDialog .commentedActionMessage {
+  margin-left : 10px;
+  background : #EEEEEE;
+  padding : 5px 5px 5px 5px;
+}
+.commentedActionDialog .commentedActionMessage textarea {
+  font-size : small;
+}
+.commentedActionDialog .gwt-Hyperlink {
+  white-space : nowrap;
+  font-size : small;
+}
+.commentedActionDialog .rebaseContentPanel {
+  margin-left : 10px;
+  background : #EEEEEE;
+  padding : 5px 5px 5px 5px;
+  width : 300px;
+}
+.commentedActionDialog .rebaseContentPanel .rebaseSuggestBox {
+  font-size : small;
+  width : 100%;
+}
+.groupDescriptionPanel, .groupNamePanel {
+  margin-bottom : 3px;
+}
+.groupNameTextBox {
+  margin-bottom : 2px;
+}
+.groupOptionsPanel {
+  margin-bottom : 5px;
+}
+.groupOwnerPanel {
+  margin-bottom : 3px;
+}
+.groupOwnerTextBox, .groupMembersTable, .groupIncludesTable {
+  margin-bottom : 2px;
+}
+.addMemberTextBox {
+  margin-right : 2px;
+  margin-bottom : 2px;
+}
+.specialBranchIconCell {
+  background : #ececec;
+  border-bottom : 1px solid #fff;
+  border-top : 1px solid #fff;
+}
+.specialBranchDataCell {
+  background : #ececec;
+  border : 1px solid #fff;
+  font-style : italic;
+  padding : 2px 6px 1px;
+}
+.editHeadButton {
+  float : right;
+  cursor : pointer;
+}
+.branchTableDeleteButton {
+  margin-top : 5px;
+}
+.branchTablePrevNextLinks {
+  position : relative;
+}
+.branchTablePrevNextLinks td {
+  float : left;
+  width : 5em;
+  text-align : left;
+  padding-right : 10px;
+}
+.branchTablePrevNextLinks .gwt-Hyperlink {
+  font-size : 9pt;
+  color : #2a5db0;
+}
+.projectFilterPanel {
+  margin-bottom : 10px;
+}
+.projectFilterPanel input {
+  width : 200px;
+}
+.projectFilterLabel {
+  margin-right : 5px;
+}
+.projectNameColumn {
+  min-width : 300px;
+}
+.queryIcon {
+  position : relative;
+  top : 2px;
+  margin-right : 3px;
+}
+.maxObjectSizeLimitEffectiveLabel, .pluginProjectConfigInheritedValue {
+  padding-top : 5px;
+  padding-left : 5px;
+}
+.stringListPanelButtons {
+  margin-left : 0.5em;
+}
+.stringListPanelButtons .gwt-Button {
+  margin-right : 2em;
+  font-size : 7pt;
+  padding : 1px;
+}
+.pagingLink {
+  font-size : 18px;
+  margin-top : 5px;
+  margin-bottom : 15px;
+}
+/* @external popupContent; */
+.com-google-gwtexpui-globalkey-client-KeyCss-helpPopup {
+  background : #000 none repeat scroll 0 50%;
+  color : #fff;
+  font-family : arial, sans-serif;
+  font-weight : bold;
+  overflow : hidden;
+  text-align : left;
+  text-shadow : 1px 1px 7px #000;
+  width : 92%;
+  z-index : 1002;
+  opacity : 0.85;
+  border-radius : 10px;
+  -webkit-border-radius : 10px;
+}
+.com-google-gwtexpui-globalkey-client-KeyCss-helpPopup .popupContent {
+  margin : 10px;
+}
+.com-google-gwtexpui-globalkey-client-KeyCss-helpPopup hr, .com-google-gwtexpui-globalkey-client-KeyCss-helpHeader, .com-google-gwtexpui-globalkey-client-KeyCss-helpHeaderGlue {
+  width : 100%;
+}
+.com-google-gwtexpui-globalkey-client-KeyCss-helpHeader td {
+  white-space : nowrap;
+  color : #fff;
+}
+.com-google-gwtexpui-globalkey-client-KeyCss-helpHeader a, .com-google-gwtexpui-globalkey-client-KeyCss-helpHeader a:visited, .com-google-gwtexpui-globalkey-client-KeyCss-helpHeader a:hover {
+  color : #dd0;
+}
+.com-google-gwtexpui-globalkey-client-KeyCss-helpTable {
+  width : 90%;
+}
+.com-google-gwtexpui-globalkey-client-KeyCss-helpTable td {
+  vertical-align : top;
+  white-space : nowrap;
+}
+.com-google-gwtexpui-globalkey-client-KeyCss-helpTableGlue {
+  width : 25px;
+}
+.com-google-gwtexpui-globalkey-client-KeyCss-helpGroup {
+  color : #dd0;
+  text-align : left;
+}
+.com-google-gwtexpui-globalkey-client-KeyCss-helpKeyStroke {
+  text-align : right;
+}
+.com-google-gwtexpui-globalkey-client-KeyCss-helpSeparator {
+  width : 0.5em;
+  text-align : center;
+  font-weight : bold;
+}
+.com-google-gwtexpui-globalkey-client-KeyCss-helpKey {
+  color : #dd0;
+}
+.com-google-gwtexpui-clippy-client-ClippyCss-label {
+  vertical-align : top;
+}
+.com-google-gwtexpui-clippy-client-ClippyCss-swf {
+  margin-left : 5px;
+  height : 14px;
+  width : 14px;
+  display : inline-block !important;
+  overflow : hidden;
+}
+.com-google-gwtexpui-clippy-client-ClippyCss-copier {
+  margin-left : 5px;
+  height : 14px;
+  width : 14px;
+  display : inline-block;
+  font-size : 12px;
+  vertical-align : top;
+  padding : 0;
+  border : 0;
+  background-color : inherit;
+  cursor : pointer;
+}
+.com-google-gwtexpui-clippy-client-ClippyCss-copier:focus {
+  outline : none;
+}
+.com-google-gerrit-client-UserPopupPanel_BinderImpl_GenCss_style-panel {
+  padding : 8px;
+}
+.com-google-gerrit-client-UserPopupPanel_BinderImpl_GenCss_style-avatar {
+  padding-right : 4px;
+  width : 100px;
+  height : 100px;
+}
+.com-google-gerrit-client-UserPopupPanel_BinderImpl_GenCss_style-infoCell {
+  vertical-align : top;
+}
+.com-google-gerrit-client-UserPopupPanel_BinderImpl_GenCss_style-userName {
+  font-weight : bold;
+}
+.com-google-gerrit-client-UserPopupPanel_BinderImpl_GenCss_style-email {
+  padding-bottom : 6px;
+}
+.com-google-gerrit-client-UserPopupPanel_BinderImpl_GenCss_style-userLinks {
+  min-width : 250px;
+}
+.com-google-gerrit-client-UserPopupPanel_BinderImpl_GenCss_style-userLinksRight {
+  float : right;
+}
+.com-google-gerrit-client-UserPopupPanel_BinderImpl_GenCss_style-switchAccount {
+  border-right : 1px solid black;
+  padding-right : 0.5em;
+  margin-right : 0.5em;
+}
+.com-google-gwtexpui-progress-client-ProgressCss-container {
+  position : relative;
+  border : 1px solid #6b90da;
+  height : 20px;
+  width : 200px;
+}
+.com-google-gwtexpui-progress-client-ProgressCss-text {
+  position : absolute;
+  bottom : 0;
+  left : 0;
+  z-index : 2;
+  width : 200px;
+  padding-bottom : 3px;
+  text-align : center;
+  font-weight : bold;
+  font-style : italic;
+  font-size : smaller;
+}
+.com-google-gwtexpui-progress-client-ProgressCss-bar {
+  background : #f0f7f9;
+  border-right : 1px solid #d0d7d9;
+  position : absolute;
+  top : 0;
+  left : 0;
+  height : 20px;
+}
+</style><link rel="stylesheet" href="./PhoneWindowManager.java _ 192.168 Code Review_files/reviewers.css"><script src="./PhoneWindowManager.java _ 192.168 Code Review_files/95ED61D7E4775EBE1E6AE67D440382A7.cache.js"></script><style>/* CssEval */
+/* CssEval */
+/* CssDef */
+/* CssDef */
+/* CssDef */
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-cs2 {
+  margin-bottom : 1em;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerLine {
+  position : relative;
+  background-color : #EEEEEE;
+  height : 30px;
+  margin : 0 -5px;
+  padding : 0 5px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-subjectLine {
+  position : relative;
+  width : 560px;
+  height : 30px;
+  background-color : #EEEEEE;
+  color : #353535;
+  font-family : sans-serif;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-subjectText {
+  width : 460px;
+  height : 30px;
+  line-height : 30px;
+  overflow : hidden;
+  text-overflow : ellipsis;
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoLine {
+  position : absolute;
+  top : 0;
+  left : 560px;
+  height : 30px;
+  padding-left : 25px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoLineHeaderButtons {
+  display : inline-block;
+  height : 30px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-statusRight {
+  position : absolute;
+  top : 0;
+  right : 0;
+  height : 30px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-idAndStatus {
+  display : inline-block;
+  position : relative;
+  height : 30px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-star {
+  position : absolute;
+  top : 5px;
+  right : 2px;
+  cursor : pointer;
+  outline : none;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-changeId {
+  width : 300px;
+  white-space : nowrap;
+  line-height : 30px;
+  overflow : hidden;
+  text-overflow : ellipsis;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-statusText, .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-privateText, .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-wipText, .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-popdown button.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-selected {
+  font-weight : bold;
+}
+div.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-popdown {
+  display : inline-block;
+  margin-top : 2px;
+  margin-left : 5px;
+  margin-right : 25px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-popdown button {
+  cursor : pointer;
+  height : 25px;
+  border : none;
+  background-color : #EEEEEE;
+  margin : 0 0 0 -2px;
+  padding-left : 2px;
+  padding-right : 2px;
+  min-width : 100px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-popdown button div {
+  padding-left : 6px;
+  padding-right : 6px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-popdown button div:after {
+  content : " ▼";
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-popdown button:focus {
+  outline : none;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerButtons button:disabled, #change_infoTable button:disabled, .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-popdown button:disabled {
+  background-color : #999;
+  background-image : -webkit-linear-gradient(top, #999, #999);
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoTable {
+  border-spacing : 0;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoTable th {
+  width : 60px;
+  color : #444;
+  font-weight : normal;
+  vertical-align : top;
+  text-align : left;
+  padding : 0 5px 0 0;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-projectSettings {
+  float : right;
+  cursor : pointer;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoColumn {
+  width : 440px;
+  padding-left : 17px;
+  padding-right : 17px;
+  vertical-align : top;
+}
+#change_infoTable {
+  border-spacing : 0;
+  width : 100%;
+  margin-left : 2px;
+  margin-right : 5px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-notMergeable {
+  float : right;
+  font-weight : bold;
+  color : #d00;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn {
+  padding : 0;
+  vertical-align : top;
+  width : 560px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn {
+  padding : 0;
+  vertical-align : top;
+  width : 375px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-labels {
+  border-spacing : 0;
+  padding : 0;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-labelName {
+  color : #444;
+  vertical-align : top;
+  text-align : left;
+  padding-top : 3px;
+  padding-right : 5px;
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_user {
+  display : inline-block;
+  margin-bottom : 2px;
+  padding : 1px 3px 0 3px;
+  border-radius : 5px;
+  -webkit-border-radius : 5px;
+  background : #EEEEEE;
+  border : 1px solid #EEEEEE;
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_user img.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-avatar {
+  margin : 0 2px 0 0;
+  width : 16px;
+  height : 16px;
+  vertical-align : bottom;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_user button {
+  cursor : pointer;
+  padding : 0;
+  margin : 0 0 0 5px;
+  border : 0;
+  background-color : transparent;
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_ok {
+  color : #060;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_reject {
+  color : #d14836;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_need {
+  color : #000;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_may {
+  color : #777;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-hashtagName {
+  display : inline-block;
+  height : 15px;
+  margin-bottom : 2px;
+  padding : 1px 3px 1px 3px;
+  border-radius : 5px;
+  -webkit-border-radius : 5px;
+  background : #e2f5ff;
+  border : 1px solid #579fda;
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-hashtagName a {
+  position : relative;
+  top : -4px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-hashtagName button {
+  position : relative;
+  top : -4px;
+  cursor : pointer;
+  padding : 0;
+  margin : 0 0 0 5px;
+  border : 0;
+  background-color : transparent;
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-hashtagIcon img {
+  position : relative;
+  top : 4px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerButtons button {
+  margin : 5.286px 3px 0 0;
+  text-align : center;
+  font-size : 8pt;
+  font-weight : bold;
+  cursor : pointer;
+  border : 2px solid;
+  color : rgba(0, 0, 0, 0.15);
+  background-color : #f5f5f5;
+  -webkit-border-radius : 2px;
+  -webkit-box-sizing : content-box;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerButtons button div {
+  color : #444;
+  min-width : 54px;
+  white-space : nowrap;
+  height : 14px;
+  line-height : 14px;
+}
+button.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-highlight {
+  background-color : #4d90fe;
+}
+button.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-highlight div {
+  color : #fff;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-sectionHeader {
+  position : relative;
+  background-color : #EEEEEE;
+  font-weight : bold;
+  color : #353535;
+  height : 20px;
+  line-height : 20px;
+  margin : 0 -5px;
+  padding : 5px 5px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-sectionHeader .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerButtons {
+  position : absolute;
+  left : 300px;
+  top : 2px;
+  height : 18px;
+  line-height : 18px;
+  border-left : 1px inset #fff;
+  padding-left : 5px;
+  padding-top : 3px;
+  padding-bottom : 3px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-sectionHeader button {
+  margin-top : 0;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-diffBase {
+  display : inline-block;
+  height : 18px;
+  line-height : 18px;
+  font-size : smaller;
+  font-weight : normal;
+  vertical-align : top;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-diffBase select {
+  margin : 0;
+  border : 2px solid rgba(0, 0, 0, 0.15);
+  height : 20px;
+  font-size : 8pt;
+  font-weight : bold;
+  border-radius : 2px;
+  background-color : #f5f5f5;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-replyBox {
+  background-color : #EEEEEE;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-ownerPanel img, .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-uploaderPanel img {
+  margin : 0 2px 0 0;
+  width : 16px;
+  height : 16px !important;
+  vertical-align : bottom;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerExtension {
+  display : inline-block;
+  float : right;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerExtension>div>div {
+  float : left;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-changeExtension, .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedExtension, .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitExtension {
+  padding-top : 5px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-historyExtension {
+  display : inline-block;
+  float : right;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-pushCertStatus {
+  padding-left : 5px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-notCurrentPatchSet {
+  background-color : #ffa62f;
+}
+/* CssEval */
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-collapsed .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
+  height : 250px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
+  width : 560px;
+  border-right : 1px solid #EEEEEE;
+  border-bottom : 1px solid #EEEEEE;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-more {
+  width : 560px;
+  height : 8px;
+  line-height : 8px;
+  text-align : center;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-text {
+  font-family : monospace;
+  white-space : pre;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-moreButton {
+  padding : 0 5px 0 5px;
+  margin : 0;
+  border : none;
+  height : 8px;
+  background-color : #f7f7f7;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-moreButton:focus {
+  outline : none;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-toggle {
+  height : 16px;
+  width : 26px;
+  overflow : hidden;
+  background : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAQCAYAAAAI0W+oAAAAsklEQVR42qWS0Q0DIQiGr+lLF+lj0xuJBTSuoyO4lCPcCB4k7cNdEAFNCDEf/BBg25iXUtpjjI28h6vifvBA6+S5IEqWOKPTJNhHYrNmRH6HIQTwiJmKqJKszS2NwTDuy2Kxo695scoDMp8q2hu/D6/O5ZVS9pxzI39ntdYnss+Ia3X+8EDr5LkgSpY4o9Mk2Edis2ZEzkDwiA2LAMDLnORpbmkMhnGvL1Z5QPIJGuJm/ASMfgCsQpR8UQAAAABJRU5ErkJggg==") -0px -0px  no-repeat;
+  width : 13px;
+  height : 8px;
+  padding : 0;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-collapsed .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-toggle {
+  background-position : -13px -8px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-expanded .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-toggle {
+  background-position : 0 -8px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-collapsed button:hover .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-toggle {
+  background-position : -13px 0;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-expanded button:hover .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-toggle {
+  background-position : 0 0;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-header {
+  border-spacing : 0;
+  padding : 0;
+  width : 560px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-header th {
+  width : 72px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-header td {
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-date {
+  width : 132px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-clippy {
+  position : relative;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-clippy div {
+  position : absolute;
+  top : 0;
+  right : -16px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-webLinkPanel a:first-child {
+  margin-left : 16px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-webLinkPanel>a {
+  margin-left : 2px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-parentWebLink a:first-child {
+  margin-left : 16px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-parentWebLink>a {
+  margin-left : 2px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-commit {
+  margin-right : 3px;
+  float : left;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-userPanel img {
+  margin : 0 2px 0 0;
+  width : 16px;
+  height : 16px !important;
+  vertical-align : bottom;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-parent {
+  margin-right : 3px;
+  float : left;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-parentNotCurrent {
+  color : #ffa62f;
+  font-weight : bold;
+}
+.com-google-gwtexpui-safehtml-client-SafeHtmlCss-wikiPreFormat {
+  white-space : pre;
+  font-family : "Lucida Console", "Lucida Sans Typewriter", Monaco, monospace;
+  font-size : small;
+}
+.com-google-gwtexpui-safehtml-client-SafeHtmlCss-wikiQuote {
+  margin-left : 0;
+  border-left : 1px solid #888;
+  padding-left : 5px;
+}
+.com-google-gwtexpui-user-client-Tooltip-Css-tooltip {
+  position : relative;
+}
+.com-google-gwtexpui-user-client-Tooltip-Css-tooltip:hover:before {
+  position : absolute;
+  z-index : 51;
+  border : solid;
+  border-color : #333 transparent;
+  border-width : 0 4px 4px 4px;
+  pointer-events : none;
+  content : "";
+  top : auto;
+  right : 50%;
+  bottom : -5px;
+  margin-right : -5px;
+}
+.com-google-gwtexpui-user-client-Tooltip-Css-tooltip:hover:after {
+  position : absolute;
+  z-index : 50;
+  font : normal normal 11px/ 1.5 Helvetica, arial, sans-serif;
+  text-align : center;
+  white-space : pre;
+  pointer-events : none;
+  background : rgba(0, 0, 0, 0.7);
+  color : #fff;
+  border-radius : 3px;
+  padding : 5px;
+  content : attr(aria-label);
+  top : 100%;
+  right : 50%;
+  margin-top : 5px;
+  -webkit-transform : translateX(50%);
+  -ms-transform : translateX(50%);
+  transform : translateX(50%);
+}
+.com-google-gerrit-client-change-Assignee_BinderImpl_GenCss_style-suggestBox {
+  margin-bottom : 2px;
+}
+.com-google-gerrit-client-change-Assignee_BinderImpl_GenCss_style-error {
+  color : #d33d3d;
+  font-weight : bold;
+}
+.com-google-gerrit-client-change-Assignee_BinderImpl_GenCss_style-editAssignee, .com-google-gerrit-client-change-Assignee_BinderImpl_GenCss_style-cancel {
+  cursor : pointer;
+  float : right;
+}
+.com-google-gerrit-client-change-Reviewers_BinderImpl_GenCss_style-suggestBox {
+  margin-bottom : 2px;
+}
+.com-google-gerrit-client-change-Reviewers_BinderImpl_GenCss_style-error {
+  color : #d33d3d;
+  font-weight : bold;
+}
+.com-google-gerrit-client-change-Reviewers_BinderImpl_GenCss_style-addReviewer, .com-google-gerrit-client-change-Reviewers_BinderImpl_GenCss_style-cancel {
+  cursor : pointer;
+  float : right;
+}
+.com-google-gerrit-client-change-Topic_BinderImpl_GenCss_style-edit {
+  cursor : pointer;
+  float : right;
+}
+.com-google-gerrit-client-change-Topic_BinderImpl_GenCss_style-cancel {
+  float : right;
+}
+button.com-google-gerrit-client-change-Hashtags_BinderImpl_GenCss_style-openAdd {
+  margin : 3px 3px 0 0;
+  float : right;
+  color : rgba(0, 0, 0, 0.15);
+  background-color : #f5f5f5;
+  background-image : -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+  -webkit-border-radius : 2px;
+  -moz-border-radius : 2px;
+  border-radius : 2px;
+  -webkit-box-sizing : content-box;
+  -moz-box-sizing : content-box;
+  box-sizing : content-box;
+}
+button.com-google-gerrit-client-change-Hashtags_BinderImpl_GenCss_style-openAdd div {
+  width : auto;
+  color : #444;
+}
+.com-google-gerrit-client-change-Hashtags_BinderImpl_GenCss_style-hashtagTextBox {
+  margin-bottom : 2px;
+}
+.com-google-gerrit-client-change-Hashtags_BinderImpl_GenCss_style-error {
+  color : #d33d3d;
+  font-weight : bold;
+}
+.com-google-gerrit-client-change-Hashtags_BinderImpl_GenCss_style-addHashtag, .com-google-gerrit-client-change-Hashtags_BinderImpl_GenCss_style-cancel {
+  cursor : pointer;
+  float : right;
+}
+/* CssDef */
+#change_actions {
+  padding-top : 2px;
+  padding-bottom : 20px;
+}
+#change_actions button {
+  margin : 6px 3px 0 0;
+  text-align : center;
+  font-size : 8pt;
+  font-weight : bold;
+  border : 2px solid;
+  cursor : pointer;
+  color : rgba(0, 0, 0, 0.15);
+  background-color : #f5f5f5;
+  -webkit-border-radius : 2px;
+  -webkit-box-sizing : content-box;
+}
+#change_actions button div {
+  color : #444;
+  min-width : 54px;
+  white-space : nowrap;
+  height : 14px;
+  line-height : 14px;
+}
+#change_actions button.com-google-gerrit-client-change-Actions_BinderImpl_GenCss_style-submit {
+  float : right;
+  background-color : #4d90fe;
+  background-image : -webkit-linear-gradient(top, #4d90fe, #4d90fe);
+}
+#change_actions button.com-google-gerrit-client-change-Actions_BinderImpl_GenCss_style-submit div {
+  color : #fff;
+}
+#change_actions button:disabled {
+  font-weight : normal;
+  background-color : #999;
+  background-image : -webkit-linear-gradient(top, #999, #999);
+}
+/* @external gwt-TabBarItem; */
+/* @external gwt-TabBarItem-disabled; */
+/* @external gwt-TabBarItem-selected; */
+/* @external gwt-TabBarRest; */
+/* @external gwt-TabPanelBottom; */
+/* CssEval */
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-row {
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-activeRow {
+  background-color : #D8EDF9 !important;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-activeRow .com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-pointer {
+  visibility : visible;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-pointer {
+  display : inline-block;
+  vertical-align : top;
+  visibility : hidden;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-subject {
+  display : inline-block;
+  overflow : hidden;
+  text-overflow : ellipsis;
+  white-space : nowrap;
+  width : 355px;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-strikedSubject {
+  display : inline-block;
+  overflow : hidden;
+  text-overflow : ellipsis;
+  white-space : nowrap;
+  width : 355px;
+  text-decoration : line-through;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel .gwt-TabBarItem {
+  background : none repeat scroll 0 0 #fff !important;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel .gwt-TabBarItem-selected {
+  background : none repeat scroll 0 0 #fff !important;
+  border-bottom-color : #000 !important;
+  color : #000 !important;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel .gwt-TabBarRest {
+  background : none repeat scroll 0 0 #fff !important;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel .gwt-TabPanelBottom {
+  padding : 2px 0 0 0;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel .gwt-TabBarItem-disabled {
+  display : none;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-current {
+  display : inline-block;
+  text-align : center;
+  vertical-align : top;
+  width : 12px;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-gitweb {
+  display : inline-block;
+  text-align : center;
+  vertical-align : top;
+  width : 12px;
+  color : #000;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-indirect {
+  display : inline-block;
+  text-align : center;
+  vertical-align : top;
+  width : 12px;
+  color : #090;
+  font-weight : bold;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-notCurrent {
+  display : inline-block;
+  text-align : center;
+  vertical-align : top;
+  width : 12px;
+  color : #ffa62f;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-submittable {
+  display : inline-block;
+  text-align : center;
+  vertical-align : top;
+  width : 12px;
+  color : #090;
+  font-weight : bold;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-pointer {
+  padding : 0;
+  vertical-align : top;
+  width : 12px;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-reviewed {
+  padding : 0;
+  vertical-align : top;
+  height : 19px;
+  width : 20px;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-restoreDelete {
+  padding : 0;
+  vertical-align : top;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-table th {
+  vertical-align : top;
+  text-align : left;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-table tr {
+  vertical-align : top;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-table tr:hover {
+  background : rgba(209, 245, 248, 0.32);
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-table tr.com-google-gerrit-client-change-FileTable-FileTableCss-nohover:hover {
+  background : transparent;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-status {
+  padding-right : 4px;
+  color : #888;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-pathColumn {
+  white-space : nowrap;
+  min-width : 600px;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-pathColumn a {
+  color : #000;
+  cursor : pointer;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-commonPrefix {
+  color : #888;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-renameCopySource {
+  color : #888;
+  font-size : smaller;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-draftColumn {
+  white-space : nowrap;
+  color : #d44;
+  font-weight : bold;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-newColumn {
+  white-space : nowrap;
+  font-weight : bold;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-commentColumn {
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-deltaColumn1 {
+  white-space : nowrap;
+  text-align : right !important;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-deltaColumn2 {
+  padding-left : 5px;
+  white-space : nowrap;
+  text-align : right;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-inserted {
+  height : 10px;
+  display : inline-block;
+  background-color : #4d4;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-deleted {
+  height : 10px;
+  display : inline-block;
+  background-color : #d44;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-restoreDelete div {
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-restoreDelete button {
+  cursor : pointer;
+  padding : 0;
+  margin : 0 0 0 5px;
+  border : 0;
+  background-color : transparent;
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-error {
+  color : #d33d3d;
+  font-weight : bold;
+}
+/* CssEval */
+.com-google-gerrit-client-change-Resources-Style-popup {
+  background-color : #EEEEEE;
+  min-width : 300px;
+  min-height : 90px;
+}
+.com-google-gerrit-client-change-Resources-Style-popupContent {
+  padding : 5px;
+}
+.com-google-gerrit-client-change-Resources-Style-button, .com-google-gerrit-client-change-Resources-Style-popup button, .com-google-gerrit-client-change-Resources-Style-popup input[type="button"] {
+  margin : 0 3px 0 0;
+  border-color : rgba(0, 0, 0, 0.15) !important;
+  text-align : center;
+  font-size : 11px;
+  font-weight : bold;
+  border : 2px solid;
+  cursor : pointer;
+  color : #fff;
+  background-color : #4d90fe;
+  background-image : -webkit-linear-gradient(top, #4d90fe, #4d90fe);
+  -webkit-border-radius : 2px;
+  -webkit-box-sizing : content-box;
+}
+.com-google-gerrit-client-change-Resources-Style-button:disabled, .com-google-gerrit-client-change-Resources-Style-popup button:disabled, .com-google-gerrit-client-change-Resources-Style-popup input[type="button"]:disabled {
+  background-color : #999;
+  background-image : -webkit-linear-gradient(top, #999, #999);
+}
+.com-google-gerrit-client-change-Resources-Style-button div, .com-google-gerrit-client-change-Resources-Style-popup button div {
+  width : 54px;
+  white-space : nowrap;
+  color : #fff;
+  height : 14px;
+  line-height : 14px;
+}
+.com-google-gerrit-client-change-Resources-Style-section {
+  padding : 5px 5px;
+  border-bottom : 1px solid #b8b8b8;
+}
+</style><style>/* CssEval */
+.com-google-gerrit-client-change-PatchSetsBox_BinderImpl_GenCss_style-revisionBox {
+  min-width : 300px;
+  margin : 10px 0 5px 5px;
+}
+.com-google-gerrit-client-change-PatchSetsBox_BinderImpl_GenCss_style-scroll {
+  min-width : 300px;
+  height : 200px;
+}
+.com-google-gerrit-client-change-PatchSetsBox_BinderImpl_GenCss_style-table {
+  border-spacing : 0;
+  width : 100%;
+}
+.com-google-gerrit-client-change-PatchSetsBox_BinderImpl_GenCss_style-table td, .com-google-gerrit-client-change-PatchSetsBox_BinderImpl_GenCss_style-table th {
+  padding-left : 5px;
+  padding-right : 5px;
+  border-right : 2px solid #ddd;
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-PatchSetsBox_BinderImpl_GenCss_style-table tr.com-google-gerrit-client-change-PatchSetsBox_BinderImpl_GenCss_style-current {
+  background-color : #D8EDF9;
+}
+.com-google-gerrit-client-change-PatchSetsBox_BinderImpl_GenCss_style-table tr.com-google-gerrit-client-change-PatchSetsBox_BinderImpl_GenCss_style-current a {
+  pointer-events : none;
+  color : #000;
+}
+.com-google-gerrit-client-change-PatchSetsBox_BinderImpl_GenCss_style-legacy_id {
+  min-width : 50px;
+  text-align : right;
+  font-weight : bold;
+}
+.com-google-gerrit-client-change-PatchSetsBox_BinderImpl_GenCss_style-commit {
+  font-family : monospace;
+}
+.com-google-gerrit-client-change-PatchSetsBox_BinderImpl_GenCss_style-draft_comment {
+  margin : 0 2px 0 0;
+  width : 16px;
+  height : 16px;
+  vertical-align : bottom;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-messageBox {
+  position : relative;
+  width : 1168px;
+  padding : 2px 0 2px 0;
+  border-left : 1px solid #e3e9ff;
+  border-right : 1px solid #e3e9ff;
+  border-bottom : 1px solid #e3e9ff;
+  -webkit-border-bottom-left-radius : 8px;
+  -webkit-border-bottom-right-radius : 8px;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-header {
+  cursor : pointer;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-avatar {
+  position : absolute;
+  width : 26px;
+  height : 26px;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-closed .com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-avatar {
+  position : absolute;
+  top : 0;
+  left : -1px;
+  width : 20px;
+  height : 20px;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-contents {
+  margin-left : 28px;
+  position : relative;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-contents p, .com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-contents blockquote {
+  -webkit-margin-before : 0;
+  -webkit-margin-after : 0.3em;
+  white-space : pre-wrap;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-name {
+  white-space : nowrap;
+  font-weight : bold;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-closed .com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-name {
+  width : 150px;
+  overflow : hidden;
+  font-weight : normal;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-summary {
+  color : #777;
+  position : absolute;
+  top : 0;
+  left : 150px;
+  width : 880px;
+  overflow : hidden;
+  text-overflow : ellipsis;
+  white-space : nowrap;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-date {
+  white-space : nowrap;
+  position : absolute;
+  top : 0;
+  right : 18px;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-reply {
+  position : absolute;
+  top : 0;
+  right : 1px;
+  cursor : pointer;
+  outline : none;
+  border : none;
+  background : transparent;
+  margin : 0;
+  padding : 0;
+  line-height : 15px;
+  font-family : Arial Unicode MS, sans-serif;
+  font-size : 18px;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-closed .com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-reply {
+  visibility : hidden;
+}
+</style><style>/** @license
+The MIT License (MIT)
+
+Copyright (c) 2016 Marijn Haverbeke <marijnh@gmail.com> and others
+Copyright (c) 2016 Michael Zhou <zhoumotongxue008@gmail.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+.CodeMirror{font-family:monospace;height:300px;color:#000}.CodeMirror-lines{padding:4px 0}.CodeMirror pre{padding:0 4px}.CodeMirror-gutter-filler,.CodeMirror-scrollbar-filler{background-color:#fff}.CodeMirror-gutters{border-right:1px solid #ddd;background-color:#f7f7f7;white-space:nowrap}.CodeMirror-linenumber{padding:0 3px 0 5px;min-width:20px;text-align:right;color:#999;white-space:nowrap}.CodeMirror-guttermarker{color:#000}.CodeMirror-guttermarker-subtle{color:#999}.CodeMirror-cursor{border-left:1px solid #000;border-right:none;width:0}.CodeMirror div.CodeMirror-secondarycursor{border-left:1px solid silver}.cm-fat-cursor .CodeMirror-cursor{width:auto;border:0!important;background:#7e7}.cm-fat-cursor div.CodeMirror-cursors{z-index:1}.cm-animate-fat-cursor{width:auto;border:0;-webkit-animation:blink 1.06s steps(1) infinite;-moz-animation:blink 1.06s steps(1) infinite;animation:blink 1.06s steps(1) infinite;background-color:#7e7}@-moz-keyframes blink{50%{background-color:transparent}}@-webkit-keyframes blink{50%{background-color:transparent}}@keyframes blink{50%{background-color:transparent}}.cm-tab{display:inline-block;text-decoration:inherit}.CodeMirror-rulers{position:absolute;left:0;right:0;top:-50px;bottom:-20px;overflow:hidden}.CodeMirror-ruler{border-left:1px solid #ccc;top:0;bottom:0;position:absolute}.cm-s-default .cm-header{color:#00f}.cm-s-default .cm-quote{color:#090}.cm-negative{color:#d44}.cm-positive{color:#292}.cm-header,.cm-strong{font-weight:700}.cm-em{font-style:italic}.cm-link{text-decoration:underline}.cm-strikethrough{text-decoration:line-through}.cm-s-default .cm-keyword{color:#708}.cm-s-default .cm-atom{color:#219}.cm-s-default .cm-number{color:#164}.cm-s-default .cm-def{color:#00f}.cm-s-default .cm-variable-2{color:#05a}.cm-s-default .cm-variable-3{color:#085}.cm-s-default .cm-comment{color:#a50}.cm-s-default .cm-string{color:#a11}.cm-s-default .cm-string-2{color:#f50}.cm-s-default .cm-meta{color:#555}.cm-s-default .cm-qualifier{color:#555}.cm-s-default .cm-builtin{color:#30a}.cm-s-default .cm-bracket{color:#997}.cm-s-default .cm-tag{color:#170}.cm-s-default .cm-attribute{color:#00c}.cm-s-default .cm-hr{color:#999}.cm-s-default .cm-link{color:#00c}.cm-s-default .cm-error{color:red}.cm-invalidchar{color:red}.CodeMirror-composing{border-bottom:2px solid}div.CodeMirror span.CodeMirror-matchingbracket{color:#0f0}div.CodeMirror span.CodeMirror-nonmatchingbracket{color:#f22}.CodeMirror-matchingtag{background:rgba(255,150,0,.3)}.CodeMirror-activeline-background{background:#e8f2ff}.CodeMirror{position:relative;overflow:hidden;background:#fff}.CodeMirror-scroll{overflow:scroll!important;margin-bottom:-30px;margin-right:-30px;padding-bottom:30px;height:100%;outline:0;position:relative}.CodeMirror-sizer{position:relative;border-right:30px solid transparent}.CodeMirror-gutter-filler,.CodeMirror-hscrollbar,.CodeMirror-scrollbar-filler,.CodeMirror-vscrollbar{position:absolute;z-index:6;display:none}.CodeMirror-vscrollbar{right:0;top:0;overflow-x:hidden;overflow-y:scroll}.CodeMirror-hscrollbar{bottom:0;left:0;overflow-y:hidden;overflow-x:scroll}.CodeMirror-scrollbar-filler{right:0;bottom:0}.CodeMirror-gutter-filler{left:0;bottom:0}.CodeMirror-gutters{position:absolute;left:0;top:0;min-height:100%;z-index:3}.CodeMirror-gutter{white-space:normal;height:100%;display:inline-block;vertical-align:top;margin-bottom:-30px}.CodeMirror-gutter-wrapper{position:absolute;z-index:4;background:0 0!important;border:none!important}.CodeMirror-gutter-background{position:absolute;top:0;bottom:0;z-index:4}.CodeMirror-gutter-elt{position:absolute;cursor:default;z-index:4}.CodeMirror-gutter-wrapper ::selection{background-color:transparent}.CodeMirror-gutter-wrapper ::-moz-selection{background-color:transparent}.CodeMirror-lines{cursor:text;min-height:1px}.CodeMirror pre{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;border-width:0;background:0 0;font-family:inherit;font-size:inherit;margin:0;white-space:pre;word-wrap:normal;line-height:inherit;color:inherit;z-index:2;position:relative;overflow:visible;-webkit-tap-highlight-color:transparent;-webkit-font-variant-ligatures:contextual;font-variant-ligatures:contextual}.CodeMirror-wrap pre{word-wrap:break-word;white-space:pre-wrap;word-break:normal}.CodeMirror-linebackground{position:absolute;left:0;right:0;top:0;bottom:0;z-index:0}.CodeMirror-linewidget{position:relative;z-index:2;overflow:auto}.CodeMirror-rtl pre{direction:rtl}.CodeMirror-code{outline:0}.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber,.CodeMirror-scroll,.CodeMirror-sizer{-moz-box-sizing:content-box;box-sizing:content-box}.CodeMirror-measure{position:absolute;width:100%;height:0;overflow:hidden;visibility:hidden}.CodeMirror-cursor{position:absolute;pointer-events:none}.CodeMirror-measure pre{position:static}div.CodeMirror-cursors{visibility:hidden;position:relative;z-index:3}div.CodeMirror-dragcursors{visibility:visible}.CodeMirror-focused div.CodeMirror-cursors{visibility:visible}.CodeMirror-selected{background:#d9d9d9}.CodeMirror-focused .CodeMirror-selected{background:#d7d4f0}.CodeMirror-crosshair{cursor:crosshair}.CodeMirror-line::selection,.CodeMirror-line>span::selection,.CodeMirror-line>span>span::selection{background:#d7d4f0}.CodeMirror-line::-moz-selection,.CodeMirror-line>span::-moz-selection,.CodeMirror-line>span>span::-moz-selection{background:#d7d4f0}.cm-searching{background:#ffa;background:rgba(255,255,0,.4)}.cm-force-border{padding-right:.1px}@media print{.CodeMirror div.CodeMirror-cursors{visibility:hidden}}.cm-tab-wrap-hack:after{content:''}span.CodeMirror-selectedtext{background:0 0}.CodeMirror-dialog{position:absolute;left:0;right:0;background:inherit;z-index:15;padding:.1em .8em;overflow:hidden;color:inherit}.CodeMirror-dialog-top{border-bottom:1px solid #eee;top:0}.CodeMirror-dialog-bottom{border-top:1px solid #eee;bottom:0}.CodeMirror-dialog input{border:none;outline:0;background:0 0;width:20em;color:inherit;font-family:monospace}.CodeMirror-dialog button{font-size:70%}.CodeMirror-merge{position:relative;border:1px solid #ddd;white-space:pre}.CodeMirror-merge,.CodeMirror-merge .CodeMirror{height:350px}.CodeMirror-merge-2pane .CodeMirror-merge-pane{width:47%}.CodeMirror-merge-2pane .CodeMirror-merge-gap{width:6%}.CodeMirror-merge-3pane .CodeMirror-merge-pane{width:31%}.CodeMirror-merge-3pane .CodeMirror-merge-gap{width:3.5%}.CodeMirror-merge-pane{display:inline-block;white-space:normal;vertical-align:top}.CodeMirror-merge-pane-rightmost{position:absolute;right:0;z-index:1}.CodeMirror-merge-gap{z-index:2;display:inline-block;height:100%;-moz-box-sizing:border-box;box-sizing:border-box;overflow:hidden;border-left:1px solid #ddd;border-right:1px solid #ddd;position:relative;background:#f8f8f8}.CodeMirror-merge-scrolllock-wrap{position:absolute;bottom:0;left:50%}.CodeMirror-merge-scrolllock{position:relative;left:-50%;cursor:pointer;color:#555;line-height:1}.CodeMirror-merge-copybuttons-left,.CodeMirror-merge-copybuttons-right{position:absolute;left:0;top:0;right:0;bottom:0;line-height:1}.CodeMirror-merge-copy{position:absolute;cursor:pointer;color:#44c;z-index:3}.CodeMirror-merge-copy-reverse{position:absolute;cursor:pointer;color:#44c}.CodeMirror-merge-copybuttons-left .CodeMirror-merge-copy{left:2px}.CodeMirror-merge-copybuttons-right .CodeMirror-merge-copy{right:2px}.CodeMirror-merge-l-inserted,.CodeMirror-merge-r-inserted{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAGUlEQVQI12MwuCXy3+CWyH8GBgYGJgYkAABZbAQ9ELXurwAAAABJRU5ErkJggg==);background-position:bottom left;background-repeat:repeat-x}.CodeMirror-merge-l-deleted,.CodeMirror-merge-r-deleted{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAGUlEQVQI12M4Kyb2/6yY2H8GBgYGJgYkAABURgPz6Ks7wQAAAABJRU5ErkJggg==);background-position:bottom left;background-repeat:repeat-x}.CodeMirror-merge-r-chunk{background:#ffffe0}.CodeMirror-merge-r-chunk-start{border-top:1px solid #ee8}.CodeMirror-merge-r-chunk-end{border-bottom:1px solid #ee8}.CodeMirror-merge-r-connect{fill:#ffffe0;stroke:#ee8;stroke-width:1px}.CodeMirror-merge-l-chunk{background:#eef}.CodeMirror-merge-l-chunk-start{border-top:1px solid #88e}.CodeMirror-merge-l-chunk-end{border-bottom:1px solid #88e}.CodeMirror-merge-l-connect{fill:#eef;stroke:#88e;stroke-width:1px}.CodeMirror-merge-l-chunk.CodeMirror-merge-r-chunk{background:#dfd}.CodeMirror-merge-l-chunk-start.CodeMirror-merge-r-chunk-start{border-top:1px solid #4e4}.CodeMirror-merge-l-chunk-end.CodeMirror-merge-r-chunk-end{border-bottom:1px solid #4e4}.CodeMirror-merge-collapsed-widget:before{content:"(...)"}.CodeMirror-merge-collapsed-widget{cursor:pointer;color:#88b;background:#eef;border:1px solid #ddf;font-size:90%;padding:0 3px;border-radius:4px}.CodeMirror-merge-collapsed-line .CodeMirror-gutter-elt{display:none}.CodeMirror-simplescroll-horizontal div,.CodeMirror-simplescroll-vertical div{position:absolute;background:#ccc;-moz-box-sizing:border-box;box-sizing:border-box;border:1px solid #bbb;border-radius:2px}.CodeMirror-simplescroll-horizontal,.CodeMirror-simplescroll-vertical{position:absolute;z-index:6;background:#eee}.CodeMirror-simplescroll-horizontal{bottom:0;left:0;height:8px}.CodeMirror-simplescroll-horizontal div{bottom:0;height:100%}.CodeMirror-simplescroll-vertical{right:0;top:0;width:8px}.CodeMirror-simplescroll-vertical div{right:0;width:100%}.CodeMirror-overlayscroll .CodeMirror-gutter-filler,.CodeMirror-overlayscroll .CodeMirror-scrollbar-filler{display:none}.CodeMirror-overlayscroll-horizontal div,.CodeMirror-overlayscroll-vertical div{position:absolute;background:#bcd;border-radius:3px}.CodeMirror-overlayscroll-horizontal,.CodeMirror-overlayscroll-vertical{position:absolute;z-index:6}.CodeMirror-overlayscroll-horizontal{bottom:0;left:0;height:6px}.CodeMirror-overlayscroll-horizontal div{bottom:0;height:100%}.CodeMirror-overlayscroll-vertical{right:0;top:0;width:6px}.CodeMirror-overlayscroll-vertical div{right:0;width:100%}.CodeMirror-search-match{background:gold;border-top:1px solid orange;border-bottom:1px solid orange;-moz-box-sizing:border-box;box-sizing:border-box;opacity:.5}.CodeMirror-lint-markers{width:16px}.CodeMirror-lint-tooltip{background-color:#ffd;border:1px solid #000;border-radius:4px 4px 4px 4px;color:#000;font-family:monospace;font-size:10pt;overflow:hidden;padding:2px 5px;position:fixed;white-space:pre;white-space:pre-wrap;z-index:100;max-width:600px;opacity:0;transition:opacity .4s;-moz-transition:opacity .4s;-webkit-transition:opacity .4s;-o-transition:opacity .4s;-ms-transition:opacity .4s}.CodeMirror-lint-mark-error,.CodeMirror-lint-mark-warning{background-position:left bottom;background-repeat:repeat-x}.CodeMirror-lint-mark-error{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9sJDw4cOCW1/KIAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAHElEQVQI12NggIL/DAz/GdA5/xkY/qPKMDAwAADLZwf5rvm+LQAAAABJRU5ErkJggg==)}.CodeMirror-lint-mark-warning{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9sJFhQXEbhTg7YAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAMklEQVQI12NkgIIvJ3QXMjAwdDN+OaEbysDA4MPAwNDNwMCwiOHLCd1zX07o6kBVGQEAKBANtobskNMAAAAASUVORK5CYII=)}.CodeMirror-lint-marker-error,.CodeMirror-lint-marker-warning{background-position:center center;background-repeat:no-repeat;cursor:pointer;display:inline-block;height:16px;width:16px;vertical-align:middle;position:relative}.CodeMirror-lint-message-error,.CodeMirror-lint-message-warning{padding-left:18px;background-position:top left;background-repeat:no-repeat}.CodeMirror-lint-marker-error,.CodeMirror-lint-message-error{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAHlBMVEW7AAC7AACxAAC7AAC7AAAAAAC4AAC5AAD///+7AAAUdclpAAAABnRSTlMXnORSiwCK0ZKSAAAATUlEQVR42mWPOQ7AQAgDuQLx/z8csYRmPRIFIwRGnosRrpamvkKi0FTIiMASR3hhKW+hAN6/tIWhu9PDWiTGNEkTtIOucA5Oyr9ckPgAWm0GPBog6v4AAAAASUVORK5CYII=)}.CodeMirror-lint-marker-warning,.CodeMirror-lint-message-warning{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAANlBMVEX/uwDvrwD/uwD/uwD/uwD/uwD/uwD/uwD/uwD6twD/uwAAAADurwD2tQD7uAD+ugAAAAD/uwDhmeTRAAAADHRSTlMJ8mN1EYcbmiixgACm7WbuAAAAVklEQVR42n3PUQqAIBBFUU1LLc3u/jdbOJoW1P08DA9Gba8+YWJ6gNJoNYIBzAA2chBth5kLmG9YUoG0NHAUwFXwO9LuBQL1giCQb8gC9Oro2vp5rncCIY8L8uEx5ZkAAAAASUVORK5CYII=)}.CodeMirror-lint-marker-multiple{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAMAAADzjKfhAAAACVBMVEUAAAAAAAC/v7914kyHAAAAAXRSTlMAQObYZgAAACNJREFUeNo1ioEJAAAIwmz/H90iFFSGJgFMe3gaLZ0od+9/AQZ0ADosbYraAAAAAElFTkSuQmCC);background-repeat:no-repeat;background-position:right bottom;width:100%;height:100%}/* @external CodeMirror; */
+/* @external CodeMirror-lines; */
+/* @external CodeMirror-linenumber; */
+/* @external CodeMirror-lint-markers; */
+/* @external CodeMirror-lint-tooltip; */
+/* @external CodeMirror-overlayscroll-horizontal; */
+/* @external CodeMirror-overlayscroll-vertical; */
+/* @external CodeMirror-scrollbar-filler; */
+/* @external cm-tab; */
+/* @external cm-searching; */
+/* @external cm-trailingspace; */
+/* @external unifiedLineNumber; */
+.CodeMirror-lines {
+  padding : 0;
+}
+.CodeMirror pre {
+  padding : 0;
+  line-height : normal;
+}
+.CodeMirror-overlayscroll-horizontal div {
+  min-width : 25px;
+}
+.CodeMirror-overlayscroll-vertical div {
+  min-height : 25px;
+}
+.CodeMirror-overlayscroll-horizontal {
+  min-height : 12px;
+}
+.CodeMirror-overlayscroll-vertical {
+  min-width : 12px;
+  z-index : inherit;
+}
+.CodeMirror-scrollbar-filler {
+  min-height : 12px;
+  min-width : 12px;
+}
+.CodeMirror-overlayscroll-horizontal div, .CodeMirror-overlayscroll-vertical div {
+  background-color : rgba(128, 128, 128, 0.5);
+  z-index : 8;
+}
+.net-codemirror-lib-CodeMirror-Style-activeLine .CodeMirror-linenumber, .net-codemirror-lib-CodeMirror-Style-activeLine .unifiedLineNumber {
+  background-color : #bcf !important;
+  color : #000;
+}
+.net-codemirror-lib-CodeMirror-Style-showTabs .cm-tab:before {
+  position : absolute;
+  content : "»";
+  color : #f00;
+}
+.cm-searching {
+  background-color : #ffa !important;
+}
+.cm-trailingspace {
+  background-color : red !important;
+}
+.net-codemirror-lib-CodeMirror-Style-margin {
+  position : absolute;
+  top : 0;
+  bottom : 0;
+  width : 0;
+  border-right : 1px dashed #ffa500;
+  z-index : 2;
+  cursor : text;
+}
+.CodeMirror-lint-markers {
+  width : 250px;
+}
+.CodeMirror-lint-tooltip {
+  background-color : infobackground;
+  border : 1px solid black;
+  border-radius : 4px 4px 4px 4px;
+  color : infotext;
+  font-family : monospace;
+  font-size : 10pt;
+  overflow : hidden;
+  padding : 2px 5px;
+  position : fixed;
+  white-space : pre;
+  white-space : pre-wrap;
+  z-index : 100;
+  max-width : 600px;
+  opacity : 0;
+  transition : opacity 0.4s;
+  -moz-transition : opacity 0.4s;
+  -webkit-transition : opacity 0.4s;
+  -o-transition : opacity 0.4s;
+  -ms-transition : opacity 0.4s;
+}
+</style><style>/* @external cm-s-midnight; */
+/* @external cm-s-night; */
+/* @external cm-s-twilight; */
+/* @external com-google-gerrit-client-diff-PublishedBox_BinderImpl_GenCss_style-name; */
+/* @external com-google-gerrit-client-diff-CommentBox-Style-message; */
+/* @external com-google-gerrit-client-diff-CommentBox-Style-date; */
+/* @external com-google-gerrit-client-diff-DiffTable_BinderImpl_GenCss_style-range; */
+/* @external com-google-gerrit-client-diff-DiffTable_BinderImpl_GenCss_style-rangeHighlight; */
+/* @external net-codemirror-lib-CodeMirror-Style-activeLine; */
+/* @external CodeMirror-linenumber; */
+.cm-s-midnight .com-google-gerrit-client-diff-PublishedBox_BinderImpl_GenCss_style-name, .cm-s-midnight .com-google-gerrit-client-diff-CommentBox-Style-message, .cm-s-midnight .com-google-gerrit-client-diff-CommentBox-Style-date {
+  color : black;
+}
+.cm-s-midnight .com-google-gerrit-client-diff-DiffTable_BinderImpl_GenCss_style-range, .cm-s-midnight .com-google-gerrit-client-diff-DiffTable_BinderImpl_GenCss_style-rangeHighlight {
+  color : #777;
+}
+.cm-s-midnight .net-codemirror-lib-CodeMirror-Style-activeLine .CodeMirror-linenumber, .cm-s-night .com-google-gerrit-client-diff-PublishedBox_BinderImpl_GenCss_style-name, .cm-s-night .com-google-gerrit-client-diff-CommentBox-Style-message, .cm-s-night .com-google-gerrit-client-diff-CommentBox-Style-date {
+  color : black;
+}
+.cm-s-night .com-google-gerrit-client-diff-DiffTable_BinderImpl_GenCss_style-range, .cm-s-night .com-google-gerrit-client-diff-DiffTable_BinderImpl_GenCss_style-rangeHighlight {
+  color : #777;
+}
+.cm-s-night .net-codemirror-lib-CodeMirror-Style-activeLine .CodeMirror-linenumber, .cm-s-twilight .com-google-gerrit-client-diff-PublishedBox_BinderImpl_GenCss_style-name, .cm-s-twilight .com-google-gerrit-client-diff-CommentBox-Style-message, .cm-s-twilight .com-google-gerrit-client-diff-CommentBox-Style-date {
+  color : black;
+}
+.cm-s-twilight .com-google-gerrit-client-diff-DiffTable_BinderImpl_GenCss_style-range, .cm-s-twilight .com-google-gerrit-client-diff-DiffTable_BinderImpl_GenCss_style-rangeHighlight {
+  color : #777;
+}
+.cm-s-twilight .net-codemirror-lib-CodeMirror-Style-activeLine .CodeMirror-linenumber {
+  color : black;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets {
+  max-width : 650px;
+  font-family : sans-serif;
+  background-color : #fcfa96;
+  border : 1px solid black;
+  -webkit-box-shadow : 3px 3px 3px #888;
+  -moz-box-shadow : 3px 3px 3px #888;
+  box-shadow : 3px 3px 3px #888;
+  margin-bottom : 5px;
+  margin-right : 5px;
+  -webkit-touch-callout : initial;
+  -webkit-user-select : text;
+  -khtml-user-select : text;
+  -moz-user-select : text;
+  -ms-user-select : text;
+  user-select : text;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentBox {
+  position : relative;
+  min-height : 16px;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-header {
+  cursor : pointer;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-summary {
+  color : #777;
+  position : absolute;
+  top : 1px;
+  left : 120px;
+  width : 408px;
+  overflow : hidden;
+  text-overflow : ellipsis;
+  white-space : nowrap;
+  padding-bottom : 0.1em;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-date {
+  white-space : nowrap;
+  position : absolute;
+  top : 2px;
+  right : 5px;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-contents {
+  margin-left : 28px;
+  padding-top : 2px;
+  position : relative;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-message {
+  overflow-x : auto;
+  white-space : pre-wrap;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-message p, .com-google-gerrit-client-diff-CommentBox-Style-message ul, .com-google-gerrit-client-diff-CommentBox-Style-message blockquote {
+  -webkit-margin-before : 0.2em;
+  -webkit-margin-after : 0.3em;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentBox button {
+  margin-right : 3px;
+  margin-bottom : 1px;
+  padding : 1px;
+  text-align : center;
+  font-size : 8px;
+  font-weight : bold;
+  border : 1px solid black;
+  cursor : pointer;
+  color : #fff;
+  background-color : #4d90fe;
+  background-image : -webkit-linear-gradient(top, #4d90fe, #4d90fe);
+  -webkit-border-radius : 2px;
+  -webkit-box-sizing : content-box;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentBox button div {
+  width : 25px;
+  white-space : nowrap;
+  color : #fff;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-goPrev {
+  height : 16px;
+  width : 16px;
+  overflow : hidden;
+  background : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB+klEQVR42mNgIAJYF7Om2JSwHGUgFThkMfBYl7CsiezW/GZVzPKfJM2WhWy6ViWsD+tXhv08cX/jf5IMAGpMda4S+LrgcN2/vTcX/z/1YCtxBsCcHNur923zpWn/V53v+D/xQMr/40AXWJexfAcZgoJLWV5gOLl2ReivrVem/59yKOt/+67w/917Y/4fubvm/9F76/4fA2IQDeIfurMK4SqQk11rhL9N31v0b/nZlv8N23z/1271/N+03f9/686Q/x27I/537on837UnCkyD+PtvLYMYYFXKPDeqV+fr0pNN/yfsT/5fsNb0f+kmm//V25z+1+90/1+13el/4QbT/6kr1P/HLZb9n7BE4X/GSu3/O67NRhgQ3qn+de6R8v/tu0P+p61R+p+2XuF/0nrx/zFr+f5HruH+H7GS63/oEs7/gfPY//vNYgPjxafqUL3gWMn/rX1b9L9pp1L/p26V/J+wlfd/4na+/4nb+P7Hbeb9H7WW+3/YMoQhKAbAAtG6lPVh3iLbn0uvlv2vOWH8P/OQ4P/0g4L/191u+r/mRuP/lVca/i87Xw/WjGEAPBrLWdYEdcp9XXy16P/0WyH/806K/t9wr/m/bSWBaERPSPaVXF97j0T+W3onD2wAWUnZpoz1YfYisx8rr9eSbgCyl3xbJL+SZQAx2RkA4tBE8RSuSzsAAAAASUVORK5CYII=") -0px -0px  no-repeat;
+  display : inline-block;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-goNext {
+  height : 16px;
+  width : 16px;
+  overflow : hidden;
+  background : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACBUlEQVR42mNgwAJsSliOWpWwpjKQC6yKWf5H9mh/syphWe2QxcBDlgGnH27/37Q66ifQJQ8tC9l0STbg3OPd/w/fWf1/ybGWf85VAl9xesmqlOUFSAMyti5j+X76wbb/M4/k/994aeL/7Vfm/I/vN/xmXcKyBsNLIA0Hbi//f+jOqv9H7679f+ze+v/H720A44kHU/73H0z8P/dE8f/dN+f/b1wd9QvDSyAD9t5c/L91Z8j/jt0R/7v3RP/v3hvzv2dfzP/eg0B8KOp/16HQ/z2HI/6vv9Lzf87hqn9uNSIIL4EM2Hl9zv+S9db/89YY/89Yqf0/e43+/4pttv+b9nn+7zwc8L/jiO//lkOe/xv2ufyffSr3/6pznf/j+g2+WZUyzwUbsPhU3X+/WWxwHLSA/X/4cs7/0eu4/8dv4vuftkP8f84u+f/5u9T+9x4L/T/vZNn/sE71r1gN8J/D9j9kCcf/qDXc/+M28/5P2sn3P2UP//+c/TL/51xK/9+9O/afUxUfqhdABsDwkjN1/5dfrP+/6mrj/8TtQNv3C/yvP23yf8Wtiv+Fy+x+WpehByKWaLSpYPm++lrj/5Rdgv8nXQ76v/R68f/gbrmv1uVYohFXQlp9vfH/gqs5/7sPRvyzr+T6SlLeABmw7HL1/6yFZj9syshMyr4tEl9tysjMTKRkZwAv9Ee9WASqUQAAAABJRU5ErkJggg==") -0px -0px  no-repeat;
+  display : inline-block;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-goUp {
+  height : 16px;
+  width : 16px;
+  overflow : hidden;
+  background : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACHElEQVR42p1S30tTYRgedIzIZJtSVCBdtou66CKoTcywi6AsIlpZkcHalnMGs03XonJ6NNa68aIN1oJlWNhmnnbOLGyz1jzMnZFFJaJFZnWif8CZXezpO4uBKbXVCw/fy/vj+Xie75PJ/hJq24pbEmT/E2prif6oSzWndW2ek/J/Wt5pWbl19wV55p5wFb3Jy5ByqVbUco1JtobcOOuJtWR9fAtuPDehmz2RlWpSryCBxkqF7H0HfjCve3CJ24vWh7tyJE1+zYLaSgUL676myjyZDOB6rAHtQ3VwsHtwsncjfKMWHKQr/+yHpLHGXpZ59NaPQMoB98hxdEcPwcrtwOE7q2Ae3AJv4hyq21Yv9yOv+/ZoezYy4YWHb0QPfxruhBYGphL1oVLUB0vRFa8DzR3JamxL/JB0X+nXLiRnGATSbfAJZngEHZzxWpxiy9AQIeAIwnLcHDfB6N/+vSrvh6TpmFuVET5G8EqMYlx8jLTIwvtCh7PDG3AmKod+RIHB95148K4DoakO3H1zEfvp9b/8IEy8+jyFPKrs1Hz6axiu1D7oYwo0JpRoSpYjPEuj2lEy/9ss2V3+EqQhiAzsiW0wPlPCPFYBy8u14MSu3FLhL0yGxr4MoDm2CYanCpj4cjSnKsB+posn4D/1Qz+0DrphOQxEvzGuBPOhs3iC+Ewf7k84EZx05kwbmCYgZ3EENurbYqMWQ0N6S+d/Alj7SPGr006IAAAAAElFTkSuQmCC") -0px -0px  no-repeat;
+  display : inline-block;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-header {
+  position : relative;
+  height : 16px;
+  line-height : 16px;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-reviewed input {
+  margin : 0;
+  padding : 0;
+  vertical-align : middle;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-path {
+  white-space : nowrap;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-fileCount {
+  white-space : nowrap;
+  position : relative;
+  bottom : 4px;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-navigation {
+  position : absolute;
+  top : 0;
+  right : 10px;
+  height : 16px;
+  line-height : 16px;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-nodiff {
+  white-space : nowrap;
+  color : #b00000;
+  vertical-align : top;
+  font-weight : bold;
+  margin-right : 1em;
+  float : left;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-linkPanel {
+  float : left;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-linkPanel img {
+  padding-right : 3px;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-preferences {
+  cursor : pointer;
+}
+.com-google-gerrit-client-diff-DiffTable-Style-range {
+  background-color : #ffd500 !important;
+}
+.com-google-gerrit-client-diff-DiffTable-Style-rangeHighlight {
+  background-color : #ff0 !important;
+}
+.com-google-gerrit-client-diff-DiffTable-Style-fullscreen {
+  background-color : #f7f7f7;
+  border-bottom : 1px solid #ddd;
+}
+/* @external diffHeader; */
+.diffHeader {
+  font-size : 12px;
+  font-weight : bold;
+  color : #5252ad;
+}
+.diffHeader pre {
+  margin : 0 0 3px 0;
+}
+/* @external dark noIntraline showLineNumbers; */
+/* CssEval */
+/* CssEval */
+.com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-table {
+  width : 100%;
+}
+.com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-linkCell {
+  text-align : center;
+  font-size : 12px;
+  white-space : normal;
+  font-family : sans-serif;
+  font-weight : bold;
+}
+.com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-linkCell div {
+  padding-left : 3px;
+  padding-right : 3px;
+  vertical-align : middle;
+  display : inline-block;
+}
+.com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-linkCell a {
+  padding-left : 3px;
+  padding-right : 3px;
+  text-decoration : none;
+  vertical-align : middle;
+  display : inline-block;
+}
+.com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-selected {
+  font-weight : bold;
+  background-color : #D8EDF9;
+}
+.com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-hidden {
+  visibility : hidden;
+}
+.com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-iconCell {
+  width : 16px;
+}
+.com-google-gerrit-client-diff-Scrollbar-Style-comment, .com-google-gerrit-client-diff-Scrollbar-Style-draft {
+  min-height : 5px;
+  position : absolute;
+  right : 0;
+  z-index : 7;
+  color : #0d0d0d;
+  font-size : 9px;
+}
+.com-google-gerrit-client-diff-Scrollbar-Style-insert {
+  min-height : 5px;
+  position : absolute;
+  right : 0;
+  z-index : 7;
+}
+.com-google-gerrit-client-diff-Scrollbar-Style-delete {
+  min-height : 5px;
+  position : absolute;
+  right : 0;
+  z-index : 7;
+  background-color : #faa;
+  min-width : 12px;
+}
+.com-google-gerrit-client-diff-Scrollbar-Style-edit {
+  min-height : 5px;
+  position : absolute;
+  right : 0;
+  z-index : 7;
+}
+.com-google-gerrit-client-diff-Scrollbar-Style-insert {
+  background-color : #9f9;
+  min-width : 12px;
+}
+.com-google-gerrit-client-diff-Scrollbar-Style-edit {
+  border-left : 6px solid #faa;
+  width : 6px !important;
+  background-color : #9f9;
+}
+/* @external CodeMirror CodeMirror-selectedtext; */
+/* @external CodeMirror-linenumber; */
+/* @external CodeMirror-overlayscroll-vertical CodeMirror-scroll; */
+/* @external CodeMirror-dialog-bottom; */
+/* @external CodeMirror-cursor; */
+/* @external dark noIntraline showLineNumbers; */
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-difftable .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-patchSetNav, .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-difftable .CodeMirror {
+  -webkit-touch-callout : none;
+  -webkit-user-select : none;
+  -khtml-user-select : none;
+  -moz-user-select : none;
+  -ms-user-select : none;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-difftable .CodeMirror pre {
+  overflow : visible;
+  border-right : 0;
+  width : auto;
+  padding-bottom : 1px;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-difftable .CodeMirror pre span {
+  padding-bottom : 1px;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-hideA .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-psNavA, .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-hideA .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-a, .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-hideB .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-psNavB, .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-hideB .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-b {
+  display : none;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-table {
+  width : 100%;
+  table-layout : fixed;
+  border-spacing : 0;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-table td {
+  padding : 0;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-a, .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-b {
+  width : 50%;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-hideA .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-psNavB, .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-hideA .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-b, .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-hideB .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-psNavA, .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-hideB .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-a {
+  width : 100%;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-a .CodeMirror-scroll {
+  margin-right : -36px;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-a .CodeMirror-overlayscroll-vertical {
+  display : none !important;
+}
+.showLineNumbers .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-b {
+  border-left : none;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-b {
+  border-left : 1px solid #ddd;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-a .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-diff {
+  background-color : #faa;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-b .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-diff {
+  background-color : #9f9;
+  min-width : 60em;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-a .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-intralineBg {
+  background-color : #fee;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-b .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-intralineBg {
+  background-color : #dfd;
+}
+.noIntraline .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-a .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-intralineBg {
+  background-color : #faa;
+}
+.noIntraline .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-b .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-intralineBg {
+  background-color : #9f9;
+}
+.dark .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-a .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-diff {
+  background-color : #400;
+}
+.dark .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-b .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-diff {
+  background-color : #444;
+}
+.dark .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-a .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-intralineBg {
+  background-color : #888;
+}
+.dark .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-b .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-intralineBg {
+  background-color : #bbb;
+}
+.dark .noIntraline .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-a .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-intralineBg {
+  background-color : #400;
+}
+.dark .noIntraline .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-b .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-intralineBg {
+  background-color : #444;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-patchSetNav, .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-diff_header {
+  background-color : #f7f7f7;
+  line-height : 1;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-difftable .CodeMirror-selectedtext {
+  background-color : inherit !important;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-difftable .CodeMirror-linenumber {
+  height : 1.11em;
+  cursor : pointer;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-difftable .CodeMirror div.CodeMirror-cursor {
+  border-left : 2px solid black;
+}
+.com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-difftable .CodeMirror-dialog-bottom {
+  border-top : 0;
+  border-left : 1px solid #000;
+  border-bottom : 1px solid #000;
+  background-color : #f7f7f7;
+  top : 0;
+  right : 0;
+  bottom : auto;
+  left : auto;
+}
+.showLineNumbers .com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-padding {
+  margin-left : 21px;
+  border-left : 2px solid #d64040;
+}
+.com-google-gerrit-client-diff-SideBySide_BinderImpl_GenCss_style-sbs {
+  margin-left : -5px;
+  margin-right : -5px;
+}
+</style><style>.com-google-gerrit-client-change-IncludedInBox_BinderImpl_GenCss_style-includedInBox {
+  min-width : 300px;
+  max-width : 580px;
+  margin : 5px;
+}
+.com-google-gerrit-client-change-IncludedInBox_BinderImpl_GenCss_style-includedInTable {
+  border-spacing : 0;
+}
+.com-google-gerrit-client-change-IncludedInBox_BinderImpl_GenCss_style-includedInTable th {
+  width : 60px;
+  color : #444;
+  font-weight : normal;
+  vertical-align : top;
+  text-align : left;
+  padding-right : 5px;
+}
+.com-google-gerrit-client-change-IncludedInBox_BinderImpl_GenCss_style-includedInElement {
+  font-size : smaller;
+  font-family : monospace;
+}
+.com-google-gerrit-client-change-IncludedInBox_BinderImpl_GenCss_style-includedInElement span {
+  width : 500px;
+  white-space : nowrap;
+  display : inline-block;
+  overflow : hidden;
+  text-overflow : ellipsis;
+}
+.com-google-gerrit-client-change-IncludedInBox_BinderImpl_GenCss_style-includedInElement .com-google-gerrit-client-change-IncludedInBox_BinderImpl_GenCss_style-gwt-TextBox {
+  padding : 0;
+  margin : 0;
+  border : 0;
+  max-height : 18px;
+  width : 500px;
+}
+.com-google-gerrit-client-change-IncludedInBox_BinderImpl_GenCss_style-includedInElement div {
+  float : right;
+}
+</style><style>.com-google-gerrit-client-diff-SkipBar_BinderImpl_GenCss_style-skipBar {
+  background-color : #def;
+  height : 1.3em;
+  overflow : hidden;
+}
+.com-google-gerrit-client-diff-SkipBar_BinderImpl_GenCss_style-text {
+  display : table;
+  margin : 0 auto;
+  color : #777;
+  font-style : italic;
+  overflow : hidden;
+}
+.com-google-gerrit-client-diff-SkipBar_BinderImpl_GenCss_style-anchor {
+  color : inherit;
+  text-decoration : none;
+}
+.com-google-gerrit-client-diff-SkipBar_BinderImpl_GenCss_style-noExpand .com-google-gerrit-client-diff-SkipBar_BinderImpl_GenCss_style-arrow {
+  display : none;
+}
+.com-google-gerrit-client-diff-SkipBar_BinderImpl_GenCss_style-arrow {
+  font-family : Arial Unicode MS, sans-serif;
+}
+</style><style>.com-google-gerrit-client-diff-InsertCommentBubble_BinderImpl_GenCss_style-bubble {
+  z-index : 150;
+  white-space : nowrap;
+  line-height : 16px;
+  cursor : pointer;
+}
+.com-google-gerrit-client-diff-InsertCommentBubble_BinderImpl_GenCss_style-message {
+  background : #fff1a8;
+  padding-left : 5px;
+  padding-right : 5px;
+  border-radius : 5px;
+  border : 1px solid #aaa;
+  font-family : sans-serif;
+  font-size : smaller;
+  font-style : italic;
+  vertical-align : top;
+}
+.com-google-gerrit-client-diff-InsertCommentBubble_BinderImpl_GenCss_style-message b {
+  vertical-align : top;
+}
+</style></head><body><div id="gerrit_topmenu" class="gerritTopMenu"><table class="topmenu"><colgroup><col><col><col></colgroup><tbody><tr><td class="topmenuTDmenu"><table cellspacing="0" cellpadding="0" class="topmenuMenuLeft"><tbody><tr><td align="left" style="vertical-align: top;"><table cellspacing="0" cellpadding="0" class="gwt-TabBar" role="tablist" style="width: 100%;"><tbody><tr><td align="left" height="100%" class="gwt-TabBarFirst-wrapper" style="vertical-align: bottom;"><div class="gwt-TabBarFirst" style="white-space: normal; height: 100%;">&nbsp;</div></td><td align="left" class="gwt-TabBarItem-wrapper" style="vertical-align: bottom;"><div tabindex="0" class="gwt-TabBarItem" role="tab"><input type="text" tabindex="-1" aria-hidden="true" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;"><div class="gwt-Label" style="white-space: nowrap;">All</div></div></td><td align="left" class="gwt-TabBarItem-wrapper gwt-TabBarItem-wrapper-selected" style="vertical-align: bottom;"><div tabindex="0" class="gwt-TabBarItem gwt-TabBarItem-selected" role="tab"><input type="text" tabindex="-1" aria-hidden="true" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;"><div class="gwt-Label" style="white-space: nowrap;">My</div></div></td><td align="left" class="gwt-TabBarItem-wrapper" style="vertical-align: bottom;"><div tabindex="0" class="gwt-TabBarItem" role="tab"><input type="text" tabindex="-1" aria-hidden="true" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;"><div class="gwt-Label" style="white-space: nowrap;">Projects</div></div></td><td align="left" class="gwt-TabBarItem-wrapper" style="vertical-align: bottom;"><div tabindex="0" class="gwt-TabBarItem" role="tab"><input type="text" tabindex="-1" aria-hidden="true" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;"><div class="gwt-Label" style="white-space: nowrap;">People</div></div></td><td align="left" class="gwt-TabBarItem-wrapper" style="vertical-align: bottom;"><div tabindex="0" class="gwt-TabBarItem" role="tab"><input type="text" tabindex="-1" aria-hidden="true" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;"><div class="gwt-Label" style="white-space: nowrap;">Documentation</div></div></td><td align="left" width="100%" class="gwt-TabBarRest-wrapper" style="vertical-align: bottom;"><div class="gwt-TabBarRest" style="white-space: normal; height: 100%;">&nbsp;</div></td></tr></tbody></table></td></tr><tr><td align="left" height="100%" style="vertical-align: top;"><div class="gwt-TabPanelBottom" role="tabpanel"><div aria-hidden="true" style="width: 100%; height: 100%; padding: 0px; margin: 0px; display: none;"><div class="linkMenuBar" role="menubar" aria-hidden="true" style="width: 100%; height: 100%; display: none;"><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#/q/status:open" role="menuitem">Open</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#/q/status:merged" role="menuitem">Merged</a><a class="menuItem" href="http://192.168.8.215/#/q/status:abandoned" role="menuitem">Abandoned</a></div></div><div style="width: 100%; height: 100%; padding: 0px; margin: 0px;"><div class="linkMenuBar" role="menubar" style="width: 100%; height: 100%;"><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#/dashboard/self" role="menuitem">Changes</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#/q/has:draft" role="menuitem">Draft Comments</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#/q/has:edit" role="menuitem">Edits</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#/q/is:watched+is:open" role="menuitem">Watched Changes</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#/q/is:starred" role="menuitem">Starred Changes</a><a class="menuItem" href="http://192.168.8.215/#/groups/self" role="menuitem">Groups</a></div></div><div aria-hidden="true" style="width: 100%; height: 100%; padding: 0px; margin: 0px; display: none;"><div class="linkMenuBar" role="menubar" aria-hidden="true" style="width: 100%; height: 100%; display: none;"><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#/admin/projects/" role="menuitem">List</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#" role="menuitem" aria-hidden="true" style="display: none;">General</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#" role="menuitem" aria-hidden="true" style="display: none;">Branches</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#" role="menuitem" aria-hidden="true" style="display: none;">Tags</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#" role="menuitem" aria-hidden="true" style="display: none;">Access</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/#" role="menuitem" aria-hidden="true" style="display: none;">Dashboards</a><a class="menuItem" href="http://192.168.8.215/#" role="menuitem" target="_self" aria-hidden="true" style="display: none;">Reviewers</a></div></div><div aria-hidden="true" style="width: 100%; height: 100%; padding: 0px; margin: 0px; display: none;"><div class="linkMenuBar" role="menubar" aria-hidden="true" style="width: 100%; height: 100%; display: none;"><a class="menuItem" href="http://192.168.8.215/#/admin/groups/" role="menuitem">List Groups</a></div></div><div aria-hidden="true" style="width: 100%; height: 100%; padding: 0px; margin: 0px; display: none;"><div class="linkMenuBar" role="menubar" aria-hidden="true" style="width: 100%; height: 100%; display: none;"><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/Documentation/index.html" role="menuitem" target="_blank">Table of Contents</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/Documentation/user-search.html" role="menuitem" target="_blank">Searching</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/Documentation/user-upload.html" role="menuitem" target="_blank">Uploading</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/Documentation/access-control.html" role="menuitem" target="_blank">Access Controls</a><a class="menuItem linkMenuItemNotLast" href="http://192.168.8.215/Documentation/rest-api.html" role="menuitem" target="_blank">REST API</a><a class="menuItem" href="http://192.168.8.215/Documentation/intro-project-owner.html" role="menuitem" target="_blank">Project Owner Guide</a></div></div></div></td></tr></tbody></table></td><td class="topmenuTDglue"><div></div></td><td class="topmenuTDmenu"><div class="topmenuMenuRight"><div class="searchPanel"><input type="text" class="searchTextBox inputFieldTypeHint" size="70"><select class="searchDropdown" size="1"><option value="Changes">Changes</option><option value="Docs">Docs</option></select><button type="button" class="searchButton">Search</button></div><div class="linkMenuBar" role="menubar"><div tabindex="0" class="menuBarUserNameFocusPanel"><input type="text" tabindex="-1" aria-hidden="true" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;"><div class="menuBarUserNamePanel"><span class="menuBarUserName">yansitian</span><img class="menuBarUserNameAvatar" aria-hidden="true" style="display: none;"><span class="gwt-InlineLabel"> ▾</span></div></div></div></div></td></tr></tbody></table></div><div id="gerrit_header"></div><div id="gerrit_body" class="gerritBody"><div><div style=""><div class="screen"><table class="screenHeader" aria-hidden="true" style="display: none;"><colgroup><col><col><col><col></colgroup><tbody><tr><td>&nbsp;</td><td><div class="screenHeader"><span class="gwt-InlineLabel"></span></div></td><td>&nbsp;</td><td align="right" width="100%">&nbsp;</td></tr></tbody></table><div><div class="com-google-gerrit-client-diff-SideBySide_BinderImpl_GenCss_style-sbs"><div class="com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-header"><span class="com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-reviewed" title="Mark file as reviewed (Shortcut: r)"><input type="checkbox" value="on" id="gwt-uid-8405" tabindex="0" checked=""><label for="gwt-uid-8405"></label></span> <span class="com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-path"><span>NoUcode/SQ45</span> / <span>frameworks/base/services/core/java/com/android/server/policy/<b>PhoneWindowManager.java</b></span></span> <div class="com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-navigation"> <span class="com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-nodiff" aria-hidden="true" style="display: none;">No Differences</span> <div class="com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-linkPanel"><a class="gwt-InlineHyperlink" href="http://192.168.8.215/#/c/NoUcode/SQ45/+/21061/1/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java,unified" title="Unified diff"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABJ0lEQVR42tWSy0sCURTG/T/btpHCxIoWgSmztAfVphatxnQMFMkJpwErpDDEbDATYcKowAc9IBBcfvqdaChkmh6rFr8Z5t5zfvc7l/Fpmoa/4OOjE1j4Ff9AEFUiY3xbwOKMWYJq1oTUYUXWCsE5bwELtXwJsbSFk6s2Ths97JhNrKfLsmcF5j8LJu5mHFigZkwoqSrs9iu6LwPcP/ZRsZ+wlmtge/8tCWvdBcYlEsVbEbCZb6ZQj24QTV54C/aOr0VgtZ6lmaeTgtWRZJ6C5EFxNH8VevlBTiYUMMFm1mMEZ4zRzW/odWTPWiLi95Zek72QMvu1IBxZlEL93JYkjP1+efHduOBfmnIXkEl1euwnWlldhmHkHQnXXAVufJQ4gp/ARkoIBUPrXeDfDkkS9AAAAABJRU5ErkJggg==" border="0" width="16" height="16"></a></div> <span class="com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-fileCount"> File <span>3</span> of <span>13</span> </span> <a class="com-google-gerrit-client-diff-CommentBox-Style-goPrev" href="http://192.168.8.215/#/c/NoUcode/SQ45/+/21061/1/frameworks/base/services/core/java/com/android/server/pm/permission/PermissionManagerService.java" title="PermissionManagerService.java (Shortcut: [)"></a> <a class="com-google-gerrit-client-diff-CommentBox-Style-goUp" title="Up to change (Shortcut: u)" href="http://192.168.8.215/#/c/NoUcode/SQ45/+/21061/1"></a> <a class="com-google-gerrit-client-diff-CommentBox-Style-goNext" href="http://192.168.8.215/#/c/NoUcode/SQ45/+/21061/1/packages/apps/Provision/src/com/android/provision/DefaultActivity.java" title="DefaultActivity.java (Shortcut: ])"></a> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGSSURBVCjPVVFNSwJhEF78Ad79Cf6PvXQRsotUlzKICosuRYmR2RJR0KE6lBFFZVEbpFBSqKu2rum6llFS9HHI4iUhT153n6ZtIWMOM+/MM88z7wwH7s9Ub16SJcnbmrNcxVm2q7Z8/QPvEOtntpj92NkCqITLepEpjix7xQtiLOoQ2b6+E7YAN/5nfOEJ2WbKqOIOJ4bYVMEQx4LfBBQDsvFMhUcCVU1/CxVXmDBGA5ZETrhDCQVcYAPbyEJBhvrnBVPiSpNr6cYDNCQwo4zzU/ySckkgDYuNuVpI42T9k4gLKGMPs/xPzzovQiY2hQYe0jlJfyNNhTqiWDYBq/wBMcSRpnyPzu1oS7WtxjVBSthU1vgVksiQ3Dn6Gp5ah2YOKQo5GiuHPA6xT1EKpxQNCNYejgIR457KKio0S56YckjSa9jo//3mrj+BV0QQagqGTOo+Y7gZIf1puP3WHoLhEb2PjTlCTCWGXtbp8DCX3hZuOdaIc9A+aQvWk4ihq95p67a7nP+u+Ws+r0dql9z/zv0NCYhdCPKZ7oYAAAAASUVORK5CYII=" width="16" height="16" class="com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-preferences" title="Diff preferences (Shortcut: ,)"> </div></div><div class="com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-difftable showLineNumbers"><table class="com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-table"> <tbody><tr class="com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-patchSetNav"> <td class="com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-psNavA"> <div><table class="com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-table"> <tbody><tr><td class="com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-iconCell"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACL0lEQVR42s2Q30tTYRjH/TOyIIpuusiLgvIiGF1ERT8vZBaTxRpaoCkUpEVlRdaMjk2stYi1wF0ozREuOeDZsLAykYKmIpTJUGtuO22+y7Odc3Z29u09p8EmB+q2B7487w8+n/fhrar6b6oYZZGf7occ8UD65IY41YfcBIPs+B0IrzshcO3IsG0gwSaQgBUGgfotCBTzhhRV2tWKM7pOD9YZBbmPbnopo6iQPykQqEqaZrUUoqeoikj5DhsF2cmHUMVFyMkXkOM+SCvPIP14DHG5F+JiN3LRm8gudEDJTIL37jMKhPcMFSxAiveXYBeFnRR2UPiGDgvzrVDIOySf1BoFZPQKCrl5Cnsq4LvIRjsp3K7DwpdGKniDxKMdRkGavQAh4gWZugzy4SLIRBtSY7YSfF6H1+YaoKyOIe7cZhTwgdMgb2+jsDZDE0E+FUQq3ADhqwbb8Yq14JL7FM4+OAFblwmHOmqurRP8HLKCD5jBvzwIOTGEfDIAPlSvw4GgGbf8ZzAy68LnGAdnqBknnTWobdnIlCfwWyEtjyD2fBcS/r2QEoPgueN0bAvs9/ZjeKYXw3N90IoJN8EZPkcF1WJZMGCGHGORibgQHzhCJ7EgPX4dSjqEo1d3gp31oLKC0y5NUP6LpO8Y4t4DWHlqQsy1G0vMZpot+N6zFabWTbjP2eHgbDrsGLUZJ/hb7Wmu7qpjtqOHa9Rf1rq2X/cH/5S0bOimL/7Sxta6ttfOfwPd8QATav3NjwAAAABJRU5ErkJggg==" width="16" height="16" class="gwt-Image link" title="Click to add file comment"> </td> <td class="com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-linkCell"> <div><div class="gwt-Label">Patch Set</div><a class="com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-selected" href="http://192.168.8.215/#/c/NoUcode/SQ45/+/21061/1/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java">Base</a><a class="gwt-InlineHyperlink" href="http://192.168.8.215/#/c/NoUcode/SQ45/+/21061/1..1/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java">1</a><a class="gwt-Anchor" href="http://192.168.8.215/cat/21061%2C1%2Cframeworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java%5E1" title="Download"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABl0lEQVR42pWTS0sCYRSGtUW/oiDaFFKBmK76B21SSwOlspJIW0SuWgm1CWmhoNUEKbSIwBYuJFq0jCCCior2bRRveB2d8dLbnMkRTUX94GEG5nuf+c6ZOTLZ3xoRUAloejAmMCTrsFQcx2UqlUqtWq2iE8JzeL1eTzeJhsKFQgEsyzbIZrNIp9OIxWKiJBqNwufztUnkJKANpVIJPM+LVyKfzyOTySAej4uCYrEIegnDMJKkVUBhCRJQIJfLIZFItJVU74m8RSCU0dhA91S3VEoymRRPEolEugv+0yyhk1A/UqlU/4JmCZVDPSHRQAKiXC6LfSEJMbCATrFzv4atWzMsISPM17reAgpJ0AmsYROuvi5w+cFA75/vX0BhYiW4iMD7CZhXD0wBPSa04+t9fQXXwyEsQSMcYRtOX9zwPLuwG7Jhzqnm1fvKu2bBT8cZKHOwBzdhv9mA++kIrscDLJ/roNyb+lY4FcPS3zgrdJkVAl2HyRpYhdm/BMPZAgzH2lp9ehtrlCS9xlnlmPmc3p58q4cpI/sFcf9wVDzrgGcAAAAASUVORK5CYII=" border="0" width="16" height="16"></a><a class="gwt-Anchor" href="http://192.168.8.215/gitweb?p=NoUcode%2FSQ45.git;hb=d2534287a3182e5ab4b616aaff4da47f6a2eedad;f=frameworks%2Fbase%2Fservices%2Fcore%2Fjava%2Fcom%2Fandroid%2Fserver%2Fpolicy%2FPhoneWindowManager.java">(gitweb)</a><a class="gwt-Anchor" href="javascript:;" title="Blame"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACl0lEQVR42rVS60tTYRzeh75E343+gIigkLBA+mJirsh9qMBuKBmSDEUlqxmmzITES1BGhoYSbujENKm8lMomzPKeeFuaY86zTd3O5pnbzmU7O+fpzUAxKvzSAw8/eN/f8/wefu+rUPyGkKMzjbW2drOLjdTmdA3vHy8TmCGNzzeYO+0zPyhV/A2sveMQb+voFZy9EL3DiAa/QeJXIAsUov4FCMs98PXnYL3zim3DVHRslxjrnw6EvuvGIrQZUpgitBPxPCRuCtHQKOEwObNAjtAIjD2DU5fkcw8UHdyJbamvFBxdpMEFSVgi1Qk56gfk8BblKEPMZiBudgGSD54POXC2XevZNvBPVjhFZob0LpFJy5BFLxFtbAm3KNLkzk4MPhK2QnCNw/o8nt822Pj8MCxxy4iyI4hykyS+hcSeRTQwRQRjZAdDEAN9EDwvwbsKIIUoLFSekLcNvMZ8R9g9SqbPgXcUkwnlYN5lgOlWg+nKhLdFBd5ZBtZ6HRG6Cjw1jsXquJ0EXtODCmakmsT1gl8phKc+FtzKfcJ7YG1qUu9itXw/gvNKyLIVrrZ82F6pTDuvYNLuc3erF4JzzWSBVtBN8VtizpkNlkoHZy/Aek0MJHYQm1/bYSk9Ijja8w7vekq3sTB2rSONDs62wP/29i8DMvmnmLPfgVevAmNugEV7VHQYsm788TPRfZqTNsOttdVGJXhjCqTVc5BciRDNl2ArjsF0WVyAepOlVPwLRsPjlNpHmRF9bRHqqk7jifYUNHkZuJp0XDbptWcUe0GJRk3pmlug07Wirr4R1U9f4HJKEq3YKzS5N7/0DwzA46ExMTGJ1016pKoSlvZs0GeoTE+9eJ5NTj4rJyYmyBeUCdz7hpJsxf/AD1hpCRKLDa4oAAAAAElFTkSuQmCC" border="0" width="16" height="16"></a></div> </td> </tr></tbody></table></div> </td> <td class="com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-psNavB"> <div><table class="com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-table"> <tbody><tr><td class="com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-iconCell"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACL0lEQVR42s2Q30tTYRjH/TOyIIpuusiLgvIiGF1ERT8vZBaTxRpaoCkUpEVlRdaMjk2stYi1wF0ozREuOeDZsLAykYKmIpTJUGtuO22+y7Odc3Z29u09p8EmB+q2B7487w8+n/fhrar6b6oYZZGf7occ8UD65IY41YfcBIPs+B0IrzshcO3IsG0gwSaQgBUGgfotCBTzhhRV2tWKM7pOD9YZBbmPbnopo6iQPykQqEqaZrUUoqeoikj5DhsF2cmHUMVFyMkXkOM+SCvPIP14DHG5F+JiN3LRm8gudEDJTIL37jMKhPcMFSxAiveXYBeFnRR2UPiGDgvzrVDIOySf1BoFZPQKCrl5Cnsq4LvIRjsp3K7DwpdGKniDxKMdRkGavQAh4gWZugzy4SLIRBtSY7YSfF6H1+YaoKyOIe7cZhTwgdMgb2+jsDZDE0E+FUQq3ADhqwbb8Yq14JL7FM4+OAFblwmHOmqurRP8HLKCD5jBvzwIOTGEfDIAPlSvw4GgGbf8ZzAy68LnGAdnqBknnTWobdnIlCfwWyEtjyD2fBcS/r2QEoPgueN0bAvs9/ZjeKYXw3N90IoJN8EZPkcF1WJZMGCGHGORibgQHzhCJ7EgPX4dSjqEo1d3gp31oLKC0y5NUP6LpO8Y4t4DWHlqQsy1G0vMZpot+N6zFabWTbjP2eHgbDrsGLUZJ/hb7Wmu7qpjtqOHa9Rf1rq2X/cH/5S0bOimL/7Sxta6ttfOfwPd8QATav3NjwAAAABJRU5ErkJggg==" width="16" height="16" class="gwt-Image link" title="Click to add file comment"> </td> <td class="com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-linkCell"> <div><div class="gwt-Label">Patch Set</div><a class="com-google-gerrit-client-diff-PatchSetSelectBox_BinderImpl_GenCss_style-selected" href="http://192.168.8.215/#/c/NoUcode/SQ45/+/21061/1/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java">1</a><a class="gwt-Anchor" href="http://192.168.8.215/cat/21061%2C1%2Cframeworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java%5E0" title="Download"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABl0lEQVR42pWTS0sCYRSGtUW/oiDaFFKBmK76B21SSwOlspJIW0SuWgm1CWmhoNUEKbSIwBYuJFq0jCCCior2bRRveB2d8dLbnMkRTUX94GEG5nuf+c6ZOTLZ3xoRUAloejAmMCTrsFQcx2UqlUqtWq2iE8JzeL1eTzeJhsKFQgEsyzbIZrNIp9OIxWKiJBqNwufztUnkJKANpVIJPM+LVyKfzyOTySAej4uCYrEIegnDMJKkVUBhCRJQIJfLIZFItJVU74m8RSCU0dhA91S3VEoymRRPEolEugv+0yyhk1A/UqlU/4JmCZVDPSHRQAKiXC6LfSEJMbCATrFzv4atWzMsISPM17reAgpJ0AmsYROuvi5w+cFA75/vX0BhYiW4iMD7CZhXD0wBPSa04+t9fQXXwyEsQSMcYRtOX9zwPLuwG7Jhzqnm1fvKu2bBT8cZKHOwBzdhv9mA++kIrscDLJ/roNyb+lY4FcPS3zgrdJkVAl2HyRpYhdm/BMPZAgzH2lp9ehtrlCS9xlnlmPmc3p58q4cpI/sFcf9wVDzrgGcAAAAASUVORK5CYII=" border="0" width="16" height="16"></a><a class="gwt-Anchor" href="http://192.168.8.215/gitweb?p=NoUcode%2FSQ45.git;hb=refs%2Fchanges%2F61%2F21061%2F1;f=frameworks%2Fbase%2Fservices%2Fcore%2Fjava%2Fcom%2Fandroid%2Fserver%2Fpolicy%2FPhoneWindowManager.java">(gitweb)</a><a class="gwt-Anchor" href="javascript:;" title="Blame"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACl0lEQVR42rVS60tTYRzeh75E343+gIigkLBA+mJirsh9qMBuKBmSDEUlqxmmzITES1BGhoYSbujENKm8lMomzPKeeFuaY86zTd3O5pnbzmU7O+fpzUAxKvzSAw8/eN/f8/wefu+rUPyGkKMzjbW2drOLjdTmdA3vHy8TmCGNzzeYO+0zPyhV/A2sveMQb+voFZy9EL3DiAa/QeJXIAsUov4FCMs98PXnYL3zim3DVHRslxjrnw6EvuvGIrQZUpgitBPxPCRuCtHQKOEwObNAjtAIjD2DU5fkcw8UHdyJbamvFBxdpMEFSVgi1Qk56gfk8BblKEPMZiBudgGSD54POXC2XevZNvBPVjhFZob0LpFJy5BFLxFtbAm3KNLkzk4MPhK2QnCNw/o8nt822Pj8MCxxy4iyI4hykyS+hcSeRTQwRQRjZAdDEAN9EDwvwbsKIIUoLFSekLcNvMZ8R9g9SqbPgXcUkwnlYN5lgOlWg+nKhLdFBd5ZBtZ6HRG6Cjw1jsXquJ0EXtODCmakmsT1gl8phKc+FtzKfcJ7YG1qUu9itXw/gvNKyLIVrrZ82F6pTDuvYNLuc3erF4JzzWSBVtBN8VtizpkNlkoHZy/Aek0MJHYQm1/bYSk9Ijja8w7vekq3sTB2rSONDs62wP/29i8DMvmnmLPfgVevAmNugEV7VHQYsm788TPRfZqTNsOttdVGJXhjCqTVc5BciRDNl2ArjsF0WVyAepOlVPwLRsPjlNpHmRF9bRHqqk7jifYUNHkZuJp0XDbptWcUe0GJRk3pmlug07Wirr4R1U9f4HJKEq3YKzS5N7/0DwzA46ExMTGJ1016pKoSlvZs0GeoTE+9eJ5NTj4rJyYmyBeUCdz7hpJsxf/AD1hpCRKLDa4oAAAAAElFTkSuQmCC" border="0" width="16" height="16"></a></div> </td> </tr></tbody></table></div> </td> </tr> <tr class="diffHeader" aria-hidden="true" style="display: none;"> <td colspan="2"><pre></pre></td> </tr> <tr> <td class="com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-a"><div class="CodeMirror cm-s-default CodeMirror-overlayscroll net-codemirror-lib-CodeMirror-Style-showTabs" style="height: 885px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 876px; left: 183.281px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-overlayscroll-horizontal" cm-not-content="true" style="display: none; right: 6px; left: 0px;"><div style="width: 10px; left: 0px;"></div></div><div class="CodeMirror-overlayscroll-vertical" cm-not-content="true" style="display: block; bottom: 0px;"><div style="height: 13.35px; top: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true" style="height: 6px; width: 6px;"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 39px; min-width: 897.427px; padding-right: 6px; padding-bottom: 0px; margin-bottom: -17px; border-right-width: 13px; min-height: 59651px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>9729</div></div></div><div class="CodeMirror-measure"><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">        </span><span class="cm-tab" role="presentation" cm-text="	">        </span><span class="cm-keyword">try</span>{</span></pre></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* Copyright (C) 2006 The Android Open Source Project</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* Licensed under the Apache License, Version 2.0 (the "License");</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* you may not use this file except in compliance with the License.</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* You may obtain a copy of the License at</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*      http://www.apache.org/licenses/LICENSE-2.0</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* Unless required by applicable law or agreed to in writing, software</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* distributed under the License is distributed on an "AS IS" BASIS,</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* See the License for the specific language governing permissions and</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* limitations under the License.</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*/</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">package</span> <span class="cm-def">com</span>.<span class="cm-variable">android</span>.<span class="cm-variable">server</span>.<span class="cm-variable">policy</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">Manifest</span>.<span class="cm-variable">permission</span>.<span class="cm-variable">INTERNAL_SYSTEM_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">Manifest</span>.<span class="cm-variable">permission</span>.<span class="cm-variable">SYSTEM_ALERT_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">AppOpsManager</span>.<span class="cm-variable">OP_SYSTEM_ALERT_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">AppOpsManager</span>.<span class="cm-variable">OP_TOAST_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">ACTIVITY_TYPE_HOME</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">ACTIVITY_TYPE_STANDARD</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">ACTIVITY_TYPE_RECENTS</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">WINDOWING_MODE_FREEFORM</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">WINDOWING_MODE_FULLSCREEN</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">WINDOWING_MODE_SPLIT_SCREEN_PRIMARY</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">WINDOWING_MODE_SPLIT_SCREEN_SECONDARY</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">WINDOWING_MODE_UNDEFINED</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">Context</span>.<span class="cm-variable">CONTEXT_RESTRICTED</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">32</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">Context</span>.<span class="cm-variable">DISPLAY_SERVICE</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">33</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">Context</span>.<span class="cm-variable">WINDOW_SERVICE</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">34</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">pm</span>.<span class="cm-variable">PackageManager</span>.<span class="cm-variable">FEATURE_LEANBACK</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">35</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">pm</span>.<span class="cm-variable">PackageManager</span>.<span class="cm-variable">FEATURE_PICTURE_IN_PICTURE</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">36</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">pm</span>.<span class="cm-variable">PackageManager</span>.<span class="cm-variable">FEATURE_WATCH</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">37</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">pm</span>.<span class="cm-variable">PackageManager</span>.<span class="cm-variable">PERMISSION_GRANTED</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">38</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">res</span>.<span class="cm-variable">Configuration</span>.<span class="cm-variable">EMPTY</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">39</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">res</span>.<span class="cm-variable">Configuration</span>.<span class="cm-variable">UI_MODE_TYPE_CAR</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">40</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">res</span>.<span class="cm-variable">Configuration</span>.<span class="cm-variable">UI_MODE_TYPE_MASK</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">41</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">os</span>.<span class="cm-variable">Build</span>.<span class="cm-variable">VERSION_CODES</span>.<span class="cm-variable">M</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">42</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">os</span>.<span class="cm-variable">Build</span>.<span class="cm-variable">VERSION_CODES</span>.<span class="cm-variable">O</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">43</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">provider</span>.<span class="cm-variable">Settings</span>.<span class="cm-variable">Secure</span>.<span class="cm-variable">VOLUME_HUSH_OFF</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">44</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">Display</span>.<span class="cm-variable">DEFAULT_DISPLAY</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">45</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">Display</span>.<span class="cm-variable">STATE_OFF</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">46</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">DOCKED_LEFT</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">47</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">DOCKED_RIGHT</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">48</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">DOCKED_TOP</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">49</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">INPUT_CONSUMER_NAVIGATION</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">50</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FIRST_APPLICATION_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">51</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FIRST_SUB_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">52</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FIRST_SYSTEM_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">53</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_ALLOW_LOCK_WHILE_SCREEN_ON</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">54</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">55</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_FORCE_NOT_FULLSCREEN</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">56</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_FULLSCREEN</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">57</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_LAYOUT_ATTACHED_IN_DECOR</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">58</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_LAYOUT_INSET_DECOR</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">59</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_LAYOUT_IN_OVERSCAN</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">60</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_LAYOUT_IN_SCREEN</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">61</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_LAYOUT_NO_LIMITS</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">62</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_SHOW_WALLPAPER</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">63</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_SHOW_WHEN_LOCKED</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">64</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_TRANSLUCENT_NAVIGATION</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">65</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_TRANSLUCENT_STATUS</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">66</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">LAST_APPLICATION_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.9931px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">67</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">LAST_SUB_WINDOW</span>;</span></pre></div></div></div></div><div class="net-codemirror-lib-CodeMirror-Style-margin" style="margin-left: 721px;"></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 59651px;"></div><div class="CodeMirror-gutters" style="height: 59664px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 38px;"></div></div></div></div></td> <td class="com-google-gerrit-client-diff-SideBySideTable_BinderImpl_GenCss_style-b"><div class="CodeMirror cm-s-default CodeMirror-overlayscroll net-codemirror-lib-CodeMirror-Style-showTabs" style="height: 885px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 876px; left: 38.993px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-overlayscroll-horizontal" cm-not-content="true" style="display: none; right: 6px; left: 0px;"><div style="width: 10px; left: 0px;"></div></div><div class="CodeMirror-overlayscroll-vertical" cm-not-content="true" style="display: block; bottom: 0px;"><div style="height: 13.3493px; top: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true" style="height: 6px; width: 6px;"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 39px; min-width: 897.427px; padding-right: 6px; padding-bottom: 0px; margin-bottom: -17px; border-right-width: 13px; min-height: 59654px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>9744</div></div></div><div class="CodeMirror-measure"><pre class="CodeMirror-line" role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* Copyright (C) 2006 The Android Open Source Project</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* Licensed under the Apache License, Version 2.0 (the "License");</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* you may not use this file except in compliance with the License.</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* You may obtain a copy of the License at</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*      http://www.apache.org/licenses/LICENSE-2.0</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* Unless required by applicable law or agreed to in writing, software</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* distributed under the License is distributed on an "AS IS" BASIS,</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* See the License for the specific language governing permissions and</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* limitations under the License.</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*/</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">package</span> <span class="cm-def">com</span>.<span class="cm-variable">android</span>.<span class="cm-variable">server</span>.<span class="cm-variable">policy</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">Manifest</span>.<span class="cm-variable">permission</span>.<span class="cm-variable">INTERNAL_SYSTEM_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">Manifest</span>.<span class="cm-variable">permission</span>.<span class="cm-variable">SYSTEM_ALERT_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">AppOpsManager</span>.<span class="cm-variable">OP_SYSTEM_ALERT_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">AppOpsManager</span>.<span class="cm-variable">OP_TOAST_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">ACTIVITY_TYPE_HOME</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">ACTIVITY_TYPE_STANDARD</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">ACTIVITY_TYPE_RECENTS</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">WINDOWING_MODE_FREEFORM</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">WINDOWING_MODE_FULLSCREEN</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">WINDOWING_MODE_SPLIT_SCREEN_PRIMARY</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">WINDOWING_MODE_SPLIT_SCREEN_SECONDARY</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">app</span>.<span class="cm-variable">WindowConfiguration</span>.<span class="cm-variable">WINDOWING_MODE_UNDEFINED</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">Context</span>.<span class="cm-variable">CONTEXT_RESTRICTED</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">32</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">Context</span>.<span class="cm-variable">DISPLAY_SERVICE</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">33</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">Context</span>.<span class="cm-variable">WINDOW_SERVICE</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">34</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">pm</span>.<span class="cm-variable">PackageManager</span>.<span class="cm-variable">FEATURE_LEANBACK</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">35</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">pm</span>.<span class="cm-variable">PackageManager</span>.<span class="cm-variable">FEATURE_PICTURE_IN_PICTURE</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">36</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">pm</span>.<span class="cm-variable">PackageManager</span>.<span class="cm-variable">FEATURE_WATCH</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">37</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">pm</span>.<span class="cm-variable">PackageManager</span>.<span class="cm-variable">PERMISSION_GRANTED</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">38</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">res</span>.<span class="cm-variable">Configuration</span>.<span class="cm-variable">EMPTY</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">39</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">res</span>.<span class="cm-variable">Configuration</span>.<span class="cm-variable">UI_MODE_TYPE_CAR</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">40</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">content</span>.<span class="cm-variable">res</span>.<span class="cm-variable">Configuration</span>.<span class="cm-variable">UI_MODE_TYPE_MASK</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">41</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">os</span>.<span class="cm-variable">Build</span>.<span class="cm-variable">VERSION_CODES</span>.<span class="cm-variable">M</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">42</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">os</span>.<span class="cm-variable">Build</span>.<span class="cm-variable">VERSION_CODES</span>.<span class="cm-variable">O</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">43</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">provider</span>.<span class="cm-variable">Settings</span>.<span class="cm-variable">Secure</span>.<span class="cm-variable">VOLUME_HUSH_OFF</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">44</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">Display</span>.<span class="cm-variable">DEFAULT_DISPLAY</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">45</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">Display</span>.<span class="cm-variable">STATE_OFF</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">46</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">DOCKED_LEFT</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">47</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">DOCKED_RIGHT</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">48</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">DOCKED_TOP</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">49</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">INPUT_CONSUMER_NAVIGATION</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">50</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FIRST_APPLICATION_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">51</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FIRST_SUB_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">52</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FIRST_SYSTEM_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">53</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_ALLOW_LOCK_WHILE_SCREEN_ON</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">54</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">55</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_FORCE_NOT_FULLSCREEN</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">56</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_FULLSCREEN</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">57</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_LAYOUT_ATTACHED_IN_DECOR</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">58</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_LAYOUT_INSET_DECOR</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">59</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_LAYOUT_IN_OVERSCAN</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">60</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_LAYOUT_IN_SCREEN</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">61</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_LAYOUT_NO_LIMITS</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">62</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_SHOW_WALLPAPER</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">63</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_SHOW_WHEN_LOCKED</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">64</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_TRANSLUCENT_NAVIGATION</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">65</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">FLAG_TRANSLUCENT_STATUS</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">66</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">LAST_APPLICATION_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">67</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">LAST_SUB_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">68</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">LAST_SYSTEM_WINDOW</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">69</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">70</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">71</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">MATCH_PARENT</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38.993px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 29px;">72</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-keyword">static</span> <span class="cm-variable">android</span>.<span class="cm-variable">view</span>.<span class="cm-variable">WindowManager</span>.<span class="cm-variable">LayoutParams</span>.<span class="cm-variable">PRIVATE_FLAG_ACQUIRES_SLEEP_TOKEN</span>;</span></pre></div></div></div></div><div class="net-codemirror-lib-CodeMirror-Style-margin" style="margin-left: 721px;"></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 59654px;"></div><div class="CodeMirror-gutters" style="height: 59667px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 38px;"></div></div></div><div not-content="true" class="com-google-gerrit-client-diff-Scrollbar-Style-insert" style="top: 158.214px; width: 5px; height: 127.637px;"></div><div not-content="true" class="com-google-gerrit-client-diff-Scrollbar-Style-insert" style="top: 585.393px; width: 5px; height: 143.459px;"></div></div></td> </tr> </tbody></table> <div aria-hidden="true" style="display: none;"></div></div></div></div></div></div></div></div><div style="clear: both"><div id="gerrit_footer"></div><div id="gerrit_btmmenu"><span class="gwt-InlineHTML">Powered by <a href="https://www.gerritcodereview.com/" target="_blank">Gerrit Code Review</a> (2.15.6)</span><span class="gwt-InlineLabel"> | </span><a class="" href="http://192.168.8.215/c/NoUcode/SQ45/+/21061/1/frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java?polygerrit=1">Switch to New UI</a><span class="gwt-InlineLabel"> | </span><span class="gwt-InlineLabel">Press '?' to view keyboard shortcuts</span></div></div><iframe id="__gwt_historyFrame" src="javascript:&#39;&#39;" style="position:absolute;width:0;height:0;border:0" tabindex="-1" src="./PhoneWindowManager.java _ 192.168 Code Review_files/saved_resource.html"></iframe><script language="javascript" src="./PhoneWindowManager.java _ 192.168 Code Review_files/gerrit_ui.nocache.js" type="text/javascript"></script><iframe id="gerrit_ui" tabindex="-1" style="position: absolute; width: 0px; height: 0px; border: none; left: -1000px; top: -1000px;" src="./PhoneWindowManager.java _ 192.168 Code Review_files/saved_resource(1).html"></iframe><span class="rpcStatus" style="display: none;" aria-hidden="true">Working ...</span><div aria-hidden="true" style="display: none;"></div><iframe id="reviewers" tabindex="-1" style="position: absolute; width: 0px; height: 0px; border: none; left: -1000px; top: -1000px;" src="./PhoneWindowManager.java _ 192.168 Code Review_files/saved_resource(2).html"></iframe><div aria-hidden="true" style="display: none;"></div></body></html>
