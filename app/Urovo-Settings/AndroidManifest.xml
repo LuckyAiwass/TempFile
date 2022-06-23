@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.urovo.bluetooth.scanner"
+    android:sharedUserId="android.uid.system">
+
+
+    
+     <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 摄像头权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera.autofocus" /> <!-- 自动聚焦权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission	android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+   	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SHUTDOWN"/>
+
+    <application
+        android:name=".service.MainApplication"
+        android:allowBackup="false"
+        android:theme="@style/AppTheme"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+       >
+        <activity
+            android:name="com.example.maintools.mainpage.FirstPageActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+          >
+           
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name=".service.BTScannerService"
+            android:enabled="true"
+            android:exported="true">
+            <!--android:process=":remote"-->
+            <intent-filter>
+                <action android:name="android.intent.action.BTSOCKET_SERVICE" />
+                
+            </intent-filter>
+        </service>
+        <receiver android:name="com.urovo.bluetooth.scanner.MainActivity$BtConnectReceiver"> 
+            <intent-filter android:priority="1000" > 
+                <action android:name="ACTION_CONNECT_BLUETOOTH" />
+            </intent-filter>
+       </receiver>
+        <receiver android:name="com.example.BootReceiver.bootcastreceiver">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.PAIRING_REQUEST" />
+            	<action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.nfc.properties"/>           
+            </intent-filter>
+        </receiver>
+        
+         <service
+            android:name="com.example.BootReceiver.BootServer"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_SERVICE" />
+            </intent-filter>
+        </service>
+        
+          <activity android:name="com.example.nfcfile.ExprotNfcActivity"></activity>
+       <activity android:name="com.example.nfcfile.ImprotNfcActivity"></activity>
+       <activity android:name="com.bluetoothscan.qrcode.BtScanActivity"></activity>
+       <activity android:name="com.google.zxing.activity.CaptureActivity"/>
+       <activity android:name="com.example.bignfcfile.ExprotNfcActivity"></activity>
+       <activity android:name="com.example.bignfcfile.ImprotNfcActivity"></activity>
+    </application>
+
+</manifest>

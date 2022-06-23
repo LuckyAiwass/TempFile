@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!--ImageView
+        android:id="@+id/iv_input_nfc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/im_input_nfc" /
+
+
+    <ImageView
+        android:id="@+id/iv_input_scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/im_input_scan" />
+
+    <ImageView
+        android:id="@+id/iv_input_local"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/im_input_local" />
+
+
+        -->
+    <FrameLayout
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_input_nfc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/im_input_nfc" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/text_input_nfc"
+            android:textColor="@android:color/white"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:textSize="18dip"
+            />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_input_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/im_input_scan" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/text_input_scan"
+            android:textColor="@android:color/white"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:textSize="18dip"
+            />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_input_local"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/im_input_local" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/text_input_local"
+            android:textColor="@android:color/white"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:textSize="18dip"
+            />
+    </FrameLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,3025 @@
+<propertygroup>
+	<package>
+			<packageName>com.android.providers.settings</packageName>
+			<table >
+				<name>System</name>
+				<property>
+					<key>volume_music_speaker</key>
+					<value>12</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>notification_light_pulse</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>persist.sys.multifinger</key>
+					<value>true</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>notification_sound</key>
+					<value>content://media/internal/audio/media/76</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>volume_voice_earpiece</key>
+					<value></value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>ringtone</key>
+					<value>content://media/internal/audio/media/119</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>hearing_aid</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>lockTaskWhitePackages</key>
+					<value>com.urovo.uhome,com.urovo.remotecontrol</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>screen_brightness_mode</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>alarm_alert_set</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>mute_streams_affected</key>
+					<value>47</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>tty_mode</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>multi_finger_screen_shot_enabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>screen_brightness_for_vr</key>
+					<value>86</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>ringtone_set</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>font_scale</key>
+					<value>1.0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>dim_screen</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>notification_sound_set</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>volume_bluetooth_sco</key>
+					<value>12</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>sys.ethernet.availability</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>lockscreen_sounds_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>user_rotation</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>accelerometer_rotation</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>screen_off_timeout</key>
+					<value>121000</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>volume_alarm_speaker</key>
+					<value>15</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>vibrate_when_ringing</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>hide_rotation_lock_toggle_for_accessibility</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>button_light_enable</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>alarm_alert</key>
+					<value>content://media/internal/audio/media/24</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>pointer_speed</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>mode_ringer_streams_affected</key>
+					<value>422</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>volume_notification</key>
+					<value>5</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>device_nfc</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>dtmf_tone_type</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>dtmf_tone</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>volume_ring_speaker</key>
+					<value>12</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>time_12_24</key>
+					<value>12</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>system_locales</key>
+					<value>en-US</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>volume_system</key>
+					<value>5</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>status_bar_show_battery_percent</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>scheduled_check</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>sound_effects_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>urovo_scan_stat</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>screen_brightness</key>
+					<value>102</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>Glove_mode</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>System</name>
+				<property>
+					<key>haptic_feedback_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>low_battery_sound_timeout</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+                                <name>Global</name>
+                                <property>
+                                        <key>zen_mode</key>
+                                        <value>0</value>
+                                </property>
+                        </table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>car_undock_sound</key>
+					<value>/system/media/audio/ui/Undock.ogg</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>Phenotype_boot_count</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>Phenotype_flags</key>
+					<value></value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>window_animation_scale</key>
+					<value>1.0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>_boot_Phenotype_flags</key>
+					<value></value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>show_zen_settings_suggestion</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>mode_ringer</key>
+					<value>2</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>default_install_location</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>wifi_display_on</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>device_name</key>
+					<value>DT50</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>wifi_networks_available_notification_on</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>zen_settings_updated</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>dock_sounds_enabled_when_accessbility</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>bluetooth_on</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>mobile_data</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>network_watchlist_last_report_time</key>
+					<value>1546272000000</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>database_creation_buildid</key>
+					<value>PKQ1.190118.001</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>emergency_tone</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>max_sound_trigger_detection_service_ops_per_day</key>
+					<value>1000</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>add_users_when_locked</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>dock_audio_media_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>fulllist_prefernetwork</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>adb_enabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>trusted_sound</key>
+					<value>/system/media/audio/ui/Trusted.ogg</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>unlock_sound</key>
+					<value>/system/media/audio/ui/Unlock.ogg</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>airplane_mode_radios</key>
+					<value>cell,bluetooth,wifi,nfc,wimax</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>wifi_max_dhcp_retry_count</key>
+					<value>9</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>airplane_mode_toggleable_radios</key>
+					<value>bluetooth,wifi,nfc</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>heads_up_notifications_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>low_power</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>charging_vibration_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>zen_mode_ringer_level</key>
+					<value>2</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>preferred_network_mode</key>
+					<value>22,20</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>bluetooth_disabled_profiles</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>desk_undock_sound</key>
+					<value>/system/media/audio/ui/Undock.ogg</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>zen_duration</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>mobile_data_always_on</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>webview_provider</key>
+					<value>com.android.chrome</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>wifi_sleep_policy</key>
+					<value>2</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>dock_sounds_enabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>charging_sounds_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>wifi_scan_always_enabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>ntp_server_2</key>
+					<value>persist.vendor.ntp.svr_2</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>network_recommendations_enabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>car_dock_sound</key>
+					<value>/system/media/audio/ui/Dock.ogg</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>sound_trigger_detection_service_op_timeout</key>
+					<value>15000</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>power_sounds_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>stay_on_while_plugged_in</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>disable_pop_softinput</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>zen_mode_config_etag</key>
+					<value>1434328487</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>set_install_location</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>zen_mode</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>transition_animation_scale</key>
+					<value>1.0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>data_roaming</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>package_verifier_enable</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>theater_mode_on</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>cdma_cell_broadcast_sms</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>airplane_mode_on</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>zen_settings_suggestion_viewed</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>default_restrict_background_data</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>low_battery_sound</key>
+					<value>/system/media/audio/ui/LowBattery.ogg</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>netstats_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>wifi_wakeup_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>subscription_mode</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>assisted_gps_enabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>lock_sound</key>
+					<value>/system/media/audio/ui/Lock.ogg</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>settings_glove_mode_state</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>auto_time_zone</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>location_global_kill_switch</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>wifi_on</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>wireless_charging_started_sound</key>
+					<value>/system/media/audio/ui/ChargingStarted.ogg</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>device_provisioned</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>emergency_affordance_needed</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>auto_pop_softinput</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>sysui_demo_allowed</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>auto_time</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>usb_mass_storage_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>call_auto_retry</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>boot_count</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Global</name>
+				<property>
+					<key>desk_dock_sound</key>
+					<value>/system/media/audio/ui/Dock.ogg</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>lock_screen_show_notifications</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+                                <name>Secure</name>
+                                <property>
+                                        <key>location_providers_allowed</key>
+                                        <value></value>
+                                </property>
+			</table >
+			<table >
+                                <name>Secure</name>
+                                <property>
+                                        <key>night_display_activated</key>
+                                        <value></value>
+                                </property>
+			</table >
+			<table >
+                                <name>Secure</name>
+                                <property>
+                                        <key>eye_protect_activated</key>
+                                        <value></value>
+                                </property>
+                        </table >
+			<table >
+                                <name>Secure</name>
+                                <property>
+                                        <key>display_density_forced</key>
+                                        <value></value>
+                                </property>
+                        </table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>unknown_sources_default_reversed</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sysui_volume_up_silent</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>accessibility_shortcut_enabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>immersive_mode_confirmations</key>
+					<value>confirmed</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>accessibility_shortcut_target_service</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>default_input_method</key>
+					<value>com.google.android.inputmethod.korean/.KoreanIme</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sleep_timeout</key>
+					<value>-1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>lock_screen_allow_private_notifications</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>double_tap_to_wake</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>speak_password</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>wake_gesture_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>screensaver_activate_on_sleep</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>volume_hush_gesture</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sysui_qs_fancy_anim</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>backup_enabled</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sysui_keyguard_right</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sysui_qs_move_whole_rows</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>user_setup_complete</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sysui_volume_down_silent</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>nfc_payment_default_component</key>
+					<value>com.google.android.gms/com.google.android.gms.tapandpay.hce.service.TpHceService</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>manual_ringer_toggle_count</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sysui_do_not_disturb</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>trust_agents_initialized</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>lockscreen.disabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>enabled_notification_assistant</key>
+					<value>com.google.android.ext.services/android.ext.services.notification.Assistant</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>lock_screen_owner_info_enabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>accessibility_display_inversion_enabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>selected_spell_checker_subtype</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>long_press_timeout</key>
+					<value>400</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sysui_tuner_version</key>
+					<value>4</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sysui_nav_bar_left</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>voice_recognition_service</key>
+					<value>com.google.android.googlequicksearchbox/com.google.android.voicesearch.serviceapi.GoogleRecognitionService</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>notification_badging</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>screensaver_components</key>
+					<value>com.google.android.deskclock/com.android.deskclock.Screensaver</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>voice_interaction_service</key>
+					<value>com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>accessibility_display_magnification_scale</key>
+					<value>2.0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>hush_gesture_used</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>screensaver_activate_on_dock</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>backup_transport</key>
+					<value>com.google.android.gms/.backup.BackupTransportService</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>input_methods_subtype_history</key>
+					<value>com.google.android.inputmethod.korean/.KoreanIme;-1901779940</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>mock_location</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>systemui.google.opa_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>bluetooth_name</key>
+					<value>H5</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>autofill_service</key>
+					<value>com.google.android.gms/.autofill.service.AutofillService</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sysui_keyguard_left</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sync_parent_sounds</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sysui_nav_bar</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>screensaver_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>snoozed_schedule_condition_provider</key>
+					<value></value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>mount_play_not_snd</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>mount_ums_notify_enabled</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>overview_nav_bar_gesture</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>icon_blacklist</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>android_id</key>
+					<value>48344d51d4f185bb</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>touch_exploration_enabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sysui_qqs_count</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>qs_show_brightness</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>enabled_notification_policy_access_packages</key>
+					<value>com.google.android.apps.wellbeing</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>selected_input_method_subtype</key>
+					<value>-1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>mount_ums_prompt</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sysui_nav_bar_right</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>selected_spell_checker</key>
+					<value>com.google.android.inputmethod.latin/com.android.inputmethod.latin.spellcheck.AndroidSpellCheckerService</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>screensaver_default_component</key>
+					<value>com.google.android.deskclock/com.android.deskclock.Screensaver</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>mount_ums_autostart</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>sms_default_application</key>
+					<value>com.google.android.apps.messaging</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>install_non_market_apps</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>keyguard_slice_uri</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>show_ime_with_hard_keyboard</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>accessibility_enabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>multi_press_timeout</key>
+					<value>300</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>accessibility_display_magnification_enabled</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>user_setup_personalization_state</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>clock_seconds</key>
+					<value>null</value>
+				</property>
+			</table >
+			<table >
+				<name>Secure</name>
+				<property>
+					<key>enabled_input_methods</key>
+					<value>com.google.android.inputmethod.korean/.KoreanIme</value>
+				</property>
+			</table >
+	</package>
+	<package>
+			<packageName>com.urovo.provider.settings</packageName>
+			<table >
+				<name>settings</name>
+				<property>
+					<key>SCANNER_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>IMAGE_EXPOSURE_MODE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>IMAGE_FIXED_EXPOSURE</key>
+					<value>80</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>SEND_GOOD_READ_BEEP_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>SEND_GOOD_READ_VIBRATE_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>TRIGGERING_MODES</key>
+					<value>8</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>GOOD_READ_BEEP_ENABLE</key>
+					<value>2</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>GOOD_READ_VIBRATE_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LABEL_APPEND_ENTER</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>IMAGE_PICKLIST_MODE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>IMAGE_ONE_D_INVERSE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>TRIGGERING_LOCK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>SEND_LABEL_PREFIX_SUFFIX</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LABEL_PREFIX</key>
+					<value></value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LABEL_SUFFIX</key>
+					<value></value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LABEL_MATCHER_PATTERN</key>
+					<value></value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LABEL_MATCHER_TARGETREGEX</key>
+					<value></value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LABEL_MATCHER_REPLACEMENT</key>
+					<value></value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>REMOVE_NONPRINT_CHAR</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LASER_ON_TIME</key>
+					<value>50</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>TIMEOUT_BETWEEN_SAME_SYMBOL</key>
+					<value>10</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LINEAR_CODE_TYPE_SECURITY_LEVEL</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>FUZZY_1D_PROCESSING</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>MULTI_DECODE_MODE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>BAR_CODES_TO_READ</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>FULL_READ_MODE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODING_FORMAT</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE39_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE39_ENABLE_CHECK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE39_SEND_CHECK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE39_FULL_ASCII</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CHARACTER_DATA_DELAY</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>APPEND_ENTER_DELAY</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE39_LENGTH1</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE39_LENGTH2</key>
+					<value>20</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>TRIOPTIC_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE32_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE32_SEND_START</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>C25_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>D25_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>D25_LENGTH1</key>
+					<value>2</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>D25_LENGTH2</key>
+					<value>50</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>M25_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE11_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE11_ENABLE_CHECK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE11_SEND_CHECK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE11_LENGTH1</key>
+					<value>4</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE11_LENGTH2</key>
+					<value>55</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>I25_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>I25_ENABLE_CHECK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>I25_SEND_CHECK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>I25_LENGTH1</key>
+					<value>2</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>I25_LENGTH2</key>
+					<value>50</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>I25_TO_EAN13</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODABAR_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODABAR_NOTIS</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODABAR_CLSI</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODABAR_LENGTH1</key>
+					<value>4</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODABAR_LENGTH2</key>
+					<value>20</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE93_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE93_LENGTH1</key>
+					<value>2</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE93_LENGTH2</key>
+					<value>50</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE128_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE128_LENGTH1</key>
+					<value>2</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE128_LENGTH2</key>
+					<value>40</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE_ISBT_128</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE128_GS1_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPCA_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPCA_SEND_CHECK</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPCA_SEND_SYS</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPCA_TO_EAN13</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPCE_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPCE_SEND_CHECK</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPCE_SEND_SYS</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPCE_TO_UPCA</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPCE1_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPCE1_SEND_CHECK</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPCE1_SEND_SYS</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPCE1_TO_UPCA</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>EAN13_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>EAN13_SEND_CHECK</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>EAN13_BOOKLANDEAN</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>EAN13_BOOKLAND_FORMAT</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>EAN8_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>EAN8_SEND_CHECK</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>EAN8_TO_EAN13</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>EAN_EXT_ENABLE_2_5_DIGIT</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPC_EAN_SECURITY_LEVEL</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UCC_COUPON_EXT_CODE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>MSI_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>MSI_REQUIRE_2_CHECK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>MSI_SEND_CHECK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>MSI_CHECK_2_MOD_11</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>MSI_LENGTH1</key>
+					<value>4</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>MSI_LENGTH2</key>
+					<value>10</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>GS1_14_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>GS1_14_TO_UPC_EAN</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>GS1_LIMIT_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>GS1_EXP_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>GS1_EXP_LENGTH1</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>GS1_EXP_LENGTH2</key>
+					<value>74</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>US_POSTNET_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>US_PLANET_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>US_POSTAL_SEND_CHECK</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>USPS_4STATE_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UPU_FICS_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>ROYAL_MAIL_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>ROYAL_MAIL_SEND_CHECK</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>AUSTRALIAN_POST_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>KIX_CODE_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>JAPANESE_POST_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>PDF417_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>MICROPDF417_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>COMPOSITE_CC_AB_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>COMPOSITE_CC_C_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>COMPOSITE_TLC39_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>HANXIN_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>HANXIN_INVERSE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DATAMATRIX_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DATAMATRIX_LENGTH1</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DATAMATRIX_LENGTH2</key>
+					<value>1500</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DATAMATRIX_INVERSE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>MAXICODE_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>QRCODE_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>QRCODE_INVERSE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>MICROQRCODE_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>AZTEC_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>AZTEC_INVERSE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>WEDGE_KEYBOARD_ENABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>WEDGE_KEYBOARD_TYPE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>WEDGE_INTENT_ACTION_NAME</key>
+					<value>android.intent.ACTION_DECODE_DATA</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>INTENT_DATA_STRING_TAG</key>
+					<value>barcode_string</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_2D_LIGHTS_MODE</key>
+					<value>3</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_2D_CENTERING_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_2D_CENTERING_MODE</key>
+					<value>2</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_2D_WINDOW_UPPER_LX</key>
+					<value>412</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_2D_WINDOW_UPPER_LY</key>
+					<value>316</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_2D_WINDOW_LOWER_RX</key>
+					<value>420</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_2D_WINDOW_LOWER_RY</key>
+					<value>324</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_2D_DEBUG_WINDOW_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_EXPOSURE_METHOD</key>
+					<value>2</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_TARGET_VALUE</key>
+					<value>120</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_TARGET_PERCENTILE</key>
+					<value>97</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_TARGET_ACCEPT_GAP</key>
+					<value>40</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_MAX_EXP</key>
+					<value>472</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_MAX_GAIN</key>
+					<value>4</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_FRAME_RATE</key>
+					<value>30</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_CONFORM_IMAGE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_CONFORM_TRIES</key>
+					<value>6</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_SPECULAR_EXCLUSION</key>
+					<value>2</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_SPECULAR_SAT</key>
+					<value>240</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_SPECULAR_LIMIT</key>
+					<value>3</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_FIXED_GAIN</key>
+					<value>4</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ES_FIXED_FRAME_RATE</key>
+					<value>30</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_ILLUM_POWER_LEVEL</key>
+					<value>10</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_PICKLIST_AIM_MODE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_PICKLIST_AIM_DELAY</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_MaxMultiRead_COUNT</key>
+					<value>2</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_Multiple_Decode_TIMEOUT</key>
+					<value>5000</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_Multiple_Decode_INTERVAL</key>
+					<value>50</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_Multiple_Decode_MODE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LABEL_SEPARATOR_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LABEL_FORMAT_SEPARATOR_CHAR</key>
+					<value>()</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>TRIGGERING_SLEEP_WORK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>TRANSMIT_CODE_ID</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DOTCODE_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_OCR_MODE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_OCR_TEMPLATE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_OCR_USER_TEMPLATE</key>
+					<value></value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>OUT_EDITORTEXT_MODE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>OUT_CLIPBOARD_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_DECODE_DELAY</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_DECODE_DEBUG_MODE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>SUSPENSION_BUTTON</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LINEAR_1D_QUIET_ZONE_LEVEL</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE39_Quiet_Zone</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE39_START_STOP</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE39_SECURITY_LEVEL</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>M25_SEND_CHECK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>M25_LENGTH1</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>M25_LENGTH2</key>
+					<value>55</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>I25_QUIET_ZONE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>I25_SECURITY_LEVEL</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODABAR_ENABLE_CHECK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODABAR_SEND_CHECK</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODABAR_SEND_START</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODABAR_CONCATENATE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE128_REDUCED_QUIET_ZONE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE128_CHECK_ISBT_TABLE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE_ISBT_Concatenation_MODE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE128_SECURITY_LEVEL</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CODE128_IGNORE_FNC4</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UCC_REDUCED_QUIET_ZONE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UCC_COUPON_EXT_REPORT_MODE</key>
+					<value></value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UCC_EAN_ZERO_EXTEND</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>UCC_EAN_SUPPLEMENTAL_MODE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>GS1_LIMIT_Security_Level</key>
+					<value>3</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>COMPOSITE_UPC_MODE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>POSTAL_GROUP_TYPE_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>KOREA_POST_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>Canadian_POSTAL_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CACHE_DATA_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CACHE_DATA_LIMIT_ENABLE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>CACHE_DATA_LIMIT_TIME</key>
+					<value>30000</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>SPECIFIC_CODE_GS</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DPM_DECODE_MODE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DATAMATRIX_SYMBOL_SIZE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>MAXICODE_SYMBOL_SIZE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>QRCODE_SYMBOL_SIZE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>AZTEC_SYMBOL_SIZE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LOW_POWER_SLEEP_MODE</key>
+					<value>1</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LOW_POWER_SLEEP_TIMEOUT</key>
+					<value>15000</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LOW_CONTRAST_IMPROVED</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>LOW_CONTRAST_IMPROVED_ALGORITHM</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_Multiple_Decode_INTERVAL</key>
+					<value>50</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>DEC_EachImageAttempt_TIME</key>
+					<value>125</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>SEND_TOKENS_OPTION</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>SEND_TOKENS_FORMAT</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>SEND_TOKENS_SEPARATOR</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>ENABLE_PARSER_UDICODE</key>
+					<value>62</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>ENABLE_FORMAT_UDI_DATE</key>
+					<value>0</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>device_sn</key>
+					<value>NA</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>SCANNER_TYPE</key>
+					<value>15</value>
+				</property>
+			</table >
+			<table >
+				<name>settings</name>
+				<property>
+					<key>SCAN_HANDLE</key>
+					<value>1</value>
+				</property>
+			</table >
+	</package>
+</propertygroup>

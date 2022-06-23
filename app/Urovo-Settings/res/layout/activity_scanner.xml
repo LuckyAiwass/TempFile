@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <SurfaceView
+            android:id="@+id/scanner_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <com.google.zxing.view.ViewfinderView
+            android:id="@+id/viewfinder_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:label_text="@string/text_qr_code"
+            app:label_text_size="30.0"
+            app:label_text_color="@color/colorAccent"/>
+
+        <ImageButton
+            android:id="@+id/btn_flash"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="30dip"
+            android:background="@color/transparent"
+            android:padding="6dip"
+            android:scaleType="centerCrop"
+            android:src="@drawable/flash_off" />
+    </FrameLayout>
+
+</LinearLayout>

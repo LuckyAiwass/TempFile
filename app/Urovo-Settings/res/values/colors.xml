@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="main_bg_normal">#57BDB4</color>
+    <color name="main_bg_preesed">#DBD8D8</color>
+    <color name="white">#FFFFFF</color>
+    <color name="font_color">#808080</color>
+    <color name="transparent">#00000000</color>
+    <color name="btn_scan_normal">#009688</color>
+    <color name="btn_scan_press">#77009688</color>
+    <color name="scan_text_main">#595959</color>
+    <color name="scan_text_minor">#A5A5A5</color>
+    <color name="scan_title_bg">#A0A0A0</color>
+    <color name="line">#CECECE</color>
+    <color name="export_text_color">#333333</color>
+    <color name="item_bg">#EAEAEA</color>
+    
+     <color name="btn_scan_bg_normal">#4A90E2</color>
+    <color name="btn_scan_bg_press">#774A90E2</color>
+    <color name="item_device_font_name">#595959</color>
+    <color name="item_device_font_address">#808080</color>
+</resources>
