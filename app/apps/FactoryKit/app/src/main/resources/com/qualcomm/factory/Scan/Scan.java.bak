@@ -1,0 +1,288 @@
+/*
+ * Copyright (c) 2011-2012 urovo Technologies, Inc.  All Rights Reserved.
+ * urovo Technologies Proprietary and Confidential.
+ */
+package com.ubx.factorykit.Scan;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.device.ScanManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.device.ScanManager;
+import android.widget.TextView;
+
+import com.ubx.factorykit.R;
+import com.ubx.factorykit.Utilities;
+import com.ubx.factorykit.Framework.Framework;
+
+import java.util.Iterator;
+import java.util.Map;
+
+public class Scan extends Activity {
+
+    private static final String TAG = "Scan";
+    private static String resultString = Utilities.RESULT_FAIL;
+    private static Context mContext;
+    private EditText focusView;
+    private static String barcodeStr;
+    private final static String SCAN_ACTION = "urovo.rcv.message";
+    ScanManager mScanManager;
+    private boolean soundstate = false;
+    private boolean modestate = false;
+    private boolean powerstate = false;
+    private boolean lockstate = false;
+
+    // private CharSequence entries[];
+    // private CharSequence entriesvaule[];
+    @Override
+    public void finish() {
+    	//if (powerstate){
+    	//	mScanManager.setOutputParameter(4, 0);
+        //    mScanManager.closeScanner();
+        //}
+        //if (modestate)
+        //	mScanManager.setOutputParameter(5, 0);
+    	//if (soundstate)
+    	//	mScanManager.setOutputParameter(1, 0);
+    	//if (lockstate)
+    	//	mScanManager.lockTriggler();
+        Utilities.writeCurMessage(this, TAG, resultString);
+        unregisterReceiver(mScanReceiver);
+        super.finish();
+    }
+
+    @Override
+    protected void onPause() {
+
+        super.onPause();
+    }
+
+    private void init(Context context) {
+        mContext = context;
+        resultString = Utilities.RESULT_FAIL;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        init(getApplicationContext());
+        setRequestedOrientation(Framework.orientation);
+        if(Utilities.getBuildProject().equals("SQ46"))
+            setContentView(R.layout.scan_sq46);
+        else
+            setContentView(R.layout.scan);
+        focusView = (EditText) findViewById(R.id.focus);
+        // urovo add 屈臣氏默认弹出键盘，避免测试无法显示扫描结果 2020-01-17 begin
+        if(android.os.Build.PWV_CUSTOM_CUSTOM.equals("QCS")){
+            focusView.setFocusable(true);
+            focusView.setFocusableInTouchMode(true);
+            focusView.requestFocus();
+            getWindow().setSoftInputMode(android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        }
+        // urovo add 屈臣氏默认弹出键盘，避免测试无法显示扫描结果 2020-01-17 end
+        initScan();
+        Button pass = (Button) findViewById(R.id.pass);
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(SCAN_ACTION);
+        registerReceiver(mScanReceiver, filter);
+        pass.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View v) {
+
+                pass();
+            }
+        });
+
+        Button fail = (Button) findViewById(R.id.fail);
+        fail.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View v) {
+
+                fail(null);
+            }
+        });
+        Button scannertype = (Button) findViewById(R.id.scannertype);
+        scannertype.setText("Scanner");
+        scannertype.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View v) {
+
+                showScannerType();
+            }
+        });
+    }
+
+    private BroadcastReceiver mScanReceiver = new BroadcastReceiver() {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+//            focusView.setText("");
+
+            byte[] barocode = intent.getByteArrayExtra("barocode");
+            int barocodelen = intent.getIntExtra("length", 0);
+            byte temp = intent.getByteExtra("barcodeType", (byte) 0);
+            loge(temp);
+            barcodeStr = new String(barocode, 0, barocodelen);
+            focusView.setText(barcodeStr);
+        }
+
+    };
+    void fail(Object msg) {
+
+        loge(msg);
+        setResult(RESULT_CANCELED);
+        resultString = Utilities.RESULT_FAIL;
+        finish();
+    }
+
+    void pass() {
+
+        setResult(RESULT_OK);
+        resultString = Utilities.RESULT_PASS;
+        finish();
+    }
+
+    void logd(Object d) {
+
+        Log.d(TAG, "" + d);
+    }
+
+    void loge(Object e) {
+
+        Log.e(TAG, "" + e);
+    }
+    
+    private void initScan() {
+        // TODO Auto-generated method stub
+        mScanManager = new ScanManager();
+        
+        if(mScanManager.getOutputParameter(4) != 1){
+            //mScanManager.setOutputParameter(4, 1);
+            mScanManager.openScanner();
+            powerstate = true;
+        } 
+		if (mScanManager.getOutputParameter(5) != 1) {
+			modestate = true;
+			mScanManager.setOutputParameter(5, 1);
+			if (mScanManager.getOutputParameter(1) != 1) {
+				mScanManager.setOutputParameter(1, 1);
+				soundstate = true;
+			}
+		}
+        if(mScanManager.getOutputParameter(6) != 1){
+            mScanManager.unlockTriggler();
+            lockstate = true;
+        }
+
+        int type = mScanManager.getScannerType();
+        if(type <= 0 && Build.PWV_CUSTOM_CUSTOM.equals("Reliance")) {
+            type = 13;//4710
+            mScanManager.setOutputParameter(7, type);            
+        }
+        initScannerList(type);
+        /*int i;
+        int length = mScanManager.getScanerList().size();
+        for (i=0;i<length;i++){
+            if(String.valueOf(type) == entriesvaule[i].toString())
+                setTitle(entries[i]);
+        }*/
+        if(type <= 0 || currentType == -1) {
+            showScannerType();
+        }
+    }
+    String[] entries;
+    int entriesvaule[];
+    int currentType = -1;
+    void initScannerList(int type) {
+        Map<String, Integer> scanTypelist = mScanManager.getScanerList();
+        if(scanTypelist != null) {
+            int length = scanTypelist.size();
+            entries = new String[length];
+            entriesvaule = new int[length];
+            try{
+                Iterator mi = scanTypelist.entrySet().iterator();
+                int i = 0;
+                while (mi.hasNext()) {
+                    Map.Entry e = (Map.Entry) mi.next();
+                    Log.d(TAG, "entryList " + e.getKey() + "=" + e.getValue());
+                    entries[i] = e.getKey().toString();
+                    entriesvaule[i] = (Integer)(e.getValue());
+                    i++;
+                }
+                i = 0;
+                if(entries != null) {
+                    for (i = entriesvaule.length - 1; i > 0; i--)
+                    {
+                        //在 0-i 范围内，将该范围内最大的数字沉到i
+                        for (int j = 0; j < i; j++)
+                        {
+                            if (entriesvaule[j] < entriesvaule[j+1])
+                            {
+                                //交换
+                                int temp = entriesvaule[j];
+                                entriesvaule[j] = entriesvaule[j+1];
+                                entriesvaule[j+1] = temp;
+                                
+                                String name = entries[j];
+                                entries[j] = entries[j+1];
+                                entries[j+1] = name;
+                            }
+                        }
+                    }
+                    i = 0;
+                    for (i = 0;i < entriesvaule.length ; i++)
+                    {
+                        if(type == entriesvaule[i]) {
+                            currentType = i;
+                            break;
+                        }
+                        Log.d(TAG, "sort entryList " + entries[i] + "=" + entriesvaule[i] );
+                    }
+                    if(currentType > 0 && currentType < entries.length)
+                        setTitle(entries[currentType]);
+                }
+                
+                if(currentType >=length) {
+                    currentType = -1;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    private void showScannerType() {
+        if (entries == null) {
+            Log.d(TAG, "entries null " );
+            return;
+        }
+        AlertDialog dialog = new AlertDialog.Builder(this).setTitle("Scanner Type")
+                .setSingleChoiceItems(entries, currentType, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Toast.makeText(MainActivity.this, items[which],
+                        // Toast.LENGTH_SHORT).show();
+                        currentType = which;
+                        int ScannerType = entriesvaule[which];
+                        setTitle(entries[currentType]);
+                        Log.d(TAG, currentType + " currentType " + ScannerType);
+                        mScanManager.setOutputParameter(7, ScannerType);
+                        dialog.dismiss();
+                    }
+                }).create();
+        dialog.show();
+    }
+}

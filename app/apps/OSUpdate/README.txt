@@ -1,0 +1,3 @@
+OSUpdate修改须知:
+当修改了AndroidManifest.xml文件后，需要把修改同步到replace下的AndroidManifest.xml
+设置了开关URV_OSUPDATE_DISPLAY_ICON_IN_MENU为true时，replace下的AndroidManifest.xml会替换原来的

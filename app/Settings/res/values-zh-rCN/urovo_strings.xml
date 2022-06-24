@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2012 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="keymap_setting">按键映射</string>
+    <string name="toggle_tp_sensitive">手套模式</string>
+    <string name="enable_navigationbar">导航栏</string>
+    <string name="dynamic_navigationbar">自动隐藏导航栏</string>
+
+    <!-- urovo luolin add begin 2018-12-03  -->
+    <string name="factory_mode">工厂模式</string>
+    <string name="sn_number">设备ID</string>
+    <!-- urovo luolin add end 2018-12-03  -->
+    <string name="docker_settings_title">OTG 设置</string>
+    <string name="host_toggle_title">Host 模式</string>
+    <string name="host_toggle_summary">打开 pogo-pin host 模式</string>
+    <string name="usb_otg_title">OTG 模式</string>
+    <string name="usb_otg_summary">打开 usb type-c otg 模式</string>
+    <string name="ulog_title">日志管理</string>
+    <string name="testing_factory">工厂测试(*#1262*#)</string>
+    <string name="testing_scan_type">扫描类型(*#1261*#)</string>
+    <string name="testing_aging">老化测试(*#1260*#)</string>
+    <string name="testing_gps">GPS测试(*#311)</string>
+    <string name="usb_config">*#3258</string>
+    <string name="testing_ulog">离线日志(*#3333#*)</string>
+
+    <!-- In the Testing screen. The item title of the activity that shows a bunch of battery-related information.  -->
+    <string name="testing_battery_info">"电池信息"</string>
+    <string name="battery_status_title" msgid="9159414319574976203">"电池状态"</string>
+    <string name="battery_level_title" msgid="2965679202786873272">"电池电量"</string>
+
+    <string name="date_time_set_server">设置时间同步服务器</string>
+    <string name="text_server_url">服务器地址:</string>
+    <string name="hint_server_url">服务器地址</string>
+    <string name="title_server_url">时间同步服务器设置</string>
+    <!-- yangkun add for Docking station start 2019/10/28 -->
+    <string name="ethernet_titile">以太网</string>
+    <string name="eth_toggle_summary_on">打开以太网</string>
+    <string name="eth_toggle_summary_off">关闭以太网</string>
+    <string name="eth_quick_toggle_title">以太网</string>
+    <string name="eth_conf_summary">配置以太网设备</string>
+    <string name="eth_conf_perf_title">以太网配置</string>
+    <string name="ethernet_proxy_settings_title">以太网的代理设置</string>
+    <string name="title_eth_mac_address">以太网MAC地址</string>
+    <string name="scanhandle_toggle_title">扫描手柄</string>
+    <string name="scanhandle_toggle_summary_enable">打开扫描手柄</string>
+    <string name="scanhandle_toggle_summary_disable">关闭扫描手柄</string>
+    <string name="eth_con_type">连接方式</string>
+    <string name="eth_con_type_dhcp">DHCP</string>
+    <string name="eth_con_type_manual">静态IP</string>
+    <string name="eth_ipaddr">IP地址</string>
+    <string name="eth_gw">网关地址</string>
+    <string name="eth_mask">网络前缀长度</string>
+    <string name="eth_dns1">DNS地址1</string>
+    <string name="eth_dns2">DNS地址2</string>
+    <string name="eth_config_title">以太网设备配置</string>
+    <string name="configuring_ethernet">正在配置以太网...</string>
+    <string name="u_docker_settings_title">扩展坞</string>
+    <string name="disallow_masterclear">电量低，为了设备安全，禁止恢复出厂设置！</string>
+    <string name="fingerprint_enrolled">指纹已存在，请换个手指重试！</string>
+    <string name="shank_input_title">手柄设置(扫描头/超高屏)</string>
+    <string name="ufs_number">定制型号</string>
+    <string name="usb_host_warn">勾选后不支持快充</string>
+    <string name="display_backlight_title">无操作灭屏时间设置</string>
+    <string name="display_off_on">勾选打开</string>
+    <string name="display_off_min">分钟</string>
+    <string name="allow_app_installed">允许第三方应用安装</string>
+    <string name="allow_app_installed_password">请输入密码</string>
+    <string name="allow_app_installed_password_error">密码错误</string>
+    <string name="app_installed_white_list">应用安装白名单</string>
+    <!-- add end -->
+    <string name="internal_build_number">固件版本号</string>
+   <!-- urovo add zhangmeilin begin 2020-05-08 -->
+    <!-- Key Management title -->
+    <string name="key_management_title">快速漫游</string>
+    <string name="wifi_show_fast_transition"> 802.11r</string>
+    <!-- urovo add zhangmeilin end 2020-05-08 -->
+    <!--urovo weiyu add for factory reset on 2020-06-30 start-->
+    <string name="master_clear_final_reboot_button_text">"清除所有数据后重启"</string>
+    <string name="master_clear_final_shutdown_button_text">"清除所有数据后关机"</string>
+    <!--urovo weiyu add for factory reset on 2020-06-30 end-->
+    <string name="ubx_dashboard_title">企业特色设置</string>
+    <string name="ubx_dashboard_scan_setting_title">扫描设置</string>
+    <string name="ubx_dashboard_scan_wedge_title">ScanWedge配置文件</string>
+    <string name="ubx_dashboard_feature_setting_title">系统特色设置</string>
+    <string name="one_key_lock_screen">一键锁屏</string>
+</resources>

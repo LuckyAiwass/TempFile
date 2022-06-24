@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="keyboard">
+        <item>Power</item>
+        <item>Vol +</item>
+        <item>Vol -</item>
+        <item>PTT</item>
+        <item>Menu</item>
+        <item>Home</item>
+        <item>Back</item>
+    </string-array>
+    <string-array name="keyboardcode">
+        <item>26</item>
+        <item>24</item>
+        <item>25</item>
+        <item>514</item>
+        <item>82</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="size_unit">
+        <item>GB</item>
+        <item>MB</item>
+        <item>KB</item>
+    </string-array>
+</resources>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 自动电话录音自定义dialog -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true"
+    android:background="@drawable/dialog_vbtn_shape"
+    android:orientation="vertical"
+    android:padding="20.0dip" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+		android:textColor="#000000"
+		android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/str_telephone_record"
+            android:visibility="visible" />
+ 
+	<TextView
+                android:textColor="#737373"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+	    android:gravity="left"
+	    android:layout_marginTop="15dp"
+            android:text="title_record_file_path"
+	    android:visibility="visible" />
+
+    <EditText
+	    android:id="@+id/key_record_file_path"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+	    android:gravity="left"
+	    style="MyEditText"
+            android:text="@string/str_default_record_file_path"
+	    android:visibility="visible" />
+    <TextView
+                android:textColor="#737373"
+		android:textSize="12sp"
+                android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="title_folder_maxsize"
+            android:visibility="visible" />
+    
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#ffffff"
+            android:gravity="left"
+            android:orientation="horizontal" >
+	<EditText
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+	    android:gravity="left"
+	    style="MyEditText"
+            android:text="@string/str_default_record_folder_maxsize"
+	    android:visibility="visible" />
+    <Spinner
+	    android:id="@+id/size_unit_spinner"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:entries="@array/size_unit"
+	    android:layout_marginLeft="13dp"
+	    android:text="GB"
+	    />
+	
+    </LinearLayout>
+	
+    	<TextView
+                android:textColor="#737373"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+	    android:text="@string/text_record_attention"
+            android:visibility="visible" />
+
+    
+    <LinearLayout
+            android:layout_width="fill_parent"
+ 	    android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="#ffffff"
+	    android:gravity="center"
+	    android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+	    <Button
+		android:id="@+id/key_record_cancel"
+                android:layout_width="100dp"
+		android:layout_height="35dp"
+		android:layout_marginRight="20dp"
+		android:textSize="13sp"
+		android:background="@drawable/false_button_shape"
+		android:textStyle="bold"
+		android:text="@string/str_cancel"/>
+
+	<Button
+		android:id="@+id/key_record_ok"
+                android:layout_width="100dp"
+		android:layout_height="35dp"
+		android:layout_marginLeft="20dp"
+                android:textSize="13sp"
+		android:background="@drawable/ture_button_shape"
+		android:textColor="#ffffff"
+		android:text="@string/str_ok"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

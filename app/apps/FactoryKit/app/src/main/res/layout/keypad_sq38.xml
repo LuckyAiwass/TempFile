@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  Copyright (c) 2011-2013, Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/keypad_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15px"
+        android:text="@string/keypad_text"
+        android:textSize="20dip" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15px"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/key_code" />
+
+        <TextView
+            android:id="@+id/key_code_value"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <!--TextView
+            android:id="@+id/menu"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_menu"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/home"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_home"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_back"
+            android:textSize="15dip" /-->
+
+        <!--TextView
+            android:id="@+id/led"
+            android:text="@string/keypad_ptt"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:textSize="15dip" /-->
+        <TextView
+            android:id="@+id/p1"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_p1"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/p2"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_p2"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/esc"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_esc"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/tab"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_tab"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/keyenter"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_keyenter"
+            android:textSize="15dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/keyback"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_keyback"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/scan1"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_keySCAN"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/scan2"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_keySCAN2"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/scan3"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_keySCAN3"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/volume_up"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_volume_up"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/volume_down"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_volume_down"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/light_up"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_light_up"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/light_down"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_light_down"
+            android:textSize="15dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/key1"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_key1"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/key2"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_key2"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/key3"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_key3"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/key4"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_key4"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/key5"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_key5"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/key6"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_key6"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/key7"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_key7"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/key8"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_key8"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/key9"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_key9"
+            android:textSize="15dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/keystar"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_keystar"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/key0"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_key0"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/keypound"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_keypound"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/F1"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_F1"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/F2"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_F2"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/F3"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_F3"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/F4"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_F4"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/keyAa"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2px"
+            android:text="@string/keypad_Aa"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/fn"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1px"
+            android:text="@string/keypad_keyFn"
+            android:textSize="15dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15px"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/pass"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/pass"
+            android:textSize="20dip"></Button>
+
+        <Button
+            android:id="@+id/fail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/fail"
+            android:textSize="20dip"></Button>
+    </LinearLayout>
+
+</LinearLayout>

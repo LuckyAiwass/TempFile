@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <SwitchPreference
+        android:key="key_status"
+        android:summary="@string/sum_status"
+        android:title="@string/str_status" />
+    <Preference
+        android:key="key_vbtn"
+        android:summary="@string/sum_vbtn"
+        android:title="@string/str_vbtn" />
+    <SwitchPreference
+        android:key="key_navigationbar"
+        android:summary="@string/sum_navigationbar"
+        android:title="@string/str_navigationbar" />
+
+<!--   <CheckBoxPreference
+        android:key="key_vbtn_left"
+        android:summary="@string/sum_vbtn_left"
+        android:title="@string/str_vbtn_left" />
+    <CheckBoxPreference
+        android:key="key_vbtn_middle"
+        android:summary="@string/sum_vbtn_middle"
+        android:title="@string/str_vbtn_middle" />
+    <CheckBoxPreference
+        android:key="key_vbtn_right"
+        android:summary="@string/sum_vbtn_right"
+	android:title="@string/str_vbtn_right" /> -->
+ <!--    <CheckBoxPreference
+        android:key="key_lock_screen"
+        android:summary="@string/sum_lock_screen"
+        android:title="@string/str_lock_screen" /> -->
+    <SwitchPreference
+        android:key="key_auto_input_method"
+        android:summary="@string/sum_auto_input_method"
+        android:title="@string/str_auto_input_method" />
+    <SwitchPreference
+        android:key="key_disable_input_method"
+        android:summary="@string/str_status_input_method"
+        android:title="@string/str_disable_input_method" />
+
+    <Preference
+        android:key="key_keyboard_settings"
+        android:summary="@string/sum_soft_keyboard_settings"
+        android:title="@string/str_soft_keyboard_settings" />
+
+    <!-- urovo yansitian add 2022.04.02 -->
+    <SwitchPreference
+        android:key="key_soft_keyboard_floating_window"
+        android:summary="@string/sum_soft_keyboard_floating_window"
+        android:title="@string/str_soft_keyboard_floating_window" />
+
+    <!--
+    <CheckBoxPreference
+        android:key="key_status_input_method"
+        android:summary="@string/sum_status_input_method"
+        android:title="@string/str_status_input_method" />
+    -->
+    <SwitchPreference
+        android:key="key_disable_scankey_to_app"
+        android:summary="@string/sum_disable_scankey_to_app"
+        android:title="@string/str_disable_scankey_to_app" />
+ <!--  <CheckBoxPreference
+        android:key="key_show_scanbtn"
+        android:summary="@string/sum_show_scanbtn"
+	android:title="@string/str_show_scanbtn" /> -->
+
+    <CheckBoxPreference
+        android:key="key_hind_left_lockscreen"
+        android:summary="@string/sum_hind_left_lockscreen"
+        android:title="@string/str_hind_left_lockscreen" />
+    <CheckBoxPreference
+        android:key="key_hind_right_lockscreen"
+        android:summary="@string/sum_hind_right_lockscreen"
+        android:title="@string/str_hind_right_lockscreen" />
+
+
+	
+    <SwitchPreference
+        android:key="key_telephone_record"
+        android:summary="@string/sum_telephone_record"
+        android:title="@string/str_telephone_record" />
+    <SwitchPreference
+        android:key="key_three_finger_screenshots"
+        android:summary="@string/sum_three_screenshots"
+        android:title="@string/str_three_screenshots" />
+<!--    <Preference
+        android:key="key_wakeup_enable"
+        android:summary="@string/sum_wakeup_enable"
+        android:title="@string/str_wakeup_enable" />
+    <Preference
+        android:key="key_rfid_scan_enable"
+        android:summary="@string/sum_rfid_enable"
+	android:title="@string/str_rfid_enable" /> -->
+
+    <SwitchPreference
+        android:key="key_lock_screen"
+        android:summary="@string/sum_pinning_screen"
+        android:title="@string/str_pinning_screen" />
+<!--   <Preference
+        android:dialogTitle="@string/title_ptt"
+        android:key="key_ptt_action"
+        android:summary="@string/sum_ptt_action"
+	android:title="@string/str_ptt_action" /> -->
+    <Preference
+        android:key="key_default_launcher"
+        android:summary="@string/sum_default_launcher"
+        android:title="@string/str_default_launcher" />
+
+</PreferenceScreen>

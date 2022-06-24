@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2011-2013, Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+<resources>
+    <!-- Common string -->
+    <string name="report_title">测试报告</string>
+    <string name="report_all">总共(%1$d)项</string>
+    <string name="report_pass">测试通过(%1$d)项</string>
+    <string name="report_fail">测试失败(%1$d)项：%2$s</string>
+    <string name="report_notest">未测试(%1$d)项：%2$s</string>
+    <string name="exit_all_pass">再按一次返回键退出</string>
+    <string name="exit_menu">退出</string>
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="pass">成功</string>
+    <string name="fail">失败</string>
+    <string name="cancel">取消</string>
+    <string name="testing">测试中...</string>
+    <string name="initialize">初始化...</string>
+    <string name="app_name">工厂测试</string>
+    <string name="start">开始</string>
+    <string name="scan">扫描</string>
+    <string name="scan_name">扫描</string>
+    <string name="scan_code">扫描码</string>
+    <string name="device_open_fail">设备打开失败!</string>
+    <string name="service_get_fail">服务获取失败!</string>
+    <string name="sensor_get_fail">传感器获取失败!</string>
+    <string name="sensor_register_fail">传感器注册失败!</string>
+    <string name="test_pass">测试通过</string>
+    <string name="shake_hint">请用手盖住光线传感器最少两次.
+    </string>
+    <string name="shake">请晃动设备.</string>
+    <string name="remove_headset">请取下耳机</string>
+    <string name="insert_headset">请插入耳机</string>
+    <string name="stop">停止</string>
+    <string name="play">播放</string>
+    <string name="record">录音</string>
+    <string name="time_out">超时!</string>
+    <!-- ControlCenter -->
+    <string name="clean_state">清除当前测试状态</string>
+    <string name="uninstall">卸载</string>
+    <string name="lasttime_state">查看上次测试结果</string>
+    <string name="control_center_quit_confirm">确定要退出?</string>
+    <string name="item1">按键背光</string>
+    <string name="fengmq">蜂鸣器</string>
+    <!-- Led -->
+    <string name="led_name">三色灯</string>
+    <string name="led_tri_text">LED测试顺序: 红, 绿, 蓝</string>
+    <string name="led_tri_text_SQ46">LED测试顺序: 红,绿,蓝,红</string>
+    <string name="led_tri_text_SQ42T">LED测试顺序:左红, 绿, 蓝，右红</string>
+    <string name="led_tri_text_SQ26TB">LED测试顺序:1红,1绿,4蓝,2红,2绿,3红,3蓝,4红</string>
+    <string name="led_tri_text_SQ27T">LED测试顺序:2红,2蓝,3白,4红,1红,1绿</string>
+    <string name="led_tri_text_SQ27TC">LED测试顺序:1红,2绿,3橘,4黄,</string>
+    <string name="led_dual_text">LED测试顺序: 红, 绿</string>
+    <string name="led_sq274g_text">LED测试顺序:绿, 红，蓝，白，红</string>
+    <string name="led_confirm">LED 灯颜色是否正确?</string>
+    <string name="led_text">灯测试: 红，绿</string>
+    <string name="led_tri_text_SQ52">LED测试顺序: 蓝，红，绿灯（绿灯在背面看）</string>
+    <string name="led_tri_text_SQ53">LED测试顺序: 绿，红，蓝，红</string>
+    <string name="led_tri_text_SQ47">LED测试顺序: 绿，红，黄，红</string>
+    <string name="led_tri_text_SQ45">LED测试顺序: 绿，红，蓝</string>
+    <string name="led_tri_text_SQ45S">LED测试顺序: 绿，红，蓝，红，蓝</string>
+    <string name="led_tri_text_SQ38">LED测试顺序: 绿，红，红，绿，红，绿.</string>
+    <string name="led_tri_text_SQ51FW">LED测试顺序: 红，绿，红，蓝.</string>
+    <string name="led_tri_text_SQ53c">LED测试顺序: 绿，红，红，蓝.</string>
+    <string name="led_tri_text_SQ51s">LED测试顺序: 红，蓝，绿，红.</string>
+    <string name="dual_led_name">双色灯</string>
+    <string name="dual_led_text">灯测试: 红，绿</string>
+    <string name="remove_plug">请移除充电装置</string>
+    <!-- Flashlight -->
+    <string name="flashlight_name">闪光灯</string>
+    <string name="flashlight_confirm">闪光灯是否亮了?</string>
+    <!-- KeypadBacklight -->
+    <string name="keypadbacklight_name">按键背光</string>
+    <string name="keypadbacklight_confirm">按键背光是否亮了?</string>
+    <!-- four leds -->
+    <string name="led_four_text">LED测试顺序: 蓝,  黄， 绿， 红 + 红， 绿</string>
+    <string name="FourLeds">四色灯</string>
+    <string name="fourled_confirm">四色灯颜色是否正确?</string>
+    <!-- SIM1 -->
+    <string name="sim1_name">SIM1</string>
+    <string name="cdma">CDMA卡</string>
+    <string name="wcdma">WCDMA卡</string>
+    <string name="ready">状态：准备中</string>
+    <!-- DENGMQ -->
+    <string name="fengmq_confirm">蜂鸣器是否正常?</string>
+    <!-- SIM2 -->
+    <string name="gsm">GSM卡</string>
+    <string name="sim2_name">SIM2</string>
+    <!-- NFC -->
+    <string name="nfc_name">NFC</string>
+    <!-- TouchPanelEdge -->
+    <string name="touchpanel_edge_name">触摸屏</string>
+    <!-- TouchPanelKey -->
+    <string name="touchpanel_key_name">触摸按键</string>
+    <!-- Keypad -->
+    <string name="keypad_name">按键</string>
+    <string name="keypad_text">请按下以下按钮</string>
+    <string name="keypad_volume_up">音量 + 键</string>
+    <string name="keypad_volume_down">音量 - 键</string>
+    <string name="media_next">耳机按键 + 键</string>
+    <string name="media_previous">耳机按键 - 键</string>
+    <string name="keypad_focus">聚焦</string>
+    <string name="keypad_camera">拍照</string>
+    <string name="keypad_home">主页</string>
+    <string name="keypad_menu">菜单</string>
+    <string name="keypad_app_switch">Recent App</string>
+    <string name="keypad_back">返回</string>
+    <string name="keypad_power">待机</string>
+    <string name="keypad_search">搜索</string>
+    <string name="keypad_custom">客户自定义</string>
+    <string name="keypad_sos">紧急呼叫</string>
+    <string name="silent_on">静音 - 开</string>
+    <string name="silent_off">静音 - 关</string>
+    <!-- CameraBack -->
+    <string name="cameraback_name">后摄像头</string>
+    <string name="cameraback_takepicture">拍照</string>
+    <string name="cameraback_fail_open">相机打开失败，请检查相机安装是否正确!
+    </string>
+    <string name="autofocus_fail">没有自动对焦功能或者自动对焦失败</string>
+    <!-- CameraFront -->
+    <string name="camerafront_name">前摄像头</string>
+    <string name="camerafront_takepicture">拍照</string>
+    <!-- LCM -->
+    <string name="lcm_name">显示屏</string>
+    <string name="lcm_confirm">请选择</string>
+    <!-- Vibrator -->
+    <string name="vibrate">马达</string>
+    <string name="vibrate_name">震动</string>
+    <string name="vibrate_confirm">请选择</string>
+    <string name="vibrate_hint">震动中...</string>
+    <!-- PSensor -->
+    <string name="psensor_name">距离传感器</string>
+    <string name="psensor_title">请按照以下说明操作，并且每个步骤必须在7秒内完成
+    </string>
+    <string name="psensor_to_cover">请盖住距离传感器超过2秒</string>
+    <string name="psensor_to_uncover">取消覆盖传感器超过2秒</string>
+    <string name="psensor_uncovered">未覆盖</string>
+    <string name="psensor_covered">覆盖</string>
+    <string name="psensor_verifying">验证中...</string>
+    <string name="psensor_sensor_unstable_fail">距离传感器不稳定!</string>
+    <!-- GSensor -->
+    <string name="gsensor_name">加速度感应器</string>
+    <!-- MSensor -->
+    <string name="msensor_name">地磁感应器</string>
+    <!-- Gyroscope -->
+    <string name="gyroscope_name">电子罗盘</string>
+    <!-- LightSensor -->
+    <string name="lightsensor_name">光线感应器</string>
+    <!-- PSAM -->
+    <string name="psam_name">PSAM</string>
+    <!-- SIMIO -->
+    <string name="simio_name">SIMIO</string>
+    <string name="simio_info">正在测试SIMIO，请稍候...</string>
+    <!-- SDCard -->
+    <string name="sdcard_name">SD 卡</string>
+    <string name="sdcard_title">SD卡</string>
+    <string name="sdcard_wait">读取SD卡中，请稍等...</string>
+    <string name="sdcard_confirm">已插入SD卡?</string>
+    <string name="sdcard_to_remove">请移除SD卡</string>
+    <string name="sdcard_to_insert">请插入SD卡</string>
+    <!-- Bluetooth -->
+    <string name="bluetooth_name">蓝牙</string>
+    <string name="bluetooth_scan_start">扫描设备...</string>
+    <string name="bluetooth_scan_finish">扫描结束</string>
+    <string name="bluetooth_turning_on">打开蓝牙...</string>
+    <string name="bluetooth_scan_null">没有发现任何设备</string>
+    <string name="cost">打开蓝牙花费</string>
+    <!-- WiFi -->
+    <string name="wifi_name">WiFi</string>
+    <string name="wifi_text">WiFi测试将在30秒内完成，请稍等</string>
+    <string name="wifi_scan_failed">扫描失败!</string>
+    <string name="wifi_is_closing">WiFi正在关闭，请稍候再试.</string>
+    <string name="wifi_scan_null">没有发现任何无线网!</string>
+    <string name="wifi_state_unknown">WiFi状态未知，请重试.</string>
+    <!--TransmitterReceiver -->
+    <string name="speaker">扬声器</string>
+    <string name="transmitter_receiver_name">话筒/听筒</string>
+    <string name="transmitter_receiver_mic_main">主MIC测试</string>
+    <string name="transmitter_receiver_mic_deputy">副MIC测试</string>
+    <string name="transmitter_receiver_hint">话筒和听筒</string>
+    <string name="transmitter_receiver_recording">现在开始录音，请说话然后点击停止按钮停止录音
+    </string>
+    <string name="transmitter_receiver_playing">回放中，请听听筒.</string>
+    <string name="deputy_transmitter_receiver_playing">回放中，请听扬声器.</string>
+    <string name="transmitter_receiver_confirm">请问是否听到声音?</string>
+    <string name="transmitter_receiver_record_first">请首先点击录音按钮</string>
+    <string name="transmitter_receiver_replay_end">录音已经到达最后.</string>
+    <string name="transmitter_receiver_to_record">点击录音按钮进行录音.</string>
+    <!-- Headset -->
+    <string name="headset_name">耳机</string>
+    <string name="headset_hint">耳机</string>
+    <string name="headset_recording">现在开始录音，请说话然后点击停止按钮停止录音.
+    </string>
+    <string name="headset_playing">回放中，请带上耳机听录音.</string>
+    <string name="headset_confirm">请问是否听到声音?</string>
+    <string name="headset_record_first">请首先点击录音按钮</string>
+    <string name="headset_replay_end">录音已经到达最后.</string>
+    <string name="headset_to_record">点击录音按钮进行录音.</string>
+    <!-- HeadsetHook -->
+    <string name="headsethook_name">耳机按键</string>
+    <string name="headsethook_hint">请按下耳机按键进行测试.</string>
+    <!-- Speaker -->
+    <string name="speaker_name">扬声器</string>
+    <string name="speaker_hint">扬声器</string>
+    <string name="speaker_confirm">请问是否听到声音?</string>
+    <string name="speaker_playing">播放中...</string>
+    <string name="speaker_play_first">请首先点击播放按钮</string>
+    <string name="speaker_to_play">点击播放按钮播放声音.</string>
+    <string name="speaker_recording">现在开始录音，请说话</string>
+    <!-- GPS -->
+    <string name="gps_name">GPS</string>
+    <string name="gps_enable_first">请打开GPS</string>
+    <string name="gps_start">GPS 开始定位</string>
+    <string name="locate_success">定位成功</string>
+    <string name="provider_enable">GPS服务启动</string>
+    <string name="unknown_location">位置不明或者定位中...</string>
+    <string name="latitude">纬度</string>
+    <string name="longitude">经度</string>
+    <string name="speed">速度</string>
+    <string name="altitude">海拔</string>
+    <string name="bearing">方位</string>
+    <!-- FM -->
+    <string name="fm_name">收音机</string>
+    <string name="fm_search">搜索</string>
+    <string name="fm_confirm">请问是否听到声音 ?</string>
+    <string name="app_not_exist">不支持收音机测试</string>
+    <!-- Battery -->
+    <string name="battery_name">电池</string>
+    <string name="battery_voltage">电池电压为 ： </string>
+    <string name="charging">充电中</string>
+    <string name="full">满电</string>
+    <!-- FuelGaugeCalibration -->
+    <string name="fuelgauge_name">电量计校准</string>
+    <string name="fuelgauge_hint">电量计校准将在30秒内完成，请稍等...
+    </string>
+    <string name="fuelgauge_processing">处理中...</string>
+    <string name="flag">标志位为：</string>
+
+
+    <!-- DeviceInfo -->
+    <string name="deviceinfo">设备信息</string>
+    <string name="buildinfo">版本信息</string>
+    <string name="version_1">软件版本号：</string>
+    <string name="version_hardware_title">硬件版本号：</string>
+    <string name="version_2">Wifi Mac 地址：</string>
+    <string name="version_3">SN 号：</string>
+    <string name="version_7">Mac 地址不可用</string>
+    <string name="version_8">SN，BT，FT1，FT2，WIFI : </string>
+    <string name="version_9">CPU频率:</string>
+    <string name="version_10">系统内存:</string>
+    <string name="Sn_Wait">SN 未知</string>
+    <string name="mp">MP 版本:</string>
+    <string name="se_version">SE 版本：</string>
+    <string name="qcn_version">QCN :</string>
+    <string name="note_Wait">标志位未知</string>
+    <!-- TCard -->
+    <string name="tcard_name">T 卡</string>
+    <string name="pen_name">电容笔</string>
+    <string name="tcard_wait">读取T卡中，请稍等...</string>
+    <string name="tcard_confirm">已插入T卡?</string>
+    <string name="tcard_to_remove">请移除T卡</string>
+    <string name="tcard_to_insert">请插入T卡</string>
+    <!-- MasterClear -->
+    <string name="reset_system">恢复出厂设置后重启</string>
+    <string name="reset_system_shutdown">恢复出厂设置后关机</string>
+    <string name="master_clear_desc">"此操作会清除您"<b>"设备"</b>"中的所有数据，包括："\n\n<li>"您的 Google 帐户"</li>\n<li>"系统及应用程序数据和设置"</li>\n<li>"已下载的应用程序"</li>\n<li>"SD卡中的数据"</li></string>
+
+    <string name="pen_text">请插拔电容笔</string>
+    <string name="pen_in">插入电容笔</string>
+    <string name="pen_out">拔出电容笔</string>
+    <!-- Printer -->
+    <string name="printer_name">打印机</string>
+    <string name="picture">图片</string>
+    <string name="barcode">条码</string> 
+    <string name="print">打印</string>
+    
+    <string name="printer_temp_title">当前温度: </string>
+    <string name="printer_temp">0</string>
+    
+    <string name="printer_temp_threshold_title">设置温度阈值: </string>
+    <string name="printer_temp_threshold">0</string>
+    <string name="printer_temp_threshold_def">Def: 50</string>
+    
+    <string name="bt_set_temp_threshold">设置温度阈值</string>
+    
+    <string name="printer_temp_overheating">过热保护</string>
+    
+    <string name="tv_factoryTest">工厂测试</string>
+    <string name="cb_factoryTest">无电池测试</string>
+    <string name="btn_BACK">后退</string>
+    <string name="btn_FORWARD">前进</string>
+    
+    <string name="btn_barcode">条码</string>
+    <string name="btn_prnBill">打印</string>
+    <string name="btn_prnPicture">图片</string>
+    
+    <string name="et_printer_def_hue">默认灰度: 0(0~4)</string>
+    <string name="bt_printer_set_hue">设置灰度</string>
+    <string name="et_printer_def_speed">默认速度: 9(0~9)</string>
+    <string name="bt_printer_set_speed">设置速度</string>
+    
+    <string name="mci_select_title">生产测试</string>
+    <string name="mci_select_content">生产测试</string>
+    <string name="mci_select_ok">确定</string>
+    <string name="mci_select_cancel">取消</string>
+    
+    <string name="tst_info_paper">缺纸！！！</string>
+    <string name="tst_info_temperature">过温保护！！！</string>
+    <string name="tst_info_voltage">"电池电压过低！！！"</string>
+    <string name="tst_info_busy">打印机忙!!!</string>
+    <string name="tst_info_error">打印机出错!!!</string>
+    <string name="tst_info_driver_error">打印机驱动出错!!!</string>
+    <string name="tst_hint_content">请输入需打印信息！！！</string>
+    <!-- ICC -->
+    <string name="icc_name">ICC</string>
+    <string name="pinpad_fail_message">该机器不支持TP切换</string>
+    <string name="pinpad_dialog_message">密码键盘是否正常</string>
+    <string name="btn_send">Send APDU</string>
+	<string name="btn_send_hint">HEX, 16 byte (e.g. 0A4F&#8230;)</string>
+	<string name="btn_reset">Reset</string>
+	<string name="btn_def_apdu">DEF APDU</string>
+	<string name="btn_detect">Detect</string>
+	<string name="btn_init_ic">Init IC</string>
+	<string name="btn_init_sle4442">Init 4442</string>
+	<!-- Mag -->
+	<string name="mag_name">MagCard</string>
+    <string name="btn_open">Open</string>
+    <string name="btn_checkdev">Check Pay</string>
+    <string name="btn_allstrip">AllStrip</string>
+    <string name="btn_firststrip">1 Strip</string>
+    <string name="btn_secondstrip">2 Strip</string>
+    <string name="btn_thirdstrip">3 Strip</string>
+    <!-- Picc -->
+    <string name="picc_name">Picc</string>
+    <string name="test_title">Ultra High Frequency</string>
+    <string name="result_title">Scan Rerult: </string>
+	<string name="read">Read Data</string>
+	<string name="stop_read">Stop</string>
+	<string name="action_settings">Settings</string>
+	<string name="test_tip">这个应用程序是使用超高fregency测试，请针对测试卡，然后按下按钮来读取数据，读取数据.</string>
+	    
+	<string name="picc_open">open</string>
+	<string name="picc_check">check</string>
+	<string name="picc_block_data">Block data:</string>
+	<string name="picc_authen">Authen</string>
+	<string name="picc_read_block">Read</string>
+	<string name="picc_write_block">Write</string>
+	<string name="picc_def_apdu">DEF APDU</string>
+	<string name="picc_send_apdu">Send APDU</string>
+	<string name="picc_digits">0123456789ABCDEFabcdef</string>
+	<string name="picc_block_no_none">请先输入需要读写的Block号</string>
+	<string name="picc_block_no_illegal">Block号只能在0～63之间</string>
+	<string name="picc_authen_fail">认证失败</string>
+	<string name="picc_operate_fail">操作失败</string>
+	<string name="picc_block_data_none">请先输入需要写入块中的数据</string>
+	<string name="picc_active_fail">激活失败</string>
+	<string name="picc_apdu_hint">APDU:</string>
+	<string name="picc_authen_before">请先点击Authen按钮</string>
+	    <!-- PSam card -->
+    <string name="read_icc">Read Icc</string>
+    <string name="icc_hint">请插入IC卡</string>
+    <string name="icc_reset_fail">IC卡重置错误</string>
+    <string name="key_code">键值：</string> 
+    <string name="keypad_ptt">PTT 键</string>
+    <string name="keypad_keySCAN">SCAN 键</string>
+    <string name="keypad_keyFn">Fn 键</string>
+    <string name="keypad_keydel">Del 键</string>
+    <string name="keypad_keyback">BACK SPACE</string>
+    <string name="keypad_keyenter">ENT 键</string>
+    <string name="keypad_Aa">Aa 键</string>
+    <string name="keypad_shift">Shift 键</string>
+    <string name="keypad_keytalk">TALK 键</string>
+    <string name="keypad_key1">数字 1 键</string> 
+    <string name="keypad_key2">数字 2 键</string>
+    <string name="keypad_key3">数字 3 键</string> 
+    <string name="keypad_key4">数字 4 键</string>     
+    <string name="keypad_key5">数字 5 键</string> 
+    <string name="keypad_key6">数字 6 键</string>    
+    <string name="keypad_key7">数字 7 键</string> 
+    <string name="keypad_key8">数字 8 键</string>     
+    <string name="keypad_key9">数字 9 键</string> 
+    <string name="keypad_key0">数字 0 键</string>
+    <string name="keypad_keystar">* 键</string>
+    <string name="keypad_keypound"># 键</string>
+    <string name="keypad_F1">F1 键</string>
+    <string name="keypad_F2">F2 键</string>
+    <string name="keypad_F3">F3 键</string>
+    <string name="keypad_F4">F4 键</string>
+    <string name="keypad_F5">F5 键</string>
+    <string name="keypad_F6">F6 键</string>
+    <string name="keypad_F7">F7 键</string>
+    <string name="keypad_F8">F8 键</string>
+    <string name="keypad_F9">F9 键</string>
+    <string name="keypad_F0">F10 键</string>
+    <string name="keypad_up">上 键</string>
+    <string name="keypad_down">下 键</string>
+    <string name="keypad_left">左 键</string>
+    <string name="keypad_right">右 键</string>
+    <string name="keypad_led">led 键</string>
+    <string name="keypad_S1">S1 键</string>
+    <string name="keypad_S2">S2 键</string>
+    <string name="keypad_TAB">TAB 键</string>
+    <string name="keypad_SPACE">space 键</string>
+    <string name="keypad_DOT">. 键</string>
+    <string name="keypad_COMMA">， 键</string>
+    <string name="keypad_keySCANL">SCAN </string>
+    <string name="keypad_keySCANR">SCAN 右</string>
+    <string name="keypad_keySCAN1">SCAN1 </string>
+    <string name="keypad_keySCAN2">SCAN2 </string>
+    <string name="keypad_keySCAN3">SCAN3 </string>
+    <string name="keypad_keySCAN4">SCAN4 </string>
+    <string name="fingercheck">指纹识别中...</string>
+    <string name="pressure_sensor_name">气压传感器</string>
+    <string name="measurevolume_name">3D测量体积</string>
+    <string name="voltage1">3伏</string>
+    <string name="voltage2">5伏</string>
+    <string name="voltage3">1.8伏</string>
+    <string name="voltage_text">卡电压:</string>
+    <string name="missing_required_permission">您禁用了必需的权限。</string>
+    <string name="equipment_to_be_attacked">设备疑是被攻击，关闭当前应用！</string>
+    <string name="enter_print_content">请输入打印内容</string>
+    <string name="urovo_fi_text">FI:</string>
+    <string name="urovo_fi_err_text">FI 值非法</string>
+    <string name="urovo_fi_text_hint">请输入 FI(1---15).</string>
+    <string name="urovo_di_text">DI:</string>
+    <string name="urovo_di_err_text">DI 值非法</string>
+    <string name="urovo_di_text_hint">请输入 DI(1---8).</string>
+    <!-- urovo yaunwei add Fingerprint 2018-12-26 -->
+    <string name="not_chipsailing_ic">不是芯启航IC</string>
+    <string name="hasenroll_5finger">指纹已经录制满5个,无法使用进行CIT测试。</string>
+    <!-- urovo yuanwei nfc -->
+    <string name="scanning">请将磁卡靠近设备</string>
+    <!-- TCard -->
+    <string name="otg_name">OTG</string>
+    <string name="otg_wait">读取otg中，请稍等...</string>
+    <string name="otg_confirm">已插入otg?</string>
+    <string name="otg_to_remove">请移除otg</string>
+    <string name="otg_to_insert">请插入otg </string>
+    <string name="calibration_info">校准、综测:</string>
+    <string name="sensor_calibration_menu">传感器校准</string>
+    <string name="pogo_name">POGO PIN测试</string>
+    <string name="pogo_pin_test_01">测试项: OTG 测试</string>
+    <string name="pogo_pin_test_02">测试项: 按键 测试</string>
+    <string name="pogo_pin_test_03">测试项: 串口 测试</string>
+    <string name="pogo_pin_test_04">测试项: 充电 测试</string>
+    <string name="pogo_pin_test_05">测试项: ID 测试</string>
+    <string name="pogo_pin_test_06">测试项: IIC 引脚测试</string>
+    <string name="pogo_charge_send_txt">充电测试</string>
+    <string name="pogo_charge_result_txt">充电测试信息</string>
+    <string name="pogo_serila_tip">请先短接POGO PIN 串口</string>
+    <string name="pogo_serila_send_txt">向串口发送数据</string>
+    <string name="pogo_serila_send_txt_mind">开始发送数据 ...</string>
+    <string name="pogo_key_send_txt">点击获取状态</string>
+    <string name="pogo_key_result_txt">请先将POGO ID引脚接地再点击按钮查看</string>
+    <string name="pogo_key_result_txt_scl">请先将POGO SCL引脚接地再点击按钮查看</string>
+    <string name="pogo_key_result_txt_sda">请先将POGO SDA引脚接地再点击按钮查看</string>
+    <string name="pogo_key_mind">请按POGO PIN按键：</string>
+    <string name="pogo_dc_charge_mind">,请确认座充是否在位!</string>
+    <string name="qcn_info">QCN版本：</string>
+    <string name="hardware_info">硬件版本：</string>
+    <string name="mac_addr_no_exist">Mac 地址不存在!</string>
+    <string name="mainboard_info">主板标志：</string>
+    <string name="baseband_info">基带版本：</string>
+    <string name="lcd_info">LCD信息：</string>
+    <string name="tp_info">TP信息：</string>
+    <string name="battery_type_info">电池信息：</string>
+    <string name="battery_id_info">电池ID：</string>
+    
+    <string name="prma_success">RPMB配置完成</string>
+    <string name="prma_repeat">设备已配置过RPMB</string>
+    <string name="prma_failed">RPMB配置失败</string>
+    <string name="key_success">成功</string>
+    <string name="key_failed">失败</string>
+    
+    <string name="prmb_name">RPMB Key</string>
+    <string name="Att_name">Attesttation Key</string>
+    <string name="navbar_home">虚拟Home</string>
+    <string name="navbar_recent">虚拟Recent</string>
+    <string name="navbar_back">虚拟Back</string>
+    <string name="heating_name">加热器</string>
+    <string name="curr_temp_scan">SCAN 当前温度(℃):</string>
+    <string name="curr_temp_lcd">LCD 当前温度(℃):</string>
+    <string name="curr_temp_mb">主板 当前温度(℃):</string>
+
+    <string name="scan_heating">SCAN 加热</string>
+    <string name="lcd_heating">LCD 加热</string>
+    <string name="mb_heating">主板 加热</string>
+
+    <string name="scan_heating_status">SCAN 加热当前状态:</string>
+    <string name="lcd_heating_status">LCD 加热当前状态:</string>
+    <string name="mb_heating_status">主板 加热当前状态:</string>
+
+    <string name="heating_open">打开加热中..</string>
+    <string name="heating_open_failed">打开加热失败!!</string>
+    <string name="heating_open_success">加热中...</string>
+    <string name="heating_close">关闭加热</string>
+    <string name="heating_led_waring">请确认左边的蓝色灯状态(加热开:蓝灯亮,加热关:蓝灯灭. 温度超过35度以后,加热会自动停止,再次进入蓝色灯会不亮.)</string>
+    <string name="pass_psam">读取PSAM成功！</string>
+
+    <string name="sim_insert_waring">请插入SIM卡!</string>
+    <string name="bulk_capacitor_name">大电容</string>
+    <string name="bulk_capacitor_hint">请观察设备断电后是否会立即关机.\n 设备立即关机:失败 \n不立即关机:成功</string>
+
+
+    <string name="battery_vol">电量计</string>
+    <string name="charge">充电</string>
+    <string name="discharging">放电</string>
+    <string name="not_charging">未充电</string>
+    <string name="batterytype">电池类型:</string>
+    <string name="batteryvoltage">当前电压:</string>
+    <string name="chargesate">充电状态:</string>
+    <string name="batteryElectric">充电电流</string>
+    <string name="currentpower">当前电量:</string>
+    <string name="batterypower">电池设计容量:</string>
+    <string name="powerstate">电池情况:</string>
+    <string name="plugged_ac">交流电源</string>
+    <string name="plugged_usb">USB电源</string>
+    <string name="charge_count">电池充电次数:</string>
+    <string name="battery_sn">电池序列号:</string>
+    <string name="baterry_health">电池容量百分比(健康度)：</string>
+    
+        <string-array name="font_name">
+        <item>宋体</item>
+        <item>arial</item>
+    </string-array>
+    <string name="tst_info_select_picture">是否打印默认图片?</string>
+    <string name="tst_info_select_picture_msg">按"确定"打印默认图片，按"取消"从图库打印一张图片!！!</string>
+    <string name="query_trigger_sec">查询安全芯片</string>
+    <string name="clear_trigger_sec">清除触发</string>
+    <string name="query_trigger_info_fail">获取设备触发信息失败!</string>
+    <string name="NV02499_flag">校准 综测 :</string>
+    <string name="str_reset">重置</string>
+    <string name="printer_lowspeed">打印机型号：低压低速 </string>
+    <string name="printer_highspeed">打印机型号：低压高速</string>
+    <string name="led_color_red">红色,</string>
+    <string name="led_color_green">绿色,</string>
+    <string name="led_color_blue">蓝色.</string>
+    <string name="led_tri_text_nomal">LED测试顺序: </string>
+    <string name="toast_no_apk">请查看配置文件包名是否正确及是否未安装对应apk！</string>
+    <string name="safe_name">安全测试</string>
+    <string name="common_name"> 通用测试 </string>
+    <string name="device_name">设备型号：</string>
+    <string name="mainboard_sn">主板SN:</string>
+    <string name="pogo_dock_result_txt">MAC地址：</string>
+    <string name="pogo_ethernet_result_txt">以太网MAC地址 :</string>
+    <string name="pogo_ethernet_start_txt">以太网测试开始</string>
+    <string name="pogo_pin_test_07">测试项: 以太网测试</string>
+    <string name="pogo_ethernet_ip_address">以太网IP地址: </string>
+    <string name="pogo_usb_plugged_state">USB插入状态:</string>
+    <string name="unknown_state">未知状态</string>
+</resources>

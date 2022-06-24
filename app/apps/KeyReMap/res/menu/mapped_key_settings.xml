@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu_reset">
+    <item
+        android:id="@+id/action_import"
+        android:orderInCategory="101"
+        android:title="@string/import_config_keys" />
+    <item
+        android:id="@+id/action_export"
+        android:orderInCategory="102"
+        android:title="@string/export_config_keys" />
+    <item
+        android:id="@+id/action_reset"
+        android:orderInCategory="103"
+        android:title="@string/txt_clear_mapping" />
+</menu>

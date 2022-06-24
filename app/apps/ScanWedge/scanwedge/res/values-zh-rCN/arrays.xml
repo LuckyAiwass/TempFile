@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="linear_security_level_entries">
+        <item>安全级别1</item>
+        <item>安全级别2</item>
+        <item>安全级别3</item>
+        <item>安全级别4</item>
+    </string-array>
+    <string-array name="image_inverse_decoder_entries">
+        <item>常规解码</item>
+        <item>仅限反白</item>
+        <item>自动检测</item>
+    </string-array>
+    <string-array name="scanner_triggermode_entries">
+        <item>短按触发解码或超时停止</item>
+        <item>短按触发连扫,再次短按停止</item>
+        <item>短按触发,松开停止</item>
+    </string-array>
+    <string-array name="image_bar_cades_to_read_entries">
+        <item>解码 1 次</item>
+        <item>解码 2 次</item>
+        <item>解码 3 次</item>
+        <item>解码 4 次</item>
+        <item>解码 5 次</item>
+        <item>解码 6 次</item>
+        <item>解码 7 次</item>
+        <item>解码 8 次</item>
+        <item>解码 9 次</item>
+        <item>解码 10 次</item>
+    </string-array>
+    <string-array name="send_lable_fix_entries">
+        <item>无</item>
+        <item>前缀</item>
+        <item>后缀</item>
+        <item>前缀和后缀</item>
+        <item>格式化</item>
+        <item>替换</item>
+        <item>替换和前缀,后缀</item>
+    </string-array>
+
+    <string-array name="scanner_beep_entries" translatable="false">
+        <item>无</item>
+        <item>短促</item>
+        <item>尖锐</item>
+    </string-array>
+
+    <string-array name="wired_scan_entries" translatable="false">
+        <item>一维</item>
+        <item>二维</item>
+    </string-array>
+</resources>

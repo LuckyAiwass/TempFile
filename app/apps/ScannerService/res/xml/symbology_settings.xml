@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <Preference
+        android:key="scanner_symbology_aztec"
+        android:title="@string/scanner_symbology_aztec" />
+    <Preference
+        android:key="scanner_symbology_codabar"
+        android:title="@string/scanner_symbology_codabar" />
+    <Preference
+        android:key="scanner_symbology_code128"
+        android:title="@string/scanner_symbology_code128" />
+    <Preference
+        android:key="scanner_symbology_gs1_128"
+        android:title="@string/scanner_symbology_gs1_128" />
+    <Preference
+        android:key="scanner_symbology_code39"
+        android:title="@string/scanner_symbology_code39" />
+    <Preference
+        android:key="scanner_symbology_code93"
+        android:title="@string/scanner_symbology_code93" />
+    <Preference
+        android:key="scanner_symbology_code11"
+        android:title="@string/scanner_symbology_code11" />
+    <Preference
+        android:key="scanner_symbology_composite_cc_ab"
+        android:title="@string/scanner_symbology_composite_cc_ab" />
+    <Preference
+        android:key="scanner_symbology_composite_cc_c"
+        android:title="@string/scanner_symbology_composite_cc_c" />
+    <Preference
+        android:key="scanner_symbology_composite_39"
+        android:title="@string/scanner_symbology_composite_39" />
+    <Preference
+        android:key="scanner_symbology_hanxin"
+        android:title="@string/scanner_symbology_hanxin" />
+    <Preference
+        android:key="scanner_symbology_Datamatrix"
+        android:title="@string/scanner_symbology_Datamatrix" />
+    <Preference
+        android:key="scanner_symbology_ean13"
+        android:title="@string/scanner_symbology_ean13" />
+    <Preference
+        android:key="scanner_symbology_ean8"
+        android:title="@string/scanner_symbology_ean8" />
+    <Preference
+        android:key="scanner_symbology_gs1_databar14"
+        android:title="@string/scanner_symbology_gs1_databar14" />
+    <Preference
+        android:key="scanner_symbology_gs1_databar_expanded"
+        android:title="@string/scanner_symbology_gs1_databar_expanded" />
+    <Preference
+        android:key="scanner_symbology_gs1_databar_limited"
+        android:title="@string/scanner_symbology_gs1_databar_limited" />
+    
+    <Preference
+        android:key="scanner_symbology_interleaved_25"
+        android:title="@string/scanner_symbology_interleaved_25" />
+    <Preference
+        android:key="scanner_symbology_matrix_25"
+        android:title="@string/scanner_symbology_matrix_25" />
+    <Preference
+        android:key="scanner_symbology_chinese_25"
+        android:title="@string/scanner_symbology_chinese_25" />
+    <Preference
+        android:key="scanner_symbology_maxicode"
+        android:title="@string/scanner_symbology_maxicode" />
+    <Preference
+        android:key="scanner_symbology_micropdf417"
+        android:title="@string/scanner_symbology_micropdf417" />
+    <Preference
+        android:key="scanner_symbology_MSI"
+        android:title="@string/scanner_symbology_MSI" />
+    
+    <Preference
+        android:key="scanner_symbology_code32"
+        android:title="@string/scanner_symbology_code32" />
+    <Preference
+        android:key="scanner_symbology_pdf47"
+        android:title="@string/scanner_symbology_pdf417" />
+        <Preference
+        android:key="scanner_symbology_postal"
+        android:title="@string/scanner_symbology_postal" />
+    <!-- urovo add shenpidong begin 2019-04-08 -->
+    <ListPreference
+        android:title="@string/scanner_symbology_postal"
+        android:defaultValue="0"
+        android:entries="@array/postal_sym_entries"
+        android:entryValues="@array/postal_sym_values"
+        android:key="sym_post_config"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null" />
+    <!-- urovo add shenpidong end 2019-04-08 -->
+   <!-- <Preference
+        android:key="scanner_symbology_postal_australian"
+        android:title="@string/scanner_symbology_postal_australian" />
+    <Preference
+        android:key="scanner_symbology_postal_japan"
+        android:title="@string/scanner_symbology_postal_japan" />
+    <Preference
+        android:key="scanner_symbology_postal_kix"
+        android:title="@string/scanner_symbology_postal_kix" />
+    
+    
+    <Preference
+        android:key="scanner_symbology_postal_royal_mail"
+        android:title="@string/scanner_symbology_postal_royal_mail" />
+    <Preference
+        android:key="scanner_symbology_postal_planet"
+        android:title="@string/scanner_symbology_postal_planet" />
+    <Preference
+        android:key="scanner_symbology_postal_postnet"
+        android:title="@string/scanner_symbology_postal_postnet" />
+    <Preference
+        android:key="scanner_symbology_postal_usps4_state"
+        android:title="@string/scanner_symbology_postal_usps4_state" /> -->
+    <Preference
+        android:key="scanner_symbology_qrcode"
+        android:title="@string/scanner_symbology_qrcode" />
+    <Preference
+        android:key="scanner_symbology_microqrcode"
+        android:title="@string/scanner_symbology_micro_qrcode" />
+     <Preference
+        android:key="scanner_symbology_discrete_25"
+        android:title="@string/scanner_symbology_discrete_25" />
+    <Preference
+        android:key="scanner_symbology_trioptic"
+        android:title="@string/scanner_symbology_trioptic" />
+    <Preference
+        android:key="scanner_symbology_upc_a"
+        android:title="@string/scanner_symbology_upc_a" />
+    <Preference
+        android:key="scanner_symbology_upc_e"
+        android:title="@string/scanner_symbology_upc_e" />
+    <Preference
+        android:key="scanner_symbology_upc_e1"
+        android:title="@string/scanner_symbology_upc_e1" />
+    <Preference
+        android:key="scanner_symbology_upc_ena_extensions"
+        android:title="@string/scanner_symbology_upc_ena_extensions" />
+    <Preference
+        android:title="@string/lable_ocr_symbology"
+        android:key="ocr_symbology" />
+    <Preference
+        android:title="@string/scanner_symbology_dotcode"
+        android:key="dotcode_symbology" />
+    <ListPreference
+        android:title="@string/scanner_dpm_decoding"
+        android:defaultValue="0"
+        android:entries="@array/dpm_decoding_entries"
+        android:entryValues="@array/code_id_type_values"
+        android:key="DPM_DECODE_MODE"/>
+</PreferenceScreen>

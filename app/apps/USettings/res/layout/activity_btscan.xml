@@ -1,0 +1,133 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/diemen_50dp"
+        android:background="@color/btn_scan_bg_normal"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_btscan_already_devices"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/diemen_39dp"
+                android:background="@null"
+                android:text="@string/Already_devices"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16sp"
+                android:textStyle="bold" />
+
+            <View
+                 android:id="@+id/view_btscan_already"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/diemen_3dp"
+                android:layout_marginBottom="@dimen/diemen_3dp"
+                android:layout_marginLeft="@dimen/diemen_30dp"
+                android:layout_marginRight="@dimen/diemen_30dp"
+                android:layout_marginTop="@dimen/diemen_3dp"
+                android:background="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/diemen_5dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_btscan_discovered_devices"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/diemen_39dp"
+                android:background="@null"
+                android:text="@string/text_discovered"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view_btscan_discoveres"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/diemen_3dp"
+                android:layout_marginBottom="@dimen/diemen_3dp"
+                android:layout_marginLeft="@dimen/diemen_30dp"
+                android:layout_marginRight="@dimen/diemen_30dp"
+                android:layout_marginTop="@dimen/diemen_3dp"
+                android:background="@color/white"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_qrcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/diemen_16dp"
+        android:layout_marginRight="@dimen/diemen_16dp"
+        android:layout_marginTop="@dimen/diemen_14dp"
+        android:background="@drawable/selector_btn_bg2"
+        android:text="@string/start"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_18sp" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/diemen_16dp"
+        android:layout_marginRight="@dimen/diemen_16dp"
+        android:layout_marginTop="@dimen/diemen_5dp"
+        android:text="@string/textC"
+        android:visibility="gone"
+        android:textColor="@color/scan_text_minor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/diemen_14dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/diemen_30dp"
+            android:layout_marginTop="@dimen/diemen_5dp"
+            android:background="@color/scan_title_bg"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/diemen_16dp"
+                android:text="@string/textC"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_btscan"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:cacheColorHint="#00000000"
+            android:divider="@color/line"
+            android:dividerHeight="1dp" >
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

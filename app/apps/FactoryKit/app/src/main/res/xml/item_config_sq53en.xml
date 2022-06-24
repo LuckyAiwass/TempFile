@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2011-2013, Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+<FactoryTest>
+
+    <FunctionItem
+        name="TriColor Led"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.TriColorLed"
+        parameter="red=red;green=sys;blue=blue;" >
+    </FunctionItem>
+    <!--FunctionItem
+        name="Flashlight"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Flashlight"
+        parameter="device=led:flash_0" >
+    </FunctionItem-->
+    <!--FunctionItem
+        name="KeypadBacklight"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.KeypadBacklight"
+        parameter="device=button-backlight" >
+    </FunctionItem-->
+    <FunctionItem
+        name="TouchPanel Edge"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.TouchPanelEdge"
+        parameter="" >
+    </FunctionItem>
+    <!--FunctionItem
+        name="TouchPanelKey"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.TouchPanelKey"
+        parameter="" >
+    </FunctionItem-->
+    <FunctionItem
+        name="Keypad"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Keypad"
+        parameter="KeyMode=0" >
+    </FunctionItem>
+    <FunctionItem
+        name="Camera Back"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.CameraBack"
+        parameter="AutoFocus=false" >
+    </FunctionItem>
+    <FunctionItem
+        name="Camera Front"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.CameraFront"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="LCM"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.LCM"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="SIM1"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.SIM1"
+        parameter="service=intent.SIM1.SIM1Service;ServiceDelay=10000;" >
+    </FunctionItem>
+    <FunctionItem
+        name="SIM2"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.SIM2"
+        parameter="service=intent.SIM2.SIM2Service;ServiceDelay=10000;" >
+    </FunctionItem>
+    <FunctionItem
+        name="Vibrate"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Vibrate"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="PSensor"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.PSensor"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="GSensor"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.GSensor"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="MSensor"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.MSensor"
+        parameter="" >
+    </FunctionItem>
+<!--     <FunctionItem
+        name="PressureSensor"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.PressureSensor"
+        parameter="" >
+    </FunctionItem> -->
+    <FunctionItem
+        name="Gyroscope"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.Gyroscope"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="Light Sensor"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.LightSensor"
+        parameter="" >
+    </FunctionItem>
+    <!--FunctionItem
+        name="SDCard"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.SDCard"
+        parameter="">
+    </FunctionItem -->
+    <FunctionItem
+        name="Bluetooth"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Bluetooth"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="Wi-Fi"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.WiFi"
+        parameter="service=intent.WiFi.WiFiService;ServiceDelay=0;" >
+    </FunctionItem>
+    <FunctionItem
+        name="Speaker"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Speaker"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="Transmitter Receiver"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.TransmitterReceiver"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="Deputy Transmitter Receiver"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.DeputyTransmitterReceiver"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="Headset"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Headset"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="Headset Hook"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.HeadsetHook"
+        parameter=""
+	></FunctionItem>
+    <!--FunctionItem
+        name="FM"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.FM"
+        parameter="" >
+    </FunctionItem-->
+    <FunctionItem
+        name="Fingerprint"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Fingerprint"
+        parameter="" >
+    </FunctionItem>
+    <!--FunctionItem
+        name="PSAM"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.PSAM"
+        parameter="" >
+    </FunctionItem-->
+    <FunctionItem
+        name="NFC"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.NFC"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="GPS"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.GPS"
+        parameter="service=intent.GPS.GpsService;timeout=150000;ServiceDelay=2000" >
+    </FunctionItem>
+    <FunctionItem
+        name="Battery"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Battery"
+        parameter="" >
+    </FunctionItem>
+     <FunctionItem
+        name="Scan"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.Scan">
+    </FunctionItem>
+<!--
+    <FunctionItem
+        name="电量计校准"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.FuelGaugeCalibration"
+        parameter="" >
+    </FunctionItem>
+-->
+    <FunctionItem
+        name="DeviceInfo"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.DeviceInfo"
+        parameter=""
+    ></FunctionItem>
+    <FunctionItem
+        name="TCard"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.TCard"
+    ></FunctionItem>
+    <FunctionItem
+        name="OTG"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.Otg"
+    ></FunctionItem>
+    <FunctionItem
+        name="POGO PIN"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.Pogo"
+    ></FunctionItem>
+    <FunctionItem
+        name="POGO DC charging"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.PogoDC"
+        ></FunctionItem>
+    <!--FunctionItem
+        name="Pen"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.Pen"
+        parameter=""
+    ></FunctionItem-->
+    <FunctionItem
+        name="Attestation Key"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.AttesttationKey"/>
+    <FunctionItem
+        name="Master Clear"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.MasterClear"
+        parameter=""
+    ></FunctionItem>
+</FactoryTest>

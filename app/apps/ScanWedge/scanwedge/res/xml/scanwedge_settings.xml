@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/scanwedge_settings">
+    <SwitchPreference
+        android:key="datawedge_enable"
+        android:title="@string/datawedge_enable_title"
+        android:summaryOff="@string/datawedge_enable_summaryoff"
+        android:summaryOn="@string/datawedge_enable_summaryon"/>
+    <SwitchPreference
+        android:key="datawedge_logging_enable"
+        android:title="@string/datawedge_logging_enable_title"
+        android:summary="@string/datawedge_logging_enable_summary" />
+    <PreferenceScreen
+        android:key="import_scanwedge_config"
+        android:summary="@string/import_config_keys_summary"
+        android:title="@string/import_config_keys"></PreferenceScreen>
+    <PreferenceScreen
+        android:key="export_scanwedge_config"
+        android:summary="@string/export_config_keys_summary"
+        android:title="@string/export_config_keys"></PreferenceScreen>
+
+</PreferenceScreen>

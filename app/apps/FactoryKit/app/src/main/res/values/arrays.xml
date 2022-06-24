@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- FunctionItem packagename entries for getLocaleString()
+        注意:entries的位置关系与description的位置关系具有一一对应的关系-->
+    <string-array name="item_test_packagename_entries" translatable="false">
+        <item>com&#046;ubx&#046;factorykit&#046;AttesttationKey</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Battery</item>
+        <!-- 该packagename几乎没有使用过，对应的description未做多语言适配>
+        <item>com&#046;ubx&#046;factorykit&#046;BatteryContent</item>
+        <-->
+        <item>com&#046;ubx&#046;factorykit&#046;Bluetooth</item>
+        <item>com&#046;ubx&#046;factorykit&#046;BuildInfo</item>
+        <!-- 该packagename几乎没有使用过，对应的description未做多语言适配>
+        <item>com&#046;ubx&#046;factorykit&#046;BulkCapacitor</item>
+        <-->
+        <item>com&#046;ubx&#046;factorykit&#046;CameraBack</item>
+        <item>com&#046;ubx&#046;factorykit&#046;CameraFront</item>
+        <!-- 该packagename几乎没有使用过，对应的description未做多语言适配>
+        <item>com&#046;ubx&#046;factorykit&#046;Common</item>
+        <-->
+        <item>com&#046;ubx&#046;factorykit&#046;DeputyTransmitterReceiver</item>
+        <item>com&#046;ubx&#046;factorykit&#046;DeviceInfo</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Fengmq</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Fingerprint</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Flashlight</item>
+        <item>com&#046;ubx&#046;factorykit&#046;FM</item>
+        <item>com&#046;ubx&#046;factorykit&#046;FourLed</item>
+        <!-- 该packagename几乎没有使用过，对应的description未做多语言适配>
+        <item>com&#046;ubx&#046;factorykit&#046;FuelGaugeCalibration</item>
+        <-->
+        <item>com&#046;ubx&#046;factorykit&#046;GPS</item>
+        <item>com&#046;ubx&#046;factorykit&#046;GSensor</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Gyroscope</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Headset</item>
+        <item>com&#046;ubx&#046;factorykit&#046;HeadsetHook</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Heating</item>
+        <item>com&#046;ubx&#046;factorykit&#046;ICC</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Keypad</item>
+        <item>com&#046;ubx&#046;factorykit&#046;KeypadBacklight</item>
+        <item>com&#046;ubx&#046;factorykit&#046;LCM</item>
+        <item>com&#046;ubx&#046;factorykit&#046;LightSensor</item>
+        <item>com&#046;ubx&#046;factorykit&#046;MagCard</item>
+        <item>com&#046;ubx&#046;factorykit&#046;MasterClear</item>
+        <item>com&#046;ubx&#046;factorykit&#046;MeasureVolume</item>
+        <item>com&#046;ubx&#046;factorykit&#046;MSensor</item>
+        <item>com&#046;ubx&#046;factorykit&#046;NFC</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Otg</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Pen</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Picc</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Pinpad</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Pogo</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Pogo2</item>
+        <item>com&#046;ubx&#046;factorykit&#046;PogoDC</item>
+        <item>com&#046;ubx&#046;factorykit&#046;PogoPoor</item>
+        <item>com&#046;ubx&#046;factorykit&#046;PogoPOS</item>
+        <item>com&#046;ubx&#046;factorykit&#046;PressureSensor</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Print</item>
+        <item>com&#046;ubx&#046;factorykit&#046;PSAM</item>
+        <item>com&#046;ubx&#046;factorykit&#046;PSensor</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Safe</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Scan</item>
+        <item>com&#046;ubx&#046;factorykit&#046;SDCard</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Serial</item>
+        <item>com&#046;ubx&#046;factorykit&#046;SIM1</item>
+        <item>com&#046;ubx&#046;factorykit&#046;SIM2</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Speaker</item>
+        <!-- 该packagename几乎没有使用过，对应的description未做多语言适配>
+        <item>com&#046;ubx&#046;factorykit&#046;SPSAM</item>
+        <-->
+        <item>com&#046;ubx&#046;factorykit&#046;TCard</item>
+        <item>com&#046;ubx&#046;factorykit&#046;TouchPanelEdge</item>
+        <item>com&#046;ubx&#046;factorykit&#046;TouchPanelKey</item>
+        <item>com&#046;ubx&#046;factorykit&#046;TransmitterReceiver</item>
+        <item>com&#046;ubx&#046;factorykit&#046;TriColorLed</item>
+        <item>com&#046;ubx&#046;factorykit&#046;Vibrate</item>
+        <item>com&#046;ubx&#046;factorykit&#046;WiFi</item>
+    </string-array>
+
+    <!-- FunctionItem name values for multi locale
+        注意:多语言同步修改-->
+    <string-array name="item_test_description_values">
+        <item>GoogleKey</item>
+        <item>Battery</item>
+        <!-- 该description不支持多语言,对应item_test_packagename_entries中相应位置的packageName>
+        <item>com&#046;ubx&#046;factorykit&#046;BatteryContent</item >
+        <-->
+        <item>Bluetooth</item>
+        <item>Build&#160;Info</item>
+        <!-- 该description不支持多语言,对应item_test_packagename_entries中相应位置的packageName>
+        <item>com&#046;ubx&#046;factorykit&#046;BulkCapacitor</item>
+        <-->
+        <item>Rear&#160;Camera</item>
+        <item>Front-Facing Camera</item>
+        <!-- 该description不支持多语言,对应item_test_packagename_entries中相应位置的packageName>
+        <item>com&#046;ubx&#046;factorykit&#046;Common</item>
+        <-->
+        <item>Deputy&#160;MIC</item>
+        <item>DeviceInfo</item>
+        <item>Buzzer</item>
+        <item>Fingerprint</item>
+        <item>Flashlight</item>
+        <item>Radio</item>
+        <item>Four&#160;Color&#160;LED</item>
+        <!-- 该description不支持多语言,对应item_test_packagename_entries中相应位置的packageName>
+        <item>com&#046;ubx&#046;factorykit&#046;FuelGaugeCalibration</item>
+        <-->
+        <item>GPS</item>
+        <item>Accelerometer</item>
+        <item>Gyroscope</item>
+        <item>Headset</item>
+        <item>Headset&#160;Button</item>
+        <item>Heating</item>
+        <item>ICC</item>
+        <item>Keypad</item>
+        <item>Key&#160;Backlight</item>
+        <item>Display&#160;Screen</item>
+        <item>Light&#160;Sensor</item>
+        <item>MAG</item>
+        <item>Master&#160;Clear</item>
+        <item>Measure&#160;Volume</item>
+        <item>Geomagnetic&#160;Sensor</item>
+        <item>NFC</item>
+        <item>OTG</item>
+        <item>Pen</item>
+        <item>PICC</item>
+        <item>PinPad</item>
+        <item>POGO&#160;PIN</item>
+        <item>POGO&#160;PIN</item>
+        <item>POGO&#160;DC&#160;Charging</item>
+        <item>POGO&#160;PIN</item>
+        <item>POGO&#160;PIN</item>
+        <item>Gas&#160;Pressure&#160;Sensor</item>
+        <item>Printer</item>
+        <item>PSAM</item>
+        <item>Proximity&#160;Sensor</item>
+        <item>Security&#160;Testing</item>
+        <item>Scan</item>
+        <item>SDCard</item>
+        <item>Serial</item>
+        <item>SIM1</item>
+        <item>SIM2</item>
+        <item>Speaker</item>
+        <!-- 该description不支持多语言,对应item_test_packagename_entries中相应位置的packageName>
+        <item>com&#046;ubx&#046;factorykit&#046;SPSAM</item>
+        <-->
+        <item>T&#160;Card</item>
+        <item>Touch&#160;Screen</item>
+        <item>Touch&#160;Button</item>
+        <item>MIC</item>
+        <item>Tricolored&#160;LED</item>
+        <item>Vibration Sensor</item>
+        <item>Wi-Fi</item>
+    </string-array>
+</resources>

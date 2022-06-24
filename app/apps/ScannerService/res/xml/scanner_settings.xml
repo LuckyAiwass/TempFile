@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
+            android:title="@string/set_scanner_manager">
+   <ListPreference
+       android:entries="@array/wired_scan_entries"
+       android:entryValues="@array/wired_scan_values"
+       android:key="wired_scan"
+       android:persistent="false"
+       android:title="@string/wired_scan" />
+   <CheckBoxPreference
+        android:key="scanhandle_toggle"
+        android:title="@string/scanhandle_toggle_title"
+        android:summaryOn="@string/scanhandle_toggle_summary_enable"
+        android:summaryOff="@string/scanhandle_toggle_summary_disable"
+        android:persistent="false" />
+    <CheckBoxPreference
+        android:key="webjump_switch"
+        android:title="@string/webjump_switch_title"
+        android:persistent="false" />
+   <CheckBoxPreference
+       android:key="scanner_virtual"
+       android:persistent="true"
+       android:summary="@string/scanner_virtual_button_summary"
+       android:title="@string/scanner_virtual_button_title" />
+    <CheckBoxPreference
+        android:key="open_scanner"
+        android:persistent="false"
+        android:summaryOff="@string/scanner_on"
+        android:summaryOn="@string/scanner_off"
+        android:title="@string/scanner" />
+    <CheckBoxPreference
+        android:key="lock_scan_key"
+        android:persistent="false"
+        android:summaryOff="@string/scanner_lock_on"
+        android:summaryOn="@string/scanner_lock_off"
+        android:title="@string/scanner_lock" />
+    <CheckBoxPreference
+        android:key="scan_app_key"
+        android:persistent="false"
+        android:summaryOff="@string/scanner_app_off"
+        android:summaryOn="@string/scanner_app_on"
+        android:title="@string/scanner_app" />
+    <CheckBoxPreference
+        android:key="yto_sixlen_key"
+        android:persistent="false"
+        android:summaryOff="@string/yto_sixlen_off"
+        android:summaryOn="@string/yto_sixlen_on"
+        android:title="@string/yto_sixlen" />
+    <EditTextPreference
+        android:key="yto_limit_len"
+        android:title="@string/min_code_len" />
+    <CheckBoxPreference
+        android:key="phonemode_scan_key"
+        android:summary="@string/phonemode_summary"
+        android:title="@string/phonemode_title"/>
+	<!--<CheckBoxPreference
+		android:key="scanner_trigger_mode"
+		android:summary="@string/scanner_trigger_mode_summary"
+		android:title="@string/scanner_trigger_mode" /> -->
+    <ListPreference
+        android:entries="@array/scanner_triggermode_entries"
+        android:entryValues="@array/scanner_triggermode_values"
+        android:key="scanner_trigger_mode"
+        android:persistent="false"
+        android:title="@string/scanner_trigger_mode" />
+     <Preference
+        android:key="n6603_multiple_decode"
+        android:title="@string/n6603_multiple_decode_config" />
+     <Preference
+        android:key="scanner_multiple_decode_mode"
+        android:title="@string/scanner_multiple_decode"
+        android:summary="@string/scanner_multiple_decode_sum"/>
+    <!--<PreferenceCategory
+        android:key="scanner_mode"
+        android:title="@string/scanner_keyboard_mode" />-->
+       <CheckBoxPreference
+            android:key="scanner_keyboard_copy"
+            android:title="@string/scanner_keyboard_copy" />
+ 
+        <CheckBoxPreference
+            android:key="scanner_keyboard_output"
+            android:summary="@string/scanner_keyboard_output_summary"
+            android:title="@string/scanner_output_mode" />
+        <PreferenceCategory
+            android:key="preferencecategory_keyboard_output"
+            android:title="@string/scanner_keyboard_output" >
+            <ListPreference
+                android:dependency="scanner_keyboard_output"
+                android:entries="@array/scanner_keyboard_type_entries"
+                android:entryValues="@array/scanner_keyboard_type_values"
+                android:key="scanner_keyboard_type"
+                android:persistent="false"
+                android:title="@string/scanner_keyboard_type_title" />
+            <!--<CheckBoxPreference
+                android:dependency="scanner_keyboard_output"
+                android:key="scanner_beep"
+                android:persistent="false"
+                android:summary="@string/scanner_beep_summary"
+                android:title="@string/scanner_beep" />-->
+	    <ListPreference
+                android:entries="@array/out_editortext_mode_entries"
+                android:entryValues="@array/out_editortext_mode_values"
+                android:key="scanner_out_editortext_mode"
+                android:persistent="false"
+                android:title="@string/scanner_out_editortext_mode" />
+            <ListPreference
+                android:dependency="scanner_keyboard_output"
+                android:entries="@array/scanner_beep_entries"
+                android:entryValues="@array/image_inverse_decoder_values"
+                android:key="scanner_beep"
+                android:persistent="false"
+                android:title="@string/scanner_beep" />
+            <CheckBoxPreference
+                android:dependency="scanner_keyboard_output"
+                android:key="scanner_vibrate"
+                android:persistent="false"
+                android:summary="@string/scanner_vibrate_summary"
+                android:title="@string/scanner_vibrate" />
+            <!--<CheckBoxPreference
+                android:dependency="scanner_keyboard_output"
+                android:key="scanner_enter"
+                android:persistent="false"
+                android:summary="@string/scanner_enter_summary"
+                android:title="@string/scanner_enter" />-->
+            <ListPreference
+                android:dependency="scanner_keyboard_output"
+                android:entries="@array/action_key_character_entries"
+                android:entryValues="@array/action_key_character_values"
+                android:key="scanner_keyboard_action_character"
+                android:persistent="false"
+                android:title="@string/scanner_keyboard_action_character" />
+            <Preference
+                android:dependency="scanner_keyboard_output"
+                android:key="output_data_delay"
+                android:title="@string/output_data_delay" />
+            <Preference
+                android:dependency="scanner_keyboard_output"
+                android:key="keyevent_enter_delay"
+                android:title="@string/keyevent_enter_delay" />
+        </PreferenceCategory>
+        <PreferenceCategory
+            android:title="@string/scanner_wedge_intent_title">
+            <EditTextPreference
+                android:key="intent_action"
+                android:title="@string/scanner_intent_action" />
+            <EditTextPreference
+                android:key="intent_stringlabel"
+                android:title="@string/scanner_intent_stringlabel" />
+            <!--<CheckBoxPreference
+                android:key="scanner_send_beep"
+                android:persistent="false"
+                android:summary="@string/scanner_beep_summary"
+                android:title="@string/scanner_beep" />-->
+            <ListPreference
+                android:entries="@array/scanner_beep_entries"
+                android:entryValues="@array/image_inverse_decoder_values"
+                android:key="scanner_send_beep"
+                android:persistent="false"
+                android:title="@string/scanner_beep" />
+            <CheckBoxPreference
+                android:key="scanner_send_vibrate"
+                android:persistent="false"
+                android:summary="@string/scanner_vibrate_summary"
+                android:title="@string/scanner_vibrate" />
+        </PreferenceCategory>
+    <ListPreference
+            android:entries="@array/image_coding_format_entries"
+            android:entryValues="@array/image_coding_format_values"
+            android:key="image_coding_format"
+            android:persistent="false"
+            android:title="@string/scanner_coding_format" />
+     <Preference
+        android:key="scanner_triggering"
+        android:title="@string/scanner_trigger_reading" />
+    <Preference
+        android:key="scanner_formatting"
+        android:title="@string/scanner_formatting" />
+    <Preference
+        android:key="scanner_udi_format"
+        android:title="@string/scanner_udi_format" />
+    <Preference
+        android:key="scanner_symbology_settings"
+        android:title="@string/scanner_symbology" />
+    <PreferenceCategory
+        android:key="decode_configure "
+        android:title="@string/scanner_reset_def" >
+        <PreferenceScreen
+            android:key="import_config"
+            android:title="@string/import_config_keys" >
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="export_config"
+            android:title="@string/export_config_keys" >
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="reset_def"
+            android:summary="@string/scanner_reset_def_summary"
+            android:title="@string/scanner_reset_def" />
+<!--         <PreferenceScreen
+            android:key="barcode_param"
+            android:summary="@string/scanner_barcode_param_summary"
+            android:title="@string/scanner_barcode_param" >
+
+            
+           <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.settings"
+            android:targetClass="com.android.settings.DecoderConfigure" />
+           
+        </PreferenceScreen> -->
+    </PreferenceCategory>
+<!--    
+    <PreferenceCategory
+        android:key="scanscan"
+        android:title="扫描类型">
+        <PreferenceScreen
+            android:key="scantype"
+            android:summary="扫描类型选择"
+            android:title="扫描类型" />
+    </PreferenceCategory>
+-->
+</PreferenceScreen>

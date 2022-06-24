@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keyboard_config>
+
+	<!-- Please put this file to "/system/etc/meig/cit_keytest_config.xml"
+		 [Keyword explanation]:
+		 ===>test_line:	show key test button in one lineage
+		 ===>key_test:	one key test object
+		 ===>keyName:	key name to show
+		 ===>keyCode:	key code value
+		 ===>width:		key button width,you can not set
+		 ===>height:	key button height,you can not set
+	-->
+
+		<test_line>
+		<key_test
+            keyName="power1"
+            keyCode="26">
+        </key_test>	
+        <key_test
+            keyName="scan2"
+            keyCode="521">
+        </key_test>
+		<key_test
+            keyName="scan3"
+            keyCode="520">
+        </key_test>
+		</test_line>
+
+		<test_line>
+		<key_test
+            keyName="volume+"
+            keyCode="24">
+        </key_test>
+        <key_test
+            keyName="volume-"
+            keyCode="25">
+        </key_test>
+		<key_test
+            keyName="ptt"
+            keyCode="515">
+        </key_test>
+	</test_line>
+	
+	<test_line>
+		<key_test
+            keyName="三家分晋"
+            keyCode="4">
+        </key_test>
+        <key_test
+            keyName="home"
+            keyCode="3">
+        </key_test>
+		<key_test
+            keyName="power"
+            keyCode="26">
+        </key_test>
+	</test_line>
+	<test_line>
+		<key_test
+            keyName="power2"
+            keyCode="26">
+        </key_test>
+        <key_test
+            keyName="power3"
+            keyCode="26">
+        </key_test>
+		<key_test
+            keyName="power4"
+            keyCode="26">
+        </key_test>
+	</test_line>
+
+	<test_line>
+		<key_test
+			keyName="power2"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power3"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power4"
+			keyCode="26">
+		</key_test>
+	</test_line>
+
+	<test_line>
+		<key_test
+			keyName="power2"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power3"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power4"
+			keyCode="26">
+		</key_test>
+	</test_line>
+
+
+	<test_line>
+		<key_test
+			keyName="power2"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power3"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power4"
+			keyCode="26">
+		</key_test>
+	</test_line>
+
+
+	<test_line>
+		<key_test
+			keyName="power2"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power3"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power4"
+			keyCode="26">
+		</key_test>
+	</test_line>
+
+
+	<test_line>
+		<key_test
+			keyName="power2"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power3"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power4"
+			keyCode="26">
+		</key_test>
+	</test_line>
+
+
+	<test_line>
+		<key_test
+			keyName="power2"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power3"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power4"
+			keyCode="26">
+		</key_test>
+	</test_line>
+
+
+	<test_line>
+		<key_test
+			keyName="power2"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power3"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power4"
+			keyCode="26">
+		</key_test>
+	</test_line>
+
+
+	<test_line>
+		<key_test
+			keyName="power2"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power3"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power4"
+			keyCode="26">
+		</key_test>
+	</test_line>
+
+
+	<test_line>
+		<key_test
+			keyName="power1"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power2"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power3"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power4"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power5"
+			keyCode="26">
+		</key_test>
+		<key_test
+			keyName="power6"
+			keyCode="26">
+		</key_test>
+	</test_line>
+
+</keyboard_config>

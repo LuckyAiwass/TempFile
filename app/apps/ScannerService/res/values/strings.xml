@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Strings for Dialog yes button -->
+    <string name="yes">"Yes"</string>
+
+    <!-- Strings for Dialog no button -->
+    <string name="no">"No"</string>
+
+    
+
+     <!-- add for product sn  -->
+    <string name="product_sn">Product SN</string>
+    <string name="product_sn_default">"set in misc"</string>
+    <string name="urovo">"urovo"</string>
+    <string name="urovo_settings">Support Scanners</string>
+    <string name="scan_type">Scan Type</string>
+    <string name="scan_type_summary">[ <xliff:g id="scan_type_entries">%1$s</xliff:g> ]</string>
+    <string name="urovo_settings_title">Scanners</string>
+    
+    <string name="set_scanner_manager">Scanner</string>
+    <string name="scanner">Scanner</string>
+    <string name="scanner_control">Scanner Control</string>
+    <string name="scanner_screen_on">"Screen off scanner is working"</string>
+    <string name="scanner_separator">"Separator"</string>
+    <string name="scanner_separator_summary">"GS1、DataMatrix Separator"</string>
+    <string name="scanner_on">Turn on scanner power</string>
+    <string name="scanner_off">Turn off scanner power</string>
+    <string name="scanner_keyboard_mode">Keyboard mode</string>
+    <string name="scanner_virtual_button_output">Virtual key output</string>
+    <string name="scanner_virtual_button_summary">Suspension button</string>
+    <string name="scanner_virtual_button_title">Suspension button on/off</string>
+    <string name="scanner_output_mode">Keyboard output mode</string>
+    <string name="scanner_keyboard_output">"Keyboard output"</string>
+    <string name="scanner_keyboard_output_summary">output the barcode into the focused edit box</string>
+    <string name="scanner_trigger_mode">"Triggering Modes"</string>
+    <string name="scanner_trigger_mode_summary">"The laser is always on and decoding"</string>
+    <string name="scanner_beep">Sounds</string>
+    <string name="scanner_beep_summary">Play sound when the scan is successful</string>
+    <string name="scanner_vibrate">Vibrate</string>
+    <string name="scanner_vibrate_summary">Vibrate when the scan is successful</string>
+    <string name="scanner_wedge_intent_title">Intent Output</string>
+    <string name="scanner_wedge_intent_summary">Data be sent to an application in the form of an implicit Intent</string>
+    <string name="scanner_intent_stringlabel">Intent string extra</string>
+    <string name="scanner_intent_action">Intent action</string>
+    <string name="scanner_enter">Additional enter key</string>
+    <!-- urovo add jinpu.lin 2019.05.08 -->
+    <string name="keyevent_enter_delay">Key event delay</string>
+    <string name="output_data_delay">Characters delay</string>
+    <!-- urovo add end 2019.05.08 -->
+    <string name="scanner_enter_summary">Additional enter key after the scan results</string>
+    <string name="scanner_keyboard_action_character">Action key character</string>
+    <string name="scanner_out_editortext_mode">Editor text mode</string>
+    <string name="scanner_lock">Scan key</string>
+    <string name="scanner_lock_on">Enable Scan key</string>
+    <string name="scanner_lock_off">Disable Scan key</string>
+    
+    <string name="scanner_app_on">Enable Scan App</string>
+    <string name="scanner_app_off">Disable Scan App</string>
+    <string name="scanner_app">Scan App</string>
+    <string name="scanner_reset_def">Reset Configuration</string>
+    <string name="scanner_reset_def_summary">Reset the decoding subsystem configuration </string>
+    <string name="scanner_reset_def_alert">Reset the decoding subsystem configuration?</string>
+    <string name="scanner_reset_progress">"Reset......"</string>
+    <string name="scanner_update_progress">"Update......"</string>
+    <string name="scanner_toast">Scanner reset finished!</string>
+    <string name="scanner_type_unknown">unknown scan type!</string>
+    <string name="scanner_keyboard_type_title">Keyboard type</string>
+    <string-array name="scanner_keyboard_type_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    
+    <string-array name="scanner_keyboard_type_entries">
+        <item>Physical keyboard</item>
+        <item>Soft keyboard</item>
+        <item>Always Physical keyboard</item>
+        <item>Always Soft keyboard</item>
+    </string-array>
+    
+    <string name="title_device_sn">SN</string>
+    <string name="summary_device_sn">unknown sn code</string>
+    <string name="title_device_32550">SE</string>
+    <string name="summary_device_32550">Unknown</string>
+    <string name="phonemode_summary">Scan Screen</string>
+    <string name="phonemode_title">Phone Mode</string>
+    <string name="phonemode_scan_key">Phone Mode</string>
+    <string name="phonemode_scan_key_summary">Scan Screen</string>
+    <!-- scanner properties setting -->
+    <string name="scanner_green_spot">Good read spot</string>
+    <string name="scanner_green_spot_on">Green spot with good read</string>
+    <string name="scanner_green_led">Good Led spot</string>
+    <string name="scanner_green_led_on">Green Led with good read</string>
+    <string name="scanner_green_spot_off">Disable green spot with good read</string>
+    <string name="scanner_intent_mode">Intent mode</string>
+    <string name="scanner_intent_mode_on">The captured data to be sent to an application in the form of an implicit Intent</string>
+    <string name="scanner_intent_mode_off">Disable the captured data to be sent to an application in the form of an implicit Intent</string>
+    <string name="scanner_action_save">Permanent Save</string>
+    <string name="scanner_commit">Enable Config</string>
+    <string name="scanner_decode_engine">Decoder configure </string>
+    <string name="scanner_barcode_param">Decoder parameters</string>
+    <string name="scanner_barcode_param_summary">Decoder parameters configure</string>
+    <string name="scanner_decoders_enable">All decoders enable</string> 
+    <string name="scanner_decoders_enable_summary">Allow all barcode symbologies</string>
+    <string name="scanner_keystroke_output_category">Keystroke Output</string>
+    <string name="scanner_intent_output_category">Intent Output</string>
+    <string name="scanner_intent_atcion">Intent action</string>
+    <string name="scanner_intent_delivery">Intent delivery</string>
+    
+    <!-- decoder configture -->
+    <string name="scanner_reader_codeid_type">Code Id Type</string>
+    <string name="scanner_reader_params">Reader Params</string>
+    <string name="decoder_type_code39">Code39</string>
+    <string name="decoder_type_code39_enable_check">Enable checksum</string>
+    <string name="decoder_type_code39_send_check">Report checksum</string>
+    <string name="decoder_type_code39_full_ascii">Full ASCII conversion</string>
+    <string name="decoder_L1_of_code39">L1 of Code39</string>
+    <string name="decoder_L2_of_code39">L2 of Code39</string>
+    <string name="decoder_code39_userid">Code39 code id</string>
+    <string name="decoder_type_Trioptic_code39">Trioptic</string>
+    <string name="decoder_Trioptic_code39_userid">Trioptic code id</string>
+    <string name="decoder_type_pharma39">Pharma39</string>
+    <string name="decoder_type_pharma39_send_check">Send checksum</string>
+    <string name="decoder_type_pharma39_prefix">Send Prefix</string>
+    <string name="decoder_pharma39_userid">Pharma39 code id</string>
+    <string name="decoder_type_Discrete_2_of_5">Discrete 2 of 5</string>
+    <string name="decoder_L1_Discrete_2_of_5">L1 of Discrete 2 of 5</string>
+    <string name="decoder_L2_Discrete_2_of_5">L2 of Discrete 2 of 5</string>
+    <string name="decoder_Discrete_2_of_5_userid">Discrete 2 of 5 code id</string>
+    <string name="decoder_type_Matrix_2_of_5">Matrix 2 of 5</string>
+    <string name="decoder_type_Matrix_2_of_5_en_check">Matrix 2 of 5 verify check</string>
+    <string name="decoder_type_Matrix_2_of_5_send_check">Matrix 2 of 5 report check</string>
+    <string name="decoder_L1_Matrix_2_of_5">L1 of Matrix 2 of 5</string>
+    <string name="decoder_L2_Matrix_2_of_5">L2 of Matrix 2 of 5</string>
+    <string name="decoder_Matrix_2_of_5_userid">Matrix 2 of 5 code id</string>
+    <string name="decoder_type_Interleaved_2_of_5">Interleaved 2 of 5</string>
+    <string name="decoder_type_Interleaved_2_of_5_en_case_code">Enable Case Code</string>
+    <string name="decoder_type_Interleaved_2_of_5_en_check">Enable checksum</string>
+    <string name="decoder_type_Interleaved_2_of_5_send_check">Send checksum</string>
+    <string name="decoder_L1_Interleaved_2_of_5">L1 of Interleaved 2 of 5</string>
+    <string name="decoder_L2_Interleaved_2_of_5">L2 of Interleaved 2 of 5</string>
+    <string name="decoder_Interleaved_2_of_5_userid">Interleaved 2 of 5 code id</string>
+    <string name="decoder_type_Codabar">Codabar</string>
+    <string name="decoder_type_Codabar_send_start">Send start/stop </string>
+    <string name="decoder_type_Codabar_clsi">Convert to CLSI</string>
+    <string name="decoder_L1_of_codabar">L1 of Codabar</string>
+    <string name="decoder_L2_of_codabar">L2 of Codabar</string>
+    <string name="decoder_codabar_userid">Codabar code id</string>
+    <string name="decoder_type_code93">Code93</string>
+    <string name="decoder_L1_of_code93">L1 of Code93</string>
+    <string name="decoder_L2_of_code93">L2 of Code93</string>
+    <string name="decoder_code93_userid">Code93 code id</string>
+    <string name="decoder_type_code128">Code128</string>
+    <string name="decoder_type_gs1_code128">GS1 Code128</string>
+    <string name="decoder_L1_of_code128">L1 of Code128</string>
+    <string name="decoder_L2_of_code128">L2 0f Code128</string>
+    <string name="decoder_code128_userid">Code128 code id</string>
+    <string name="decoder_type_UPC_A">UPCA</string>
+    <string name="decoder_type_UPC_A_send_check">Report check digit</string>
+    <string name="decoder_type_UPC_A_send_sys">Report Sys Char</string>
+    <string name="decoder_type_UPC_A_to_EAN13">Convert to EAN13</string>
+    <string name="decoder_upca_userid">UPCA code id</string>
+    <string name="decoder_type_UPC_E">UPCE</string>
+    <string name="decoder_type_UPC_E_send_check">Report check digit</string>
+    <string name="decoder_type_UPC_E_send_sys">Report Sys Char</string>
+    <string name="decoder_type_UPC_E_to_upca">Convert UPCE To UPCA</string>
+    <string name="decoder_upce_userid">UPCE code id</string>
+    <string name="decoder_type_EAN13">EAN-13</string>
+    <string name="decoder_type_EAN13_to_isbn">Convert to ISBN</string>
+    <string name="decoder_type_EAN13_to_issn">Convert to ISSN</string>
+    <string name="decoder_type_EAN13_send_check">Send check digit</string>
+    <string name="decoder_type_EAN13_send_sys">Send system digit</string>
+    <string name="decoder_ean13_userid">EAN13 code id</string>
+    <string name="decoder_type_EAN8">EAN-8</string>
+    <string name="decoder_type_EAN8_send_check">Send check digit</string>
+    <string name="decoder_type_EAN8_to_ean13">Convert EAN8 To EAN13</string>
+    <string name="decoder_ean8_userid">EAN8 code id</string>
+    <string name="decoder_type_upc_ean">UPC EAN Extensions</string>
+    <string name="decoder_type_upc_ean_2">Enable 2-digit extensions</string>
+    <string name="decoder_type_upc_ean_5">Enable 5-digit extensions</string>
+    <string name="decoder_type_code128_ext">Enable code128 extensions</string>
+    <string name="decoder_type_upc_ean_req">UPC/EAN require</string>
+    <string name="decoder_type_MSI">MSI</string>
+    <string name="decoder_type_MSI_2_check">Check digit</string>
+    <string name="decoder_type_MSI_send_check">Report check digit</string>
+    <string name="decoder_type_MSI_2_mod_11">Check digit scheme</string>
+    <string name="decoder_L1_of_MSI">L1 of MSI</string>
+    <string name="decoder_L2_of_MSI">L2 of MSI</string>
+    <string name="decoder_MSI_userid">MSI code id</string>
+    <string name="decoder_type_rss">RSS</string>
+    <string name="decoder_type_RSS_14">RSS14</string>
+    <string name="scanner_symbology_convert_to_upc_ean">Convert to UPC EAN</string>
+    <string name="decoder_rss_14_userid">RSS14 code id</string>
+    <string name="decoder_type_RSS_Limited">RSS Limited</string>
+    <string name="decoder_rss_limit_userid">RSS Limited code id</string>
+    <string name="decoder_type_RSS_Expanded">RSS Expanded</string>
+    <string name="decoder_rss_exp_userid">RSS Expanded code id</string>
+    <string name="decoder_type_all_postal">All Postal</string>
+    <string name="decoder_type_postnet">US Postnet</string>
+    <string name="decoder_postnet_userid">US Postnet code id</string>
+    <string name="decoder_type_planet">US Planet</string>
+    <string name="decoder_planet_userid">Planet code id</string>
+    <string name="decoder_type_postal_send_chk">Postal report check digit</string>
+    <string name="decoder_type_usps_4state">Usps 4 state</string>
+    <string name="decoder_usps_4state_userid">USPS 4 state code id</string>
+    <string name="decoder_type_upu_fics">UPU Fics</string>
+    <string name="decoder_upu_fics_userid">UPU Fics code id</string>
+    <string name="decoder_royal_mail">Royal mail</string>
+    <string name="decoder_royal_mail_send_chk">Royal mail report check</string>
+    <string name="decoder_type_royal_mail_userid">Royal mail code id</string>
+    <string name="decoder_type_australian_post">Australian post</string>
+    <string name="decoder_type_australian_post_userid">Australian post code id</string>
+    <string name="decoder_type_kix_code">Kix code</string>
+    <string name="decoder_type_kix_code_userid">Kix code id</string>
+    <string name="decoder_type_japan_code">Japan code</string>
+    <string name="decoder_type_japan_code_userid">Japan code id</string>
+    <string name="decoder_type_2D">2D Decoder</string>
+    <string name="decoder_type_pdf417">PDF417</string>
+    <string name="decoder_type_pdf417_userid">PDF417 code id</string>
+    <string name="decoder_type_micropdf417">Micropdf417</string>
+    <string name="decoder_type_micropdf417_userid">Micropdf417 code id</string>
+    <string name="decoder_type_composite">Composite</string>
+    <string name="decoder_type_composite_to_gs1128">Composite to gs1-128</string>
+    <string name="decoder_type_composite_userid">Composite code id</string>
+    <string name="decoder_type_datamatrix">Datamatrix</string>
+    <string name="decoder_type_datamatrix_userid">Datamatrix code id</string>
+    <string name="decoder_type_maxicode">Maxicode</string>
+    <string name="decoder_type_maxicode_userid">Maxicode code id</string>
+    <string name="decoder_type_qrcode">Qrcode</string>
+    <string name="decoder_type_microqrcode">Micro QR</string>
+    <string name="decoder_type_qrcode_userid">Qrcode code id</string>
+    <string name="decoder_type_aztec">Aztec</string>
+    <string name="decoder_type_aztec_userid">Aztec code id</string>
+    <string name="long_range_input_mode">Long range input mode</string>
+    <string name="long_range_enable_spot">Long range enable spot</string>
+    <string name="long_range_spot_timeout">Long range spot timeout</string>
+    <string name="long_range_release_time">Long range release time</string>
+    <string name="image_illuminate_mode">Image illuminate mode</string>
+    <string name="image_target_mode">Image target mode</string>
+    <string name="image_picklist_enable">Image picklist enable</string>
+    <string name="image_target_mode_enable">Image target mode enable</string>
+    <string name="image_target_enable">Image target enable</string>
+    <string name="target_timeout">Target timeout</string>
+    <string name="target_release_time">Target release time</string>
+    <string name="remove_non_printable_chars">Remove non-printable characters</string>
+    <string name="good_read_count_seek">Good read number</string>
+    <string name="good_read_count">Good read count</string>
+    <string name="good_read_duration">Good read duration</string>
+    <string name="send_code_id">Send Code ID</string>
+    <string name="scanner_formatting">Label formatting</string>
+    <string name="scanner_send_lable_fix">Append formatting</string>
+    <string name="scanner_lable_prefix">Label prefix</string>
+    <string name="scanner_lable_suffix">Label suffix</string>
+    <string name="scanner_lable_pattern">Formatting</string>
+    <string name="scanner_lable_replace">Replace</string>
+    <string name="scanner_lable_replaceregex">Traget text</string>
+    <string name="scanner_lable_replacement">Replacement</string>
+    <string name="scanner_lable_replaceerror">Please input valid characters</string>
+    <!-- urovo add shenpidong begin 2019-04-18 -->
+    <string name="scanner_lable_format_error">%1$s error! Please enter the correct expression.</string>
+    <!-- urovo add shenpidong end 2019-04-18 -->
+    <string name="edit_lable_prefix">Edit label prefix</string>
+    <string name="edit_lable_suffix">Edit label suffix</string>
+    <string name="edit_lable_pattern">Edit label pattern</string>
+    <string name="lable_separator">Label separator</string>
+    <string name="gs_substitution">GS substitution</string>
+    <string name="decode_timeout">Decode timeout</string>
+    <string name="good_read_interval">Good read interval</string>
+    <string name="good_read_interval_seek">Good read interval</string>      
+    <string name="good_read_duration_seek">Good read duration</string>
+    <string name="add_special_formatting">Add</string>
+    <string name="lable_application_identifier">Application Identifier</string>
+    <string name="lable_application_identifier_summary">"GS1、DataMatrix Code128 Separator"</string>
+    <string name="lable_application_identifier_edit">Application Identifier Edit</string>
+    <string name="lable_ai_edit_length">Please input two characters</string>
+    <!-- urovo add shenpidong begin 2019-04-17 -->
+    <string name="lable_ai_edit_ascii">%1$s not within the reasonable scope of the ASCII.</string>
+    <!-- urovo add shenpidong end 2019-04-17 -->
+    <!--OCR Symbology  settings -->
+    <string name="lable_ocr_symbology">OCR symbology</string>
+    <string name="lable_ocr_symbology_enable">OCR</string>
+    <string name="lable_ocr_symbology_mode">OCR Mode</string>
+    <string name="lable_ocr_symbology_template">OCR Template</string>
+    <string name="lable_ocr_symbology_template_font">OCR Template Font</string>
+    <string name="lable_ocr_symbology_template_character">OCR Template Character</string>
+    <string name="lable_ocr_symbology_template_font_length">OCR label length(1-50)</string>
+    <string name="lable_ocr_user_template">Defines OCR user template</string>
+    <string name="lable_ocr_user_template_df">13777777770</string>
+    <string name="import_config_keys">Import Profile</string>
+    <string name="export_config_keys">Export Profile</string>
+    <string name="exporting_config">Exporting config</string>
+    <string name="importing_config">Importing config</string>
+    <!-- Symbology settings -->
+    <string name="scanner_symbology_code11">Code 11</string>
+    <string name="scanner_symbology_chinese_25">Chinese 25</string>
+    <string name="scanner_symbology_upc_e1">UPC-E1</string>
+    <string name="scanner_symbology">Symbology Settings</string>
+    <string name="scanner_symbology_user_id">User ID</string>
+    <string name="scanner_symbology_user_l1">L1 length</string>
+    <string name="scanner_symbology_user_l2">L2 length</string>
+    <string name="scanner_symbology_length_range" translatable="false">"The length can be set from %1$s to %2$s."</string>
+    <string name="scanner_symbology_timeout_range" translatable="false">"The value can be set from %1$s to %2$s."</string>
+    <string name="scanner_symbology_enable">Enable</string>
+    <string name="scanner_symbology_enable_checksum">Enable checksum</string>
+    <string name="scanner_symbology_send_checksum">Send checksum</string>
+    <string name="scanner_symbology_checksum_mode">Check digit mode</string>
+    <string name="scanner_symbology_aztec">Aztec</string>
+    <string name="scanner_symbology_codabar">Codabar</string>
+    <string name="scanner_symbology_send_start_stop">NOTIS Editing</string>
+    <string name="scanner_symbology_convert_to_clsi">CLSI Editing</string>
+    <string name="scanner_symbology_code128">Code 128</string>
+    <string name="scanner_symbology_isbt_128">ISBT 128</string>
+    <string name="scanner_symbology_gs1_128">GS1-128</string>
+    <string name="scanner_symbology_code39">Code 39</string>
+    <string name="scanner_symbology_full_ascii_conversion">Full ASCII conversion</string>
+    <string name="scanner_symbology_code93">Code 93</string>
+    <string name="scanner_symbology_composite_cc_ab">Composite CC-A/B</string>
+    <string name="scanner_symbology_composite_cc_c">Composite CC-C</string>
+    <string name="scanner_symbology_composite_39">Composite TLC-39</string>
+    <string name="scanner_symbology_hanxin">Han Xin</string>
+    <string name="scanner_inverse">Inverse</string>
+    <string name="scanner_symbology_Datamatrix">Datamatrix</string>
+    <string name="scanner_symbology_ean13">EAN-13</string>
+    <string name="scanner_symbology_ean8">EAN-8</string>
+    <string name="scanner_symbology_booklandean">Bookland EAN</string>
+    <string name="scanner_symbology_bookland_format">Bookland Format</string>
+    <string name="scanner_symbology_convert_to_isbn">Convert to ISBN</string>
+    <string name="scanner_symbology_convert_to_issn">Convert to ISSN</string>
+    <string name="scanner_symbology_convert_to_ean13">Convert to EAN-13</string>
+    <string name="scanner_symbology_gs1_databar14">GS1 DataBar-14</string>
+    <string name="scanner_symbology_gs1_databar_expanded">GS1 DataBar Expanded</string>
+    <string name="scanner_symbology_gs1_databar_limited">GS1 DataBar Limited</string>
+    <string name="scanner_symbology_interleaved_25">Interleaved 2 of 5</string>
+    <string name="scanner_symbology_matrix_25">Matrix 2 of 5</string>
+    <string name="scanner_symbology_maxicode">Maxicode</string>
+    <string name="scanner_symbology_micropdf417">MicroPDF417</string>
+    <string name="scanner_symbology_MSI">MSI</string>
+    <string name="scanner_symbology_require_second_checksum">Check Digit</string>
+    <string name="scanner_symbology_second_checksum_mod_11">Check Digit Algorithm</string>
+    <string name="scanner_symbology_code32">Code 32</string>
+    <string name="scanner_symbology_code32_prefix">Code 32 prefix</string>
+    <string name="scanner_symbology_pdf417">PDF417</string>
+    <string name="scanner_symbology_postal">Postal codes</string>
+    <string name="scanner_symbology_postal_australian">Postal Australian</string>
+    <string name="scanner_symbology_postal_japan">Postal Japan</string>
+    <string name="scanner_symbology_postal_kix">Postal Kix</string>
+    <string name="scanner_symbology_postal_royal_mail">Postal Royal mail</string>
+    <string name="scanner_symbology_postal_royal_mail_send_check">Royal mail send check</string>
+    <string name="scanner_symbology_postal_planet">US Planet</string>
+    <string name="scanner_symbology_postal_postnet">US Postnet</string>
+    <string name="scanner_symbology_postal_send_check">US Postal send check</string>
+    <string name="scanner_symbology_upu_fics">UPU FICS</string>
+    <string name="scanner_symbology_postal_usps4_state">Postal Usps 4 state</string>
+    <string name="scanner_symbology_qrcode">QR Code</string>
+    <string name="scanner_symbology_micro_qrcode">Micro QR Code</string>
+    <string name="scanner_symbology_discrete_25">Discrete 2 of 5</string><!-- Standard 2/5 -->
+    <string name="scanner_symbology_trioptic">Trioptic</string>
+    <string name="scanner_symbology_upc_a">UPC-A</string>
+    <string name="scanner_symbology_upc_e">UPC-E</string>
+    <string name="scanner_symbology_send_system_digit">Send system digit</string>
+    <string name="scanner_symbology_convert_to_upc_a">Convert to UPC-A</string>
+    <string name="scanner_symbology_upc_ena_extensions">UPC/EAN Extensions</string>
+    <string name="scanner_symbology_enable_25digit_extensions">Enable 2-5 digit extensions</string>
+    <string name="scanner_symbology_upc_ean_security_level">UPC EAN Security level</string>
+    <string name="scanner_symbology_ucc_coupon_extended">UCC Coupon Extended Code</string>
+    <string name="scanner_symbology_enable_5digit_extensions">Enable 5-digit extensions</string>
+    <string name="scanner_symbology_require_extensions">Require extensions  </string>
+    <string name="scanner_dpm_decoding">DPM decoding</string>
+    <string name="add_special">Add special:</string>
+    <string name="scanner_1d_special">1D special</string>
+    <string name="scanner_fuzzy_1d_processing">Fuzzy 1D processing</string>
+    <string name="scanner_1d_inverse">1D inverse decoder</string>
+    <string name="scanner_multi_decode">Multi decode</string>
+    <string name="scanner_multi_decode_mode">Multi decode mode</string>
+    <string name="scanner_bar_codes_to_read">Bar codes to read</string>
+    <string name="scanner_full_read_mode">Full read mode</string>
+    <string name="scanner_trigger_reading">Other Settings</string>
+    <string name="scanner_laser_on_time">Laser on time</string>
+    <string name="scanner_laser_timeout_summary" translatable="false">" %1$s ms"</string>
+    <string name="scanner_timeout_same_symbol">Timeout between same symbol</string>
+    <string name="scanner_type_security_level">Linear code type security level</string>
+    <string name="scanner_coding_format">Coding format</string>
+    <string name="scanner_symbology_dotcode">DotCode</string>
+	
+    <string name="factory_passwork_title">Factory Reset</string>
+    <string name="factory_password_tv">Password:</string>
+    <string name="factory_password_ok">OK</string>
+    <string name="factory_password_cansel">Cancel</string>
+    <string name="factory_password_error">Password error!</string>
+    
+    <string name="auto_input_title">Auto pop-up softinput</string>
+    <string name="statusbar_battery_level_title">Battery level</string>
+    <string name="statusbar_battery_level_summary">In the status bar to show the battery level</string>
+    
+    
+    <string name="scanner_symbology_enable_2digit_extensions">Enable 2-digit extensions</string>
+    <string name="scanner_settings">Scanner Settings</string>
+    <string name="app_name">ScannerService</string>
+    <string name="scanner_exposure_setting">Exposure Settings</string>
+    <string name="scanner_exposure_mode">Exposure Mode</string>
+    <string name="scanner_exposure_fixed_title">Fixed Exposure</string>
+    <string-array name="scanner_exposure_mode_entries">
+        <item>Auto</item>
+        <item>Fixed</item>
+    </string-array>
+    <!-- Exposure Modes -->
+    <string-array name="scanner_exposure_mode_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string name="n6603_title_lights_config">Lights Configuration</string>
+    <string name="n6603_title_lights_config_summary">For configuring lights mode</string>
+    <string name="n6603_decoce_windowing">Decode Windowing</string>
+    <string name="n6603_configure_windowing">Configure Windowing</string>
+    <!-- Decode Centering (Windowing) Strings -->
+    <string name="n6603_centering_mode_title">Mode Configuration</string>
+    <string name="n6603_centering_mode_summary">For Centering Mode</string>
+    <string name="n6603_UpperLeftWindowX">UpperLeftWindowX</string>
+    <string name="n6603_UpperLeftWindowY">UpperLeftWindowY</string>
+    <string name="n6603_LowerRightWindowX">LowerRightWindowX</string>
+    <string name="n6603_LowerRightWindowY">LowerRightWindowY</string>
+    <string name="n6603_UpperLeftWindowX_summary">Sets the upper left X value</string>
+    <string name="n6603_UpperLeftWindowY_summary">Sets the upper left Y value</string>
+    <string name="n6603_LowerRightWindowX_summary">Sets the lower_right X value</string>
+    <string name="n6603_LowerRightWindowY_summary">Sets the lower_right Y value</string>
+    <string name="n6603_Enable_Debug_Window">Enable Debug Window</string>
+    <string name="se4500_dec_picklist_aim_mode">Picklist Mode</string>
+    <string name="se4500_illum_power_level">Illumination Power Level</string>
+    <string name="n3680_aimer_delay">Aimer Delay</string>
+    <string-array name="n6603_centering_mode_entries">
+        <item>Off</item>
+        <item>Around Aimer</item>
+        <item>Field Of View</item>
+        <!--<item>Sub Image</item>-->
+    </string-array>
+    <!-- Decode Centering Modes -->
+    <string-array name="n6603_centering_mode_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <!--<item>3</item>-->
+    </string-array>
+ <!-- Lights Config -->
+    <string-array name="n6603_lights_config_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <!-- urovo add shenpidong begin 2019-05-29 -->
+    <string-array name="se2100_lights_config_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <!-- urovo add shenpidong end 2019-05-29 -->
+    <!-- Lights Mode Strings -->
+    <string-array name="n6603_lights_config_values_titles">
+        <item>Illum/Aimer Off</item>
+        <item>Aimer Only</item>
+        <item>Illum Only</item>
+        <item>Alternating</item>
+        <item>Concurrent</item>
+    </string-array>
+    <!-- urovo add shenpidong begin 2019-05-29 -->
+    <string-array name="se2100_lights_config_values_titles">
+        <item>Illum/Aimer Off</item>
+        <item>Alternating</item>
+        <item>Concurrent</item>
+    </string-array>
+    <!-- urovo add shenpidong end 2019-05-29 -->
+    
+    <string-array name="n6603_multiple_decode_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="n6603_multiple_decode_values_titles">
+        <item>Always allow duplicate</item>
+        <item>Allow duplicate only after the specified time out</item>
+    </string-array>
+    <string name="n6603_multiple_decode_config">Continuous Decode Config</string>
+    <string name="n6603_multiple_decode_mode">Continuous scan mode </string>
+    <string name="n6603_multiple_decode_count">MultiRead count</string>
+    <string name="n6603_multiple_decode_count_sum">Sets the maximum number(1~100 times) of multiple barcodes to read</string>
+    <string name="n6603_multiple_decode_count_hint">1~100 times</string>
+    <string name="n6603_multiple_decode_timeout">Time out(50~60000 ms) allow duplicate barcode </string>
+    <string name="n6603_multiple_decode_timeout_hint">50~60000 ms</string>
+    <string name="n6603_multiple_decode_timeout_sum">This option is ignored if scan mode always allow duplicate.</string>
+    <!-- urovo add shenpidong begin 2019-09-12 -->
+    <string name="n6603_multiple_decode_interval">Interval time(0~5000 ms) allow continuous scan </string>
+    <string name="n6603_multiple_decode_interval_hint">0~5000 ms</string>
+    <string name="n6603_multiple_decode_interval_sum">0</string>
+    <!-- urovo add shenpidong begin 2019-09-12 -->
+    <string name="scanner_cache_enable">Cache Data</string>
+    <string name="scanner_multiple_decode">Basic Multibarcode params</string>
+    <string name="scanner_multiple_decode_sum">Set up Multibarcode specific parameters</string>
+    <string name="scanner_multiple_decode_mode">Basic Multibarcode</string>
+    <string name="scanner_multiple_decode_count">Number of barcodes per scan</string>
+    <string name="scanner_multiple_full_read_mode">Full Read Mode</string>
+    <string name="scanner_multiple_full_read_mode_sum">Only output when at least the number of bar codes set in Bar Codes to Read are decoded</string>
+    <string name="scanner_multiple_decode_separator">Barcode Separator</string>
+    <string name="scanner_cache_config">Barcode Data Cache</string>
+    <string name="scanner_cache_limit_time">Cache timeout</string>
+    <string name="scanner_cache_mode">Auto Clear Cache</string>
+    <string name="scanhandle_toggle_title">Scan Handle</string>
+    <string name="scanhandle_toggle_summary_enable">Enable Scan Handle</string>
+    <string name="scanhandle_toggle_summary_disable">Disable Scan Handle</string>
+    <string name="wired_scan">Wired scan</string>
+    <string name="wired_scan_type_other">other</string>
+    <string name="dec_decode_delay">Delay decode</string>
+    <string name="dec_debug_pic_mode">Debug image</string>
+    <string name="dec_switch_decoder">SwiftDecoder</string>
+    <string name="contiuns">continuous</string>
+    <string name="exposure">Exposure control</string>
+    <string name="lighting">lighting</string>
+    <string name="logMode">log Mode</string>
+    <string name="aimerControl">Aimer control</string>
+    <string name="chooseCameraId">Camera Id</string>
+    <string name="saveBmp">Save Bmp</string>
+    <string name="showBmp">show Bmp</string>
+    <string name="symbology">Symbology</string>
+    <string name="yto_sixlen_off">There is no limit to the length of the output bar code.</string>
+    <string name="yto_sixlen_on">Limited length of output bar code</string>
+    <string name="yto_sixlen">Bar Code Length Limitation</string>
+    <string name="min_code_len">Minimum Output Barcode Length</string>
+    <string name="n6603_Enable_GS_Window">"Special Character GS Code Settings"</string>
+    <string name="scanner_keyboard_copy">"Clipboard"</string>
+    <!-- urovo add shenpidong begin 2019-04-08 -->
+    <string name="scanner_exposure_length_range" translatable="false">"The length can be set from %1$s to %2$s."</string>
+    <!-- urovo add shenpidong end 2019-04-08 -->
+
+    <string name="import_scannersettings_success">import success</string>
+    <string name="import_scannersettings_fail">import fail</string>
+    <string name="export_scannersettings_success">export success</string>
+    <string name="export_scannersettings_fail">export fail</string>
+    <!-- urovo add shenpidong begin 2019-05-29 -->
+    <string name="unknown_input">Unknown Input!</string>
+    <!-- urovo add shenpidong end 2019-05-29 -->
+    <string name="msg_default_status">Scanner engine fails to decode normally</string>
+    <string name="msg_license_status">Scanner Engine working normal</string>
+    <string name="dec_attempt_limit_time">Decoder each image time</string>
+    <string name="low_contrast_improved_alg">Low Contrast Improved algorithm</string>
+    <string name="low_contrast_image_mode">Low Contrast Mode</string>
+    <string name="scanner_udi_format">UDI Data Formatting</string>
+    <string name="scanner_decode_concatenation">ISBT/GS1 Concatenation</string>
+    <string name="scanner_udi_tokensoption">Send Tokens</string>
+    <string name="scanner_udi_tokenseparator">Tokens Separator</string>
+    <string name="scanner_udi_tokensformat">Tokens Format</string>
+    <string name="scanner_decode_all_udi_lable">Allow all UDI lable IDs</string>
+    <string name="scanner_decode_udi_lable_list">Lable IDs</string>
+    <string name="scanner_format_udi_date">UDI Date</string>
+    <string name="scanner_format_udi_date_sum">Format yy-MM-dd Date</string>
+    <string-array name="scanner_udi_code_entries">
+        <item>GS1</item>
+        <item>HIBCC</item>
+        <item>ICCBBA</item>
+        <item>MA</item>
+        <item>AHM</item>
+    </string-array>
+    <string-array name="scanner_concatenation_entries">
+        <item>Disable</item>
+        <item>Enable</item>
+        <item>Autodiscriminate</item>
+    </string-array>
+    <string-array name="scanner_udi_tokensoption_entries">
+        <item>Disable</item>
+        <item>Tokens</item>
+        <item>Barcode And Tokens</item>
+    </string-array>
+    <string-array name="scanner_udi_tokensformat_entries">
+        <item>String</item>
+        <item>XML</item>
+        <item>JSON</item>
+    </string-array>
+    <string-array name="scanner_udi_tokensformat_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="sym_check_digits_entries">
+        <item>One Check Digit</item>
+        <item>Two Check Digits</item>
+    </string-array>
+    <string-array name="sym_check_digits_algorithm_entries">
+        <item>Mod-11-10</item>
+        <item>Mod-10-10</item>
+    </string-array>
+    <string-array name="sym_check_digits_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="low_contrast_image_mode_entries">
+        <item>None</item>
+        <item>low contrast linear symbols</item>
+        <item>low contrast I25</item>
+        <item>low contrast QR, Maxicode and Aztec</item>
+        <item>linear symbols, I25</item>
+        <item>all special low contrast</item>
+    </string-array>
+    <string-array name="low_contrast_image_mode_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="SaveImage_entries">
+        <item>not save</item>
+        <item>save decode success last bmp</item>
+        <item>save to decode last bmp</item>
+        <item>save to decode all bmp</item>
+        <item>save decode success all bmp</item>
+    </string-array>
+    <string-array name="cameraId_entries">
+        <item>Camera0</item>
+        <item>Camera1</item>
+        <item>Camera2</item>
+    </string-array>
+    <string-array name="SaveImage_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="cameraId_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <!-- urovo add by shenpidong begin 2020-10-16 -->
+    <string name="scanner_select_unmatch">The selected Scan Type does not match the current device!</string>
+    <!-- urovo add by shenpidong end 2020-10-16 -->
+    <!-- urovo add shenpidong begin 2019-12-23 -->
+    <string name="scanner_output_mode_both">Keyboard and Intent output</string>
+    <string name="scanner_wedge">Output mode</string>
+    <!-- urovo add shenpidong end 2019-12-23 -->
+    <string name="scanner_symbols_size">Symbols Size</string>
+    <string name="webjump_switch_title">Website recognition and jump</string>
+    <string name="low_power_sleep_mode">Low power mode</string>
+    <string name="sensor_exp_time">Maximum Exposure</string>
+    <string name="sensor_gain">Maximum Gain</string>
+    <string name="sensor_target_white">Target white</string>
+    <string name="c128_outofspec">Out of Spec</string>
+    <string name="sensor_image_contrast">Image contrast</string>
+</resources>

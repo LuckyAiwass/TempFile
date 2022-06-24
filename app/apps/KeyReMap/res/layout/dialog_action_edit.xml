@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/action_edit"
+        style="@style/titleTextTheme"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/common_shape_edit_bg"
+        android:hint="input broadcast action"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/colorTextSummary" />
+
+</RelativeLayout>

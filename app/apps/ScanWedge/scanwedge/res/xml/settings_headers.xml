@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<preference-headers
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <header
+        android:id="@+id/scanner_settings"
+        android:fragment="com.ubx.scanwedge.settings.fragments.ScannerSettings"
+        android:icon="@drawable/launcher_icon"
+        android:title="@string/app_name" />
+    
+    
+    <!-- <header android:icon="@drawable/ic_launcher"
+            android:title="Intent"
+            android:summary="Launches an Intent.">
+        <intent android:action="android.intent.action.VIEW"
+                android:data="http://www.android.com" />
+    </header> -->
+    
+</preference-headers>
+

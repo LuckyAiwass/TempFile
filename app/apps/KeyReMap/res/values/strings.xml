@@ -1,0 +1,118 @@
+<resources>
+
+    <string name="app_name">Key Remap</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- KeyMAP Settings -->
+    <string name="keyboard_settings">Keyboard Settings</string>
+    <string name="title_disable_intercept">Enable intercept key</string>
+    <string name="txt_remap_scans">Scancode and meta key to map from.</string>
+    <string name="txt_remap_scans_input">Press the key to remap</string>
+    <string name="txt_remap_scans_input_used">Key has been mapped or not support, press another one</string>
+    <string name="txt_press_back_to_exit">Press BACK button again, to exit</string>
+    <string name="txt_press_home_to_exit">Press HOME button again, to exit</string>
+    <string name="txt_clear_mapping">clear current mapping list!</string>
+    <string name="action_reset">Reset this mapped key</string>
+    <string name="title_activity">Remap key</string>
+    <string name="title_activity_viewer">Show key remapping list</string>
+    <string name="title_action_down_broadcast">KeyDown Broadcast</string>
+    <string name="title_action_up_broadcast">KeyUp Broadcast</string>
+    <string name="summary_action_edit_alert">Press setting button to edit</string>
+    <string name="summary_action_enable_alert">Press switch button to enable</string>
+    <string name="summary_wakeup_enable_alert">Enable wakeup screen when key pressed</string>
+    <string name="summary_wakeup_disable_alert">Disable wakeup screen when key pressed</string>
+    <string name="title_wakeup_enable">Wakeup</string>
+    <string name="txt_start_activity_noapp">No application selected</string>
+    <string name="input_remap_activity_select">Select application</string>
+    <string name="remap_activity_chooser_title">Select the application to launch</string>
+    <string name="txt_unicode_hint">Enter Unicode to remap</string>
+    <string name="totast_remove_remap_msg">Removed all key remapping entries.</string>
+    <string name="totast_remove_current_remap_msg">Do you want to delete this entry?</string>
+    <string name="totast_remove_current_remap_msg_title">Remove Remapping</string>
+    <string name="totast_do_remap_msg">Remapping type is not yet ready.</string>
+    <string name="txt_remap_keycode_same">Keycode no change, select another one</string>
+    <string name="view_remap_scancode">scancode</string>
+    <string name="view_remap_keycode">keycode</string>
+    <string name="view_remap_char">char</string>
+    <string name="view_remap_action">action</string>
+    <string name="view_remap_meta">meta</string>
+    <string name="view_remap_type">type</string>
+    <string name="input_remap">REMAP!</string>
+    <string name="input_unmap">UNMAP!</string>
+    <string name="back_remap">BACK!</string>
+    <string name="import_config_keys">Import</string>
+    <string name="export_config_keys">Export</string>
+    <string name="exporting_config">Exporting config</string>
+    <string name="importing_config">Importing config</string>
+    <string name="importing_config_failed">Config file no exists!</string>
+    <string name="successed_config">" %1$s success"</string>
+    <string name="failed_config">" %1$s failed"</string>
+    <string name="intent_ext">Intent Extras of Activity</string>
+    <string name="intent_ext_key">Extra Name</string>
+    <string name="intent_ext_value">Extra Value</string>
+    <string name="intent_ext_broadcast">Intent Extras of Broadcast</string>
+    <string name="title_activity_remap">Key Remap</string>
+    <string name="remap_as_keycode">KeyCode</string>
+    <string name="remap_as_activity">Start Application</string>
+    <string name="remap_as_broadcast">Send Broadcast</string>
+    <string name="edit_broadcast">Edit Broadcast</string>
+    <string name="selected_key_name">Selected Key </string>
+    <string name="selected_key_code">key code </string>
+    <string name="dialog_title_attention">Attention</string>
+    <string name="dialog_title_action_edit">Action of Broadcast</string>
+    <string name="dialog_message_remap_code">Remapping keycode is not yet ready!</string>
+    <string name="dialog_message_remap_activity">Remapping application is not yet ready!</string>
+    <string name="dialog_message_remap_broadcast">Remapping broadcast is not yet ready!</string>
+    <string name="dialog_message_intent_delete">Press OK to delete selected item!</string>
+    <string name="dialog_message_edit_broadcast">Editing broadcast is not yet ready!</string>
+    <string name="dialog_message_edit_broadcast_finish">Press OK to save or Press CANCEL to continue editing!</string>
+    <string name="dialog_message_edit_broadcast_abort">Are you sure to abort editing with out saving?</string>
+
+    <string name="text_title_keycode">KeyCode:</string>
+    <string name="text_title_keycode_hint">Press a key firstly!</string>
+    <string name="text_title_keyname">KeyName:</string>
+    <string name="text_title_keyname_hint"> </string>
+    <string name="text_title_remap_type">Remap Type:</string>
+    <string name="text_package_name_hint">application package name</string>
+    <string name="text_broadcast_action_hint">Please input broadcast action</string>
+
+    <string name="dialog_message_exit">Press OK to exit!</string>
+
+    <string name="map_key_code">"KeyCode: %1$s"</string>
+    <string name="map_key_name">"KeyName: %1$s"</string>
+    <string name="map_key_type">"KeyType: %1$s"</string>
+    <string name="map_key_meta_code">"MappedKeyName: %1$s"</string>
+    <string name="map_key_meta_app">"MappedApplication: %1$s"</string>
+    <string name="map_key_down_bc">"BroadcastKeyDown: %1$s"</string>
+    <string name="map_key_up_bc">"BroadcastKeyUp: %1$s"</string>
+    <string name="map_key_wakeup">"Wakeup: %1$s"</string>
+
+    <string name="delete">"Delete"</string>
+
+    <integer-array name="physical_keys" >
+    </integer-array>
+
+    <string name="title_volume_up">Volume up</string>
+    <string name="title_volume_down">Volume down</string>
+    <string name="title_left_scan">Left scan</string>
+    <string name="title_right_scan">Right scan</string>
+    <string name="title_ptt_key">TALK(PTT)</string>
+
+    <string name="title_scan_customize">Scan Customize</string>
+    <string name="title_scan">Scan</string>
+    <string name="title_scan_center">Center Scan</string>
+
+    <string name="title_ptt_broadcast">PTT Broadcast Customize</string>
+    <string name="title_ptt">PTT Action :</string>
+    <string name="str_cancel">Cancel</string>
+    <string name="str_ok">OK</string>
+    <string name="hint_up">up action : </string>
+    <string name="hint_down">down action : </string>
+
+    <string name="text_title_function">  function</string>
+    <string name="text_title_scan">SCAN</string>
+    <string name="text_title_rfid">RFID</string>
+    <string name="CheckBox1">open</string>
+    <string name="str_rfid_enable">Key customization function</string>
+    <string name="sum_rfid_enable">Set key trigger to scan RFID or scan</string>
+</resources>

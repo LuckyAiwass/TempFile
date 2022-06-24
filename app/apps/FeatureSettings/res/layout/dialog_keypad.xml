@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/content"
+        android:text="@string/lockscreen_switch"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Switch
+        android:id="@+id/st_lock"
+        android:layout_alignParentEnd="true"
+        android:padding="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/content"
+        android:id="@+id/recyc"
+        android:layout_margin="16dp"
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"/>
+
+    <TextView
+        android:id="@+id/ok"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/recyc"
+        android:layout_margin="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

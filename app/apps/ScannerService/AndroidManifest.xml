@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.usettings"
+    android:versionCode="2002"
+    android:versionName="V2.0.2_20210528"
+    android:sharedUserId="android.uid.system">
+
+    <!-- android:sharedUserId="android.uid.system" -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="27" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Settings" >
+        <activity
+            android:name="com.android.usettings.Settings"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.android.usettings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                
+            </intent-filter>
+        </activity>
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <activity
+            android:name=".SubSettings"
+            android:parentActivityName="Settings"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.android.usettings" >
+        </activity>
+        <activity
+            android:name="Settings$ScannerSettingsActivity"
+            android:icon="@drawable/ic_settings_scanner"
+            android:label="@string/scanner_settings"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.android.intent.action.SCANNER_SETTINGS" />
+                <action android:name="action.INTERNAL_SCANNER_SETTINGS" />
+                <action android:name="com.ubx.scanner.LICENSE_ACTIVATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.android.usettings.FRAGMENT_CLASS"
+                android:value="com.android.usettings.ScannerSettings" />
+            <meta-data
+                android:name="com.android.usettings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/scanner_settings" />
+            <!-- urovo add begin 2019-03-11 -->
+            <!-- add by tao.he, for insert as settings tile -->
+            <intent-filter android:priority="-3">
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+            </intent-filter>
+            <intent-filter android:priority="-3">
+                <action android:name="com.android.settings.action.SETTINGS"/>
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.homepage" />
+            <meta-data
+                android:name="com.android.settings.title"
+                android:resource="@string/scanner_settings" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_scan_settings" />
+            <!-- urovo add end 2019-03-11 -->
+        </activity>
+        <activity
+            android:name="com.android.usettings.SymbologySettings"
+            android:icon="@drawable/ic_settings_scanner"
+            android:label="@string/scanner_symbology"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.intent.action.SYMBOLOGY_SETTINGS" />
+                <action android:name="action.INTERNAL_SYMBOLOGY_SETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="SymbologySettings$SymbologyPropertiesActivity"
+            android:icon="@drawable/ic_settings_scanner"
+            android:label="@string/scanner_symbology"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.android.intent.action.SYMBOLOGY_PROPERTIES_SETTINGS" />
+                <action android:name="action.INTERNAL_SYMBOLOGY_PROPERTIES_SETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.android.usettings.FRAGMENT_CLASS"
+                android:value="com.android.usettings.SymbologyProperties" />
+            <!--
+                 <meta-data android:name="com.android.usettings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/scanner_symbology" />
+            -->
+        </activity>
+        <activity
+            android:name="com.android.usettings.ScannerTypeSettings"
+            android:icon="@drawable/ic_settings_scanner"
+            android:label="@string/scan_type"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.android.intent.action.SCANNER_TYPE_SETTINGS" />
+                <action android:name="action.INTERNAL_SCANNER_TYPE_SETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.android.usettings.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="action.SUSPENSION_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.android.usettings.FxService"
+            android:exported="true">
+            <intent-filter >
+                <action android:name="com.ubx.barcode.action.SUSPENSION_BUTTON"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.android.server.ScanService"
+            android:exported="true"
+            android:process=":remote"></service>
+        <service android:name=".ImportExoprtService">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="action.EXPORT_IMPORT_SCANNER_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".ImportExoprtReceiver">
+            <intent-filter>
+                <action android:name="action.EXPORT_SCANNER_CONFIG" />
+                <action android:name="action.IMPORT_SCANNER_CONFIG" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

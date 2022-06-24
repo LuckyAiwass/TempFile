@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (c) 2012, Qualcomm Technologies, Inc.
+ All Rights Reserved.
+ Qualcomm Technologies Proprietary and Confidential.
+ Developed by QRD Engineering team.
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:padding="10dip" >
+
+    <ImageView
+        android:id="@+id/update_image"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/icon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/update_prog"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:max="100" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:ellipsize="middle"
+                android:singleLine="true"
+		android:text="@string/update_notification_text"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/prog_text"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:gravity="right"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

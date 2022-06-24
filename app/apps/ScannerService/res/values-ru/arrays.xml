@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- Used in choose sim icon -end-->
+<string-array name="scan_type_entries">
+        <item>opticol</item>
+        <item>symbol</item>
+        <item>honyware</item>
+        <item>se4500</item>
+        <item>ZhDW</item>
+        <item>n3680</item>
+        <item>MJ</item>
+    </string-array>
+    <!-- Do not translate. -->
+    <string-array name="scan_type_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+    <string-array name="linear_security_level_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="upc_ean_security_level_entries">
+        <item>UPC/EAN security level 0</item>
+        <item>UPC/EAN security level 1</item>
+        <item>UPC/EAN security level 2</item>
+        <item>UPC/EAN security level 3</item>
+    </string-array>
+     <string-array name="linear_security_level_entries">
+        <item>Уровень 1</item>
+        <item>Уровень 2</item>
+        <item>Уровень 3</item>
+        <item>Уровень 4</item>
+    </string-array>
+    <string-array name="send_lable_fix_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+     <string-array name="send_lable_fix_entries">
+        <item>None</item>
+        <item>Label prefix</item>
+        <item>Label suffix</item>
+        <item>Label prefix and suffix</item>
+        <item>Formatting</item>
+        <item>Replace</item>
+        <item>Replace and prefix,suffix</item>
+    </string-array>
+    <string-array name="image_coding_format_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="image_coding_format_entries">
+        <item>UTF-8</item>
+        <item>GBK</item>
+        <item>BIG5</item>
+        <item>SHIFT-JIS</item>
+    </string-array>
+    <string-array name="image_inverse_decoder_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="wired_scan_values">
+        <item>3</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="image_inverse_decoder_entries">
+        <item>Только обычные</item>
+        <item>Только инвертированные</item>
+        <item>Автоопределение инверсии</item>
+    </string-array>
+    <string-array name="image_2d_inverse_decoder_entries">
+        <item>Только обычные</item>
+        <item>Только инвертированные</item>
+        <item>Автоопределение инверсии</item>
+    </string-array>
+    <string-array name="image_bar_cades_to_read_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="image_bar_cades_to_read_entries">
+        <item>1 bar codes</item>
+        <item>2 bar codes</item>
+        <item>3 bar codes</item>
+        <item>4 bar codes</item>
+        <item>5 bar codes</item>
+        <item>6 bar codes</item>
+        <item>7 bar codes</item>
+        <item>8 bar codes</item>
+        <item>9 bar codes</item>
+        <item>10 bar codes</item>
+    </string-array>
+    <string-array name="gs_substitution_entries" translatable="false">
+        <item>None</item>
+        <item>[BS]</item>
+        <item>[LF]</item>
+        <item>[CR]</item>
+        <item>[HT]</item>
+    </string-array>
+    <string-array name="scanner_beep_entries" translatable="false">
+        <item>Без звука</item>
+        <item>Обычный</item>
+        <item>Громкий</item>
+    </string-array>
+
+    <string-array name="wired_scan_entries" translatable="false">
+        <item>1D</item>
+        <item>2D</item>
+    </string-array>   
+
+    <string-array name="scanner_triggermode_entries">
+        <item>Мигающий луч</item>
+        <item>Включить луч кнопкой</item>
+        <item>Держать кнопку сканирования</item>
+    </string-array>
+    <string-array name="scanner_triggermode_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

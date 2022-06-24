@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<propertygroup>
+    <!--example  -->
+    <!-- <property id="1000" ScanCode="193" KeyCode="120">136</property> -->
+    <!-- <property id="1001" ScanCode="464" KeyCode="513">135</property> -->
+	<property id="1003" ENABLE="ENABLE_KEYS" KeyCode="0">0</property>
+</propertygroup>

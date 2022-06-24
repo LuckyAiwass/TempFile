@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">按键映射</string>
+    <string name="action_settings">按键映射</string>
+
+    <!-- KeyMAP Settings -->
+    <string name="keyboard_settings">按键映射</string>
+    <string name="title_disable_intercept">允许按键映射</string>
+    <string name="txt_remap_scans">Scancode and meta key to map from.</string>
+    <string name="txt_remap_scans_input">按下按键开始映射</string>
+    <string name="txt_remap_scans_input_used">此按键已被映射或不支持映射,请按下其他按键</string>
+    <string name="txt_press_back_to_exit">再次按下返回键退出</string>
+    <string name="txt_press_home_to_exit">再次按下主页键退出</string>
+    <string name="txt_clear_mapping">重置所有已映射的按键</string>
+    <string name="action_reset">重置该映射的按键</string>
+    <string name="title_activity">映射按键</string>
+    <string name="title_action_down_broadcast">按键按下广播</string>
+    <string name="title_action_up_broadcast">按键抬起广播</string>
+    <string name="title_wakeup_enable">屏幕唤醒</string>
+    <string name="summary_action_enable_alert">点击启用广播</string>
+    <string name="summary_action_edit_alert">点击设置按钮编辑广播内容</string>
+    <string name="summary_wakeup_enable_alert">点击启用按键唤醒功能</string>
+    <string name="summary_wakeup_disable_alert">点击关闭按键唤醒功能</string>
+    <string name="title_activity_viewer">查看映射按键</string>
+    <string name="txt_start_activity_noapp">没有选择应用</string>
+    <string name="input_remap_activity_select">选择应用</string>
+    <string name="remap_activity_chooser_title">选择要运行的应用</string>
+    <string name="txt_unicode_hint">Enter Unicode to remap</string>
+    <string name="totast_remove_remap_msg">已重置按键!</string>
+    <string name="totast_remove_current_remap_msg">确定重置按键？</string>
+    <string name="totast_remove_current_remap_msg_title">重置按键</string>
+    <string name="totast_do_remap_msg">Remapping type is not yet ready.</string>
+    <string name="txt_remap_keycode_same">按键值没有改变，请重新选择按键</string>
+    <string name="view_remap_scancode">扫描值</string>
+    <string name="view_remap_keycode">按键值</string>
+    <string name="view_remap_char">字符</string>
+    <string name="view_remap_action">动作</string>
+    <string name="view_remap_meta">辅助值</string>
+    <string name="view_remap_type">处理值</string>
+    <string name="input_remap">映射按键!</string>
+    <string name="input_unmap">重置按键!</string>
+    <string name="back_remap">退出映射!</string>
+    <string name="import_config_keys">导入</string>
+    <string name="export_config_keys">导出</string>
+    <string name="exporting_config">正在导出...</string>
+    <string name="importing_config">正在导入...</string>
+    <string name="importing_config_failed">配置文件不存在！</string>
+    <string name="successed_config">" %1$s 成功"</string>
+    <string name="failed_config">" %1$s 失败"</string>
+    <string name="intent_ext">应用附加启动参数</string>
+    <string name="intent_ext_key">参数名</string>
+    <string name="intent_ext_value">参数值</string>
+    <string name="intent_ext_broadcast">广播发送参数</string>
+    <string name="title_activity_remap">按键映射</string>
+    <string name="remap_as_keycode">新的按键</string>
+    <string name="remap_as_activity">启动应用</string>
+    <string name="remap_as_broadcast">发送广播</string>
+    <string name="edit_broadcast">编辑广播</string>
+    <string name="selected_key_name">已选中的按键 </string>
+    <string name="selected_key_code">按键值</string>
+    <string name="dialog_title_attention">提示</string>
+    <string name="dialog_title_action_edit">输入广播 ACTION</string>
+    <string name="dialog_message_remap_code">请选择一个需要映射的按键!</string>
+    <string name="dialog_message_remap_activity">请选择一个需要映射的应用!</string>
+    <string name="dialog_message_remap_broadcast">请输入一个需要映射的广播ACTION!</string>
+    <string name="dialog_message_intent_delete">点击确认删除该项参数!</string>
+    <string name="dialog_message_edit_broadcast">广播ACTION不能为空!</string>
+    <string name="dialog_message_edit_broadcast_finish">按确定保存，或者按取消继续编辑!</string>
+
+    <string name="text_title_keycode">按键值:</string>
+    <string name="text_title_keycode_hint">请先按下一个按键!</string>
+    <string name="text_title_keyname">按键名:</string>
+    <string name="text_title_keyname_hint"> </string>
+    <string name="text_title_remap_type">按键映射类型:</string>
+    <string name="text_package_name_hint">应用程序包名</string>
+    <string name="text_broadcast_action_hint">请输入广播ACTION</string>
+
+    <string name="dialog_message_exit">点击确认退出应用!</string>
+    <string name="dialog_message_edit_broadcast_abort">确定不保存修改并返回吗？</string>
+
+    <string name="map_key_code">"按键值：%1$s"</string>
+    <string name="map_key_name">"按键名：%1$s"</string>
+    <string name="map_key_meta_code">"映射的按键：%1$s"</string>
+    <string name="map_key_meta_app">"映射的应用：%1$s"</string>
+    <string name="map_key_type">"映射类型：%1$s"</string>
+    <string name="map_key_down_bc">"按下广播：%1$s"</string>
+    <string name="map_key_up_bc">"抬起广播：%1$s"</string>
+    <string name="map_key_wakeup">"唤醒屏幕：%1$s"</string>
+
+    <string name="delete">"删除"</string>
+
+    <string name="title_volume_up">音量加键</string>
+    <string name="title_volume_down">音量减键</string>
+    <string name="title_left_scan">左扫描键</string>
+    <string name="title_right_scan">右扫描键</string>
+    <string name="title_ptt_key">TALK(PTT)键</string>
+
+    <string name="title_scan_customize">自定义扫描键</string>
+    <string name="title_scan">扫描键</string>
+    <string name="title_scan_center">中间扫描键</string>
+
+    <string name="title_ptt_broadcast">自定义PTT键广播</string>
+    <string name="title_ptt">PTT广播Action :</string>
+    <string name="str_cancel">取消</string>
+    <string name="str_ok">确定</string>
+
+    <string name="text_title_function">  功能</string>
+    <string name="text_title_scan">SCAN</string>
+    <string name="text_title_rfid">RFID</string>
+    <string name="CheckBox1">打开</string>
+    <string name="str_rfid_enable">按键自定义功能</string>
+    <string name="sum_rfid_enable">设置按键触发扫描RFID或SCAN</string>
+</resources>

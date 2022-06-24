@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:key="volume_up"
+        android:title="@string/title_volume_up" />
+
+    <SwitchPreference
+        android:key="volume_down"
+        android:title="@string/title_volume_down" />
+
+    <SwitchPreference
+        android:key="left_scan"
+        android:title="@string/title_left_scan" />
+
+    <SwitchPreference
+        android:key="right_scan"
+        android:title="@string/title_right_scan" />
+
+    <SwitchPreference
+        android:key="ptt_key"
+        android:title="@string/title_ptt_key" />
+</PreferenceScreen>

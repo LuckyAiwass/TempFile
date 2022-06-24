@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/rl_export_nfc"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/iv_export_nfc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_export_nfc"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="9dp"
+                android:src="@drawable/im_export_nfc" />
+
+            <TextView
+                android:id="@id/tv_export_nfc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="9dp"
+                 android:textColor="#595959"
+                android:text="@string/export_nfc" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_export_scan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/iv_export_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_export_scan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="9dp"
+                android:src="@drawable/im_export_scan" />
+
+            <TextView
+                android:id="@id/tv_export_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="9dp"
+                 android:textColor="#595959"
+                android:text="@string/export_scan" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_export_local"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/iv_export_local"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_export_local"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="9dp"
+                android:src="@drawable/im_export_local" />
+
+            <TextView
+                android:id="@id/tv_export_local"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="9dp"
+                android:textColor="#595959"
+                android:text="@string/export_local" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_check_list"
+        android:layout_width="match_parent"
+        android:divider="@color/line"
+        android:dividerHeight="1px"
+        android:layout_height="match_parent" >
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+ScanWege简介
+
+　　ScanWedge是独立于系统扫描服务的App,实现不同APP扫描参数设置需求。参数配置也存储与数据库中，表结构与系统ScannerProvider表结构不一样。
+　　ScanWedge设置界面，分为ScanWedge功能设置和profile参数配置。只有启用ScanWedge功能设置后，才会根据启动的不同APP切换对应的Profile配置参数，更新设置到系统扫描服务中。ScanWedge通过Aidl接口与系统扫描服务通讯。
+　　APP启动切换时由系统发送广播action.NEW_STARTPROCESS_APP，ScanWedge接收广播后加载Profile配置参数并同步到系统扫描服务中。
+　　
+　
+　ScanWege 源代码可以放在sq52中编译　

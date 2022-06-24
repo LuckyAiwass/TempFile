@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.ubx.factorykit"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "FactoryKit" + "_V" + defaultConfig.versionName + "_" +
+                    new Date().format("yyyyMMdd") + ".apk"
+        }
+    }
+
+/*    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+        }
+    }*/
+
+}
+
+dependencies {
+    //implementation files('src/main/jniLibs/frameworks.jar')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-beta05'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation files('src/main/jniLibs/qcrilhook.jar')
+    implementation files('src/main/jniLibs/qcnvitems.jar')
+    implementation files('src/main/jniLibs/qcom.fmradio.jar')
+    implementation files('src/main/jniLibs/qti-telephony-utils.jar')
+    implementation files('src/main/jniLibs/sammanagerlibrary.jar')
+    implementation files('src/main/jniLibs/com.ubx.platform.jar')
+    implementation files('src/main/jniLibs/com.ubx.services.jar')
+    implementation files('src/main/jniLibs/com.ubx.usdk.jar')
+    compileOnly files('src/main/jniLibs/framework.jar')
+    implementation 'com.google.android:flexbox:0.3.0'
+}
+
+preBuild {
+    doLast {
+        def imlFile = file(project.name + ".iml")
+        println 'Change ' + project.name + '.iml order'
+        try {
+            def parsedXml = (new XmlParser()).parse(imlFile)
+            def jdkNode = parsedXml.component[1].orderEntry.find { it.'@type' == 'jdk' }
+            parsedXml.component[1].remove(jdkNode)
+            def sdkString = "Android API " + android.compileSdkVersion.substring("android-".length()) + " Platform"
+            new Node(parsedXml.component[1], 'orderEntry', ['type': 'jdk', 'jdkName': sdkString, 'jdkType': 'Android SDK'])
+            groovy.xml.XmlUtil.serialize(parsedXml, new FileOutputStream(imlFile))
+        } catch (FileNotFoundException e) {
+            // nop, iml not found
+        }
+    }
+}
+
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile) {
+        Set<File> fileSet = options.bootstrapClasspath.getFiles()
+        List<File> newFileList =  new ArrayList<>();
+        //"../framework.jar" 为相对位置，需要参照着修改，或者用绝对位置
+        newFileList.add(new File("src/main/jniLibs/framework.jar"))
+        newFileList.addAll(fileSet)
+        options.bootstrapClasspath = files(newFileList.toArray())
+    }
+}

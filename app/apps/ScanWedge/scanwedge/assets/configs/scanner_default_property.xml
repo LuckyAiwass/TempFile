@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+id -> PropertyID.java defined int
+name -> Settings.java defined String name
+scannertype -> scanner id (* ALL)
+public static final int TYPE_SE955 = 2;
+public static final int TYPE_HONYWARE = 3;
+public static final int TYPE_SE4500 = 4;
+public static final int TYPE_N6703 = 5;
+public static final int TYPE_N3680 = 6;
+public static final int TYPE_N6603 = 8;
+public static final int TYPE_SE2100 = 9;
+public static final int TYPE_IA100 = 10;
+public static final int TYPE_SE4710 = 13;
+public static final int TYPE_SE2707 = 14;
+public static final int TYPE_N603 = 15;
+category  (FORAMT/OUTPUT/READER 与扫描头内部无关) DECODER 需要设置到扫描头内部
+value_type： 属性之类型 INTEGER BOOLEAN STRING RANGE(取值范围) DISCRETE(选择)
+value_min 最小值
+value_max 最大值
+-->
+<propertygroup>
+	<property id="0" name="SCANNER_ENABLE" scannertype="*" category="READER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+    <property id="6" name="SEND_GOOD_READ_BEEP_ENABLE" scannertype="*" category="READER" value_type="DISCRETE" value_min="0" value_max="2">2</property>
+	<property id="7" name="SEND_GOOD_READ_VIBRATE_ENABLE" scannertype="*" category="READER" value_type="BOOLEAN" value_min="0" value_max="1">0</property>
+	<property id="8" name="TRIGGERING_MODES" scannertype="*" category="READER" value_type="DISCRETE" value_min="2" value_max="8">8</property>
+	<property id="9" name="GOOD_READ_BEEP_ENABLE" scannertype="*" category="READER" value_type="DISCRETE" value_min="0" value_max="2">2</property>
+	<property id="10" name="GOOD_READ_VIBRATE_ENABLE" scannertype="*" category="READER" value_type="BOOLEAN" value_min="0" value_max="1">0</property>
+	<property id="35" name="GOOD_READ_BEEP_AUDIO_FILE" scannertype="*" category="READER" value_type="STRING" value_min="0" value_max="1"></property>
+	<property id="11" name="LABEL_APPEND_ENTER" scannertype="*" category="READER" value_type="DISCRETE" value_min="0" value_max="3">1</property>
+	<property id="13" name="TRIGGERING_LOCK" scannertype="*" category="READER" value_type="BOOLEAN" value_min="0" value_max="1">0</property>
+	<property id="104" name="LOW_POWER_SLEEP_MODE" scannertype="*" category="READER" value_type="BOOLEAN" value_min="0" value_max="1">0</property>
+	<property id="105" name="LOW_POWER_SLEEP_TIMEOUT" scannertype="*" category="READER" value_type="RANGE" value_min="15000" value_max="30000">15000</property>
+	<property id="269" name="CHARACTER_DATA_DELAY" scannertype="*" category="READER" value_type="RANGE" value_min="0" value_max="1000">0</property>
+	<property id="270" name="APPEND_ENTER_DELAY" scannertype="*" category="READER" value_type="RANGE" value_min="0" value_max="1000">0</property>
+	<property id="265" name="LABEL_SEPARATOR_ENABLE" scannertype="*" category="READER" value_type="BOOLEAN" value_min="0" value_max="1">0</property>
+	<property id="266" name="LABEL_FORMAT_SEPARATOR_CHAR" scannertype="*" category="READER" value_type="STRING" value_min="0" value_max="127">()</property>
+	<property id="267" name="TRIGGERING_SLEEP_WORK" scannertype="*" category="READER" value_type="BOOLEAN" value_min="0" value_max="1">0</property>
+	<property id="8216" name="SUSPENSION_BUTTON" scannertype="*" category="READER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="8217" name="SCAN_HANDLE" scannertype="*" category="READER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2609" name="OUT_EDITORTEXT_MODE" scannertype="*" category="OUTPUT" value_type="RANGE" value_min="0" value_max="1">0</property>
+	<property id="2610" name="OUT_CLIPBOARD_ENABLE" scannertype="*" category="OUTPUT" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2614" name="OUT_CLIPBOARD_PASTE_ENABLE" scannertype="*" category="OUTPUT" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="3073" name="DEC_DECODE_DELAY" scannertype="*" category="OUTPUT" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="3074" name="DEC_DECODE_DEBUG_MODE" scannertype="*" category="OUTPUT" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2611" name="CACHE_DATA_ENABLE" scannertype="*" category="OUTPUT" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2612" name="CACHE_DATA_LIMIT_ENABLE" scannertype="*" category="OUTPUT" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2613" name="CACHE_DATA_LIMIT_TIME" scannertype="*" category="OUTPUT" value_type="RANGE" value_min="0" value_max="30000">30000</property>
+	<property id="70000" name="WEDGE_KEYBOARD_ENABLE" scannertype="*" category="OUTPUT" value_type="DISCRETE" value_min="0" value_max="3">1</property>
+	<property id="70001" name="WEDGE_KEYBOARD_TYPE" scannertype="*" category="OUTPUT" value_type="DISCRETE" value_min="0" value_max="3">0</property>
+	<property id="70002" name="WEDGE_INTENT_ENABLE" scannertype="*" category="OUTPUT" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="199990" name="WEDGE_INTENT_DELIVERY_MODE" scannertype="*" category="OUTPUT" value_type="INTEGER" value_min="0" value_max="2">2</property>
+	<property id="199991" name="WEDGE_INTENT_FOREGROUND_FLAG" scannertype="*" category="OUTPUT" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="199992" name="WEDGE_INTENT_CATEGORY_NAME" scannertype="*" category="OUTPUT" value_type="STRING" value_min="0" value_max="0">android.intent.category.DEFAULT</property>
+	<property id="200000" name="WEDGE_INTENT_ACTION_NAME" scannertype="*" category="OUTPUT" value_type="STRING" value_min="0" value_max="0">android.intent.ACTION_DECODE_DATA</property>
+	<property id="200001" name="INTENT_LABEL_TYPE_TAG" scannertype="*" category="OUTPUT" value_type="STRING" value_min="0" value_max="0"></property>
+	<property id="200002" name="INTENT_DATA_STRING_TAG" scannertype="*" category="OUTPUT" value_type="STRING" value_min="0" value_max="0">barcode_string</property>
+	<property id="200003" name="INTENT_DECODE_DATA_TAG" scannertype="*" category="OUTPUT" value_type="STRING" value_min="0" value_max="0">barcode</property>
+	<property id="37" name="SEND_LABEL_PREFIX_SUFFIX" scannertype="*" category="FORAMT" value_type="INTEGER" value_min="0" value_max="10">0</property>
+	<property id="38" name="LABEL_PREFIX" scannertype="*" category="FORAMT" value_type="STRING" value_min="0" value_max="0"></property>
+    <property id="39" name="LABEL_SUFFIX" scannertype="*" category="FORAMT" value_type="STRING" value_min="0" value_max="0"></property>
+    <property id="36" name="LABEL_MATCHER_PATTERN" scannertype="*" category="FORAMT" value_type="STRING" value_min="0" value_max="0"></property>
+    <property id="260" name="LABEL_MATCHER_TARGETREGEX" scannertype="*" category="FORAMT" value_type="STRING" value_min="0" value_max="0"></property>
+    <property id="262" name="LABEL_MATCHER_REPLACEMENT" scannertype="*" category="FORAMT" value_type="STRING" value_min="0" value_max="0"></property>
+    <property id="263" name="REMOVE_NONPRINT_CHAR" scannertype="*" category="FORAMT" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="47" name="CODING_FORMAT" scannertype="*" category="FORAMT" value_type="DISCRETE" value_min="0" value_max="8">0</property>
+	<property id="108" name="OUTPUT_HEX_STRING_DATA" scannertype="*" category="FORAMT" value_type="BOOLEAN" value_min="0" value_max="1">0</property>
+	<property id="268" name="TRANSMIT_CODE_ID" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">0</property>
+	<property id="2603" name="DEC_EachImageAttempt_TIME" scannertype="5,8,15" category="DECODER" value_type="RANGE" value_min="125" value_max="1000">125</property>
+	<property id="436289542" name="SPECIFIC_CODE_GS" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="4" name="IMAGE_EXPOSURE_MODE" scannertype="5,8" category="DECODER" value_type="DISCRETE" value_min="0" value_max="1">0</property>
+	<property id="5" name="IMAGE_FIXED_EXPOSURE" scannertype="5,8" category="DECODER" value_type="INTEGER" value_min="1" value_max="7874">200</property>
+	<property id="12" name="IMAGE_PICKLIST_MODE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="14" name="IMAGE_ONE_D_INVERSE" scannertype="13" category="DECODER" value_type="BOOLEAN" value_min="0" value_max="1">0</property>
+	<property id="40" name="LASER_ON_TIME" scannertype="*" category="DECODER" value_type="INTEGER" value_min="1" value_max="100">50</property>
+    <property id="41" name="TIMEOUT_BETWEEN_SAME_SYMBOL" scannertype="2,6,13" category="DECODER" value_type="INTEGER" value_min="1" value_max="100">10</property>
+    <property id="42" name="LINEAR_CODE_TYPE_SECURITY_LEVEL" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">1</property>
+    <property id="43" name="FUZZY_1D_PROCESSING" scannertype="13" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+    <property id="44" name="MULTI_DECODE_MODE" scannertype="5,8,13,15" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+    <property id="45" name="BAR_CODES_TO_READ" scannertype="5,8,13,15" category="DECODER" value_type="INTEGER" value_min="1" value_max="10">1</property>
+    <property id="46" name="FULL_READ_MODE" scannertype="5,8,13,15" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="256" name="CODE39_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="258" name="CODE39_ENABLE_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="259" name="CODE39_SEND_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="261" name="CODE39_FULL_ASCII" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="288" name="CODE39_LENGTH1" scannertype="*" category="DECODER" value_type="RANGE" value_min="1" value_max="55">1</property>
+	<property id="289" name="CODE39_LENGTH2" scannertype="*" category="DECODER" value_type="RANGE" value_min="1" value_max="55">55</property>
+	<property id="290" name="CODE39_Quiet_Zone" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">0</property>
+	<property id="291" name="CODE39_START_STOP" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="292" name="CODE39_SECURITY_LEVEL" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">0</property>
+	<property id="264" name="TRIOPTIC_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="272" name="CODE32_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="275" name="CODE32_SEND_START" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="276" name="C25_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="512" name="D25_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="544" name="D25_LENGTH1" scannertype="*" category="DECODER" value_type="RANGE" value_min="1" value_max="80">2</property>
+	<property id="545" name="D25_LENGTH2" scannertype="*" category="DECODER" value_type="RANGE" value_min="1" value_max="80">50</property>
+	<property id="520" name="M25_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="521" name="M25_ENABLE_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="525" name="M25_SEND_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="526" name="M25_LENGTH1" scannertype="*" category="DECODER" value_type="RANGE" value_min="1" value_max="80">1</property>
+	<property id="527" name="M25_LENGTH2" scannertype="*" category="DECODER" value_type="RANGE" value_min="1" value_max="80">55</property>
+	<property id="522" name="CODE11_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="523" name="CODE11_ENABLE_CHECK" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">1</property>
+	<property id="524" name="CODE11_SEND_CHECK" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="1">0</property>
+	<property id="548" name="CODE11_LENGTH1" scannertype="*" category="DECODER" value_type="RANGE" value_min="1" value_max="80">4</property>
+	<property id="549" name="CODE11_LENGTH2" scannertype="*" category="DECODER" value_type="RANGE" value_min="1" value_max="80">55</property>
+	<property id="528" name="I25_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="530" name="I25_ENABLE_CHECK" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="531" name="I25_SEND_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="552" name="I25_LENGTH1" scannertype="*" category="DECODER" value_type="RANGE" value_min="1" value_max="80">2</property>
+	<property id="553" name="I25_LENGTH2" scannertype="*" category="DECODER" value_type="RANGE" value_min="1" value_max="80">55</property>
+	<property id="554" name="I25_TO_EAN13" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="555" name="I25_QUIET_ZONE" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">0</property>
+	<property id="556" name="I25_SECURITY_LEVEL" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">1</property>
+	<property id="768" name="CODABAR_ENABLE" scannertype="*" category="DECODER" value_type="BOOLEAN" value_min="0" value_max="1">1</property>
+	<property id="773" name="CODABAR_NOTIS" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="774" name="CODABAR_CLSI" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="800" name="CODABAR_LENGTH1" scannertype="*" category="DECODER" value_type="RANGE" value_min="0" value_max="60">4</property>
+	<property id="801" name="CODABAR_LENGTH2" scannertype="*" category="DECODER" value_type="RANGE" value_min="0" value_max="60">55</property>
+	<property id="802" name="CODABAR_ENABLE_CHECK" scannertype="0" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="803" name="CODABAR_SEND_CHECK" scannertype="0" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="804" name="CODABAR_SEND_START" scannertype="0" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="805" name="CODABAR_CONCATENATE" scannertype="0" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1024" name="CODE93_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1056" name="CODE93_LENGTH1" scannertype="*" category="DECODER" value_type="RANGE" value_min="0" value_max="80">2</property>
+	<property id="1057" name="CODE93_LENGTH2" scannertype="*" category="DECODER" value_type="RANGE" value_min="0" value_max="80">55</property>
+	<property id="1032" name="CODE128_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="1060" name="CODE128_LENGTH1" scannertype="*" category="DECODER" value_type="RANGE" value_min="0" value_max="80">2</property>
+	<property id="1061" name="CODE128_LENGTH2" scannertype="*" category="DECODER" value_type="RANGE" value_min="0" value_max="80">40</property>
+	<property id="1062" name="CODE_ISBT_128" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="1036" name="CODE128_GS1_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="1063" name="CODE128_REDUCED_QUIET_ZONE" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">0</property>
+	<property id="1064" name="CODE128_CHECK_ISBT_TABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="1065" name="CODE_ISBT_Concatenation_MODE" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">0</property>
+	<property id="1034" name="CODE128_SECURITY_LEVEL" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">1</property>
+	<property id="1035" name="CODE128_IGNORE_FNC4" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1037" name="GS1128__UCCEAN_Composite" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1280" name="UPCA_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="1282" name="UPCA_SEND_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="1283" name="UPCA_SEND_SYS" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">1</property>
+	<property id="1284" name="UPCA_TO_EAN13" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1288" name="UPCE_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="1289" name="UPCE_SEND_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="1290" name="UPCE_SEND_SYS" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">1</property>
+	<property id="1291" name="UPCE_TO_UPCA" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1292" name="UPCE1_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+    <property id="1293" name="UPCE1_SEND_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+    <property id="1294" name="UPCE1_SEND_SYS" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">1</property>
+    <property id="1295" name="UPCE1_TO_UPCA" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1296" name="EAN13_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="1302" name="EAN13_SEND_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1300" name="EAN13_BOOKLANDEAN" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1301" name="EAN13_BOOKLAND_FORMAT" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="1">0</property>
+	<property id="1304" name="EAN8_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="1305" name="EAN8_SEND_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1307" name="EAN8_TO_EAN13" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1308" name="EAN_EXT_ENABLE_2_5_DIGIT" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="2">0</property>
+	<property id="1309" name="UPC_EAN_SECURITY_LEVEL" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">1</property>
+	<property id="1311" name="UCC_COUPON_EXT_CODE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="3" name="LINEAR_1D_QUIET_ZONE_LEVEL" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">1</property>
+	<property id="1306" name="UCC_REDUCED_QUIET_ZONE" scannertype="13" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="1543" name="UCC_COUPON_EXT_REPORT_MODE" scannertype="13" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="1542" name="UCC_EAN_ZERO_EXTEND" scannertype="13" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1541" name="UCC_EAN_SUPPLEMENTAL_MODE" scannertype="13" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="2607" name="COMPOSITE_UPC_MODE" scannertype="13" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="1544" name="MSI_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1546" name="MSI_REQUIRE_2_CHECK" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="6">0</property>
+	<property id="1547" name="MSI_SEND_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="1548" name="MSI_CHECK_2_MOD_11" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="6">0</property>
+	<property id="1572" name="MSI_LENGTH1" scannertype="*" category="DECODER" value_type="RANGE" value_min="0" value_max="55">4</property>
+	<property id="1573" name="MSI_LENGTH2" scannertype="*" category="DECODER" value_type="RANGE" value_min="0" value_max="55">55</property>
+	<property id="2048" name="GS1_14_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2049" name="GS1_14_TO_UPC_EAN" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2056" name="GS1_LIMIT_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2064" name="GS1_EXP_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2084" name="GS1_EXP_LENGTH1" scannertype="*" category="DECODER" value_type="RANGE" value_min="0" value_max="80">1</property>
+	<property id="2085" name="GS1_EXP_LENGTH2" scannertype="*" category="DECODER" value_type="RANGE" value_min="0" value_max="80">74</property>
+	<property id="2057" name="GS1_LIMIT_Security_Level" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">3</property>
+	<property id="2320" name="US_POSTNET_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2321" name="US_PLANET_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2322" name="US_POSTAL_SEND_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2323" name="USPS_4STATE_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2324" name="UPU_FICS_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2325" name="ROYAL_MAIL_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2326" name="ROYAL_MAIL_SEND_CHECK" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2327" name="AUSTRALIAN_POST_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2328" name="KIX_CODE_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2329" name="JAPANESE_POST_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2331" name="POSTAL_GROUP_TYPE_ENABLE" scannertype="*" category="DECODER" value_type="DISCRETE" value_min="0" value_max="30">0</property>
+	<property id="2330" name="KOREA_POST_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2332" name="Canadian_POSTAL_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2560" name="PDF417_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2568" name="MICROPDF417_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2608" name="COMPOSITE_CC_AB_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+    <property id="2624" name="COMPOSITE_CC_C_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+    <property id="2625" name="COMPOSITE_TLC39_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+    <property id="2626" name="HANXIN_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+    <property id="2627" name="HANXIN_INVERSE" scannertype="13" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="2816" name="DATAMATRIX_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2848" name="DATAMATRIX_LENGTH1" scannertype="*" category="DECODER" value_type="RANGE" value_min="1" value_max="3166">1</property>
+	<property id="2849" name="DATAMATRIX_LENGTH2" scannertype="*" category="DECODER" value_type="RANGE" value_min="1" value_max="3166">1500</property>
+	<property id="2850" name="DATAMATRIX_INVERSE" scannertype="13,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="271" name="DPM_DECODE_MODE" scannertype="5,8,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="103" name="DATAMATRIX_SYMBOL_SIZE" scannertype="5,8,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="2824" name="MAXICODE_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="102" name="MAXICODE_SYMBOL_SIZE" scannertype="5,8,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="2832" name="QRCODE_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2837" name="QRCODE_INVERSE" scannertype="13,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="100" name="QRCODE_SYMBOL_SIZE" scannertype="5,8,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="2836" name="MICROQRCODE_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2840" name="AZTEC_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">1</property>
+	<property id="2841" name="AZTEC_INVERSE" scannertype="13,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="101" name="AZTEC_SYMBOL_SIZE" scannertype="5,8,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="2851" name="DEC_2D_LIGHTS_MODE" scannertype="5,8,13,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="4">3</property>
+	<property id="2852" name="DEC_2D_CENTERING_ENABLE" scannertype="5,8,13,15" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2853" name="DEC_2D_CENTERING_MODE" scannertype="5,8,13,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">0</property>
+	<property id="2854" name="DEC_2D_WINDOW_UPPER_LX" scannertype="5,8,15" category="DECODER" value_type="RANGE" value_min="0" value_max="415">386</property>
+	<property id="2855" name="DEC_2D_WINDOW_UPPER_LY" scannertype="5,8,15" category="DECODER" value_type="RANGE" value_min="0" value_max="319">290</property>
+	<property id="2856" name="DEC_2D_WINDOW_LOWER_RX" scannertype="5,8,15" category="DECODER" value_type="RANGE" value_min="416" value_max="1280">446</property>
+	<property id="2857" name="DEC_2D_WINDOW_LOWER_RY" scannertype="5,8,15" category="DECODER" value_type="RANGE" value_min="320" value_max="800">350</property>
+	<property id="2864" name="DEC_2D_DEBUG_WINDOW_ENABLE" scannertype="*" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2569" name="DEC_ES_EXPOSURE_METHOD" scannertype="5,8" category="DECODER" value_type="DISCRETE" value_min="0" value_max="2">2</property>
+	<property id="2576" name="DEC_ES_TARGET_VALUE" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="1" value_max="255">120</property>
+	<property id="2577" name="DEC_ES_TARGET_PERCENTILE" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="1" value_max="99" >97</property>
+	<property id="2578" name="DEC_ES_TARGET_ACCEPT_GAP" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="1" value_max="50">40</property>
+	<property id="2579" name="DEC_ES_MAX_EXP" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="1" value_max="7874">472</property>
+	<property id="2580" name="DEC_ES_MAX_GAIN" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="1" value_max="4">4</property>
+	<property id="2581" name="DEC_ES_FRAME_RATE" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="1" value_max="30">30</property>
+	<property id="2582" name="DEC_ES_CONFORM_IMAGE" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="0" value_max="1">0</property>
+	<property id="2583" name="DEC_ES_CONFORM_TRIES" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="1" value_max="8">6</property>
+	<property id="2584" name="DEC_ES_SPECULAR_EXCLUSION" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="0" value_max="4">2</property>
+	<property id="2585" name="DEC_ES_SPECULAR_SAT" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="200" value_max="255">240</property>
+	<property id="2592" name="DEC_ES_SPECULAR_LIMIT" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="1" value_max="5">3</property>
+	<property id="2594" name="DEC_ES_FIXED_GAIN" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="1" value_max="4">4</property>
+	<property id="2593" name="DEC_ES_FIXED_EXP" scannertype="5,8" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2595" name="DEC_ES_FIXED_FRAME_RATE" scannertype="5,8" category="DECODER" value_type="RANGE" value_min="1" value_max="30">30</property>
+	<property id="2596" name="DEC_ILLUM_POWER_LEVEL" scannertype="5,8,13,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="10">10</property>
+	<property id="2597" name="DEC_PICKLIST_AIM_MODE" scannertype="6" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2598" name="DEC_PICKLIST_AIM_DELAY" scannertype="6" category="DECODER" value_type="INTEGER" value_min="0" value_max="1000">0</property>
+	<property id="2599" name="DEC_MaxMultiRead_COUNT" scannertype="5,8,15" category="DECODER" value_type="INTEGER" value_min="1" value_max="2">2</property>
+	<property id="2600" name="DEC_Multiple_Decode_TIMEOUT" scannertype="5,8,15" category="DECODER" value_type="INTEGER" value_min="50" value_max="60000">5000</property>
+	<property id="2602" name="DEC_Multiple_Decode_INTERVAL" scannertype="5,8,15" category="DECODER" value_type="INTEGER" value_min="50" value_max="5000">50</property>
+	<property id="2601" name="DEC_Multiple_Decode_MODE" scannertype="5,8,15" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2825" name="DOTCODE_ENABLE" scannertype="5,8,13,15" category="DECODER" value_type="INTEGER" value_min="0" value_max="1">0</property>
+	<property id="2628" name="DEC_OCR_MODE" scannertype="5,8,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="3">0</property>
+	<property id="2629" name="DEC_OCR_TEMPLATE" scannertype="5,8,15" category="DECODER" value_type="DISCRETE" value_min="0" value_max="4">1</property>
+	<property id="2630" name="DEC_OCR_USER_TEMPLATE" scannertype="5,8,15" category="DECODER" value_type="STRING" value_min="0" value_max="0"></property>
+	<property id="106" name="LOW_CONTRAST_IMPROVED" scannertype="15" category="DECODER" value_type="RANGE" value_min="0" value_max="5">0</property>
+	<property id="107" name="LOW_CONTRAST_IMPROVED_ALGORITHM" scannertype="15" category="DECODER" value_type="INTEGER" value_min="0" value_max="0">0</property>
+
+</propertygroup>

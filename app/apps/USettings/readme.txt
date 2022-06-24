@@ -1,0 +1,3 @@
+关于USettings应用分支的使用:
+
+一致使用jenkins_debug分支

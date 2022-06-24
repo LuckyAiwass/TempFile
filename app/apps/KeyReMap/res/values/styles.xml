@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <!-- Customize your theme here. -->
+       <!-- <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimary</item> -->
+        <item name="android:colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="titleTextTheme">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">12sp</item>
+    </style>
+
+    <style name="summaryTextTheme">
+        <item name="android:textColor">@color/colorTextSummary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">12sp</item>
+    </style>
+
+    <style name="keyNameTheme">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">8sp</item>
+        <item name="android:paddingRight">8sp</item>
+        <item name="android:paddingTop">8sp</item>
+        <item name="android:paddingBottom">8sp</item>
+    </style>
+
+    <style name="keyListTextPrimary">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">2sp</item>
+    </style>
+
+    <style name="keyListTextSummary">
+        <item name="android:textColor">@color/colorLightGray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">2sp</item>
+    </style>
+
+</resources>

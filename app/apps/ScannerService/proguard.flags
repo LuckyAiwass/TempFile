@@ -1,0 +1,6 @@
+-keep class com.android.usettings.*Fragment
+-keep class com.android.usettings.*Settings
+-keep class com.ubx.decoder.**{*;}
+-keep class com.ubx.decoder.HSMDecodeResult
+-keep class com.ubx.decoder.BarcodeReader
+-keep class com.ubx.decoder.SymbologyId

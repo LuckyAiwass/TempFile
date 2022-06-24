@@ -1,0 +1,230 @@
+package com.ubx.factorykit.Fingerprint;
+
+import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
+import android.support.v4.view.LayoutInflaterFactory;
+import android.app.AlertDialog;
+import android.os.Bundle;
+import android.os.Message;
+
+import com.ubx.factorykit.R;
+import com.ubx.factorykit.Utilities;
+
+import android.app.Activity;
+import android.text.format.Time;
+import android.util.Log;
+import android.view.Menu;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.TextView;
+import android.content.Context;
+import android.widget.Toast;
+import android.app.KeyguardManager;
+import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
+import android.support.v4.os.CancellationSignal;
+public class Fingerprint extends Activity {
+	String TAG = "Fingerprint";
+
+    private Context mContext;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mContext = this;
+        setResult(RESULT_CANCELED);
+        onFingerprintClick();
+    }
+    public void onFingerprintClick(){
+
+    callFingerPrint(new Fingerprint.OnCallBackListenr() {
+            AlertDialog dialog;
+            @Override
+            public void onSupportFailed() {
+                showToast("当前设备不支持指纹");
+            }
+
+            @Override
+            public void onInsecurity() {
+                showToast("当前设备未处于安全保护中");
+            }
+
+            @Override
+            public void onEnrollFailed() {
+                showToast("请到设置中设置指纹");
+            }
+
+            @Override
+            public void onAuthenticationStart() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                View view = LayoutInflater.from(mContext).inflate(R.layout.layout_fingerprint,null);
+                initView(view);
+                builder.setView(view);
+                builder.setCancelable(false);
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        handler.removeMessages(0);
+                        cancel();
+                    }
+                });
+                dialog = builder.create();
+                dialog.show();
+            }
+
+            @Override
+            public void onAuthenticationError(int errMsgId, CharSequence errString) {
+                //showToast(errString.toString());
+                if (dialog != null  &&dialog.isShowing()){
+                    dialog.dismiss();
+                    handler.removeMessages(0);
+                }
+            }
+
+            @Override
+            public void onAuthenticationFailed() {
+                showToast("设备正常");
+                if (dialog != null  &&dialog.isShowing()){
+                    dialog.dismiss();
+                    handler.removeMessages(0);
+                }
+                cancel();
+                setResult(RESULT_OK);
+                Utilities.writeCurMessage(mContext, TAG, "Pass");
+                finish();
+	        
+            }
+
+            @Override
+            public void onAuthenticationHelp(int helpMsgId, CharSequence helpString) {
+                showToast(helpString.toString());
+            }
+
+            @Override
+            public void onAuthenticationSucceeded(FingerprintManagerCompat.AuthenticationResult result) {
+                showToast("解锁成功");
+                if (dialog != null  &&dialog.isShowing()){
+                    dialog.dismiss();
+                    handler.removeMessages(0);
+                }
+                setResult(RESULT_OK);
+                Utilities.writeCurMessage(mContext, TAG, "Pass");
+                finish();
+
+            }
+        });
+    }
+    private Handler handler= new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.what == 0){
+                int i = postion % 5;
+                if (i == 0){
+                    tv[4].setBackground(null);
+                    tv[i].setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                }
+                else{
+                     tv[i].setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                     tv[i-1].setBackground(null);
+                }
+                postion++;
+                handler.sendEmptyMessageDelayed(0,100);
+            }
+        }
+    };
+    TextView[] tv = new TextView[5];
+    private int postion = 0;
+    private void initView(View view) {
+        postion = 0;
+        tv[0] = (TextView) view.findViewById(R.id.tv_1);
+        tv[1] = (TextView) view.findViewById(R.id.tv_2);
+        tv[2] = (TextView) view.findViewById(R.id.tv_3);
+        tv[3] = (TextView) view.findViewById(R.id.tv_4);
+        tv[4] = (TextView) view.findViewById(R.id.tv_5);
+        handler.sendEmptyMessageDelayed(0,100);
+    }
+
+
+    public void showToast(String name ){
+        Toast.makeText(Fingerprint.this,name,Toast.LENGTH_SHORT).show();
+    }
+
+
+    public  CancellationSignal cancellationSignal;
+
+    public   void callFingerPrint(final OnCallBackListenr listener){
+        FingerprintManagerCompat managerCompat = FingerprintManagerCompat.from(mContext);
+        if (!managerCompat.isHardwareDetected()){ //判断设备是否支持
+            if (listener != null)
+                listener.onSupportFailed();
+            return;
+        }
+		/*
+        KeyguardManager keyguardManager =(KeyguardManager)mContext.getSystemService(mContext.KEYGUARD_SERVICE);
+        if (!keyguardManager.isKeyguardSecure()) {//判断设备是否处于安全保护中
+            if (listener != null)
+            listener.onInsecurity();
+            return;
+        }
+        if (!managerCompat.hasEnrolledFingerprints()){ //判断设备是否已经注册过指纹
+            if (listener != null)
+                listener.onEnrollFailed(); //未注册
+            return;
+        }
+        */
+        if (listener != null)
+            listener.onAuthenticationStart(); //开始指纹识别
+        cancellationSignal  = new CancellationSignal(); //必须重新实例化，否则cancel 过一次就不能再使用了
+        managerCompat.authenticate(null,0,cancellationSignal,new FingerprintManagerCompat.AuthenticationCallback(){
+             // 当出现错误的时候回调此函数，比如多次尝试都失败了的时候，errString是错误信息，比如华为的提示就是：尝试次数过多，请稍后再试。
+             @Override
+             public void onAuthenticationError(int errMsgId, CharSequence errString) {
+                 if (listener != null)
+                     listener.onAuthenticationError(errMsgId ,errString );
+             }
+
+             // 当指纹验证失败的时候会回调此函数，失败之后允许多次尝试，失败次数过多会停止响应一段时间然后再停止sensor的工作
+             @Override
+             public void onAuthenticationFailed() {
+                 if (listener != null)
+                     listener.onAuthenticationFailed();
+             }
+
+             @Override
+             public void onAuthenticationHelp(int helpMsgId, CharSequence helpString) {
+                 if (listener != null)
+                     listener.onAuthenticationHelp(helpMsgId,helpString);
+             }
+
+             // 当验证的指纹成功时会回调此函数，然后不再监听指纹sensor
+             @Override
+             public void onAuthenticationSucceeded(FingerprintManagerCompat.AuthenticationResult result) {
+                 if (listener != null)
+                     listener.onAuthenticationSucceeded(result);
+             }
+         ;
+        },null);
+
+    }
+    interface  OnCallBackListenr{
+        void onSupportFailed();
+        void onInsecurity();
+        void onEnrollFailed();
+        void onAuthenticationStart();
+        void onAuthenticationError(int errMsgId, CharSequence errString);
+        void onAuthenticationFailed();
+        void onAuthenticationHelp(int helpMsgId, CharSequence helpString);
+        void onAuthenticationSucceeded(FingerprintManagerCompat.AuthenticationResult result);
+    }
+
+    public   void cancel(){
+        if (cancellationSignal != null)
+            cancellationSignal.cancel();
+    }
+
+
+}

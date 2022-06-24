@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites>
+  <favorite container="-101" screen="0" x="0" y="0" packageName="com.android.settings" className="com.android.settings.Settings"/>
+  <favorite container="-101" screen="1" x="1" y="0" packageName="com.android.mms" className="com.android.mms.ui.ConversationList"/>
+  <favorite container="-101" screen="3" x="3" y="0" packageName="com.android.chrome" className="com.google.android.apps.chrome.Main"/>
+  <favorite container="-101" screen="4" x="4" y="0" packageName="org.codeaurora.snapcam" className="com.android.camera.CameraLauncher"/>
+  <folder title="@string/google" screen="0" x="0" y="3">
+      <favorite packageName="com.google.android.apps.maps" className="com.google.android.maps.MapsActivity"/>
+      <favorite packageName="com.google.android.gm" className="com.google.android.gm.ConversationListActivityGmail"/>
+      <favorite packageName="com.google.android.youtube" className="com.google.android.apps.youtube.app.WatchWhileActivity"/>
+      <favorite packageName="com.google.android.googlequicksearchbox" className="com.google.android.googlequicksearchbox.SearchActivity"/>
+  </folder>
+  <folder title="@string/urovo_folder_title" screen="0" x="1" y="3">
+      <favorite packageName="com.ubx.scanwedge" className="com.ubx.scanwedge.settings.activity.ScanWedgeProfileSubSettings"/>
+      <favorite packageName="com.urovo.bluetooth.scanner" className="com.example.maintools.mainpage.FirstPageActivity"/>
+      <favorite packageName="com.udroid.featuresettings" className="com.udroid.featuresettings.activity.MainActivity"/>
+      <favorite packageName="com.urovo.appmarket" className="com.urovo.appmarket.ui.home.splash.SplashActivity"/>
+  </folder>
+  <favorite screen="0" x="2" y="3" packageName="com.example.urovoscan" className="com.example.urovoscan.MainActivity"/>
+  <favorite screen="0" x="3" y="3" packageName="com.android.vending" className="com.android.vending.AssetBrowserActivity"/>
+  <appwidget screen="0" x="0" y="0" spanX="4" spanY="1" packageName="com.android.chrome" className="org.chromium.chrome.browser.searchwidget.SearchWidgetProvider"/>
+</favorites>

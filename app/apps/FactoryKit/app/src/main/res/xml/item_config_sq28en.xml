@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2011-2013, Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+<FactoryTest>
+    <FunctionItem
+        name="Build Info"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.BuildInfo"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="LED"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.FourLed"
+        parameter="" >
+    </FunctionItem>
+
+    <FunctionItem
+        name="Buzzer"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Fengmq"
+        parameter="" >
+    </FunctionItem>
+
+    <FunctionItem
+        name="Touch screen"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.TouchPanelEdge"
+        parameter="" >
+    </FunctionItem>
+
+    <FunctionItem
+        name="keyboard"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Keypad"
+        parameter="KeyMode=0" >
+    </FunctionItem>
+    <FunctionItem
+        name="Rear camera"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.CameraBack"
+        parameter="AutoFocus=false" >
+    </FunctionItem>
+    <FunctionItem
+        name="Display"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.LCM"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="SIM1"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.SIM1"
+        parameter="service=intent.SIM1.SIM1Service;ServiceDelay=10000;" >
+    </FunctionItem>
+    <FunctionItem
+        name="SIM2"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.SIM2"
+        parameter="service=intent.SIM2.SIM2Service;ServiceDelay=10000;" >
+    </FunctionItem>
+
+    <FunctionItem
+        name="Bluetooth"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Bluetooth"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="Wi-Fi"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.WiFi"
+        parameter="service=intent.WiFi.WiFiService;ServiceDelay=0;" >
+    </FunctionItem>
+    <FunctionItem
+        name="Speaker"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Speaker"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="主MIC"
+        auto="true"
+        enable="false"
+        packageName="com.ubx.factorykit.TransmitterReceiver"
+        parameter="" >
+    </FunctionItem>
+
+    <FunctionItem
+        name="PSAM"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.PSAM"
+        parameter="" >
+    </FunctionItem >
+    <FunctionItem
+        name="GPS"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.GPS"
+        parameter="service=intent.GPS.GpsService;timeout=150000;ServiceDelay=2000" >
+    </FunctionItem>
+    <FunctionItem
+        name="Charging"
+        auto="true"
+        enable="true"
+        packageName="com.ubx.factorykit.Battery"
+        parameter="" >
+    </FunctionItem>
+    <FunctionItem
+        name="OTG"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.Otg"
+        ></FunctionItem>
+    <FunctionItem
+        name="ICC"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.ICC"
+    ></FunctionItem>
+    <FunctionItem
+        name="MAG"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.MagCard"
+    ></FunctionItem >
+    <FunctionItem
+        name="PICC"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.Picc"
+    ></FunctionItem >
+    <FunctionItem
+        name="PinPad"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.Pinpad"
+        ></FunctionItem >
+    <FunctionItem
+        name="T card"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.TCard"
+    ></FunctionItem>
+
+    <FunctionItem
+        name="Scan"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.Scan">
+    </FunctionItem>
+    <FunctionItem
+        name="Restore factory settings"
+        enable="true"
+        auto="true"
+        packageName="com.ubx.factorykit.MasterClear"
+        parameter=""
+    ></FunctionItem>
+</FactoryTest>

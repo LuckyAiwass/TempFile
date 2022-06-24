@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (c) 2011-2012, Qualcomm Technologies, Inc.
+ All Rights Reserved.
+ Qualcomm Technologies Proprietary and Confidential.
+ Developed by QRD Engineering team.
+-->
+<resources>
+
+    <string name="app_name">系统升级</string>
+    <string name="title_choose_update_from">升级类型:</string>
+    <string name="msg_reboot">确定更新系统?</string>
+    <string name="title_dialog_alert">警告</string>
+    <string name="msg_no_update">你的系统已经是最新.</string>
+    <string name="msg_no_file_explore">没有选择更新的工具.</string>
+    <string name="msg_pick_update">请选择一个更新文件.</string>
+    <string name="menu_refresh">刷新</string>
+    <string name="menu_settings">设置</string>
+    <string name="menu_install">安装更新</string>
+    <string name="menu_detail">更新详情</string>
+    <string name="title_getupdate">获取更新</string>
+    <string name="msg_getupdate">正在从服务器获取更新 ...</string>
+    <string name="msg_startInstall">开始下载和安装这个更新吗?</string>
+    <!-- 有最新的软件更新可以安装 -->
+    <string name="msg_start_download">新的软件升级可用于您的设备，按确定开始下载。</string>
+    <string name="hint_server_url">服务器地址</string>
+    <string name="text_server_url">服务器地址:</string>
+    <string name="title_server_url">服务器设置</string>
+    <string name="info_description">描述: %1$s</string>
+    <string name="info_size">大小: %1$s</string>
+    <string name="info_version">版本: %1$s</string>
+    <string name="info_delta">这是一个从版本 %1$s到版本%2$s的差分更新包.</string>
+    <string name="msg_install">下载安装更新中 ...请不要取消.</string>
+    <string name="msg_not_install">下载安装更新失败.</string>
+    <string name="msg_install_last">该更新下载后未被安装，是否安装并重新启动?</string>
+    <string name="msg_no_sdcard">请插入SD卡!</string>
+    <string name="btn_download">下载</string>
+    <string name="btn_pause">暂停</string>
+    <string name="btn_cancel">取消</string>
+    <string name="toast_task_pause">任务下次启动时会继续下载</string>
+    <string name="toast_task_cancel">下载被取消</string>
+    <string name="toast_task_failed">任务下载失败!</string>
+    <string name="toast_upgrade_failed">升级失败!</string>
+    <string name="toast_upgrade_reboot">设备稍后将会重新启动...</string>
+    <string name="dialog_update_title">请稍候</string>
+    <string name="dialog_update_msg">正在搜索升级包...</string>
+    <string name="dialog_update_not_found">未找到升级包</string>
+    <string name="msg_no_network">没有连接网络.</string>
+    <string name="dialog_verify_title">验证升级包</string>
+    <string name="msg_not_right_file_type">这个文件不是正确的升级包.</string>
+    <string name="auto_request_ota">自动检查更新</string>
+    <string name="auto_update_prefs_title">检查更新</string>
+    <string name="update_timeout_prefs_title">预定时间</string>
+    <string name="auto_bootcompleted_check">开机检查</string>
+    <string name="auto_scheduled_check">预定时间检查</string>
+    <string name="auto_download_ota">自动下载更新</string>
+    <string name="download_package_damaged">升级包验签失败，已经删除，请重新下载!</string>
+    <string name="download_ota_check_fail">升级包验签失败，已删除升级包!</string>
+    <string name="auto_bootcompleted_check_summary">您的软件更新将在系统启动完成后检查.</string>
+    <string name="update_timeout_prefs_summary">您的软件更新将在设置的时间进行检查.</string>
+    <string name="download_ota_enable">设备OTA升级已禁用!</string>
+    <string name="update_check_title">检查更新</string>
+    <string name="check_manual">手动</string>
+    <string name="check_on_boot">每次启动</string>
+    <string name="check_four_daily">每天四次</string>
+    <string name="check_twice_daily">每天两次</string>
+    <string name="check_daily">每天一次</string>
+    <string name="check_weekly">每周一次</string>
+    <string name="check_bi_weekly">两周一次</string>
+    <string name="check_monthly">每月一次</string>
+    <string name="notice">远程更新</string>
+    <string name="notice_summary">\t\t请确保设备的电量在50%以上，以防止升级过程中的升级失败。.</string>
+    <string name="battery_low_notcharging">电量太低。\n请在下载安装更新时保持设备连接充电器。</string>
+    <string name="battery_notcharging">在安装新的更新时，请保持设备连接充电器</string>
+    <string name="updating">正在更新,请勿重启或关机!</string>
+    <string name="update_progress">更新进度...</string>
+    <string name="install_success">更新成功.</string>
+    <string name="install_failed">更新失败.</string>
+    <string name="verify_failure">验证失败。请选择有效的更新文件.</string>
+    <string name="update_notification_text">  升级中...</string>
+    <string name="wifi_or_mobiledata_notification">当前处于移动数据，确认下载?</string>
+    <string name="msg_updating_now">设备正在升级，请勿重复操作!</string>
+    <string name="msg_update_successfully">升级成功，请重启系统!</string>
+    <string name="title_copyotapackage">拷贝升级包</string>
+    <string name="msg_copyotapackage">正在拷贝升级包，请稍等...</string>
+    <string name="system_update_notification_title">系统可升级...</string>
+    <string name="system_update_notification_message">系统更新，请点击进行升级!</string>
+    <string name="btn_later">稍后升级</string>
+    <string name="update_display">查看</string>
+    <string name="upgrade_tip_msg">新版本升级,请保存数据并充电</string>
+    <plurals name="hour">
+        <item quantity="one">%1$s小时</item>
+        <item quantity="other">%1$s小时</item>
+    </plurals>
+    <plurals name="minute">
+        <item quantity="one">%1$s分钟</item>
+        <item quantity="other">%1$s分钟</item>
+    </plurals>
+    <plurals name="second">
+        <item quantity="one">%1$s秒钟</item>
+        <item quantity="other">%1$s秒钟</item>
+    </plurals>
+    <string name="update_time_interval_summary">每隔%1$s检测一次</string>
+</resources>

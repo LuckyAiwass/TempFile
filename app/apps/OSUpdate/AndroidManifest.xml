@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (c) 2011-2012 Qualcomm Technologies, Inc.  All Rights Reserved.
+ Qualcomm Technologies Proprietary and Confidential.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ubx.update"
+    android:versionCode="61"
+    android:versionName="6.1"
+    android:sharedUserId="android.uid.system">
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="27" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/Dialogstyle">
+        <activity android:name=".UpdateDialog" >
+            <intent-filter>
+                <action android:name="android.settings.SYSTEM_UPDATE" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.settings.SYSTEM_UPDATE_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+	    <intent-filter>
+                <action android:name="android.settings.SYSTEM_UPDATE_SETTINGS_UROVO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".InstallReceiver"
+            android:theme="@style/Dialogstyle"
+            android:launchMode="singleInstance" 
+            android:screenOrientation="nosensor" >
+            <intent-filter>
+                <action android:name="com.ubx.update.REBOOT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.ubx.update.REBOOT_DELTA" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".UpdateSettings" 
+                  android:theme="@style/MmsNewStyleTheme"/>
+        <activity
+            android:name=".UpdateViewActivity"
+            android:theme="@style/MmsNewStyleTheme"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".RemoteActivity"
+            android:theme="@style/MmsNewStyleTheme"
+            android:screenOrientation="nosensor" >
+            <intent-filter>
+                <action android:name="android.settings.SYSTEM_UPDATE_NETWORK" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UpdateProgressDialog"
+            android:launchMode="singleInstance" 
+            android:theme="@style/Dialogstyle"
+            android:screenOrientation="nosensor" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ConfirmDownloadDialog"
+            android:theme="@style/Dialogstyle"
+            android:launchMode="singleInstance" 
+            android:screenOrientation="nosensor" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.ConfirmDownloadDialog" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+	<activity
+            android:name=".ConfirmRebootDialog"
+            android:theme="@style/Dialogstyle"
+            android:launchMode="singleInstance"
+            android:screenOrientation="nosensor" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.ConfirmRebootDialog" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".StartUpdate" >
+            <intent-filter>
+                <action android:name="com.android.suc.startupdate" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.osupdate.upgraderom" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.KQ_OSUPDATE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".NotificationReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.urovo.systemupgrade.NOTIFICATION" />
+                <action android:name="ACTION_UPDATE_CHECK_TESTING" />
+                <action android:name="ACTION_UPDATE_OTA_SERVER_URL" />
+                <action android:name="android.intent.DEVICE_OTA_MANAGER" />
+                <action android:name="com.ubx.update.TIMINGUPDATECHECK" />
+                <action android:name="com.ubx.update.RANGETIMEUPDATE" />
+                <action android:name="udroid.action.network.changed" />
+		<action android:name="com.ubx.update.MODIFY_SCHEDULED_TIME_INTERVAL" />
+            </intent-filter>
+             <intent-filter>
+                <action android:name="com.urovo.tms_Host" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="action.OTA_UPDATE_DELAYED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".NotificationService" >
+            <intent-filter>
+                <action android:name="com.urovo.systemupgrade.NOTIFICATION_SERVICE" />
+                <action android:name="system.updater.service.UpdateCheckService" />
+            </intent-filter>
+    	</service>
+	<service android:name=".service.BroadcastRegisterService" >
+            <intent-filter>
+                <action android:name="com.urovo.systemupgrade.BROADCAST_REGISTER" />
+            </intent-filter>
+        </service>
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+    <uses-permission android:name="android.permission.MASTER_CLEAR" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+</manifest>

@@ -1,0 +1,298 @@
+package com.ubx.factorykit.PSAM;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.device.IccManager;
+
+import com.ubx.factorykit.R;
+import com.ubx.factorykit.Utilities;
+import com.ubx.factorykit.Values;
+
+public class PSAM extends Activity {
+	private EditText mNo;
+	private IccManager mIccManager;
+	private Button mRead;
+	private static Context mContext;
+	private boolean fflag = false;
+	private boolean isDounbleCard = false;
+
+	private static final String TAG = "IC";
+	private Button read1;
+	private Button read2;
+	private boolean isReading = false;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+
+		super.onCreate(savedInstanceState);
+
+		setContentView(R.layout.ic);
+		if (Utilities.getBuildProject().equals("SQ27T") || Utilities.getBuildProject().equals("SQ27C") || Utilities.getBuildProject().equals("SQ31Q")
+				||Utilities.getBuildProject().equals("SQ27TE")||Utilities.getBuildProject().equals("SQ27TC") || Utilities.getBuildProject().equals("SQ27TD"))
+			isDounbleCard = true;
+		
+		initView();
+	}
+	
+	private void initView(){
+		OnClickListener ocl = new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				if (view == read1) {
+					readSam(0);
+				} else if (view == read2) {
+					readSam(1);
+				}
+
+			}
+		};
+		LinearLayout readLayout = (LinearLayout) findViewById(R.id.read_layout);
+		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT,
+				LayoutParams.MATCH_PARENT, 1);
+		read1 = new Button(this);
+		read1.setLayoutParams(lp);
+		read1.setOnClickListener(ocl);
+		readLayout.addView(read1);
+		if (isDounbleCard) {
+			read1.setText("read SAM1");
+			read2 = new Button(this);
+			read2.setLayoutParams(lp);
+			read2.setText("read SAM2");
+			read2.setOnClickListener(ocl);
+			readLayout.addView(read2);
+		} else {
+			read1.setText("read SAM");
+		}
+		
+		mNo = (EditText) findViewById(R.id.icc);
+		mNo.setText("");
+
+		mIccManager = new IccManager();
+
+		/*
+		 * mRead = (Button) findViewById(R.id.read);
+		 * mRead.setOnClickListener(new OnClickListener() {
+		 * 
+		 * @Override public void onClick(View arg0) { // TODO Auto-generated
+		 * method stub if(mIccReader == null) { mIccReader = new
+		 * IccReaderThread("ReaderThread"); mIccReader.start(); } } });
+		 */
+
+		Button pass = (Button) findViewById(R.id.pass);
+		pass.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				pass();
+			}
+		});
+
+		Button fail = (Button) findViewById(R.id.fail);
+		fail.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+
+				fail(null);
+			}
+		});
+	}
+
+	@Override
+	public void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		fflag = true;
+	}
+
+	@Override
+	public void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+
+		if (mIccManager != null) {
+			mIccManager.IccClose();
+			// mIccManager = null;
+		}
+	}
+
+	public void pass() {
+
+		setResult(RESULT_OK);
+		finish();
+	}
+
+	public void fail(Object msg) {
+		setResult(RESULT_CANCELED);
+		finish();
+	}
+
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		fflag = false;
+	}
+
+	/*
+	 * Convert byte[] to hex
+	 * string.这里我们可以将byte转换成int，然后利用Integer.toHexString(int)来转换成16进制字符串。
+	 * 
+	 * @param src byte[] data
+	 * 
+	 * @return hex string
+	 */
+	public String bytesToHexString(byte[] src) {
+		StringBuilder stringBuilder = new StringBuilder("");
+		if (src == null || src.length <= 0) {
+			return null;
+		}
+		for (int i = 0; i < src.length; i++) {
+			int v = src[i] & 0xFF;
+			String hv = Integer.toHexString(v);
+			if (hv.length() < 2) {
+				stringBuilder.append(0);
+			}
+			stringBuilder.append(hv);
+		}
+		return stringBuilder.toString();
+	}
+
+	private String lastType = "";
+
+	private boolean onDataReceivedF(final byte[] content, final String type) {
+		Log.i("mIccManager", "-------onDataReceivedF---------------");
+
+		/*if (lastType.equals(type))
+			return false;*/
+		if (fflag == true)
+			return false;
+
+		runOnUiThread(new Runnable() {
+			public void run() {
+				if (content != null) {
+					// mNo.setText("");
+
+					String contenta = bytesToHexString(content);
+					if (contenta == null) {
+						// mNo.setText("");
+					} else {
+						int len = contenta.length();
+						mNo.append(type);
+						mNo.append(contenta);
+						mNo.append("\n");
+//						lastType = type;
+					}
+				}
+			}
+		});
+		return true;
+	}
+
+	public void readSam(int id) {
+		if(isReading) return;
+		final int slot = id;
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				isReading = true;
+				Log.i("mIccManager", "-------run---------------");
+				// 4.select solt one
+				int status = mIccManager.IccSelect((char) slot);
+				Log.i(TAG, "IccSelect -------- " + status);
+				if (status == 1) {
+					isReading = false;
+					return;
+				}
+
+				boolean ret = mIccManager.IccOpen();
+				Log.i(TAG, "IccOpen --------- " + ret);
+				if (!ret) {
+					isReading = false;
+					return;
+				}
+
+				/*
+				 * byte[] retb = mIccManager.IccFound(); if (retb == null) {
+				 * continue; } for (int i = 0; i < 4; i++) {
+				 * android.util.Log.i("mIccManager",
+				 * "---------------------------------retb=[" + retb[i] + "]"); }
+				 * // 3.solt one has card? if (retb[0] != 1) { continue; }
+				 */
+				double vol;
+				for (int ii = 0; ii < 3; ii++) {
+					switch (ii) {
+					case 0:
+						vol =  1.8;
+						break;
+					case 1:
+						vol =  3;
+						break;
+					case 2:
+						vol =  5;
+						break;
+					default:
+						vol =  5;
+						break;
+					}
+					byte[] atr = mIccManager.IccAct((char)vol);
+					// 6.print the atr
+					Log.i(TAG, "IccAct ------------ " + atr + " len:"
+							+ atr.length);
+					if (atr == null || atr.length == 0) {
+						isReading = false;
+						continue;
+					}
+					for (int i = 0; i < atr.length && atr.length < 33; i++) {
+						android.util.Log.i("mIccManager",
+								"----------------atr[" + i + "]=" + atr[i]);
+					}
+					if (isDounbleCard) {
+						onDataReceivedF(atr, "SAM" + (slot + 1) + "-ATR("
+								+ vol + "): ");
+					} else {
+						onDataReceivedF(atr, "SAM" + "-ATR: ");
+					}
+
+					byte[] apdu_utf = { 0x00, (byte) 0xA4, 0x04, 0x00, 0x0E,
+							0x31, 0x50, 0x41, 0x59, 0x2E, 0x53, 0x59, 0x53,
+							0x2E, 0x44, 0x44, 0x46, 0x30, 0x31, 0x00 };
+					int apdu_count = apdu_utf.length;
+					byte[] retr = mIccManager.IccExapdu(apdu_utf,
+							(char) apdu_count);
+					Log.i(TAG, "IccExapdu --------- " + retr);
+					if (retr == null) {
+						isReading = false;
+						continue;
+					}
+					for (int i = 0; i < retr.length; i++) {
+						android.util.Log.i("mIccManager",
+								"----------------retr=[" + retr[i] + "]");
+					}
+					onDataReceivedF(retr, "APDU Out: ");
+					mIccManager.IccClose();
+					isReading = false;
+					break;
+				}
+
+			}
+		}).start();
+
+	}
+
+}

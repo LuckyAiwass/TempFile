@@ -1,0 +1,14 @@
+diff --cc platform/Android.bp
+index ce86cc5,db23ee3..0000000
+--- a/platform/Android.bp
++++ b/platform/Android.bp
+@@@ -23,6 -23,6 +23,9 @@@ filegroup 
+      srcs: [
+      	"src/android/os/IDeviceManagerService.aidl",
+          "src/android/content/pm/IPackageInstallObserver.aidl",
+++	"src/android/os/IInputActionListener.aidl",
+++	"src/android/os/IMaxqEncryptService.aidl",
+++	"src/android/os/ISignatureActionListener.aidl",
+      ],
+  }
+  

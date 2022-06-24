@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2012 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="keymap_setting">Remap Key</string>
+    <string name="toggle_tp_sensitive">Glove mode</string>
+    <string name="enable_navigationbar">Navigation bar</string>
+    <string name="dynamic_navigationbar">Automatic hide navigation bar</string>
+
+    <!-- urovo luolin add begin 2018-12-03  -->
+    <string name="factory_mode">Factory Mode</string>
+    <string name="sn_number">Device ID</string>
+<!-- urovo luolin add end 2018-12-03  -->
+    <string name="docker_settings_title">OTG settings</string>
+    <string name="host_toggle_title">Host mode</string>
+    <string name="host_toggle_summary">Open pogo pin host mode</string>
+    <string name="usb_otg_title">OTG mode</string>
+    <string name="usb_otg_summary">Open usb type-c otg mode</string>
+    <string name="ulog_title">LoggerManager</string>
+    <string name="testing_factory">Factory test(*#1262*#)</string>
+    <string name="testing_scan_type">Scan type(*#1261*#)</string>
+    <string name="testing_aging">Aging test(*#1260*#)</string>
+    <string name="testing_gps">GPS test(*#311)</string>
+    <string name="usb_config">*#3258</string>
+    <string name="testing_ulog">Offline Log(*#3333#*)</string>
+    <string name="system_update_client">Advanced FOTA client</string>
+
+    <!-- add bu guojian for bug9820 @20170803 -->
+    <!-- The title of the activity to see battery info. -->
+    <string name="battery_info_label">Battery info</string>
+    <!-- In the Testing screen. The item title of the activity that shows a bunch of battery-related information.  -->
+    <string name="testing_battery_info">Battery information</string>
+    <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_status_label">Battery status:</string>
+    <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_power_label">Power plug:</string>
+    <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_scale_label">Battery scale:</string>
+    <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_level_label">Battery level:</string>
+    <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_health_label">Battery health:</string>
+    <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_technology_label">Battery technology:</string>
+    <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_voltage_label">Battery voltage:</string>
+    <!-- Battery Info screen. Units shown after a value.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_voltage_units">mV</string>
+    <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_temperature_label">Battery temperature:</string>
+    <!-- Battery Info screen. Units shown after a value.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_temperature_units">\u00B0 C</string>
+    <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_uptime">Time since boot:</string>
+    <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_awake_battery">Awake time on battery:</string>
+    <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_awake_plugged">Awake time when charging:</string>
+    <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_screen_on">Screen ON time:</string>
+    <!-- Battery Info screen. Units shown after a value.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_power_unplugged">Unplugged</string>
+    <string name="battery_info_power_ac">AC</string>
+    <string name="battery_info_power_usb">USB</string>
+    <string name="battery_info_power_wireless">wireless</string>
+    <string name="battery_info_power_ac_usb">AC+USB</string>
+    <string name="battery_info_power_unknown">Unknown</string>
+
+    <!-- Battery Info screen. Value for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_health_unknown">Unknown</string>
+    <!-- Battery Info screen. Value for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_health_good">Good</string>
+    <!-- Battery Info screen. Value for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_health_overheat">Overheat</string>
+    <!-- Battery Info screen. Value for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_health_dead">Dead</string>
+    <!-- Battery Info screen. Value for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_health_over_voltage">Over voltage</string>
+    <!-- Battery Info screen. Value for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_health_unspecified_failure">Unknown error</string>
+    <!-- Battery Info screen. Value for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_health_cold">Cold</string>
+    <!-- SD card & phone storage settings screen, button on screen after user selects Reset phone button -->
+
+    <string name="date_time_set_server">Set ntp server</string>
+    <string name="text_server_url">Ntp server:</string>
+    <string name="hint_server_url">Ntp server address</string>
+    <string name="title_server_url">Set Ntp server</string>
+     <!-- urovo add shenpidong begin 2019-01-24 -->
+    <!-- Key Management title -->
+    <!--urovo zhangmeilin modify  2020-05-18-->
+    <string name="key_management_title">Fast Roaming</string>
+    <!-- Label to toggle FT options [CHAR LIMIT=40] -->
+    <string name="wifi_show_fast_transition">802.11r</string>
+	<!-- Message for talkback to say about fast transition [CHAR LIMIT=NONE] -->
+    <string name="wifi_show_fast_transition_description">Enable Fast Transition 802.11r.</string>
+    <!-- urovo add shenpidong end 2019-01-24 -->
+    <!-- yangkun add for Docking station start 2019/10/28 -->
+    <string name="otg_quick_toggle_title">OTG</string>
+    <string name="ethernet_titile">"Ethernet"</string>
+    <string name="eth_toggle_summary_on">Turn on Ethernet</string>
+    <string name="eth_toggle_summary_off">Turn off Ethernet</string>
+    <string name="eth_quick_toggle_title">Ethernet</string>
+    <string name="eth_conf_summary">Configure Ethernet devices</string>
+    <string name="eth_conf_perf_title">Ethernet configuration</string>
+    <string name="ethernet_proxy_settings_title">Ethernet proxy configuration</string>
+    <string name="title_eth_mac_address">Ethernet MAC address</string>
+    <string name="scanhandle_toggle_summary_enable">Enable Scan Handle</string>
+    <string name="scanhandle_toggle_title">Scan Handle</string>
+    <string name="scanhandle_toggle_summary_disable">Disable Scan Handle</string>
+    <string name="eth_con_type">Connection Type</string>
+    <string name="eth_con_type_dhcp">DHCP</string>
+    <string name="eth_con_type_manual">Static IP</string>
+    <string name="eth_ipaddr">IP address</string>
+    <string name="eth_gw">Gateway address</string>
+    <string name="eth_mask">Netmask</string>
+    <string name="eth_dns1">DNS address1</string>
+    <string name="eth_dns2">DNS address2</string>
+    <string name="eth_config_title">Configure Ethernet device</string>
+    <string name="configuring_ethernet">Configuring Ethernet...</string>
+    <string name="u_docker_settings_title">"Docking Station"</string>
+    <string name="disallow_masterclear">Low battery, disallow master clear！</string>
+    <string name="fingerprint_enrolled">This fingerprint has already been enrolled, please try another finger.</string>
+    <string name="shank_input_title">Handle settings(SCAN/UHF)</string>
+    <string name="ufs_number">UFS model</string>
+    <string name="usb_host_warn">Do not support fast charge after ticking</string>
+    <string name="display_backlight_title">No operation screen out time</string>
+    <string name="display_off_on">Check open</string>
+    <string name="display_off_min">Minute</string>
+    <string name="allow_app_installed">Allow apps to installed</string>
+    <string name="allow_app_installed_password">Please input password</string>
+    <string name="allow_app_installed_password_error">Password error!</string>
+    <string name="app_installed_white_list">Application install whitelist</string>
+    <!-- add end -->
+    <string name="internal_build_number">Firmware build number</string>
+    <!--urovo weiyu add for factory reset on 2020-06-30 start-->
+    <!-- SD card & phone storage settings screen, button on screen after user selects Reset phone button -->
+    <string name="master_clear_final_reboot_button_text">Erase everything &amp; Reboot</string>
+    <string name="master_clear_final_shutdown_button_text">Erase everything &amp; Shutdown</string>
+    <!--urovo weiyu add for factory reset on 2020-06-30 end-->
+    <string name="imei_multi_sim_title">IMEI %1$d</string>
+    <string name="ubx_dashboard_title">Enterprise featured setting</string>
+    <string name="ubx_dashboard_scan_setting_title">Scanner Settings</string>
+    <string name="ubx_dashboard_scan_wedge_title">ScanWedge Profiles</string>
+    <string name="ubx_dashboard_feature_setting_title">Feature Settings</string>
+    <string name="one_key_lock_screen">Lock Screen</string>
+</resources>

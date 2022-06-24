@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 配置文件默认的测试项描述是中文的 -->
+    <string-array name="item_test_description_values">
+        <item>GoogleKey</item>
+        <item>充电测试</item>
+        <!-- 该description不支持多语言,对应item_test_packagename_entries中相应位置的packageName>
+        <item>com&#046;ubx&#046;factorykit&#046;BatteryContent</item >
+        <-->
+        <item>蓝牙</item>
+        <item>版本信息</item>
+        <!-- 该description不支持多语言,对应item_test_packagename_entries中相应位置的packageName>
+        <item>com&#046;ubx&#046;factorykit&#046;BulkCapacitor</item>
+        <-->
+        <item>后摄像头</item>
+        <item>前摄像头</item>
+        <!-- 该description不支持多语言,对应item_test_packagename_entries中相应位置的packageName>
+        <item>com&#046;ubx&#046;factorykit&#046;Common</item>
+        <-->
+        <item>副MIC</item>
+        <item>设备信息</item>
+        <item>扬声器</item>
+        <item>指纹</item>
+        <item>闪光灯</item>
+        <item>收音机</item>
+        <item>四色灯</item>
+        <!-- 该description不支持多语言,对应item_test_packagename_entries中相应位置的packageName>
+        <item>com&#046;ubx&#046;factorykit&#046;FuelGaugeCalibration</item>
+        <-->
+        <item>GPS</item>
+        <item>加速度感应器</item>
+        <item>电子罗盘&#040;陀螺仪&#041;</item>
+        <item>耳机</item>
+        <item>耳机按键</item>
+        <item>加热器</item>
+        <item>ICC</item>
+        <item>键盘</item>
+        <item>按键背光</item>
+        <item>显示屏</item>
+        <item>光线感应器</item>
+        <item>MAG</item>
+        <item>恢复出厂设置</item>
+        <item>3D测量体积</item>
+        <item>地磁感应器</item>
+        <item>NFC</item>
+        <item>OTG</item>
+        <item>Pen</item>
+        <item>PICC</item>
+        <item>PinPad</item>
+        <item>POGO&#160;PIN</item>
+        <item>POGO&#160;PIN</item>
+        <item>DC座充充电</item>
+        <item>POGO&#160;PIN</item>
+        <item>POGO&#160;PIN</item>
+        <item>气压感应器</item>
+        <item>打印机</item>
+        <item>PSAM卡</item>
+        <item>距离传感器</item>
+        <item>安全测试</item>
+        <item>扫描头</item>
+        <item>SD卡</item>
+        <item>串口</item>
+        <item>SIM1</item>
+        <item>SIM2</item>
+        <item>扬声器</item>
+        <!-- 该description不支持多语言,对应item_test_packagename_entries中相应位置的packageName>
+        <item>com&#046;ubx&#046;factorykit&#046;SPSAM</item>
+        <-->
+        <item>T卡</item>
+        <item>触摸屏</item>
+        <item>触摸按键</item>
+        <item>主MIC</item>
+        <item>LED灯测试</item>
+        <item>马达</item>
+        <item>Wi-Fi</item>
+    </string-array>
+</resources>

@@ -1,0 +1,27 @@
+
+java_library {
+    name: "com.ubx.usdk",
+    installable: true,
+
+    //禁止生成odex
+    dex_preopt: {
+        enabled: false,
+    },
+
+    srcs: [
+        "src/**/*.java",
+        "src/**/I*.aidl",
+        //":libusdkplatform_aidl",
+    ],
+
+    required: ["com.ubx.usdk.xml", "com.ubx.saminterfaces"],
+
+    libs: ["com.ubx.platform", "com.ubx.saminterfaces"],
+}
+
+// This will install the file in /system/etc/permissions
+// ANDROIDMK TRANSLATION ERROR: unsupported assignment to LOCAL_MODULE_PATH
+// LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/permissions
+
+// ANDROIDMK TRANSLATION ERROR: unsupported include
+// include $(BUILD_PREBUILT)

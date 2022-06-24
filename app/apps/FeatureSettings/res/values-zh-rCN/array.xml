@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="keyboard">
+        <item>电源键</item>
+        <item>音量＋</item>
+        <item>音量－</item>
+        <item>PPT</item>
+        <item>菜单键</item>
+        <item>主页键</item>
+        <item>返回键</item>
+    </string-array>
+    <string-array name="keyboardcode">
+        <item>26</item>
+        <item>24</item>
+        <item>25</item>
+        <item>514</item>
+        <item>82</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="size_unit">
+        <item>GB</item>
+	<item>MB</item>
+        <item>KB</item>
+    </string-array>
+
+</resources>

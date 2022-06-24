@@ -1,0 +1,47 @@
+
+java_library {
+    name: "com.ubx.platform",
+    installable: true,
+
+    //禁止生成odex
+    dex_preopt: {
+        enabled: false,
+    },
+
+    srcs: [
+        "src/**/*.java",
+        "src/**/I*.aidl",
+    ],
+
+    static_libs: ["SaxParseXml"],
+
+    //libs:["com.ubx.services"],
+    // urovo add shenpidong begin 2019-12-02
+    libs:["android.hardware.light-V2.0-java"],
+// urovo add shenpidong end 2019-12-02
+
+        exclude_srcs: [
+        ":libusdkplatform_scanner_aidl",
+    ],
+}
+
+
+filegroup {
+    name: "libusdkplatform_aidl",
+    srcs: [
+    	"src/android/os/IDeviceManagerService.aidl",
+        "src/android/content/pm/IPackageInstallObserver.aidl",
+        "src/android/os/IInputActionListener.aidl",
+        "src/android/os/IMaxqEncryptService.aidl",
+        "src/android/os/ISignatureActionListener.aidl",
+    ],
+}
+
+filegroup {
+    name: "libusdkplatform_scanner_aidl",
+    srcs: [
+        "src/android/os/scanner/IScanCallBack.aidl",
+        "src/android/os/IScanService.aidl",
+        "src/android/os/IScanServiceWrapper.aidl",
+    ],
+}

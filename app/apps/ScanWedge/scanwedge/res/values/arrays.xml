@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Used in choose sim icon -end-->
+    <string-array name="scan_type_entries">
+        <item>opticol</item>
+        <item>symbol</item>
+        <item>honyware</item>
+        <item>se4500</item>
+        <item>ZhDW</item>
+        <item>n3680</item>
+        <item>MJ</item>
+        <item>N6603</item>
+        <item>IA100</item>
+        <item>6602</item>
+        <item>6601</item>
+        <item>n7130</item>
+        <item>Se4750</item>
+        <item>Se4710</item>
+    </string-array>
+    <!-- Do not translate. -->
+    <string-array name="scan_type_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+    </string-array>
+    <string-array name="linear_security_level_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="upc_ean_security_level_entries">
+        <item>UPC/EAN security level 0</item>
+        <item>UPC/EAN security level 1</item>
+        <item>UPC/EAN security level 2</item>
+        <item>UPC/EAN security level 3</item>
+    </string-array>
+    <string-array name="linear_security_level_entries">
+        <item>Linear security level 1</item>
+        <item>Linear security level 2</item>
+        <item>Linear security level 3</item>
+        <item>Linear security level 4</item>
+    </string-array>
+    <string-array name="linear_1d_quiet_zone_level">
+        <item>Level 0</item>
+        <item>Level 1</item>
+        <item>Level 2</item>
+        <item>Level 3</item>
+    </string-array>
+    <string-array name="postal_sym_entries">
+        <item>Default and disable postal codes</item>
+        <item>Postal Australian</item>
+        <item>Postal Japan</item>
+        <item>Postal KIX</item>
+        <item>Postal Royal mail</item>
+        <item>US Planet</item>
+        <item>US Postnet</item>
+        <item>Postal Usps 4 state</item>
+        <item>UPU FICS</item>
+        <item>Canadian Post</item>
+        <item>Korean Post</item>
+        <item>Planet,Postnet,UPU and USPS 4CB</item>
+    </string-array>
+    <string-array name="postal_sym_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+    <string-array name="send_lable_fix_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="send_lable_fix_entries">
+        <item>None</item>
+        <item>Label prefix</item>
+        <item>Label suffix</item>
+        <item>Label prefix and suffix</item>
+        <item>Formatting</item>
+        <item>Replace</item>
+        <item>Replace and prefix,suffix</item>
+    </string-array>
+    <string-array name="action_key_character_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="action_key_character_entries">
+        <item>None</item>
+        <item>Carriage return</item>
+        <item>Line feed</item>
+        <item>Tab</item>
+    </string-array>
+    <string-array name="out_editortext_mode_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="out_editortext_mode_entries">
+        <item>Append</item>
+        <item>Replace</item>
+    </string-array>
+    <string-array name="image_coding_format_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="image_coding_format_entries">
+        <item>UTF-8</item>
+        <item>GBK</item>
+        <item>BIG5</item>
+        <item>SHIFT-JIS</item>
+        <item>ISO-8859-15</item>
+        <item>US-ASCII</item>
+        <item>UTF-16</item>
+        <item>UTF-16BE</item>
+        <item>UTF-16LE</item>
+    </string-array>
+    <string-array name="image_inverse_decoder_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="wired_scan_values">
+        <item>3</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="code11_verify_check_mode_entries">
+        <item>No check digits</item>
+        <item>One check digits</item>
+        <item>Two check digits</item>
+    </string-array>
+    <string-array name="code11_check_mode_entries">
+        <item>Two check digits</item>
+        <item>One check digits</item>
+        <item>Two check digits and stripped</item>
+        <item>One check digits and stripped</item>
+    </string-array>
+    <string-array name="code11_check_mode_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="image_inverse_decoder_entries">
+        <item>Regular only</item>
+        <item>Inverse only</item>
+        <item>Inverse Autodetect</item>
+    </string-array>
+    <string-array name="image_2d_inverse_decoder_entries">
+        <item>Regular only</item>
+        <item>Inverse only</item>
+        <item>Inverse Autodetect</item>
+    </string-array>
+    <string-array name="image_bar_cades_to_read_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="image_bar_cades_to_read_entries">
+        <item>1 bar codes</item>
+        <item>2 bar codes</item>
+        <item>3 bar codes</item>
+        <item>4 bar codes</item>
+        <item>5 bar codes</item>
+        <item>6 bar codes</item>
+        <item>7 bar codes</item>
+        <item>8 bar codes</item>
+        <item>9 bar codes</item>
+        <item>10 bar codes</item>
+    </string-array>
+    <string-array name="gs_substitution_entries" translatable="false">
+        <item>None</item>
+        <item>[BS]</item>
+        <item>[LF]</item>
+        <item>[CR]</item>
+        <item>[HT]</item>
+    </string-array>
+    <string-array name="scanner_beep_entries" translatable="false">
+        <item>None</item>
+        <item>Short</item>
+        <item>Sharp</item>
+    </string-array>
+
+    <string-array name="wired_scan_entries" translatable="false">
+        <item>1D</item>
+        <item>2D</item>
+    </string-array>
+
+    <string-array name="scanner_triggermode_entries">
+        <item>Decode or Time-out</item>
+        <item>KeyDown start,Again KeyDown stop</item>
+        <item>Trigger release or Time-out</item>
+    </string-array>
+    <string-array name="scanner_triggermode_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="code_id_type_entries">
+        <item>Code Id Type None</item>
+        <item>Code Id Type Aim</item>
+        <item>Code Id Type Symbol</item>
+    </string-array>
+    <string-array name="code_id_type_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <!-- OCR Tempate Strings -->
+    <string-array name="ocr_template_entries">
+        <item>User Defined</item>
+        <item>Passport</item>
+        <item>ISBN</item>
+        <item>Price Field</item>
+        <item>MicrE-13 B</item>
+    </string-array>
+    <string-array name="ocr_template_font_entries">
+        <item>OCR-A</item>
+        <item>OCR-B</item>
+        <item>Both A&amp;B</item>
+        <item>MICR</item>
+        <item>SEMI</item>
+    </string-array>
+    <integer-array name="ocr_template_font_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </integer-array>
+    <string-array name="ocr_template_character_entries">
+        <item>Numeric</item>
+        <item>Alpha</item>
+        <item>Alphanumeric</item>
+        <item>Any (including space)</item>
+    </string-array>
+    <integer-array name="ocr_template_character_values">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </integer-array>
+    <!-- OCR Mode Strings -->
+    <string-array name="ocr_mode_entries">
+        <item>Off</item>
+        <item>Normal Video</item>
+        <item>Inverse</item>
+        <item>Both</item>
+    </string-array>
+    <!-- OCR Template Values - Predefined template settings -->
+    <string-array name="ocr_template_values">
+        <item name="ocr_user_template">0</item>
+        <item name="ocr_passport_template">1</item>
+        <item name="ocr_isbn_template">2</item>
+        <item name="ocr_price_field_template">3</item>
+        <item name="ocr_micre13b_template">4</item>
+    </string-array>
+
+    <!-- OCR Mode Values - OCR mode settings -->
+    <string-array name="ocr_mode_values">
+        <item name="ocr_mode_off">0</item>
+        <item name="ocr_mode_normal_video">1</item>
+        <item name="ocr_mode_inverse">2</item>
+        <item name="ocr_mode_both">3</item>
+    </string-array>
+    <string-array name="n6603_multiple_decode_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="n6603_multiple_decode_values_titles">
+        <item>Always allow duplicate</item>
+        <item>Allow duplicate only after the specified time out</item>
+    </string-array>
+    <string-array name="scanner_beep_channel_entries">
+        <item>Ringer</item>
+        <item>Music and Media</item>
+        <item>Alarms</item>
+        <item>Notification</item>
+    </string-array>
+    <string-array name="scanner_beep_channel_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="scanner_code128_concatenation_mode_entries">
+        <item>Concat Mode Never</item>
+        <item>Concat Mode Always</item>
+        <item>Concat Mode Auto</item>
+    </string-array>
+    <string-array name="scanner_code128_quiet_zone_entries">
+        <item>Disallow short quiet zone symbols</item>
+        <item>Allow short quiet zone symbols on only one side</item>
+        <item>Allow short quiet zone symbols on both sides</item>
+    </string-array>
+    <string-array name="scanner_msi_verify_check_mode_entries">
+        <item>One check digits</item>
+        <item>Two check digits</item>
+    </string-array>
+    <string-array name="scanner_msi_check_entries">
+        <item>Mod-11-10</item>
+        <item>Mod-10-10</item>
+    </string-array>
+    <string-array name="scanner_msi_check_mod_value">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="scanner_honeywell_msi_check_entries">
+        <item>No check</item>
+        <item>Check Mod-10</item>
+        <item>Check Mod-11-10</item>
+        <item>Check Mod-10-10</item>
+        <item>Check and strip Mod 10</item>
+        <item>Check and strip Mod-11-10</item>
+        <item>Check and strip Mod-10-10</item>
+    </string-array>
+    <string-array name="scanner_honeywell_msi_check_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="scanner_zebra_Preamble_characters_entries">
+        <item>None</item>
+        <item>System Character Only</item>
+        <item>System Character and Country Code</item>
+    </string-array>
+    <string-array name="honeywell_postal_sym_entries">
+        <item>None</item>
+        <item>Australian Post</item>
+        <item>InfoMail</item>
+        <item>Japan Post</item>
+        <item>Canadian Post</item>
+        <item>Dutch Post(KIX)</item>
+        <item>Planet</item>
+        <item>Postnet</item>
+        <item>BPO</item>
+        <item>InfoMail, BPO</item>
+        <item>UPU</item>
+        <item>USPS</item>
+        <item>Postnet(B and B)</item>
+        <item>Planet, Postnet</item>
+        <item>Planet, UPU</item>
+        <item>Postnet, UPU</item>
+        <item>Planet, USPS</item>
+        <item>Postnet, USPS</item>
+        <item>UPU, USPS</item>
+        <item>Planet, Postnet(B and B)</item>
+        <item>Postnet, UPU(B and B)</item>
+        <item>Postnet, USPS(B and B)</item>
+        <item>Planet, Postnet, UPU</item>
+        <item>Planet, Postnet, USPS</item>
+        <item>Planet, UPU, USPS</item>
+        <item>Postnet, UPU, USPS</item>
+        <item>Planet, Postnet, UPU(B and B)</item>
+        <item>Planet, Postnet, USPS(B and B)</item>
+        <item>Postnet, UPU, USPS(B and B)</item>
+        <item>Planet, Postnet, UPU, USPS</item>
+        <item>Planet, Postnet, UPU, USPS(B and B)</item>
+    </string-array>
+    <string-array name="honeywell_postal_sym_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+    </string-array>
+    <string-array name="scanner_zebra_ucc_coupon_mode_entries">
+        <item>Old Coupon</item>
+        <item>New Coupon</item>
+        <item>Both Coupon Formats</item>
+    </string-array>
+    <string-array name="scanner_zebra_bookland_format_entries">
+        <item>Format ISBN-10</item>
+        <item>Format ISBN-13</item>
+    </string-array>
+    <string-array name="scanner_zebra_supplemental_mode_entries">
+        <item>No Supplementals</item>
+        <item>Always</item>
+        <item>Auto</item>
+        <item>Smart</item>
+        <item>378/379</item>
+        <item>978/979</item>
+        <item>414/419/434/439</item>
+        <item>977</item>
+    </string-array>
+    <string-array name="scanner_zebra_supplemental_mode_values">
+        <item>No Supplementals</item>
+        <item>Always</item>
+        <item>Auto</item>
+        <item>Smart</item>
+        <item>378/379</item>
+        <item>978/979</item>
+        <item>414/419/434/439</item>
+        <item>977</item>
+    </string-array>
+    <string-array name="dpm_decoding_entries">
+        <item>Disable</item>
+        <item>Dotpeen</item>
+        <item>Reflective</item>
+    </string-array>
+    <!--• 1 - UPC Always Linked - transmit UPC bar codes and the 2D portion.
+    If 2D is not present, the UPC bar code does not transmit.
+    • *0 - UPC Never Linked - transmit UPC bar codes regardless of whether a 2D symbol is detected.
+    • 2 - Autodiscriminate UPC Composites - the imager engine determines if there is a 2D portion, then
+    transmits the UPC, as well as the 2D portion if present.-->
+    <string-array name="ucc_link_mode_entries">
+        <item>UPC Never Linked</item>
+        <item>UPC Always Linked</item>
+        <item>Autodiscriminate UPC Composites</item>
+    </string-array>
+    <string-array name="scanner_symbols_size_entries">
+        <item>Normal symbols</item>
+        <item>Handle smaller symbols</item>
+        <item>Handle very small symbols</item>
+    </string-array>
+</resources>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="set_scanner_manager">"扫描"</string>
+    <string name="set_picc_manager">"非接开关"</string>
+    <string name="scanner">"扫描"</string>
+    <string name="scanner_control">扫描控制</string>
+    <string name="scanner_screen_on">"灭屏可扫描"</string>
+    <string name="scanner_separator">"分隔符"</string>
+    <string name="scanner_separator_summary">"GS1、DataMatrix分隔符"</string>
+    <string name="scanner_on">"打开扫描电源"</string>
+    <string name="scanner_off">"关闭扫描电源"</string>
+    <string name="scanner_keyboard_mode">"解码反馈"</string>
+    <string name="scanner_keyboard_output">"键盘输出"</string>
+    <string name="scanner_output_mode">"键盘方式输出"</string>
+    <string name="scanner_keyboard_output_summary">"扫描结果以键盘方式输出到前台应用程序焦点编辑框内"</string>
+    <string name="scanner_trigger_mode">"触发模式"</string>
+    <string name="scanner_trigger_mode_summary">"引擎将连续扫描"</string>
+    <string name="scanner_beep">"提示音"</string>
+    <string name="scanner_beep_summary">"扫描成功时播放声音"</string>
+    <string name="scanner_vibrate">"振动"</string>
+    <string name="scanner_vibrate_summary">"扫描成功时振动"</string>
+    <string name="scanner_virtual_button_output">"按键输出"</string>
+    <string name="scanner_virtual_button_summary">"悬浮按键"</string>
+    <string name="scanner_virtual_button_title">"悬浮按键开/关"</string>
+    <string name="scanner_wedge_intent_title">广播输出</string>
+    <string name="scanner_wedge_intent_summary">数据通过广播发送到应用程序</string>
+    <string name="scanner_intent_stringlabel">广播数据标签</string>
+    <string name="scanner_intent_action">广播动作</string>
+    <string name="scanner_enter">"附加回车键"</string>
+    <string name="scanner_enter_summary">"扫描结果后附加回车键"</string>
+    <string name="scanner_keyboard_action_character">"操作键字符"</string>
+     <string name="scanner_keyboard_copy">"剪贴板"</string>
+    <string name="scanner_out_editortext_mode">输入文本框模式</string>
+    <string name="keyevent_enter_delay">回车键延迟</string>
+    <string name="output_data_delay">扫码结果输出延迟</string>
+    <!-- urovo add end 2019.05.08 -->
+    <string name="scanner_lock">"扫描按键"</string>
+    <string name="scanner_lock_on">"启用扫描按键"</string>
+    <string name="scanner_lock_off">"关闭扫描按键"</string>
+    <string name="scanner_app_on">"使用条码扫描器"</string>
+    <string name="scanner_app_off">"关闭条码扫描器"</string>
+    <string name="scanner_app">"条码扫描器"</string>
+    <string name="scanner_reset_def">"重置"</string>
+    <string name="scanner_reset_def_summary">"扫描引擎恢复出厂设置"</string>
+    <string name="scanner_reset_def_alert">"要使扫描引擎恢复出厂设置？"</string>
+    <string name="scanner_toast">扫描头重置完成!</string> 
+    <string name="scanner_type_unknown">未知扫描类型!</string>
+    <string name="urovo_settings">扫描头</string>
+    <string name="scan_type_summary">[ <xliff:g id="scan_type_entries">%1$s</xliff:g> ]</string>
+    <string name="scan_type">扫描类型</string>
+    <string name="urovo_settings_title">可选扫描头</string>
+    <string name="phonemode_scan_key">手机模式</string>
+    <string name="phonemode_scan_key_summary">提升扫描屏幕时性能</string>
+    <string name="phonemode_summary">提升扫描屏幕时性能</string>
+    <string name="phonemode_title">手机模式</string>
+    <string name="scanner_keyboard_type_title">键盘类型</string>
+    <string name="yto_sixlen_off">现在输出条码长度无限制</string>
+    <string name="yto_sixlen_on">现在限制短长度条码输出</string>
+    <string name="yto_sixlen">限制短条码输出</string>
+    <string name="min_code_len">最小输出条码长度</string>
+     <string-array name="scanner_keyboard_type_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    
+    <string-array name="scanner_keyboard_type_entries">
+        <item>物理键盘</item>
+        <item>输入法软件</item>
+        <item>仅用物理键盘</item>
+        <item>仅用输入法</item>
+    </string-array>
+    
+    <string name="title_device_sn">SN</string>
+    <string name="summary_device_sn">未知</string>
+    <string name="title_device_32550">SE</string>
+    <string name="summary_device_32550">未知</string>
+    <string name="scanner_intent_mode">意图模式</string>
+    <string name="scanner_intent_mode_on">扫描结果将被以隐式意图的形式发送到应用程序中</string>
+    <string name="scanner_intent_mode_off">Disable the captured data to be sent to an application in the form of an implicit Intent</string>
+    <string name="scanner_action_save">永久保存</string>
+    <string name="scanner_commit">启用配置</string>
+    <string name="scanner_decode_engine">解码器配置 </string>
+    <string name="scanner_barcode_param">解码器参数</string>
+    <string name="scanner_barcode_param_summary">解码器参数配置</string>
+    <string name="scanner_decoders_enable">启用所有解码器</string> 
+    <string name="scanner_decoders_enable_summary">解码所有的条码类型</string>
+    <string name="scanner_keystroke_output_category">按键输出</string>
+    <string name="scanner_intent_output_category">意图输出</string>
+    <string name="scanner_wedge">输出方式</string>
+    <string name="scanner_enable_keyboard_wedge">按键输出</string>
+    <string name="scanner_enable_intent_wedge">意图输出</string>
+    <string name="scanner_intent_atcion">意图动作</string>
+    <string name="scanner_intent_category">意图类别</string>
+    <string name="scanner_intent_delivery">发送意图方式</string>
+    <string name="scanner_intent_delivery_mode">发送意图方式</string>
+    <string name="scanner_notification">解码通知</string>
+    <!-- Notification -->
+    <string name="scanner_good_read_count">通知次数</string>
+    <string name="scanner_good_read_duration">通知持续时间</string>
+    <string name="scanner_good_read_tone">蜂鸣音的音高</string>
+    <string name="scanner_good_read">解码指示</string>
+    <!-- Good Read -->
+    <string name="scanner_enable_good_read">扫描成功</string>
+    <string name="scanner_enable_green_spot">绿点</string>
+    <string name="scanner_green_spot_on">"点亮绿点"</string>
+    <string name="scanner_green_led_on">"点亮LED"</string>
+    <string name="scanner_enable_led">LED灯</string>
+    <string name="scanner_enable_vibrator">震动</string>
+    <string name="scanner_decode_timeout">解码超时</string>
+    <string name="scanner_decode_timeout_units"> 秒</string>
+    <string name="scanner_good_read_interval">每次通知间隔</string>
+    
+    <string name="scanner_formatting">条码格式化</string>
+    <string name="scanner_send_lable_fix">附加格式化</string>
+    <string name="scanner_lable_prefix">前缀</string>
+    <string name="scanner_lable_suffix">后缀</string>
+    <string name="scanner_lable_pattern">格式化</string>
+    <string name="scanner_lable_replace">替换</string>
+    <string name="scanner_lable_replaceregex">原字符</string>
+    <string name="scanner_lable_replacement">替换字符</string>
+    <string name="scanner_lable_replaceerror">请输入有效字符</string>
+    <!-- urovo add shenpidong begin 2019-04-18 -->
+    <string name="scanner_lable_format_error">%1$s 错误! 请输入正确的表达式</string>
+    <!-- urovo add shenpidong end 2019-04-18 -->
+    <string name="add_special">特殊字符:</string>
+     <string name="edit_lable_prefix">编辑前缀</string>
+     <string name="edit_lable_suffix">编辑后缀</string>
+     <string name="edit_lable_pattern">编辑模式</string>
+    <string name="scanner_data_separator">数据分隔符</string>
+    <string name="scanner_group_separator_replacement">替换GS分隔符</string>
+    <string name="scanner_remove_non_printable_characters">删除非打印控制字符</string>
+    <string name="remove_non_printable_chars">删除非打印控制字符</string>
+    <string name="scanner_send_code_id">发送条码ID</string>
+    <string name="scanner_trigger_reading">其它设置</string>
+    <string name="scanner_laser_on_time">激光持续时间</string>
+    <string name="scanner_timeout_same_symbol">重码有效时延</string>
+    <string name="scanner_type_security_level">多重校验</string>
+    
+    <string name="scanner_symbology">条码设置</string>
+    <string name="scanner_1d_special">一维码特性</string>
+    <string name="scanner_fuzzy_1d_processing">优化一维解码</string>
+    <string name="scanner_1d_inverse">一维反白解码</string>
+    <string name="scanner_multi_decode">多次解码</string>
+    <string name="scanner_multi_decode_mode">启用多次解码</string>
+    <string name="scanner_bar_codes_to_read">解码次数</string>
+    <string name="scanner_full_read_mode">完整解码</string>
+    <string name="scanner_symbology_length_range" >"条码的数据字符长度为 %1$s 到 %2$s."</string>
+    <string name="scanner_symbology_timeout_range" >"取值范围为 %1$s 到 %2$s."</string>
+    <string name="scanner_laser_timeout_summary"  >" %1$s 毫秒"</string>
+    <string name="scanner_coding_format">中文编码类型</string>
+	
+    <string name="factory_passwork_title">恢复出厂设置</string>
+    <string name="factory_password_tv">密码:</string>
+    <string name="factory_password_ok">确定</string>
+    <string name="factory_password_cansel">取消</string>
+    <string name="factory_password_error">密码错误!</string>
+    
+    <string name="auto_input_title">自动弹出软键盘</string>
+	<string name="statusbar_battery_level_title">电量百分比</string>
+	<string name="statusbar_battery_level_summary">在状态栏中显示电量百分比</string>
+    <string name="lable_application_identifier">应用标示符</string>
+    <string name="lable_application_identifier_summary">"GS1、DataMatrix Code128"</string>
+    <string name="lable_application_identifier_edit">应用标识分隔符</string>
+    <string name="lable_ai_edit_length">请输入两个字符</string>
+    <!-- urovo add shenpidong begin 2019-04-17 -->
+    <string name="lable_ai_edit_ascii">%1$s 字符不在ASCII范围内.</string>
+    <!-- urovo add shenpidong end 2019-04-17 -->
+    <!--OCR Symbology  settings -->
+    <string name="lable_ocr_symbology">OCR 条码</string>
+    <string name="lable_ocr_symbology_enable">OCR</string>
+    <string name="lable_ocr_symbology_mode">OCR 解码模式</string>
+    <string name="lable_ocr_symbology_template">OCR 模板</string>
+    <string name="lable_ocr_user_template">自定义OCR模板</string>
+    <string name="lable_ocr_symbology_template_font">OCR 模板字体</string>
+    <string name="lable_ocr_symbology_template_character">OCR 字符类型</string>
+    <string name="lable_ocr_symbology_template_font_length">OCR条码长度(1-50)</string>
+    <string name="import_config_keys">导入配置文件</string>
+    <string name="export_config_keys">导出配置文件</string>
+    <string name="exporting_config">正在导出...</string>
+    <string name="importing_config">正在导入...</string>
+	<string name="app_name">扫描服务</string>
+	<string name="scanner_settings">扫描设置</string>
+	<string name="scanner_exposure_setting">曝光</string>
+	<string name="scanner_exposure_mode">曝光模式</string>
+    <string name="scanner_exposure_fixed_title">曝光值</string>
+    <string-array name="scanner_exposure_mode_entries">
+        <item>自动</item>
+        <item>开</item>
+    </string-array>
+    <string name="n6603_title_lights_config">补光灯配置</string>
+    <string name="n6603_title_lights_config_summary">For configuring lights mode</string>
+    <string name="n6603_decoce_windowing">解码取景框</string>
+    <string name="n6603_configure_windowing">配置取景框</string>
+    <!-- Decode Centering (Windowing) Strings -->
+    <string name="n6603_centering_mode_title">取景模式</string>
+    <string name="n6603_centering_mode_summary">For Centering Mode</string>
+    <string name="n6603_UpperLeftWindowX">左上角X坐标</string>
+    <string name="n6603_UpperLeftWindowY">左上角Y坐标</string>
+    <string name="n6603_LowerRightWindowX">右下角X坐标</string>
+    <string name="n6603_LowerRightWindowY">右下角Y坐标</string>
+    <string name="n6603_UpperLeftWindowX_summary">Sets the upper left X value</string>
+    <string name="n6603_UpperLeftWindowY_summary">Sets the upper left Y value</string>
+    <string name="n6603_LowerRightWindowX_summary">Sets the lower_right X value</string>
+    <string name="n6603_LowerRightWindowY_summary">Sets the lower_right Y value</string>
+    <string name="n6603_Enable_Debug_Window">调试取景框</string>
+    <string name="se4500_dec_picklist_aim_mode">瞄准模式</string>
+    <string name="se4500_illum_power_level">补光灯亮度</string>
+    <string name="n3680_aimer_delay">瞄准延时</string>
+    <string name="scanner_cache_config">条码数据缓存</string>
+    <string name="scanner_cache_enable">缓存数据</string>
+    <string name="scanner_cache_limit_time">缓存超时</string>
+    <string name="scanner_cache_mode">自动清除缓存</string>
+    <string name="wired_scan">有线指环扫描头</string>
+    <string name="wired_scan_type_other">其他</string>
+    <string name="dec_decode_delay">延时解码</string>
+    <string name="dec_debug_pic_mode">调试保存图片</string>
+    <string name="dec_switch_decoder">Swift解码库</string>
+     <string-array name="n6603_lights_config_values_titles">
+        <item>关闭</item>
+        <item>仅瞄准灯</item>
+        <item>仅照明灯</item>
+        <item>交替运行</item>
+        <item>同时运行</item>
+    </string-array>
+    <!-- urovo add shenpidong begin 2019-05-29 -->
+     <string-array name="se2100_lights_config_values_titles">
+        <item>关闭</item>
+        <item>交替运行</item>
+        <item>同时运行</item>
+    </string-array>
+    <!-- urovo add shenpidong end 2019-05-29 -->
+    
+    <string name="scanhandle_toggle_title">扫描手柄</string>
+    <string name="scanhandle_toggle_summary_enable">打开扫描手柄</string>
+    <string name="scanhandle_toggle_summary_disable">关闭扫描手柄</string>
+    <string-array name="n6603_multiple_decode_values_titles">
+        <item>可重复解码</item>
+        <item>不重复解码</item>
+    </string-array>
+    <string name="n6603_multiple_decode_config">连续扫描配置</string>
+    <string name="n6603_multiple_decode_mode">连扫模式 </string>
+    <string name="n6603_multiple_decode_count">解码多次个数</string>
+    <string name="n6603_multiple_decode_count_sum">设置最大解码个数（1~100）</string>
+    <string name="n6603_multiple_decode_count_hint">1~100 times</string>
+    <!-- urovo add shenpidong begin 2019-09-12 -->
+    <string name="n6603_multiple_decode_timeout">重码有效时延(50~60000 ms) </string>
+    <string name="n6603_multiple_decode_timeout_hint">50~60000 ms</string>
+    <string name="n6603_multiple_decode_timeout_sum">仅对不重复解码有效</string>
+    <string name="n6603_multiple_decode_interval">连续扫码间隔(0~5000 ms) </string>
+    <string name="n6603_multiple_decode_interval_hint">0~60000 ms</string>
+    <string name="n6603_multiple_decode_interval_sum">0</string>
+    <!-- urovo add shenpidong end 2019-09-12 -->
+    <string name="scanner_multiple_decode">多条码参数</string>
+    <string name="scanner_multiple_decode_sum">设置多条码特定参数</string>
+    <string name="scanner_multiple_decode_mode">解多个条码</string>
+    <string name="scanner_multiple_decode_count">每次扫描的条码数</string>
+    <string name="scanner_multiple_full_read_mode">固定条码数</string>
+    <string name="scanner_multiple_full_read_mode_sum">每次扫描固定条码数后输出</string>
+    <string name="scanner_multiple_decode_separator">条码分隔符</string>
+    <string name="contiuns">连续模式</string>
+    <string name="exposure">曝光控制</string>
+    <string name="lighting">灯光照明</string>
+    <string name="logMode">日志模式</string>
+    <string name="aimerControl">Aimer控制</string>
+    <string name="chooseCameraId">选择摄像头</string>
+    <string name="saveBmp">保存图片</string>
+    <string name="showBmp">显示图片</string>
+    <string name="symbology">条码配置</string>
+    <string name="n6603_Enable_GS_Window">"特殊字符GS码设置"</string>
+    <!-- urovo add shenpidong begin 2019-04-08 -->
+    <string name="scanner_exposure_length_range" translatable="false">"曝光值长度为 %1$s 到 %2$s."</string>
+    <!-- urovo add shenpidong end 2019-04-08 -->
+
+    <string name="import_scannersettings_success">导入配置文件成功</string>
+    <string name="import_scannersettings_fail">导入配置文件失败</string>
+    <string name="export_scannersettings_success">导出配置文件成功</string>
+    <string name="export_scannersettings_fail">导出配置文件失败</string>
+    <!-- urovo add shenpidong begin 2019-05-29 -->
+    <string name="unknown_input">未知输入!</string>
+    <!-- urovo add shenpidong end 2019-05-29 -->
+    <string name="msg_default_status">软件状态异常</string>
+    <string name="msg_license_status">软件状态正常</string>
+    <string name="dec_attempt_limit_time">解码单张图片时间</string>
+    <string name="low_contrast_improved_alg">增强低对比图像算法</string>
+    <string name="low_contrast_image_mode">低对比图像模式</string>
+    <string-array name="SaveImage_entries">
+        <item>不保存</item>
+        <item>保存解码成功最后一张图片</item>
+        <item>保存预览的最后一张图片</item>
+        <item>保存所有预览的图片</item>
+        <item>保存所有解码成功图片</item>
+    </string-array>
+    <string-array name="cameraId_entries">
+        <item>camera0摄像头</item>
+        <item>camera1摄像头</item>
+        <item>camera2摄像头</item>
+    </string-array>
+    <string-array name="SaveImage_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="cameraId_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <!-- urovo add by shenpidong begin 2020-10-16 -->
+    <string name="scanner_select_unmatch">选择扫描头类型与当前设备扫描头不匹配!</string>
+    <!-- urovo add by shenpidong end 2020-10-16 -->
+    <!-- urovo add shenpidong begin 2019-12-23 -->
+    <string name="scanner_output_mode_both">键盘和广播同时输出</string>
+    <!-- urovo add shenpidong end 2019-12-23 -->
+    <string name="scanner_udi_format">UDI数据格式化</string>
+    <string name="scanner_decode_concatenation">ISBT/GS1条码拼接</string>
+    <string name="scanner_udi_tokensoption">发送令牌</string>
+    <string name="scanner_udi_tokenseparator">令牌分隔符</string>
+    <string name="scanner_udi_tokensformat">令牌格式</string>
+    <string name="scanner_decode_all_udi_lable">解析所有UDI类型</string>
+    <string name="scanner_decode_udi_lable_list">标签ID</string>
+    <string name="scanner_format_udi_date">UDI日期</string>
+    <string name="scanner_format_udi_date_sum">格式化yy-MM-dd日期</string>
+    <string-array name="scanner_udi_tokensoption_entries">
+        <item>已禁用</item>
+        <item>仅限令牌</item>
+        <item>条码和令牌</item>
+    </string-array>
+    <string name="webjump_switch_title">网页识别并跳转</string>
+    <string name="low_power_sleep_mode">低功耗模式</string>
+    <string name="sensor_exp_time">曝光量</string>
+    <string name="sensor_gain">增益</string>
+    <string name="sensor_target_white">目标亮度</string>
+    <string name="sensor_image_contrast">图象对比度</string>
+</resources>

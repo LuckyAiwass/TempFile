@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2011-2013, Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_margin="10sp">
+        <Button
+            android:id="@+id/lcd_heating"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lcd_heating"
+            android:layout_weight="3">
+        </Button>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <TextView
+            android:id="@+id/lcd_temp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/curr_temp_lcd"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="left"
+            android:layout_weight="1">
+        </TextView>
+
+        <TextView
+            android:id="@+id/lcd_temp_value"
+            android:textColor="@color/red"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:gravity="left"
+            android:layout_weight="2">
+        </TextView>
+        </LinearLayout>
+    </TableRow>
+
+    <TextView
+        android:id="@+id/lcd_notify"
+        android:layout_marginLeft="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lcd_heating_status"
+        android:textAppearance="?android:attr/textAppearanceSmall">
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/black"></View>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <Button
+            android:id="@+id/scan_heating"
+            android:text="@string/scan_heating"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_margin="5sp"
+            android:layout_weight="3" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/scan_temp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/curr_temp_scan"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="left"
+            android:layout_weight="1">
+        </TextView>
+
+        <TextView
+            android:id="@+id/scan_temp_value"
+            android:textColor="@color/red"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:gravity="left"
+            android:layout_weight="2">
+        </TextView>
+        </LinearLayout>
+    </TableRow>
+
+    <TextView
+        android:id="@+id/scan_notify"
+        android:layout_marginLeft="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/scan_heating_status"
+        android:textAppearance="?android:attr/textAppearanceSmall">
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/black"></View>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/mb_heating"
+            android:text="@string/mb_heating"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_margin="5sp"
+            android:layout_weight="3" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/mb_temp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/curr_temp_mb"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:gravity="left"
+            android:layout_weight="1">
+        </TextView>
+        <TextView
+            android:id="@+id/mb_temp_value"
+            android:textColor="@color/red"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:gravity="left"
+            android:layout_weight="2">
+        </TextView>
+        </LinearLayout>
+    </TableRow>
+    <TextView
+        android:id="@+id/mb_notify"
+        android:layout_marginLeft="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mb_heating_status"
+        android:textAppearance="?android:attr/textAppearanceSmall">
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/black"></View>
+
+    <TextView
+        android:layout_marginTop="15px"
+        android:layout_marginLeft="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"
+        android:text="@string/heating_led_waring"
+        android:textAppearance="?android:attr/textAppearanceSmall">
+    </TextView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="25px"
+        >
+
+        <Button
+            android:id="@+id/pass"
+            android:text="@string/pass"
+            android:textSize="20dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            ></Button>
+        <Button
+            android:id="@+id/fail"
+            android:text="@string/fail"
+            android:textSize="20dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            ></Button>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+     Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:google="http://google.com">
+
+    <PreferenceCategory
+        android:key="scanner_format"
+        android:title="@string/scanner_formatting">
+        <ListPreference
+            android:entries="@array/send_lable_fix_entries"
+            android:entryValues="@array/send_lable_fix_values"
+            android:key="send_lable_fix"
+            android:persistent="false"
+            android:title="@string/scanner_send_lable_fix" />
+        <Preference
+            android:key="edit_lable_prefix"
+            android:title="@string/scanner_lable_prefix" />
+        <Preference
+            android:key="edit_lable_suffix"
+            android:title="@string/scanner_lable_suffix" />
+        <Preference
+            android:key="edit_lable_pattern"
+            android:title="@string/scanner_lable_pattern" />
+        <Preference
+            android:key="edit_lable_replace"
+            android:title="@string/scanner_lable_replace" />
+        <CheckBoxPreference
+            android:key="remove_non_printable_chars"
+            android:persistent="false"
+            android:title="@string/remove_non_printable_chars" />
+        <CheckBoxPreference
+            android:key="screen_scanner_separator"
+            android:persistent="false"
+            android:summary="@string/lable_application_identifier_summary"
+            android:title="@string/lable_application_identifier" />
+        <Preference
+            android:dependency="screen_scanner_separator"
+            android:key="edit_lable_separator"
+            android:title="@string/lable_application_identifier_edit" />
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/code_id_type_entries"
+            android:entryValues="@array/code_id_type_values"
+            android:key="scanner_reader_codeid_type"
+            android:title="@string/scanner_reader_codeid_type" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="scanner_read_trigger"
+        android:title="@string/scanner_trigger_reading">
+        <Preference
+            android:key="laser_on_time"
+            android:title="@string/scanner_laser_on_time" />
+        <Preference
+            android:key="timeout_same_symbol"
+            android:title="@string/scanner_timeout_same_symbol" />
+        <ListPreference
+            android:entries="@array/linear_security_level_entries"
+            android:entryValues="@array/linear_security_level_values"
+            android:key="linear_code_type_security_level"
+            android:persistent="false"
+            android:title="@string/scanner_type_security_level" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="scanner_1d_special"
+        android:title="@string/scanner_1d_special">
+        <CheckBoxPreference
+            android:key="scanner_fuzzy_1d_processing"
+            android:persistent="false"
+            android:title="@string/scanner_fuzzy_1d_processing" />
+        <ListPreference
+            android:entries="@array/image_inverse_decoder_entries"
+            android:entryValues="@array/image_inverse_decoder_values"
+            android:key="scanner_1d_inverse"
+            android:persistent="false"
+            android:title="@string/scanner_1d_inverse" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="scanner_multi_decode"
+        android:title="@string/scanner_multi_decode">
+        <CheckBoxPreference
+            android:key="multi_decode_mode"
+            android:persistent="false"
+            android:title="@string/scanner_multi_decode_mode" />
+        <ListPreference
+            android:dependency="multi_decode_mode"
+            android:entries="@array/image_bar_cades_to_read_entries"
+            android:entryValues="@array/image_bar_cades_to_read_values"
+            android:key="bar_codes_to_read"
+            android:persistent="false"
+            android:title="@string/scanner_bar_codes_to_read" />
+        <CheckBoxPreference
+            android:dependency="multi_decode_mode"
+            android:key="full_read_mode"
+            android:persistent="false"
+            android:title="@string/scanner_full_read_mode" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="scanner_config_exposure"
+        android:title="@string/scanner_exposure_setting">
+
+        <!-- android:summary="@string/n6603_title_lights_config_summary"-->
+        <ListPreference
+            android:defaultValue="3"
+            android:entries="@array/n6603_lights_config_values_titles"
+            android:entryValues="@array/n6603_lights_config_values"
+            android:key="n6603_lightsConfig"
+            android:title="@string/n6603_title_lights_config" />
+        <ListPreference
+            android:defaultValue="6"
+            android:entries="@array/scanner_illum_power_level_entries"
+            android:entryValues="@array/scanner_illum_power_level_values"
+            android:key="sdcn603_illum_power_level"
+            android:title="@string/se4500_illum_power_level" />
+        <ListPreference
+            android:defaultValue="2"
+            android:entries="@array/se2100_lights_config_values_titles"
+            android:entryValues="@array/se2100_lights_config_values"
+            android:key="se2100_lightsConfig"
+            android:title="@string/n6603_title_lights_config" />
+	    <Preference
+            android:key="dec_illum_power_level"
+            android:title="@string/se4500_illum_power_level" />
+        <ListPreference
+            android:entries="@array/scanner_exposure_mode_entries"
+            android:entryValues="@array/scanner_exposure_mode_values"
+            android:key="scanner_exposure_mode"
+            android:persistent="false"
+            android:title="@string/scanner_exposure_mode" />
+        <EditTextPreference
+            android:inputType="number"
+            android:key="scanner_fixed_exposure_level"
+            android:title="@string/scanner_exposure_fixed_title" />
+        <EditTextPreference
+            android:inputType="number"
+            android:key="preferences_exp_time"
+            android:title="@string/sensor_exp_time"/>
+        <EditTextPreference
+            android:inputType="number"
+            android:key="preferences_gain"
+            android:title="@string/sensor_gain"/>
+        <EditTextPreference
+            android:inputType="number"
+            android:key="preferences_target_white"
+            android:title="@string/sensor_target_white"/>
+    </PreferenceCategory>
+    <!-- Decode 4500 -->
+    <CheckBoxPreference
+        android:key="dec_picklist_aim_mode"
+        android:persistent="false"
+        android:title="@string/se4500_dec_picklist_aim_mode" />
+    <!--<Preference
+        android:key="dec_aim_mode_delay"
+        android:title="@string/n3680_aimer_delay" />-->
+    <EditTextPreference
+        android:inputType="number"
+        android:key="dec_aim_mode_delay"
+        android:title="@string/n3680_aimer_delay" />
+    <!-- Decode Windowing -->
+    <PreferenceCategory
+        android:key="n6603_decoce_windowing"
+        android:title="@string/n6603_decoce_windowing">
+        <!-- Enable/Disable -->
+        <CheckBoxPreference
+            android:key="n6603_decode_centering_enable"
+            android:title="@string/n6603_configure_windowing" />
+        <!-- Windowing Mode -->
+        <ListPreference
+            android:defaultValue="2"
+            android:dependency="n6603_decode_centering_enable"
+            android:entries="@array/n6603_centering_mode_entries"
+            android:entryValues="@array/n6603_centering_mode_values"
+            android:key="decode_centering_mode"
+            android:summary="@string/n6603_centering_mode_summary"
+            android:title="@string/n6603_centering_mode_title" />
+        <!-- Upper Left X -->
+        <EditTextPreference
+            android:defaultValue="0"
+            android:dependency="n6603_decode_centering_enable"
+            android:inputType="number"
+            android:maxLength = "3"
+            android:key="decode_window_upper_left_x"
+            android:summary="@string/n6603_UpperLeftWindowX_summary"
+            android:title="@string/n6603_UpperLeftWindowX" />
+        <!-- Upper Left Y -->
+        <EditTextPreference
+            android:defaultValue="0"
+            android:dependency="n6603_decode_centering_enable"
+            android:inputType="number"
+            android:maxLength = "3"
+            android:key="decode_window_upper_left_y"
+            android:summary="@string/n6603_UpperLeftWindowY_summary"
+            android:title="@string/n6603_UpperLeftWindowY" />
+        <!-- Lower Right X -->
+        <EditTextPreference
+            android:defaultValue="0"
+            android:dependency="n6603_decode_centering_enable"
+            android:inputType="number"
+            android:maxLength = "3"
+            android:key="decode_window_lower_right_x"
+            android:summary="@string/n6603_LowerRightWindowX_summary"
+            android:title="@string/n6603_LowerRightWindowX" />
+        <!-- Lower Right Y -->
+        <EditTextPreference
+            android:defaultValue="0"
+            android:dependency="n6603_decode_centering_enable"
+            android:inputType="number"
+            android:maxLength = "3"
+            android:key="decode_window_lower_right_y"
+            android:summary="@string/n6603_LowerRightWindowY_summary"
+            android:title="@string/n6603_LowerRightWindowY" />
+        <!-- Debug Window -->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dependency="n6603_decode_centering_enable"
+            android:key="decode_debug_window_enable"
+            android:title="@string/n6603_Enable_Debug_Window" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="n6603_decode_GS_enable"
+            android:title="@string/n6603_Enable_GS_Window" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="scanner_cache_config"
+        android:title="@string/scanner_cache_config" >
+        <CheckBoxPreference
+            android:key="scanner_cache_enable"
+            android:persistent="false"
+            android:title="@string/scanner_cache_enable" />
+        <CheckBoxPreference
+            android:key="scanner_cache_mode"
+            android:persistent="false"
+            android:dependency="scanner_cache_enable"
+            android:title="@string/scanner_cache_mode" />
+        <EditTextPreference 
+            android:title="@string/scanner_cache_limit_time"
+            android:key="scanner_cache_limit_time"
+            android:inputType="number"
+            android:dependency="scanner_cache_mode"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="scanner_config_debug_mode">
+        <EditTextPreference
+            android:key="dec_attempt_limit_time"
+            android:title="@string/dec_attempt_limit_time"/>
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/save_image_mode"
+            android:entryValues="@array/save_image_mode_values"
+            android:key="dec_debug_pic_mode"
+            android:title="@string/dec_debug_pic_mode" />
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/low_contrast_image_mode_entries"
+            android:entryValues="@array/low_contrast_image_mode_values"
+            android:key="low_contrast_image_mode"
+            android:title="@string/low_contrast_image_mode" />
+        <CheckBoxPreference
+            android:key="low_contrast_improved_alg"
+            android:persistent="false"
+            android:title="@string/low_contrast_improved_alg" />
+        <CheckBoxPreference
+            android:key="low_power_sleep_mode"
+            android:persistent="false"
+            android:title="@string/low_power_sleep_mode" />
+        <Preference
+            android:key="dec_switch_decoder"
+            android:persistent="false" />
+    </PreferenceCategory>
+    <!-- <PreferenceScreen 
+        android:title="Exposure Settings"
+        android:summary="Select to configure exposure settings"
+        android:dependency="exposure_settings_enable">
+        
+        DEC_ES_EXPOSURE_METHOD
+        <EditTextPreference 
+            android:title="Method"
+            android:summary="Sets the exposure method"
+            android:key="exposure_method"
+            android:inputType="number"
+            android:defaultValue="0"
+            android:dependency="exposure_settings_enable" />
+        DEC_ES_TARGET_VALUE
+        <EditTextPreference 
+            android:title="White Target"
+            android:summary="Sets the white target level"
+            android:key="exposure_target_value"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_TARGET_PERCENTILE
+        <EditTextPreference 
+            android:title="Target Percentile"
+            android:summary="Sets the white target percentile level"
+            android:key="exposure_target_percentile"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_TARGET_ACCEPT_GAP
+        <EditTextPreference 
+            android:title="Target Gap"
+            android:summary="Sets the target acceptance gap"
+            android:key="exposure_target_acceptance_gap"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_MAX_EXP
+        <EditTextPreference 
+            android:title="Max Exposure"
+            android:summary="Sets the maximum exposure"
+            android:key="exposure_max_exposure"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_MAX_GAIN
+        <EditTextPreference 
+            android:title="Max Gain"
+            android:summary="Sets the maximum gain"
+            android:key="exposure_max_gain"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_FRAME_RATE
+        <EditTextPreference 
+            android:title="Frame Rate"
+            android:summary="Sets the frame rate"
+            android:key="exposure_frame_rate"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_CONFORM_IMAGE
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="exposure_conform"
+            android:summary="Select to enable image must conform"
+            android:title="Must Conform"
+            android:dependency="exposure_settings_enable" >
+         </CheckBoxPreference> 
+        DEC_ES_CONFORM_TRIES
+        <EditTextPreference 
+            android:title="Conform Tries"
+            android:summary="Sets the conform tries"
+            android:key="exposure_conform_tries"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_SPECULAR_EXCLUSION
+        <EditTextPreference 
+            android:title="Conform Tries"
+            android:summary="Sets the conform tries"
+            android:key="exposure_specular_exclusion"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_SPECULAR_SAT
+        <EditTextPreference 
+            android:title="Specular Saturation"
+            android:summary="Sets the specular saturation"
+            android:key="exposure_specular_saturation"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_SPECULAR_LIMIT
+        <EditTextPreference 
+            android:title="Specular Limit"
+            android:summary="Sets the specular limit"
+            android:key="exposure_specular_limit"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_FIXED_EXP
+        <EditTextPreference 
+            android:title="Fixed Exposure"
+            android:summary="Sets the fixed exposure"
+            android:key="exposure_fixed_exposure"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_FIXED_GAIN
+        <EditTextPreference 
+            android:title="Fixed Gain"
+            android:summary="Sets the fixed gain"
+            android:key="exposure_fixed_gain"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_FIXED_FRAMERATE
+        <EditTextPreference 
+            android:title="Fixed Frame Rate"
+            android:summary="Sets the fixed frame rate"
+            android:key="exposure_fixed_frame_rate"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        
+    </PreferenceScreen> -->
+</PreferenceScreen>

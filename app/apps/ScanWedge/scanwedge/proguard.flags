@@ -1,0 +1,4 @@
+-keep class com.ubx.scanwedge.settings.activities.*Fragment
+-keep class com.ubx.scanwedge.settings.activities.*Settings
+-keep class com.ubx.scanwedge.settings.fragments.*Fragment
+-keep class com.ubx.scanwedge.settings.fragments.*Settings

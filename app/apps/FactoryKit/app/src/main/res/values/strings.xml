@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2011-2013, Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+<resources>
+    <!-- Common string -->
+    <string name="report_title">Testing report</string>
+    <string name="report_all">Total(%1$d)items</string>
+    <string name="report_pass">Pass(%1$d)items</string>
+    <string name="report_fail">Fail(%1$d)items：%2$s</string>
+    <string name="report_notest">Not test(%1$d)items：%2$s</string>
+    <string name="exit_all_pass">Press BACK again to quit</string>
+    <string name="exit_menu">Exit</string>
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="pass">pass</string>
+    <string name="fail">fail</string>
+    <string name="cancel">cancel</string>
+    <string name="testing">testing...</string>
+    <string name="initialize">initialize...</string>
+    <string name="app_name">Factory test</string>
+    <string name="start">start</string>
+    <string name="scan">scan</string>
+    <string name="scan_name">scan</string>
+    <string name="scan_code">scan code</string>
+    <string name="device_open_fail">device open fail!</string>
+    <string name="service_get_fail">Service gain failure!</string>
+    <string name="sensor_get_fail">Sensor acquisition failure!</string>
+    <string name="sensor_register_fail">Sensor registration failure!</string>
+    <string name="test_pass">pass-test</string>
+    <string name="shake_hint">Please cover the light sensor with your hand at least two times.
+    </string>
+    <string name="shake">Please sloshing the equipment.</string>
+    <string name="remove_headset">Please take off the headset</string>
+    <string name="insert_headset">Please insert the headset</string>
+    <string name="stop">stop</string>
+    <string name="play">play</string>
+    <string name="record">record</string>
+    <string name="time_out">time out!</string>
+    <!-- ControlCenter -->
+    <string name="clean_state">Clear the current test state</string>
+    <string name="uninstall">uninstall</string>
+    <string name="lasttime_state">Look at the results of the last test</string>
+    <string name="control_center_quit_confirm">Be sure to quit?</string>
+    <string name="item1">Button backlight</string>
+    <string name="fengmq">Buzzer</string>
+    <!-- Led -->
+    <string name="led_name">LED</string>
+    <string name="led_tri_text">LED test sequence: red, green, blue</string>
+    <string name="led_tri_text_SQ46">LED test order: red, green, blue, red</string>
+    <string name="led_tri_text_SQ42T">LED test order: left red, green, blue, right red</string>
+    <string name="led_tri_text_SQ26TB">LED test order: 1 red, 1 green, 4 blue, 2 red, 2 green, 3 red, 3 blue, 4 red.</string>
+    <string name="led_tri_text_SQ27T">LED test order: 2 red, 2 blue, 3 white, 4 red, 1 red, 1 green.</string>
+    <string name="led_tri_text_SQ27TC">LED test order: 1 red, 2 green, 3 orange, 4 yellow</string>
+    <string name="led_dual_text">LED test order: red, green</string>
+    <string name="led_sq274g_text">LED test order: green, red, blue, white, red</string>
+    <string name="led_confirm">Whether the color of the LED lamp is correct?</string>
+    <string name="led_text">LED test order: red, green</string>
+    <string name="led_tri_text_SQ52">LED test sequence: blue，red，green（green on back）</string>
+    <string name="led_tri_text_SQ53">LED test sequence: green, red, blue, red.</string>
+    <string name="led_tri_text_SQ47">LED test sequence: green, red, yellow, red.</string>
+    <string name="led_tri_text_SQ45">LED test sequence: green, red, blue.</string>
+    <string name="led_tri_text_SQ45S">LED test sequence: green, red, blue, red, blue.</string>
+    <string name="led_tri_text_SQ38">LED test sequence: green, red, red, green, red, green.</string>
+    <string name="led_tri_text_SQ51FW">LED test sequence:  red, green, red, blue.</string>
+    <string name="led_tri_text_SQ53c">LED test sequence:  green, red, red, blue.</string>
+    <string name="led_tri_text_SQ51s">LED test sequence:  red, blue, green, red .</string>
+    <string name="dual_led_name">Double color lamp</string>
+    <string name="dual_led_text">LED test order: red, green</string>
+    <string name="remove_plug">Please remove the charging device</string>
+    <!-- Flashlight -->
+    <string name="flashlight_name">Flash lamp</string>
+    <string name="flashlight_confirm">Whether the flash is bright or not?</string>
+    <!-- KeypadBacklight -->
+    <string name="keypadbacklight_name">Button backlight</string>
+    <string name="keypadbacklight_confirm">Whether the backlight of the button is bright?</string>
+    <!-- four leds -->
+    <string name="led_four_text">LED test order: blue, yellow, green, red + red, green.</string>
+    <string name="FourLeds">Four Leds</string>
+    <string name="fourled_confirm">Is the color of a four color lamp correct?</string>
+    <!-- SIM1 -->
+    <string name="sim1_name">SIM1</string>
+    <string name="cdma">CDMA card</string>
+    <string name="wcdma">WCDMA card</string>
+    <string name="ready">State: in preparation</string>
+    <!-- DENGMQ -->
+    <string name="fengmq_confirm">Is the buzzer normal?</string>
+    <!-- SIM2 -->
+    <string name="gsm">GSM card</string>
+    <string name="sim2_name">SIM2</string>
+    <!-- NFC -->
+    <string name="nfc_name">NFC</string>
+    <!-- TouchPanelEdge -->
+    <string name="touchpanel_edge_name">Touch screen</string>
+    <!-- TouchPanelKey -->
+    <string name="touchpanel_key_name">Touch key</string>
+    <!-- Keypad -->
+    <string name="keypad_name">Key</string>
+    <string name="keypad_text">Please press the following button</string>
+    <string name="keypad_volume_up">volume + </string>
+    <string name="keypad_volume_down">volume - </string>
+    <string name="media_next">Headset button + </string>
+    <string name="media_previous">Headset button - </string>
+    <string name="keypad_focus">focusing</string>
+    <string name="keypad_camera">Take photos</string>
+    <string name="keypad_home">home</string>
+    <string name="keypad_menu">menu</string>
+    <string name="keypad_app_switch">Recent App</string>
+    <string name="keypad_back">back</string>
+    <string name="keypad_power">power</string>
+    <string name="keypad_search">search</string>
+    <string name="keypad_custom">Customer-defined</string>
+    <string name="keypad_sos">Emergency call</string>
+    <string name="silent_on">silent on</string>
+    <string name="silent_off">silent off</string>
+    <!-- CameraBack -->
+    <string name="cameraback_name">Rear camera</string>
+    <string name="cameraback_takepicture">Take photos</string>
+    <string name="cameraback_fail_open">The camera failed to open, please check the camera installation is correct!
+    </string>
+    <string name="autofocus_fail">No auto focus function or auto focus failure</string>
+    <!-- CameraFront -->
+    <string name="camerafront_name"> Front camera </string>
+    <string name="camerafront_takepicture">Take photos</string>
+    <!-- LCM -->
+    <string name="lcm_name">Display</string>
+    <string name="lcm_confirm">Please choose</string>
+    <!-- Vibrator -->
+    <string name="vibrate">motor</string>
+    <string name="vibrate_name">shock</string>
+    <string name="vibrate_confirm">Please choose</string>
+    <string name="vibrate_hint">Vibrate...</string>
+    <!-- PSensor -->
+    <string name="psensor_name"> Distance sensor </string>
+    <string name="psensor_title">Please follow the instructions below, and each step must be completed in 7 seconds.
+    </string>
+    <string name="psensor_to_cover"> Please cover the distance sensor for more than 2 seconds </string>
+    <string name="psensor_to_uncover"> Cancel the coverage sensor for more than 2 seconds </string>
+    <string name="psensor_uncovered">Uncovered</string>
+    <string name="psensor_covered">cover</string>
+    <string name="psensor_verifying">Verification...</string>
+    <string name="psensor_sensor_unstable_fail"> Distance sensor instability !</string>
+    <!-- GSensor -->
+    <string name="gsensor_name">accelerometer</string>
+    <!-- MSensor -->
+    <string name="msensor_name"> Geomagnetic sensor </string>
+    <!-- Gyroscope -->
+    <string name="gyroscope_name">Electronic compass</string>
+    <!-- LightSensor -->
+    <string name="lightsensor_name">Light Sensor</string>
+    <!-- PSAM -->
+    <string name="psam_name">PSAM</string>
+    <!-- SIMIO -->
+    <string name="simio_name">SIMIO</string>
+    <string name="simio_info">SIMIO is being tested. Please wait a moment...</string>
+    <!-- SDCard -->
+    <string name="sdcard_name">SD card</string>
+    <string name="sdcard_title">SD card</string>
+    <string name="sdcard_wait">Read the SD card, please wait a minute...</string>
+    <string name="sdcard_confirm">The SD card has been inserted?</string>
+    <string name="sdcard_to_remove">Please remove the SD card</string>
+    <string name="sdcard_to_insert"> Please insert the SD card </string>
+    <!-- Bluetooth -->
+    <string name="bluetooth_name">Bluetooth</string>
+    <string name="bluetooth_scan_start"> Scanning equipment ...</string>
+    <string name="bluetooth_scan_finish"> Scan end </string>
+    <string name="bluetooth_turning_on"> Turn on Bluetooth ...</string>
+    <string name="bluetooth_scan_null">No equipment was found</string>
+    <string name="cost"> Open the cost of Bluetooth </string>
+    <!-- WiFi -->
+    <string name="wifi_name">WiFi</string>
+    <string name="wifi_text"> The WiFi test will be completed in 30 seconds. Please wait a moment. </string>
+    <string name="wifi_scan_failed"> Scan failure !</string>
+    <string name="wifi_is_closing">WiFi is closing. Please try again later.</string>
+    <string name="wifi_scan_null">No wireless network was found!</string>
+    <string name="wifi_state_unknown">WiFi state is unknown, please try again.</string>
+    <!--TransmitterReceiver -->
+    <string name="speaker">speaker</string>
+    <string name="transmitter_receiver_name">Microphone / receiver</string>
+    <string name="transmitter_receiver_mic_main">Master MIC test</string>
+    <string name="transmitter_receiver_mic_deputy">Vice MIC test</string>
+    <string name="transmitter_receiver_hint">Microphone and receiver</string>
+    <string name="transmitter_receiver_recording"> Now start the recording, please speak and click the stop button to stop the recording 
+    </string>
+    <string name="transmitter_receiver_playing"> In the playback, listen to the receiver .</string>
+    <string name="deputy_transmitter_receiver_playing"> In the playback, listen to the speaker .</string>
+    <string name="transmitter_receiver_confirm"> Do you hear the sound of the sound? ?</string>
+    <string name="transmitter_receiver_record_first">Please click the recording button first</string>
+    <string name="transmitter_receiver_replay_end">The recording has arrived at the end.</string>
+    <string name="transmitter_receiver_to_record"> Click on the recording button to make a recording .</string>
+    <!-- Headset -->
+    <string name="headset_name"> Headset </string>
+    <string name="headset_hint"> Headset </string>
+    <string name="headset_recording"> Now start the recording. Please speak and click the stop button to stop the recording. .
+    </string>
+    <string name="headset_playing"> In the playback, please take the headphones and listen to the recording .</string>
+    <string name="headset_confirm"> Do you hear the sound of the sound? ?</string>
+    <string name="headset_record_first"> Please click the recording button first </string>
+    <string name="headset_replay_end"> The recording has arrived at the end .</string>
+    <string name="headset_to_record"> Click on the recording button to make a recording .</string>
+    <!-- HeadsetHook -->
+    <string name="headsethook_name"> Headset button </string>
+    <string name="headsethook_hint">Please press the headset button to test it.</string>
+    <!-- Speaker -->
+    <string name="speaker_name">speaker</string>
+    <string name="speaker_hint">speaker</string>
+    <string name="speaker_confirm"> Do you hear the sound of the sound? ?</string>
+    <string name="speaker_playing">Playback...</string>
+    <string name="speaker_play_first">Please click the play button first</string>
+    <string name="speaker_to_play"> Click the play button to play the sound .</string>
+    <string name="speaker_recording"> Now start the recording. Please speak </string>
+    <!-- GPS -->
+    <string name="gps_name">GPS</string>
+    <string name="gps_enable_first"> Please open GPS </string>
+    <string name="gps_start">GPS Start positioning</string>
+    <string name="locate_success"> Positioning success </string>
+    <string name="provider_enable"> GPS service startup </string>
+    <string name="unknown_location"> Unidentified or located in location ...</string>
+    <string name="latitude">latitude</string>
+    <string name="longitude">longitude</string>
+    <string name="speed">speed</string>
+    <string name="altitude">altitude</string>
+    <string name="bearing">Position</string>
+    <!-- FM -->
+    <string name="fm_name">radio</string>
+    <string name="fm_search">search</string>
+    <string name="fm_confirm"> Do you hear the sound of the sound?  ?</string>
+    <string name="app_not_exist"> Do not support radio testing </string>
+    <!-- Battery -->
+    <string name="battery_name">Battery</string>
+    <string name="battery_voltage"> Battery voltage is  ： </string>
+    <string name="charging">Charging</string>
+    <string name="full"> Full power </string>
+    <!-- FuelGaugeCalibration -->
+    <string name="fuelgauge_name"> Calibration of coulomb meter </string>
+    <string name="fuelgauge_hint"> The calibration will be completed in 30 seconds. Please wait a moment. ...
+    </string>
+    <string name="fuelgauge_processing"> In the process of processing ...</string>
+    <string name="flag">Mark position：</string>
+
+
+    <!-- DeviceInfo -->
+    <string name="deviceinfo"> Equipment information </string>
+    <string name="buildinfo">Version information</string>
+    <string name="version_1"> Software version number ：</string>
+    <string name="version_hardware_title"> Hardware version number ：</string>
+    <string name="version_2">Wifi Mac address ：</string>
+    <string name="version_3">SN ：</string>
+    <string name="version_7"> Mac address is not available </string>
+    <string name="version_8">BT，GFT，WFT:</string>
+    <string name="version_9"> CPU frequency :</string>
+    <string name="version_10"> system memory :</string>
+    <string name="Sn_Wait">SN unknown</string>
+    <string name="mp">MP Version:</string>
+    <string name="se_version">SE Version：</string>
+    <string name="qcn_version">QCN :</string>
+    <string name="note_Wait">Sign bit unknown</string>
+    <!-- TCard -->
+    <string name="tcard_name">T card</string>
+    <string name="pen_name">Capacitor pen</string>
+    <string name="tcard_wait">Read the t-card, please wait...</string>
+    <string name="tcard_confirm">T card inserted?</string>
+    <string name="tcard_to_remove"> Please remove the t-card </string>
+    <string name="tcard_to_insert"> Please insert the T card </string>
+    <!-- MasterClear -->
+    <string name="reset_system">Restore the factory setting and reboot</string>
+    <string name="reset_system_shutdown"> Restore the factory setting and turn off the machine </string>
+    <string name="master_clear_desc">"This operation will clear you"<b>"equipment"</b>"All the data in it，Include："\n\n<li>" Your Google account "</li>\n<li>" System and application data and settings "</li>\n<li>" Downloaded applications "</li>\n<li>" Data from the SD card "</li></string>
+
+    <string name="pen_text"> Please plug in the capacitor pen </string>
+    <string name="pen_in"> Insert capacitor pen </string>
+    <string name="pen_out">Pull out the capacitor pen</string>
+    <!-- Printer -->
+    <string name="printer_name">printer</string>
+    <string name="picture">picture</string>
+    <string name="barcode">barcode</string> 
+    <string name="print">Print</string>
+    
+    <string name="printer_temp_title">Current temperature: </string>
+    <string name="printer_temp">0</string>
+    
+    <string name="printer_temp_threshold_title">Setting temperature threshold: </string>
+    <string name="printer_temp_threshold">0</string>
+    <string name="printer_temp_threshold_def">Def: 50</string>
+    
+    <string name="bt_set_temp_threshold">Setting temperature threshold</string>
+    
+    <string name="printer_temp_overheating">Overheating protection</string>
+    
+    <string name="tv_factoryTest">Factory test</string>
+    <string name="cb_factoryTest">Battery free test</string>
+    <string name="btn_BACK">back</string>
+    <string name="btn_FORWARD">Forward</string>
+    
+    <string name="btn_barcode">bar code</string>
+    <string name="btn_prnBill">Print</string>
+    <string name="btn_prnPicture">picture</string>
+    
+    <string name="et_printer_def_hue">Default gray level: 0(0~4)</string>
+    <string name="bt_printer_set_hue">Setting gray level</string>
+    <string name="et_printer_def_speed">Default speed: 9(0~9)</string>
+    <string name="bt_printer_set_speed">set speed</string>
+    
+    <string name="mci_select_title">Production test</string>
+    <string name="mci_select_content">Production test</string>
+    <string name="mci_select_ok">Determine</string>
+    <string name="mci_select_cancel">cancel</string>
+    
+    <string name="tst_info_paper">Out of paper！！！</string>
+    <string name="tst_info_temperature"> Overtemperature protection ！！！</string>
+    <string name="tst_info_voltage">"Low battery voltage！！！"</string>
+    <string name="tst_info_busy">printer busy!!!</string>
+    <string name="tst_info_error">printer error!!!</string>
+    <string name="tst_info_driver_error">Printer driver error!!!</string>
+    <string name="tst_hint_content">Please enter the required print information！！！</string>
+    <!-- ICC -->
+    <string name="icc_name">ICC</string>
+    <string name="pinpad_name">PinPad</string>
+    <string name="pinpad_fail_message">This device does not support TP switch.</string>
+    <string name="pinpad_dialog_message">PinPad is normal or not?</string>
+    <string name="btn_send">Send APDU</string>
+	<string name="btn_send_hint">HEX, 16 byte (e.g. 0A4F&#8230;)</string>
+	<string name="btn_reset">Reset</string>
+	<string name="btn_def_apdu">DEF APDU</string>
+	<string name="btn_detect">Detect</string>
+	<string name="btn_init_ic">Init IC</string>
+	<string name="btn_init_sle4442">Init 4442</string>
+	<!-- Mag -->
+	<string name="mag_name">MagCard</string>
+    <string name="btn_open">Open</string>
+    <string name="btn_checkdev">Check Pay</string>
+    <string name="btn_allstrip">AllStrip</string>
+    <string name="btn_firststrip">1 Strip</string>
+    <string name="btn_secondstrip">2 Strip</string>
+    <string name="btn_thirdstrip">3 Strip</string>
+    <!-- Picc -->
+    <string name="picc_name">Picc</string>
+    <string name="test_title">Ultra High Frequency</string>
+    <string name="result_title">Scan Rerult: </string>
+	<string name="read">Read Data</string>
+	<string name="stop_read">Stop</string>
+	<string name="action_settings">Settings</string>
+	<string name="test_tip">This application is use for ultra high fregency test, 
+	    please aimed at the test card and then press the read data button to read data.</string>
+	    
+	<string name="picc_open">open</string>
+	<string name="picc_check">check</string>
+	<string name="picc_block_data">Block data:</string>
+	<string name="picc_authen">Authen</string>
+	<string name="picc_read_block">Read</string>
+	<string name="picc_write_block">Write</string>
+	<string name="picc_def_apdu">DEF APDU</string>
+	<string name="picc_send_apdu">Send APDU</string>
+	<string name="picc_digits">0123456789ABCDEFabcdef</string>
+	<string name="picc_block_no_none">Please enter the Block number you need to read and write first</string>
+	<string name="picc_block_no_illegal">Block can only be between 0~63</string>
+	<string name="picc_authen_fail">Authentication failure</string>
+	<string name="picc_operate_fail">operation failed</string>
+	<string name="picc_block_data_none">Please input the data in the write block first</string>
+	<string name="picc_active_fail">Activation failure</string>
+	<string name="picc_apdu_hint">APDU:</string>
+	<string name="picc_authen_before">Please click the Authen button first</string>
+	    <!-- PSam card -->
+    <string name="read_icc">Read Icc</string>
+    <string name="icc_hint">Please insert IC card</string>
+    <string name="icc_reset_fail">IC card reset error</string>
+    <string name="key_code">key code：</string> 
+    <string name="keypad_ptt">PTT </string>
+    <string name="keypad_keySCAN">SCAN </string>
+    <string name="keypad_keyFn">Fn </string>
+    <string name="keypad_keydel">Del </string>
+    <string name="keypad_keyback">BACK SPACE</string>
+    <string name="keypad_keyenter">ENT </string>
+    <string name="keypad_Aa">Aa </string>
+    <string name="keypad_keytalk">TALK </string>
+    <string name="keypad_key1"> 1 </string> 
+    <string name="keypad_key2"> 2 </string>
+    <string name="keypad_key3"> 3 </string> 
+    <string name="keypad_key4"> 4 </string>     
+    <string name="keypad_key5"> 5 </string> 
+    <string name="keypad_key6"> 6 </string>    
+    <string name="keypad_key7"> 7 </string> 
+    <string name="keypad_key8"> 8 </string>     
+    <string name="keypad_key9"> 9 </string> 
+    <string name="keypad_key0"> 0 </string>
+    <string name="keypad_keystar">* </string>
+    <string name="keypad_keypound"># </string>
+    <string name="keypad_F1">F1 </string>
+    <string name="keypad_F2">F2 </string>
+    <string name="keypad_F3">F3 </string>
+    <string name="keypad_F4">F4 </string>
+    <string name="keypad_F5">F5 </string>
+    <string name="keypad_F6">F6 </string>
+    <string name="keypad_F7">F7 </string>
+    <string name="keypad_F8">F8 </string>
+    <string name="keypad_F9">F9 </string>
+    <string name="keypad_F0">F10 </string>
+    <string name="keypad_up">up</string>
+    <string name="keypad_down">down</string>
+    <string name="keypad_left"> Left</string>
+    <string name="keypad_right">right</string>
+    <string name="keypad_led">led </string>
+    <string name="keypad_S1">S1 </string>
+    <string name="keypad_S2">S2 </string>
+    <string name="keypad_TAB">TAB </string>
+    <string name="keypad_SPACE">space </string>
+    <string name="keypad_DOT">. key</string>
+    <string name="keypad_COMMA">，key</string>
+    <string name="keypad_keySCANL">SCAN </string>
+    <string name="keypad_keySCANR">SCAN right</string>
+    <string name="keypad_keySCAN1">SCAN1 </string>
+    <string name="keypad_keySCAN2">SCAN2 </string>
+    <string name="keypad_keySCAN3">SCAN3 </string>
+    <string name="keypad_keySCAN4">SCAN4 </string>
+    <string name="fingercheck">Finger checking...</string>
+    <string name="pressure_sensor_name">Pressure sensor</string>
+    <string name="measurevolume_name">3D Measure volume</string>
+    <string name="voltage1">3V</string>
+    <string name="voltage2">5V</string>
+    <string name="voltage3">1.8V</string>
+    <string name="voltage_text">Card voltage:</string>
+    <string name="missing_required_permission">You have disabled a required permission.</string>
+    <string name="equipment_to_be_attacked">The device is suspected to be attacked, close the current application!</string>
+    <string name="enter_print_content">Please enter print content</string>
+    <string name="urovo_fi_text">FI:</string>
+    <string name="urovo_fi_err_text">FI invalid value</string>
+    <string name="urovo_fi_text_hint">Please input FI(1---15).</string>
+    <string name="urovo_di_text">DI:</string>
+    <string name="NV02499_flag">Calibration and Comprehensive :</string>
+    <string name="urovo_di_err_text">DI invalid value</string>
+    <string name="urovo_di_text_hint">Please input DI(1---8).</string>
+    <!-- urovo yaunwei add Fingerprint 2018-12-26 -->
+    <string name="not_chipsailing_ic">Not Chipsailing IC</string>
+    <string name="hasenroll_5finger">The fingerprint has been recorded for 5 and cannot be used for CIT testing.</string>
+    <!-- OTG -->
+    <string name="otg_name">OTG</string>
+    <string name="otg_wait">Read the otg, please wait...</string>
+    <string name="otg_confirm">otg inserted?</string>
+    <string name="otg_to_remove"> Please remove the otg </string>
+    <string name="otg_to_insert"> Please insert the otg </string>
+    <!-- urovo yuanwei SQ38 new key -->
+    <string name="keypad_p1">P1</string>
+    <string name="keypad_p2">P2</string>
+    <string name="keypad_esc">ESC</string>
+    <string name="keypad_tab">TAB</string>
+    <string name="keypad_light_up">light+</string>
+    <string name="keypad_light_down">light-</string>
+    <!-- urovo yuanwei nfc -->
+    <string name="nfc_not_available">NFC not available</string>
+    <string name="nfc_enable_first">Enable NFC...</string>
+    <string name="nfc_enable_fail">Can not enable NFC</string>
+    <string name="scanning">Please bring the magnetic card close to the device</string>
+    <string name="enabling">Enabling...</string>
+    <string name="disabling">Disabling...</string>
+    <string name="turning_on">Turning on...</string>
+    <string name="turning_off">Turning off...</string>
+    <string name="off">OFF</string>
+    <string name="calibration_info">RFCal、RFVerify:</string>
+    <string name="sensor_calibration_menu">Sensor Calibration</string>
+    <string name="pogo_name">POGO PIN</string>
+    <string name="pogo_pin_test_01">Test item 1: OTG </string>
+    <string name="pogo_pin_test_02">Test item 2: key </string>
+    <string name="pogo_pin_test_03">Test item 3: Serial </string>
+    <string name="pogo_pin_test_04">Test item 4: charge</string>
+    <string name="pogo_pin_test_05">Test item 5: ID </string>
+    <string name="pogo_pin_test_06">Test item 6: IIC Test</string>
+    <string name="pogo_charge_send_txt">POGO PIN charge</string>
+    <string name="pogo_charge_result_txt">POGO PIN charge info</string>
+    <string name="pogo_serila_tip">Please short the POGO PIN serial port first.</string>
+    <string name="pogo_serila_send_txt">Send data to the serial port</string>
+    <string name="pogo_serila_send_txt_mind">Start sending data ...</string>
+    <string name="pogo_key_send_txt">Click get POGO id status</string>
+    <string name="pogo_key_result_txt_scl">Please short click SCL and click the button to view</string>
+    <string name="pogo_key_result_txt_sda">Please short click SDA and click the button to view</string>
+    <string name="pogo_key_result_txt">Please short click and click the button to view</string>
+    <string name="pogo_key_mind">Please press POGO PIN key</string>
+    <string name="pogo_dc_charge_mind">,Please confirm if the charger is in place.</string>
+    <string name="qcn_info">QCN Version: </string>
+    <string name="hardware_info">Hardware Version: </string>
+    <string name="mac_addr_no_exist">Mac address does not exist</string>
+    <string name="baseband_info">Baseband Version: </string>
+    <string name="mainboard_info">Mainboard Info: </string>
+    <string name="lcd_info">LCD Info: </string>
+    <string name="tp_info">TP Info: </string>
+    <string name="battery_type_info">Battery Info: </string>
+    <string name="battery_id_info">Battery Status: </string>	
+    
+    <string name="prma_success">RPMB key provisioning completed</string>
+    <string name="prma_repeat">the device is already provisioned RPMB key</string>
+    <string name="prma_failed">RPMB key provisioning failed</string>
+    <string name="key_success">success</string>
+    <string name="key_failed">failed</string>
+    <string name="prmb_name">RPMB Key</string>
+    <string name="Att_name">Attesttation Key</string>
+    <string name="keypad_shift">Shift</string>
+	
+	
+	<string name="keypad_leftkey">SCAN_LEFT_KEY</string>
+	<string name="keypad_rightkey">SCAN_RIGHT_KEY</string>
+	<string name="up_keypad">VOLUME_UP</string>
+	<string name="down_keypad">VOLUME_DOWN</string>
+	<string name="power_keypad">POWER</string>
+	<string name="no_uart">NO UART</string>
+	<string name="send_fail">SEND FAIL</string>
+	<string name="scan_type">Please wait......</string>
+	<string name="no_scan_camera">Open Scan Camera Failed</string>
+	 <string name="fingerprint_recognition_guide_tip">启动中</string>
+	<string name="fingerprint_get"> 检测到指纹</string>
+	<string name="fingerprint_yes"> 启动指纹服务</string>
+	<string name="fingerprint_no"> 无法启动指纹服务</string>
+	<string name="fingerprint_name">指纹测试</string>
+    <string name="alt_left">ALT</string>
+    <string name="ctrl_left">CTRL</string>
+    <string name="navbar_home">nav_home</string>
+    <string name="navbar_recent">nav_recent</string>
+    <string name="navbar_back">nav_back</string>
+    <string name="heating_name">Heating</string>
+    <string name="curr_temp_scan">SCAN temprature(℃):</string>
+    <string name="curr_temp_lcd">LCD temprature(℃):</string>
+    <string name="curr_temp_mb">MB temprature(℃):</string>
+
+    <string name="scan_heating">SCAN heating</string>
+    <string name="lcd_heating">LCD heating</string>
+    <string name="mb_heating">MB heating</string>
+
+    <string name="scan_heating_status">SCAN heating status:</string>
+    <string name="lcd_heating_status">LCD heating status:</string>
+    <string name="mb_heating_status">MB heating status:</string>
+
+    <string name="heating_open">Opening..</string>
+    <string name="heating_open_failed">Open Failed!!</string>
+    <string name="heating_open_success">Contitue heating...</string>
+    <string name="heating_close">Close heating.</string>
+    <string name="heating_led_waring">Please confirm the blue light in the left (heating on: blue light on, heating off: blue light off)</string>
+    <string name="pass_psam">read PSAM successfull！</string>
+    <string name="sim_insert_waring">Please insert SIM Card!</string>
+    <string name="bulk_capacitor_name">Bulk Capacitor</string>
+    <string name="bulk_capacitor_hint">Please observe whether the device shuts down immediately after power failure.\n Device shuts down immediately: failure \n Not to shut down immediately: Successful</string>
+
+    <string name="battery_vol">Voltameter</string>
+    <string name="charge">Charge</string>
+    <string name="discharging">Discharging</string>
+    <string name="not_charging">No charging</string>
+    <string name="batterytype">Battery type:</string>
+    <string name="batteryvoltage">Battery voltage:</string>
+    <string name="chargesate">Charge state:</string>
+    <string name="currentpower">Current power:</string>
+    <string name="batterypower">Design power:</string>
+    <string name="powerstate">Power state:</string>
+    <string name="plugged_ac">AC power</string>
+    <string name="plugged_usb">USB power</string>
+    <string name="batteryElectric">Battery Electric</string>
+    <string name="charge_count">Charge count:</string>
+    <string name="battery_sn">Battery SN:</string>
+    <string name="baterry_health">Battery capacity (Health)：</string>
+    
+        <string-array name="font_size">
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>16</item>
+        <item>24</item>
+        <item>32</item>
+        <item>48</item>
+        <item>50</item>
+    </string-array>
+
+    <string-array name="font_name">
+        <item>simsun</item>
+        <item>arial</item>
+    </string-array>
+
+    <string name="tst_info_select_picture">Print default picture?</string>
+    <string name="tst_info_select_picture_msg">Press OK to print default picture, otherwise print a picture from Gallery!!!</string>
+    
+    <string name="query_trigger_sec">Query Trigger</string>
+    <string name="clear_trigger_sec">Clear Trigger</string>
+    <string name="query_trigger_info_fail">Failed to obtain device trigger information!</string>
+    <string name="str_reset">Reset</string>
+    <string name="printer_lowspeed">Printer Model: Low Voltage Low Speed</string>
+    <string name="printer_highspeed">Printer Model: Low Voltage High Speed</string>
+    <string name="led_color_red">Red,</string>
+    <string name="led_color_green">Green,</string>
+    <string name="led_color_blue">Blue,</string>
+    <string name="led_tri_text_nomal">LED test sequence:  </string>
+    <string name="toast_no_apk">App name error or Not install test apk!</string>
+    <string name="safe_name"> Safe test </string>
+    <string name="common_name"> Common test </string>
+    <string name="device_name">Device Name: </string>
+    <string name="mainboard_sn">Mainboard SN:</string>
+    <string name="pogo_dock_result_txt">Dock MAC address：</string>
+    <string name="pogo_pin_test_07">Test item 7: Ethernet</string>
+    <string name="pogo_ethernet_result_txt">Ethernet MAC address：</string>
+    <string name="pogo_ethernet_start_txt">Ethernet Test Start</string>
+    <string name="pogo_ethernet_ip_address">Ethernet IP Address: </string>
+    <string name="pogo_usb_plugged_state">Usb plugged in State: </string>
+    <string name="unknown_state">Unknown State</string>
+</resources>

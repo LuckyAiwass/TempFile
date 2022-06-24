@@ -1,0 +1,185 @@
+package com.ubx.factorykit.NFC;
+
+import java.io.UnsupportedEncodingException;
+
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
+import android.nfc.NfcAdapter;
+import android.nfc.NfcAdapter.CreateNdefMessageCallback;
+import android.nfc.NfcEvent;
+import android.content.BroadcastReceiver;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.widget.TextView;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+
+import com.ubx.factorykit.Framework.Framework;
+import com.ubx.factorykit.R;
+import com.ubx.factorykit.Utilities;
+
+public class NFC extends Activity implements CreateNdefMessageCallback {
+
+    private static final String  TAG          = "NFC";
+	private NfcAdapter mNfcAdapter;
+	private TextView textView;
+	private MyReceiver mNfcReceiver;
+	private boolean result = false;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setRequestedOrientation(Framework.orientation);
+		setContentView(R.layout.nfc);
+		
+		textView = (TextView) findViewById(R.id.tv);
+		mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+		init();
+		
+		boolean nfcOn = nfcIsEnabled(textView);
+		
+		if (nfcOn) {			
+			mNfcAdapter.setNdefPushMessageCallback(this, this, this);
+		}
+		
+	}
+	
+	private boolean nfcIsEnabled(TextView tv) {
+		if (mNfcAdapter != null && mNfcAdapter.isEnabled()) {
+			tv.setText("将磁卡靠近设备");
+			return true;
+		} else {
+			if (mNfcAdapter == null) {
+				tv.setText("此设备不具备NFC功能！");
+			}
+			if (!mNfcAdapter.isEnabled()) {
+				tv.setText("请在设置中打开NFC功能");
+			}
+			return false;
+		}
+	}
+	
+	private void init() {
+		// TODO Auto-generated method stub
+        mNfcReceiver = new MyReceiver();
+        IntentFilter localIntentFilter = new IntentFilter();
+        localIntentFilter.addAction("factory.kit.nfc.message");
+        registerReceiver(mNfcReceiver, localIntentFilter);
+	}
+
+	@Override
+	public NdefMessage createNdefMessage(NfcEvent event) {
+		// TODO Auto-generated method stub
+		String text = ("Beam me up, Android!\n\n" + "Beam Time: " + System.currentTimeMillis());
+		// textView.setText(text);
+		
+		NdefMessage msg = new NdefMessage(new NdefRecord[]{
+		//		createMime("application/vnd.com.example.android.beam", text.getBytes())
+         /**
+
+          * The Android Application Record (AAR) is commented out. When a device
+
+          * receives a push with an AAR in it, the application specified in the AAR
+
+          * is guaranteed to run. The AAR overrides the tag dispatch system.
+
+          * You can add it back in to guarantee that this
+
+          * activity starts when receiving a beamed message. For now, this code
+
+          * uses the tag dispatch system.
+
+          */
+          //,NdefRecord.createApplicationRecord("com.example.android.beam")
+		});
+		return null;
+	}
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(getIntent().getAction())) {
+			// ACTION_NDEF_DISCOVERED
+		}
+		if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(getIntent().getAction())) {
+			// ACTION_TECH_DISCOVERED
+			// readFromTag(getIntent());
+		}
+		if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(getIntent().getAction())) {
+			// ACTION_TAG_DISCOVERED
+		}
+	}
+	
+	@Override
+	protected void onNewIntent(Intent intent) {
+		// TODO Auto-generated method stub
+		super.onNewIntent(intent);
+	}
+	
+	private boolean readFromTag(Intent intent){
+	    Parcelable[] rawArray = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+	    NdefMessage mNdefMsg = (NdefMessage)rawArray[0];
+	    NdefRecord mNdefRecord = mNdefMsg.getRecords()[0];
+	    String readResult = null;
+	    try {
+	        if(mNdefRecord != null){
+	            readResult = new String(mNdefRecord.getPayload(),"UTF-8");
+	            textView.setText(readResult);
+	            return true;
+	         }
+	    }
+	    catch (UnsupportedEncodingException e) {
+	         e.printStackTrace();
+	    };
+	    return false;  
+	 }
+	 
+	 class MyReceiver extends BroadcastReceiver {
+
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			// TODO Auto-generated method stub
+			
+			//myThread.start();
+			result = true;
+			returnResult();
+		}
+		
+		/*
+		Thread myThread = new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				while(isScaning) {
+					try {
+						Thread.sleep(1000);
+						returnResult();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		*/
+	}
+	
+	private void returnResult() {
+	    setResult(result ? RESULT_OK : RESULT_CANCELED);
+		Utilities.writeCurMessage(this, TAG, result ? "Pass" : "Failed");
+        unregisterReceiver(mNfcReceiver);
+        
+        finish();
+    }
+    
+    @Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		unregisterReceiver(mNfcReceiver);
+	}
+}

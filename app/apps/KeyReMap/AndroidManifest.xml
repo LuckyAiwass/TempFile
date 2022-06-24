@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ubx.keyremap"
+    coreApp="true"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="V1.0" >
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name="com.ubx.keyremap.component.KeyboardSettings"
+            android:label="@string/title_activity_viewer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.DEVICE_KEYBOARD_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="action.PROGRAMMABLE_KEY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>-->
+        </activity>
+
+        <activity android:name="com.ubx.keyremap.component.WakeKeySettings"
+            android:label="@string/title_wakeup_enable">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.WAKE_KEY_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+	
+        <activity android:name="com.ubx.keyremap.component.RemapDetailActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.KEY_REMAP_TYPE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.ubx.keyremap.component.EditBroadcastActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT_INTENT_EXTRAS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.ubx.keyremap.component.RemapResultActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.KEY_REMAP_VIEWER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="action.PROGRAMMABLE_KEY" />
+                <action android:name="action.PROGRAMMABLE_IMPORT_KEY" />
+                <action android:name="action.PROGRAMMABLE_EXPORT_KEY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+	
+        <activity android:name="com.ubx.keyremap.component.RemapActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.KEY_REMAP" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            </intent-filter>
+        </activity>
+	
+        <provider
+            android:name="com.ubx.keyremap.provider.KeymapProvider"
+            android:authorities="com.android.provider.keymap"
+            android:exported="true"/>
+
+        <receiver android:name="com.ubx.keyremap.component.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.ubx.keyremap.component.ImportExportService">
+            <intent-filter>
+                <action android:name="action.PROGRAMMABLE_KEY_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <activity android:name="com.ubx.keyremap.component.KeyFunction">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.KEYFUNCTION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

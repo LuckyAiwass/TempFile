@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?><!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="scanwedge_settings">ScanWedge 设置</string>
+    <string name="about_scanwedge">关于 ScanWedge</string>
+    <string name="datawedge_enable_title">ScanWedge</string>
+    <string name="datawedge_enable_summaryon">已启用 ScanWedge</string>
+    <string name="datawedge_enable_summaryoff">已禁用 ScanWedge</string>
+    <string name="datawedge_logging_enable_title">启用日志记录 </string>
+    <string name="datawedge_logging_enable_summary">在Logcat输出调试信息</string>
+    <string name="settings_profile_title">"配置文件: %1$s"</string>
+    <string name="scanner_settings_title">掃描設置</string>
+    <string name="set_scanner_manager">掃描</string>
+    <string name="scanwedge_version">"版本: %1$s"</string>
+    <string name="scanning_framework">"扫描服务: %1$s"</string>
+    <string name="decoder_library_engine">"解码库: %1$s"</string>
+    <string name="scanner">"掃描"</string>
+    <string name="scanner_on">"打開掃描電源"</string>
+    <string name="scanner_off">"關閉掃描電源"</string>
+    <string name="scanner_wedge_mode">輸出方式</string>
+    <string name="scanner_keyboard_mode">"解碼反饋"</string>
+    <string name="scanner_keyboard_output">"鍵盤輸出"</string>
+    <string name="scanner_output_mode">"鍵盤方式輸出"</string>
+    <string name="scanner_keyboard_output_summary">"掃描結果以鍵盤方式輸出到前臺應用程序焦點編輯框內"</string>
+    <string name="scanner_trigger_mode">"掃描模式"</string>
+    <string name="scanner_trigger_mode_summary">"引擎將連續掃描"</string>
+    <string name="scanner_decode_feedback">掃描参数</string>
+    <string name="scanner_beep">"提示音"</string>
+    <string name="scanner_beep_summary">"掃描成功播放聲音"</string>
+    <string name="scanner_vibrate">"震動"</string>
+    <string name="scanner_vibrate_summary">"掃描成功震動"</string>
+    <string name="scanner_virtual_button_output">"按鍵輸出"</string>
+    <string name="scanner_virtual_button_summary">"懸浮按鍵"</string>
+    <string name="scanner_virtual_button_title">"懸浮按鍵开/關"</string>
+    <string name="scanner_wedge_intent_mode">Intent 輸出</string>
+    <string name="scanner_wedge_intent_title">廣播輸出</string>
+    <string name="scanner_wedge_intent_summary">數據通過廣播發送到應用程序</string>
+    <string name="scanner_intent_stringlabel">廣播數據標籤</string>
+    <string name="scanner_intent_action">廣播動作</string>
+    <string name="scanner_intent_categtoy">Intent 类别</string>
+    <string name="scanner_intent_recevier_foreground">Receiver forgeround 标记</string>
+    <string name="scanner_intent_recevier_summary">在播intent中设置标记</string>
+    <string name="scanner_keyboard_copy">"剪貼板"</string>
+    <string name="scanner_enter">"附加回車鍵"</string>
+    <string name="scanner_enter_summary">"掃描結果後附加回車鍵"</string>
+    <string name="scanner_action_key_character">操作鍵字符</string>
+    <string name="scanner_out_editortext_mode">输入文本框模式</string>
+    <string name="keyevent_enter_delay">回车键延迟</string>
+    <string name="output_data_delay">延迟输出</string>
+    <string name="output_data_character_delay">字符间延迟</string>
+    <string name="scanner_lock">"掃描按鍵"</string>
+    <string name="scanner_lock_on">"啓用掃描按鍵"</string>
+    <string name="scanner_lock_off">"關閉掃描按鍵"</string>
+    <string name="scanner_reset_def">"重置"</string>
+    <string name="scanner_reset_def_summary">"掃描引擎恢復出廠設置"</string>
+    <string name="scanner_reset_def_alert">"要使要使掃描引擎恢復出廠設置？"</string>
+    <string name="scanner_reset_profile_def">重置配置文件</string>
+    <string name="scanner_reset_profile_def_summary">重置配置文件至初始設置 </string>
+    <string name="scanner_reset_profile_def_alert">重置配置文件至初始設置?</string>
+    <string name="scanner_profile_toast">配置文件重置完成!</string>
+    <string name="scanner_toast">掃描頭重置完成!</string>
+    <string name="scanner_type_unknown">未知掃描頭類型!</string>
+    <string name="urovo_settings">掃描頭</string>
+    <string name="scan_type_summary">[ <xliff:g id="scan_type_entries">%1$s</xliff:g> ]</string>
+    <string name="scan_type">掃描頭類型</string>
+    <string name="urovo_settings_title">可選掃描頭</string>
+    <string name="phonemode_scan_key">手機模式</string>
+    <string name="phonemode_scan_key_summary">提升掃描屏幕時性能</string>
+    <string name="phonemode_summary">提升掃描屏幕時性能</string>
+    <string name="phonemode_title">LCD 模式</string>
+    <string name="n6603_Enable_GS_Window">"特殊字符GS码设置"</string>
+    <string name="scanner_keyboard_type_title">鍵盤類型</string>
+    <string name="scanner_associated_apps_title">关联的应用程序</string>
+    <string name="scanner_associated_apps_summary">将应用程序关联到此配置文件</string>
+    <string name="scanner_associated_apps_category_title">应用程序</string>
+    <string name="scanner_input_category_title">扫描头输入</string>
+    <string name="scanner_input_title">启用扫描头</string>
+    <string name="scanner_input_summary">启用/禁用扫描器输入</string>
+    <string-array name="scanner_keyboard_type_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="scanner_keyboard_type_entries">
+        <item>文本框優化</item>
+        <item>輸入法軟件</item>
+        <item>僅用物理鍵盤</item>
+        <item>僅用輸入法</item>
+    </string-array>
+
+    <string name="title_device_sn">SN</string>
+    <string name="summary_device_sn">未知</string>
+    <string name="title_device_32550">SE</string>
+    <string name="summary_device_32550">未知</string>
+    <string name="scanner_intent_mode">意圖模式</string>
+    <string name="scanner_intent_mode_on">扫描结果将被以隐式意图的形式发送到应用程序中</string>
+    <string name="scanner_intent_mode_off">Disable the captured data to be sent to an application in the form of an implicit Intent</string>
+    <string name="scanner_action_save">永久保存</string>
+    <string name="scanner_commit">啓用配置</string>
+    <string name="scanner_decode_engine">解碼器配置</string>
+    <string name="scanner_barcode_param">解碼器參數</string>
+    <string name="scanner_barcode_param_summary">解碼器參數配置</string>
+    <string name="scanner_decoders_enable">啓用所有解碼器</string>
+    <string name="scanner_decoders_enable_summary">解碼所有的條碼類型</string>
+    <string name="scanner_keystroke_output_category">按鍵輸出</string>
+    <string name="scanner_intent_output_category">意图输出</string>
+    <string name="scanner_wedge">輸出方式</string>
+    <string name="scanner_enable_keyboard_wedge">按鍵輸出</string>
+    <string name="scanner_enable_intent_wedge">意圖輸出</string>
+    <string name="scanner_intent_atcion">意图动作</string>
+    <string name="scanner_intent_category">意图类别</string>
+    <string name="scanner_intent_delivery">发送意图方式</string>
+    <string name="scanner_intent_delivery_mode">发送意图方式</string>
+    <string name="scanner_notification">解码通知</string>
+    <!-- Notification -->
+    <string name="scanner_good_read_count">通知次数</string>
+    <string name="scanner_good_read_duration">通知持续时间</string>
+    <string name="scanner_good_read_tone">蜂鸣音的音高</string>
+    <string name="scanner_good_read">解码指示</string>
+    <!-- Good Read -->
+    <string name="scanner_enable_good_read">掃描成功</string>
+    <string name="scanner_enable_green_spot">绿点</string>
+    <string name="scanner_green_spot_on">"点亮绿点"</string>
+    <string name="scanner_green_led_on">"点亮LED"</string>
+    <string name="scanner_enable_led">LED灯</string>
+    <string name="scanner_enable_vibrator">震動</string>
+    <string name="scanner_decode_timeout">解碼超時</string>
+    <string name="scanner_decode_timeout_units"> 秒</string>
+    <string name="scanner_good_read_interval">每次通知间隔</string>
+
+    <string name="scanner_formatting">數據格式化</string>
+    <string name="scanner_send_lable_fix">附加格式化</string>
+    <string name="scanner_lable_prefix">前缀</string>
+    <string name="scanner_lable_suffix">後缀</string>
+    <string name="scanner_lable_pattern">格式化</string>
+    <string name="scanner_lable_replace">替換</string>
+    <string name="scanner_lable_replaceregex">原字符</string>
+    <string name="scanner_lable_replacement">替換字符</string>
+    <string name="scanner_lable_replaceerror">请输入有效字符</string>
+    <string name="add_special">特殊字符:</string>
+    <string name="edit_lable_prefix">編輯前缀</string>
+    <string name="edit_lable_suffix">編輯後缀</string>
+    <string name="edit_lable_pattern">編輯模式</string>
+    <string name="scanner_lable_format_error">%1$s 錯誤! 請輸入正確的表達式</string>
+    <string name="scanner_data_separator">數據分隔符</string>
+    <string name="scanner_group_separator_replacement">替換GS分隔符</string>
+    <string name="scanner_remove_non_printable_characters">刪除非打印控制符</string>
+    <string name="remove_non_printable_chars">删除非打印控制字符</string>
+    <string name="scanner_send_code_id">發送條碼ID</string>
+    <string name="scanner_trigger_reading">读取器参数</string>
+    <string name="scanner_laser_on_time">激光持續時間</string>
+    <string name="scanner_timeout_same_symbol">重碼有效時延</string>
+    <string name="scanner_type_security_level">多重校驗</string>
+    <string name="scanner_1d_quiet_zone_level">空白区域校驗</string>
+
+    <string name="scanner_symbology">條碼設置</string>
+    <string name="scanner_special_settings">特色设置</string>
+    <string name="scanner_1d_special">一維碼特性</string>
+    <string name="scanner_fuzzy_1d_processing">優化一維解碼</string>
+    <string name="scanner_1d_inverse">一維反白解碼</string>
+    <string name="scanner_multi_decode">多次解碼</string>
+    <string name="scanner_multi_decode_mode">啓用多次解碼</string>
+    <string name="scanner_bar_codes_to_read">解碼次數</string>
+    <string name="scanner_full_read_mode">完整解碼</string>
+    <string name="scanner_symbology_length_range">"條碼的數據字符長度爲 %1$s 到 %2$s."</string>
+    <string name="scanner_laser_timeout_summary">" %1$s 毫秒"</string>
+    <string name="scanner_coding_format">中文編碼類型</string>
+
+    <string name="factory_passwork_title">恢復出廠設置</string>
+    <string name="factory_password_tv">密碼:</string>
+    <string name="factory_password_ok">確定</string>
+    <string name="factory_password_cansel">取消</string>
+    <string name="factory_password_error">密碼錯誤!</string>
+
+    <string name="auto_input_title">自動彈出鍵盤</string>
+    <string name="statusbar_battery_level_title">电量百分比</string>
+    <string name="statusbar_battery_level_summary">在状态栏中显示电量百分比</string>
+    <string name="lable_application_identifier">應用標示符</string>
+    <string name="lable_application_identifier_summary">"GS1、DataMatrix Code128"</string>
+    <string name="lable_application_identifier_edit">應用標示分隔符</string>
+    <string name="lable_ai_edit_length">請輸入兩個字符</string>
+    <!-- urovo add shenpidong begin 2019-04-17 -->
+    <string name="lable_ai_edit_ascii">%1$s 字符不在ASCII範圍內.</string>
+    <!-- urovo add shenpidong end 2019-04-17 -->
+    <!--OCR Symbology  settings -->
+    <string name="lable_ocr_symbology">OCR 扫描</string>
+    <string name="lable_ocr_symbology_enable">OCR</string>
+    <string name="lable_ocr_symbology_mode">OCR 解碼模式</string>
+    <string name="lable_ocr_symbology_template">OCR 模板</string>
+    <string name="lable_ocr_user_template">基础OCR模板</string>
+    <string name="lable_defined_ocr_user_template">自定義OCR模板</string>
+    <string name="lable_ocr_symbology_template_font">OCR 模板字体</string>
+    <string name="lable_ocr_symbology_template_character">OCR 字符类型</string>
+    <string name="lable_ocr_symbology_template_font_length">OCR条码长度(1-50)</string>
+    <string name="import_config_keys">导入配置文件</string>
+    <string name="export_config_keys">导出配置文件</string>
+    <string name="import_config_keys_summary">导入 ScanWedge 配置文件</string>
+    <string name="export_config_keys_summary">导出 ScanWedge 配置文件</string>
+    <string name="exporting_config">正在导出...</string>
+    <string name="importing_config">正在导入...</string>
+    <string name="app_name">ScanWedge</string>
+    <string name="scanner_settings">ScanWedge 配置文件</string>
+    <string name="scanner_exposure_setting">曝光</string>
+    <string name="scanner_exposure_mode">曝光模式</string>
+    <string name="scanner_exposure_fixed_title">曝光值</string>
+    <string-array name="scanner_exposure_mode_entries">
+        <item>自動</item>
+        <item>开</item>
+    </string-array>
+    <string name="n6603_title_lights_config">補光燈补光灯配置</string>
+    <string name="n6603_title_lights_config_summary">For configuring lights mode</string>
+    <string name="n6603_decoce_windowing">解码取景框</string>
+    <string name="n6603_configure_windowing">配置取景框</string>
+    <!-- Decode Centering (Windowing) Strings -->
+    <string name="n6603_centering_mode_title">取景模式</string>
+    <string name="n6603_centering_mode_summary">For Centering Mode</string>
+    <string name="n6603_UpperLeftWindowX">左上角X座標</string>
+    <string name="n6603_UpperLeftWindowY">左上角Y座標</string>
+    <string name="n6603_LowerRightWindowX">右下角X座標</string>
+    <string name="n6603_LowerRightWindowY">右下角Y座標</string>
+    <string name="n6603_UpperLeftWindowX_summary">Sets the upper left X value</string>
+    <string name="n6603_UpperLeftWindowY_summary">Sets the upper left Y value</string>
+    <string name="n6603_LowerRightWindowX_summary">Sets the lower_right X value</string>
+    <string name="n6603_LowerRightWindowY_summary">Sets the lower_right Y value</string>
+    <string name="n6603_Enable_Debug_Window">調試取景框</string>
+    <string name="se4500_dec_picklist_aim_mode">瞄準模式</string>
+    <string name="se4500_illum_power_level">補光燈亮度</string>
+    <string name="n3680_aimer_delay">瞄準延時</string>
+    <string name="scanner_cache_config">條碼數據緩存</string>
+    <string name="scanner_cache_enable">緩存數據</string>
+    <string name="scanner_cache_limit_time">緩存超時</string>
+    <string name="scanner_cache_mode">自動清除緩存</string>
+    <string name="wired_scan">有線指環掃描頭</string>
+    <string name="wired_scan_type_other">其他</string>
+    <string-array name="n6603_multiple_decode_values_titles">
+        <item>可重複解碼</item>
+        <item>不重複解碼</item>
+    </string-array>
+    <string name="scanner_multiple_decode">多条码参数</string>
+    <string name="scanner_multiple_decode_sum">设置多条码特定参数</string>
+    <string name="scanner_multiple_decode_mode">解多个条码</string>
+    <string name="scanner_multiple_decode_count">每次扫描的条码数</string>
+    <string name="scanner_multiple_full_read_mode">固定条码数</string>
+    <string name="scanner_multiple_full_read_mode_sum">每次扫描固定条码数后输出</string>
+    <string name="scanner_multiple_decode_separator">条码分隔符</string>
+    <string name="n6603_multiple_decode_config">連續掃描配置</string>
+    <string name="n6603_multiple_decode_mode">連續模式 </string>
+    <string name="n6603_multiple_decode_count">解碼多次個數</string>
+    <string name="n6603_multiple_decode_count_sum">設置最大解碼個數（1~100）</string>
+    <string name="n6603_multiple_decode_count_hint">1~100 次</string>
+    <string name="n6603_multiple_decode_timeout">解碼多次超時(50~60000 ms) </string>
+    <string name="n6603_multiple_decode_timeout_hint">50~60000 ms</string>
+    <string name="n6603_multiple_decode_timeout_sum">僅對不重複解碼有效</string>
+    <string name="contiuns">連續模式</string>
+    <string name="exposure">曝光控制</string>
+    <string name="lighting">燈光照明</string>
+    <string name="logMode">日誌模式</string>
+    <string name="aimerControl">Aimer控制</string>
+    <string name="chooseCameraId">選擇攝像頭</string>
+    <string name="saveBmp">保存圖片</string>
+    <string name="showBmp">顯示圖片</string>
+    <string name="symbology">條碼配置</string>
+    <string-array name="SaveImage_entries">
+        <item>不保存</item>
+        <item>保存解碼成功最後一張圖片</item>
+        <item>保存預覽的最後一張圖片</item>
+        <item>保存所有預覽的圖片</item>
+        <item>保存所有解碼成功圖片</item>
+    </string-array>
+    <string-array name="cameraId_entries">
+        <item>camera0攝像頭</item>
+        <item>camera1攝像頭</item>
+        <item>camera2攝像頭</item>
+    </string-array>
+    <string-array name="SaveImage_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="cameraId_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string name="advanced_property_settings">高级设置</string>
+    <string name="import_property_scan">扫描导入设置项</string>
+    <string name="import_property_local">文件导入设置项</string>
+    <string name="import_property_add_Preference">自定义设置项</string>
+    <string name="import_property_clear_Preference">清除设置项</string>
+</resources>

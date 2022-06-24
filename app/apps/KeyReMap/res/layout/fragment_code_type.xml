@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="@color/colorLightGray" />
+
+    <LinearLayout
+        android:id="@+id/fg_code_detail"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/fg_key_name"
+            style="@style/titleTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_weight="2.5"
+            android:gravity="center_vertical"
+            android:text="@string/selected_key_name"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/fg_key_code"
+            style="@style/titleTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1.5"
+            android:gravity="center_vertical"
+            android:text="@string/selected_key_code"
+            android:textColor="@color/colorPrimary" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginLeft="8dp"
+        android:background="@android:color/darker_gray" />
+
+    <com.jplus.view.FlowLayout
+        android:id="@+id/key_names_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="6dp"
+        android:background="@drawable/key_board_bg"
+        android:padding="4dp" />
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (c) 2011-2012, Qualcomm Technologies, Inc.
+ All Rights Reserved.
+ Qualcomm Technologies Proprietary and Confidential.
+ Developed by QRD Engineering team.
+-->
+<resources>
+
+    <string-array name="remote_entries">
+        <item>Remote updates</item>
+        <item>Local updates</item>
+    </string-array>
+    <string-array name="auto_update_prefs_entries">
+        <item>Never check</item>
+        <item>Boot completed check</item>
+        <item>Scheduled check</item>
+    </string-array>
+    <string-array name="auto_update_prefs_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="update_timeout_entries">
+        <item>6 hours</item>
+        <item>12 hours</item>
+        <item>24 hours</item>
+         <item>3 days</item>
+        <item>7 days</item>
+        <item>15 days</item>
+        <item>30 days</item>
+    </string-array>
+    <string-array name="update_timeout_values" translatable="false">
+        <item>3</item>
+        <item>7</item>
+        <item>15</item>
+        <item>30</item>
+    </string-array>
+    <integer-array name="update_scheduled_time_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </integer-array>
+    <string-array name="update_auto_scheduled_time_values">
+        <item>6</item>
+        <item>12</item>
+        <item>24</item>
+         <item>72</item>
+        <item>168</item>
+        <item>360</item>
+        <item>720</item>
+    </string-array>
+    <string-array name="remote_entries_local">
+        <item>Local updates</item>
+    </string-array>
+
+    <string-array name="remote_entries_remote">
+        <item>Remote updates</item>
+    </string-array>
+
+    <string-array name="update_check_entries" translatable="false">
+        <item>@string/check_four_daily</item>
+        <item>@string/check_twice_daily</item>
+        <item>@string/check_daily</item>
+        <item>@string/check_weekly</item>
+        <item>@string/check_bi_weekly</item>
+        <item>@string/check_monthly</item>
+        </string-array>
+
+    <string-array name="update_check_values" translatable="false">
+        <item>21600</item>
+        <item>43200</item>
+        <item>86400</item>
+        <item>604800</item>
+        <item>1209600</item>
+        <item>2419200</item>
+    </string-array>
+</resources>

@@ -1,0 +1,4 @@
+java_import {
+    name: "SaxParseXml",
+    jars: ["SaxParseXml.jar"],
+}

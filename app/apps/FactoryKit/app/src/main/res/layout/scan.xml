@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2011, Qualcomm Technologies, Inc.
+    All Rights Reserved.
+    Qualcomm Technologies Proprietary and Confidential.
+    Developed by QRD Engineering team.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+     <TextView
+        android:id="@+id/otg_hint"
+        android:layout_width="fill_parent"
+        android:layout_height="350dp"
+        android:text="@string/scan_type"
+        android:gravity="top"
+        android:textSize="20sp" />
+	
+	<EditText
+	        android:id="@+id/focus"
+	        android:hint="scan code"
+	        android:layout_weight="1"
+			android:visibility="gone"
+	        android:gravity="top"
+	        android:layout_width="fill_parent"
+	        android:layout_height="0dp"/>
+		
+	  
+    
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <Button
+            android:id="@+id/pass"
+            android:text="@string/pass"
+            android:textSize="20sp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+        ></Button>
+        <Button
+            android:id="@+id/fail"
+            android:text="@string/fail"
+            android:textSize="20sp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+        ></Button>
+	
+	<Button
+            android:id="@+id/scannertype"
+            android:textAllCaps="false"
+            android:text="@string/fail"
+            android:textSize="20sp"
+			android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+        ></Button>
+        
+    </LinearLayout>
+</LinearLayout>

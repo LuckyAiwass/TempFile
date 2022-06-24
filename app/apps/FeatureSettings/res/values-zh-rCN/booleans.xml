@@ -1,0 +1,7 @@
+<resources>
+
+	<bool name="bool_vbtn_left">false</bool>
+	    <bool name="bool_vbtn_middle">false</bool>
+    <bool name="bool_vbtn_right">false</bool>
+
+    </resources>

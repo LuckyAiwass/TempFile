@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <PreferenceCategory
+        android:key="aztec"
+        android:title="@string/scanner_symbology_aztec" >
+        <CheckBoxPreference
+            android:key="decoder_type_aztec"
+            android:title="@string/scanner_symbology_enable" />
+        <ListPreference
+            android:key="scanner_aztec_inverse"
+            android:persistent="false"
+            android:entries="@array/image_2d_inverse_decoder_entries"
+            android:entryValues="@array/image_inverse_decoder_values"
+            android:title="@string/scanner_inverse" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="codabar"
+        android:title="@string/scanner_symbology_codabar" >
+        <CheckBoxPreference
+            android:key="decoder_type_Codabar"
+            android:title="@string/scanner_symbology_enable" />
+
+        <EditTextPreference
+            android:dependency="decoder_type_Codabar"
+            android:key="decoder_L1_of_codabar"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_type_Codabar"
+            android:key="decoder_L2_of_codabar"
+            android:title="@string/scanner_symbology_user_l2" />
+
+        <!-- <CheckBoxPreference
+            android:dependency="decoder_type_Codabar"
+            android:key="codabar_enable_checksum"
+            android:title="@string/scanner_symbology_enable_checksum" /> -->
+        <!-- <CheckBoxPreference
+            android:dependency="codabar_enable_checksum"
+            android:key="codabar_send_checksum"
+            android:title="@string/scanner_symbology_send_checksum" /> -->
+        <CheckBoxPreference
+            android:dependency="decoder_type_Codabar"
+            android:key="decoder_type_Codabar_send_start"
+            android:title="@string/scanner_symbology_send_start_stop" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_Codabar"
+            android:key="decoder_type_Codabar_clsi"
+            android:title="@string/scanner_symbology_convert_to_clsi" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="code_128"
+        android:title="@string/scanner_symbology_code128" >
+        <CheckBoxPreference
+            android:key="decoder_type_code128"
+            android:title="@string/scanner_symbology_enable" />
+
+        <EditTextPreference
+            android:dependency="decoder_type_code128"
+            android:key="decoder_L1_of_code128"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_type_code128"
+            android:key="decoder_L2_of_code128"
+            android:title="@string/scanner_symbology_user_l2" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_code128"
+            android:key="decoder_type_code128_isbt"
+            android:title="@string/scanner_symbology_isbt_128" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="gs1_128"
+        android:title="@string/scanner_symbology_gs1_128" >
+        <CheckBoxPreference
+            android:key="enable_gs1_128"
+            android:title="@string/scanner_symbology_enable" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="code_39"
+        android:title="@string/scanner_symbology_code39" >
+        <CheckBoxPreference
+            android:key="decoder_type_code39"
+            android:title="@string/scanner_symbology_enable" />
+
+        <EditTextPreference
+            android:dependency="decoder_type_code39"
+            android:key="decoder_L1_of_code39"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_type_code39"
+            android:key="decoder_L2_of_code39"
+            android:title="@string/scanner_symbology_user_l2" />
+
+        <CheckBoxPreference
+            android:dependency="decoder_type_code39"
+            android:key="decoder_type_code39_enable_check"
+            android:title="@string/scanner_symbology_enable_checksum" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_code39_enable_check"
+            android:key="decoder_type_code39_send_check"
+            android:title="@string/scanner_symbology_send_checksum" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_code39"
+            android:key="decoder_type_code39_full_ascii"
+            android:title="@string/scanner_symbology_full_ascii_conversion" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="code_93"
+        android:title="@string/scanner_symbology_code93" >
+        <CheckBoxPreference
+            android:key="decoder_type_code93"
+            android:title="@string/scanner_symbology_enable" />
+
+        <EditTextPreference
+            android:dependency="decoder_type_code93"
+            android:key="decoder_L1_of_code93"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_type_code93"
+            android:key="decoder_L2_of_code93"
+            android:title="@string/scanner_symbology_user_l2" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="code_11"
+        android:title="@string/scanner_symbology_code11" >
+        <CheckBoxPreference
+            android:key="decoder_type_code11"
+            android:title="@string/scanner_symbology_enable" />
+
+        <EditTextPreference
+            android:dependency="decoder_type_code11"
+            android:key="decoder_L1_of_code11"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_type_code11"
+            android:key="decoder_L2_of_code11"
+            android:title="@string/scanner_symbology_user_l2" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_code11"
+            android:key="decoder_type_code11_enable_check"
+            android:title="@string/scanner_symbology_enable_checksum" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_code11"
+            android:key="decoder_type_code11_send_check"
+            android:title="@string/scanner_symbology_send_checksum" />
+        <ListPreference
+            android:key="decoder_type_code11_check_mode"
+            android:dependency="decoder_type_code11"
+            android:persistent="false"
+            android:entries="@array/code11_check_mode_entries"
+            android:entryValues="@array/code11_check_mode_value"
+            android:title="@string/scanner_symbology_checksum_mode" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="composite_cc_ab"
+        android:title="@string/scanner_symbology_composite_cc_ab" >
+        <CheckBoxPreference
+            android:key="decoder_composite_cc_ab"
+            android:title="@string/scanner_symbology_enable" />
+
+        <!-- <EditTextPreference
+            android:dependency="decoder_composite_cc_ab"
+            android:key="composite_cc_ab_L1"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_composite_cc_ab"
+            android:key="composite_cc_ab_L2"
+            android:title="@string/scanner_symbology_user_l2" /> -->
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="composite_cc_c"
+        android:title="@string/scanner_symbology_composite_cc_c" >
+        <CheckBoxPreference
+            android:key="decoder_composite_cc_c"
+            android:title="@string/scanner_symbology_enable" />
+
+        <!-- <EditTextPreference
+            android:dependency="decoder_composite_cc_c"
+            android:key="composite_cc_c_L1"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_composite_cc_c"
+            android:key="composite_cc_c_L2"
+            android:title="@string/scanner_symbology_user_l2" /> -->
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="composite_39"
+        android:title="@string/scanner_symbology_composite_39" >
+        <CheckBoxPreference
+            android:key="decoder_composite_39"
+            android:title="@string/scanner_symbology_enable" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="datamatrix"
+        android:title="@string/scanner_symbology_Datamatrix" >
+        <CheckBoxPreference
+            android:key="decoder_type_datamatrix"
+            android:title="@string/scanner_symbology_enable" />
+
+       <!--  <EditTextPreference
+            android:dependency="decoder_type_datamatrix"
+            android:key="datamatrix_L1"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_type_datamatrix"
+            android:key="datamatrix_L2"
+            android:title="@string/scanner_symbology_user_l2" /> -->
+            <ListPreference
+            android:key="scanner_datamatrix_inverse"
+            android:persistent="false"
+            android:entries="@array/image_2d_inverse_decoder_entries"
+            android:entryValues="@array/image_inverse_decoder_values"
+            android:title="@string/scanner_inverse" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="ean13"
+        android:title="@string/scanner_symbology_ean13" >
+        <CheckBoxPreference
+            android:key="decoder_type_EAN13"
+            android:title="@string/scanner_symbology_enable" />
+
+        <CheckBoxPreference
+            android:dependency="decoder_type_EAN13"
+            android:key="decoder_ean13_send_check"
+            android:title="@string/scanner_symbology_send_checksum" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_EAN13"
+            android:key="decoder_type_EAN13_to_isbn"
+            android:title="@string/scanner_symbology_booklandean" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_EAN13"
+            android:key="decoder_type_EAN13_to_issn"
+            android:title="@string/scanner_symbology_bookland_format" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="ean8"
+        android:title="@string/scanner_symbology_ean8" >
+        <CheckBoxPreference
+            android:key="decoder_type_EAN8"
+            android:title="@string/scanner_symbology_enable" />
+
+        <CheckBoxPreference
+            android:dependency="decoder_type_EAN8"
+            android:key="decoder_ean8_send_check"
+            android:title="@string/scanner_symbology_send_checksum" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_EAN8"
+            android:key="decoder_type_EAN8_to_ean13"
+            android:title="@string/scanner_symbology_convert_to_ean13" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="gs1_databar14"
+        android:title="@string/scanner_symbology_gs1_databar14" >
+        <CheckBoxPreference
+            android:key="decoder_type_RSS_14"
+            android:title="@string/scanner_symbology_enable" />
+        <CheckBoxPreference
+            android:key="decoder_type_convert_to_upc_ean"
+            android:title="@string/scanner_symbology_convert_to_upc_ean" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="gs1_expanded"
+        android:title="@string/scanner_symbology_gs1_databar_expanded" >
+        <CheckBoxPreference
+            android:key="decoder_type_RSS_Expanded"
+            android:title="@string/scanner_symbology_enable" />
+
+        <EditTextPreference
+            android:dependency="decoder_type_RSS_Expanded"
+            android:key="gs1_expanded_L1"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_type_RSS_Expanded"
+            android:key="gs1_expanded_L2"
+            android:title="@string/scanner_symbology_user_l2" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="gs1_limited"
+        android:title="@string/scanner_symbology_gs1_databar_limited" >
+        <CheckBoxPreference
+            android:key="decoder_type_RSS_Limited"
+            android:title="@string/scanner_symbology_enable" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="Interleaved_2_of_5"
+        android:title="@string/scanner_symbology_interleaved_25" >
+        <CheckBoxPreference
+            android:key="decoder_type_Interleaved_2_of_5"
+            android:title="@string/scanner_symbology_enable" />
+
+        <EditTextPreference
+            android:dependency="decoder_type_Interleaved_2_of_5"
+            android:key="decoder_L1_Interleaved_2_of_5"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_type_Interleaved_2_of_5"
+            android:key="decoder_L2_Interleaved_2_of_5"
+            android:title="@string/scanner_symbology_user_l2" />
+
+        <CheckBoxPreference
+            android:dependency="decoder_type_Interleaved_2_of_5"
+            android:key="decoder_type_Interleaved_2_of_5_en_check"
+            android:title="@string/scanner_symbology_enable_checksum" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_Interleaved_2_of_5_en_check"
+            android:key="decoder_type_Interleaved_2_of_5_send_check"
+            android:title="@string/scanner_symbology_send_checksum" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_Interleaved_2_of_5"
+            android:key="decoder_type_Interleaved_2_of_5_to_ean13"
+            android:title="@string/scanner_symbology_convert_to_ean13" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="Matrix_2_of_5"
+        android:title="@string/scanner_symbology_matrix_25" >
+        <CheckBoxPreference
+            android:key="decoder_type_Matrix_2_of_5"
+            android:title="@string/scanner_symbology_enable" />
+
+        <!-- <EditTextPreference
+            android:dependency="decoder_type_Matrix_2_of_5"
+            android:key="decoder_L1_Matrix_2_of_5"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_type_Matrix_2_of_5"
+            android:key="decoder_L2_Matrix_2_of_5"
+            android:title="@string/scanner_symbology_user_l2" /> -->
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="chinese_2_of_5"
+        android:title="@string/scanner_symbology_chinese_25" >
+        <CheckBoxPreference
+            android:key="decoder_type_chinese_2_of_5"
+            android:title="@string/scanner_symbology_enable" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="maxicode"
+        android:title="@string/scanner_symbology_maxicode" >
+        <CheckBoxPreference
+            android:key="decoder_type_maxicode"
+            android:title="@string/scanner_symbology_enable" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="micropdf417"
+        android:title="@string/scanner_symbology_micropdf417" >
+        <CheckBoxPreference
+            android:key="decoder_type_micropdf417"
+            android:title="@string/scanner_symbology_enable" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="MSI"
+        android:title="@string/scanner_symbology_MSI" >
+        <CheckBoxPreference
+            android:key="decoder_type_MSI"
+            android:title="@string/scanner_symbology_enable" />
+
+        <EditTextPreference
+            android:dependency="decoder_type_MSI"
+            android:key="decoder_L1_of_MSI"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_type_MSI"
+            android:key="decoder_L2_of_MSI"
+            android:title="@string/scanner_symbology_user_l2" />
+        <ListPreference
+            android:key="decoder_type_MSI_2_check"
+            android:dependency="decoder_type_MSI"
+            android:persistent="false"
+            android:entries="@array/sym_check_digits_entries"
+            android:entryValues="@array/sym_check_digits_values"
+            android:title="@string/scanner_symbology_require_second_checksum" />
+         <ListPreference
+            android:key="decoder_type_MSI_2_mod_11"
+            android:dependency="decoder_type_MSI"
+            android:persistent="false"
+            android:entries="@array/sym_check_digits_algorithm_entries"
+            android:entryValues="@array/sym_check_digits_values"
+            android:title="@string/scanner_symbology_second_checksum_mod_11" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_MSI"
+            android:key="decoder_type_MSI_send_check"
+            android:title="@string/scanner_symbology_send_checksum" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="code32"
+        android:title="@string/scanner_symbology_code32" >
+        <CheckBoxPreference
+            android:key="decoder_type_code32"
+            android:title="@string/scanner_symbology_enable" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_code32"
+            android:key="decoder_type_code32_prefix"
+            android:title="@string/scanner_symbology_code32_prefix" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="pdf417"
+        android:title="@string/scanner_symbology_pdf417" >
+        <CheckBoxPreference
+            android:key="decoder_type_pdf417"
+            android:title="@string/scanner_symbology_enable" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="postal_codes"
+        android:title="@string/scanner_symbology_postal" >
+        <CheckBoxPreference
+            android:key="decoder_type_postal_australian"
+            android:title="@string/scanner_symbology_postal_australian" />
+
+        <CheckBoxPreference
+            android:key="decoder_type_postal_japan"
+            android:title="@string/scanner_symbology_postal_japan" />
+
+        <CheckBoxPreference
+            android:key="decoder_type_postal_kix"
+            android:title="@string/scanner_symbology_postal_kix" />
+
+        <CheckBoxPreference
+            android:key="decoder_type_postal_royal_mail"
+            android:title="@string/scanner_symbology_postal_royal_mail" />
+
+        <CheckBoxPreference
+            android:key="decoder_type_postal_royal_mail_send_check"
+            android:title="@string/scanner_symbology_postal_royal_mail_send_check" />
+        <CheckBoxPreference
+            android:key="decoder_type_postal_planet"
+            android:title="@string/scanner_symbology_postal_planet" />
+        <CheckBoxPreference
+            android:key="decoder_type_postal_planet_send_check"
+            android:title="@string/scanner_symbology_postal_send_check" />
+
+        <CheckBoxPreference
+            android:key="decoder_type_postal_postnet"
+            android:title="@string/scanner_symbology_postal_postnet" />
+
+        <CheckBoxPreference
+            android:key="decoder_type_postal_usps4_state"
+            android:title="@string/scanner_symbology_postal_usps4_state" />
+        <CheckBoxPreference
+            android:key="decoder_type_postal_upu_fics"
+            android:title="@string/scanner_symbology_upu_fics"/>
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="qrcode"
+        android:title="@string/scanner_symbology_qrcode" >
+        <CheckBoxPreference
+            android:key="decoder_type_qrcode"
+            android:title="@string/scanner_symbology_enable" />
+        <ListPreference
+            android:key="scanner_qrcode_inverse"
+            android:persistent="false"
+            android:entries="@array/image_2d_inverse_decoder_entries"
+            android:entryValues="@array/image_inverse_decoder_values"
+            android:title="@string/scanner_inverse" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="micro_qrcode"
+        android:title="@string/scanner_symbology_micro_qrcode" >
+        <CheckBoxPreference
+            android:key="decoder_type_microqrcode"
+            android:title="@string/scanner_symbology_enable" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="hanxin"
+        android:title="@string/scanner_symbology_hanxin" >
+        <CheckBoxPreference
+            android:key="decoder_type_hanxin"
+            android:title="@string/scanner_symbology_enable" />
+        <ListPreference
+            android:key="scanner_hanxin_inverse"
+            android:persistent="false"
+            android:entries="@array/image_2d_inverse_decoder_entries"
+            android:entryValues="@array/image_inverse_decoder_values"
+            android:title="@string/scanner_inverse" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="Discrete_2_of_5"
+        android:title="@string/scanner_symbology_discrete_25" >
+        <CheckBoxPreference
+            android:key="decoder_type_Discrete_2_of_5"
+            android:title="@string/scanner_symbology_enable" />
+
+        <EditTextPreference
+            android:dependency="decoder_type_Discrete_2_of_5"
+            android:key="decoder_L1_Discrete_2_of_5"
+            android:title="@string/scanner_symbology_user_l1" />
+        <EditTextPreference
+            android:dependency="decoder_type_Discrete_2_of_5"
+            android:key="decoder_L2_Discrete_2_of_5"
+            android:title="@string/scanner_symbology_user_l2" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="trioptic"
+        android:title="@string/scanner_symbology_trioptic" >
+        <CheckBoxPreference
+            android:key="decoder_type_Trioptic_code39"
+            android:title="@string/scanner_symbology_enable" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="upca"
+        android:title="@string/scanner_symbology_upc_a" >
+        <CheckBoxPreference
+            android:key="decoder_type_UPC_A"
+            android:title="@string/scanner_symbology_enable" />
+
+        <CheckBoxPreference
+            android:dependency="decoder_type_UPC_A"
+            android:key="decoder_type_UPC_A_send_check"
+            android:title="@string/scanner_symbology_send_checksum" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_UPC_A"
+            android:key="decoder_type_UPC_A_send_sys"
+            android:title="@string/scanner_symbology_send_system_digit" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_UPC_A"
+            android:key="decoder_type_UPC_A_to_ean13"
+            android:title="@string/scanner_symbology_convert_to_ean13" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="upce"
+        android:title="@string/scanner_symbology_upc_e" >
+        <CheckBoxPreference
+            android:key="decoder_type_UPC_E"
+            android:title="@string/scanner_symbology_enable" />
+
+        <CheckBoxPreference
+            android:dependency="decoder_type_UPC_E"
+            android:key="decoder_type_UPC_E_send_check"
+            android:title="@string/scanner_symbology_send_checksum" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_UPC_E"
+            android:key="decoder_type_UPC_E_send_sys"
+            android:title="@string/scanner_symbology_send_system_digit" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_UPC_E"
+            android:key="decoder_type_UPC_E_to_upca"
+            android:title="@string/scanner_symbology_convert_to_upc_a" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="upce1"
+        android:title="@string/scanner_symbology_upc_e1" >
+        <CheckBoxPreference
+            android:key="decoder_type_UPC_E1"
+            android:title="@string/scanner_symbology_enable" />
+
+        <CheckBoxPreference
+            android:dependency="decoder_type_UPC_E1"
+            android:key="decoder_type_UPC_E1_send_check"
+            android:title="@string/scanner_symbology_send_checksum" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_UPC_E1"
+            android:key="decoder_type_UPC_E1_send_sys"
+            android:title="@string/scanner_symbology_send_system_digit" />
+        <CheckBoxPreference
+            android:dependency="decoder_type_UPC_E1"
+            android:key="decoder_type_UPC_E1_to_upca"
+            android:title="@string/scanner_symbology_convert_to_upc_a" />
+        
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="upc_ena_extensions"
+        android:title="@string/scanner_symbology_upc_ena_extensions" >
+        <CheckBoxPreference
+            android:key="enable_25digit_extensions"
+            android:title="@string/scanner_symbology_enable_25digit_extensions" />
+        <ListPreference
+            android:entries="@array/upc_ean_security_level_entries"
+            android:entryValues="@array/linear_security_level_values"
+            android:key="symbology_upc_ean_security_level"
+            android:persistent="false"
+            android:title="@string/scanner_symbology_upc_ean_security_level" />
+        <CheckBoxPreference
+            android:key="ucc_coupon_extended"
+            android:title="@string/scanner_symbology_ucc_coupon_extended" />
+    </PreferenceCategory>
+    <!-- PreferenceScreen for OCR -->
+    <PreferenceCategory android:title="@string/lable_ocr_symbology"
+        android:key="lable_ocr_symbology">
+
+        <!-- SYM_OCR -->
+        <!--<CheckBoxPreference
+            android:title="@string/lable_ocr_symbology_enable"
+            android:key="sym_ocr_enable"
+            android:defaultValue="false" />-->
+
+        <!-- OCR Mode -->
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/ocr_mode_entries"
+            android:entryValues="@array/ocr_mode_values"
+            android:key="sym_ocr_mode_config"
+            android:title="@string/lable_ocr_symbology_mode" />
+
+        <!-- SYM_POSTALS - note: only one can be enabled at a time -->
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/ocr_template_entries"
+            android:entryValues="@array/ocr_template_values"
+            android:key="sym_ocr_template_config"
+            android:title="@string/lable_ocr_symbology_template" />
+
+        <Preference
+            android:key="edit_ocr_user_template"
+            android:title="@string/lable_ocr_user_template" />
+        <!-- User Defined Template -->
+        <EditTextPreference
+            android:defaultValue="@string/lable_ocr_user_template_df"
+            android:key="sym_ocr_user_template"
+            android:title="@string/lable_ocr_user_template" />
+    </PreferenceCategory>
+     <PreferenceCategory
+        android:key="lable_dotcode_symbology"
+        android:title="@string/scanner_symbology_dotcode" >
+        <CheckBoxPreference
+            android:key="decoder_type_dotcode"
+            android:title="@string/scanner_symbology_enable" />
+    </PreferenceCategory>
+</PreferenceScreen>

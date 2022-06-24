@@ -1,0 +1,1306 @@
+package com.android.server.scanner;
+
+import android.util.Log;
+import android.util.SparseArray;
+import android.device.ScanNative;
+import android.device.scanner.configuration.PropertyID;
+import com.android.server.ScanService;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+public class OpticonScanner extends SerialScanner {
+    private static final String TAG = "OpticonScanner";
+    
+    public OpticonScanner(ScanService scanService) {
+        super(scanService);
+        // TODO Auto-generated constructor stub
+        mScannerType = ScannerFactory.TYPE_Opticon;
+        mBaudrate = 9600;
+
+        for (int i = 0; i < INTERNAL_PROPERTY_INDEX.length; i++) {
+            mPropIndexHashMap.put(INTERNAL_PROPERTY_INDEX[i], VALUE_PARAM_INDEX[i]);
+        }
+    }
+    
+    private int BytesIndexOf(byte[] arr, int offset, int count, byte b) {
+        for (int i = offset; i < offset + count; ++i) {
+            if (arr[i] == b) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    @Override
+    protected boolean onDataReceived() {
+        // TODO Auto-generated method stub
+     // mdl2000
+        int start = BytesIndexOf(mBuffer, 0, mBufOffset, (byte) 0x02);
+        Log.i(TAG, "-start=[" + start + "]... ...");
+        if (start != -1) {
+            int end = BytesIndexOf(mBuffer, start, mBufOffset - start, (byte) 0x03);
+            Log.i(TAG, "end=[" + end + "]... ...");
+            if (end != -1) {
+                int barcodelen = (mBuffer[start + 2] - 0x30) * 10 + (mBuffer[start + 3] - 0x30);
+                Log.i(TAG, "barcodelen=[" + barcodelen + "]... ...");
+                if (barcodelen + 4 == end - start) { // 校验报告长度和真实长度
+                    byte[] tmp = new byte[barcodelen];
+                    for (int i = 0; i < barcodelen; ++i) {
+                        tmp[i] = mBuffer[start + 4 + i];
+                    }
+                    sendBroadcast(tmp, mBuffer[start + 1], barcodelen);
+
+                    // 把剩余内容移动到缓冲头部
+                    int len = mBufOffset - (end + 1); // 剩余长度
+                    for (int i = 0; i < len; ++i) {
+                        mBuffer[i] = mBuffer[end + 1 + i];
+                    }
+                    mBufOffset = len;
+
+                    return true;
+                } else {
+                    Log.i(TAG, "---mdc-100----error, so clear---------------");
+                    mBufOffset = 0;
+                    return false;
+                }
+
+            }// end of end != -1
+        } // end of start !- 01
+        return false;
+    }
+
+    @Override
+    protected void onGetParamTimeout() {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    protected void onSetParamTimeout() {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public int setProperties(SparseArray<Integer> property) {
+        // TODO Auto-generated method stub
+        synchronized (mHandler) {
+            StringBuffer command = new StringBuffer();
+            StringBuffer cmdL1 = new StringBuffer(OpticonCommand.FIXED_SEL_MIN);
+            StringBuffer cmdL2 = new StringBuffer(OpticonCommand.FIXED_SEL_MAX);
+            boolean disable = false;
+            int size = property.size();
+            for (int i = 0; i < size; i++) {
+                int keyForIndex = property.keyAt(i);
+                int internalIndex = mPropIndexHashMap.get(keyForIndex, SPECIAL_VALUE);
+                if (internalIndex != SPECIAL_VALUE) {
+                    int value = property.get(keyForIndex);
+                    switch (keyForIndex) {
+                        case PropertyID.CODE39_ENABLE: {
+                            if (value == 0) {
+                                if (mScanService.getPropertyInt(PropertyID.CODE32_ENABLE) == 1) {
+                                    command.append(OpticonCommand.CODE39_ONLY_CODE32);
+                                } else {
+                                    disable = true;
+                                }
+                            } else {
+                                if (mScanService.getPropertyInt(PropertyID.CODE32_ENABLE) == 1) {
+                                    command.append(OpticonCommand.CODE39_IF_CODE32);
+                                } else {
+                                    command.append(OpticonCommand.CODE39_NORMAL);
+                                }
+                                command.append(OpticonCommand.CODE39);
+                            }
+                        }
+                            break;
+                        case PropertyID.CODE39_ENABLE_CHECK: {
+                            if (value == 0) {
+                                command.append(OpticonCommand.CODE39_NO_CHECK_CD);
+                            } else {
+                                command.append(OpticonCommand.CODE39_CHECK_CD);
+                            }
+                        }
+                            break;
+                        case PropertyID.CODE39_SEND_CHECK: {
+                            if (value == 0) {
+                                command.append(OpticonCommand.CODE39_NO_CD);
+                            } else {
+                                command.append(OpticonCommand.CODE39_CD);
+                            }
+                        }
+                            break;
+                        case PropertyID.CODE39_FULL_ASCII: {
+                            if (value == 0) {
+                                if (mScanService.getPropertyInt(PropertyID.CODE32_ENABLE) == 1) {
+                                    command.append(OpticonCommand.CODE39_NORMAL);
+                                    command.append(OpticonCommand.CODE39_IF_CODE32);
+                                } else {
+                                    // command.append(OpticonCommand.CODE39_IF_FULL_ASCII);
+                                    command.append(OpticonCommand.CODE39_NORMAL);
+                                }
+                            } else {
+                                if (mScanService.getPropertyInt(PropertyID.CODE32_ENABLE) == 1)
+                                    command.append(OpticonCommand.CODE39_IF_CODE32);
+                                command.append(OpticonCommand.CODE39_FULL_ASCII);
+                            }
+                        }
+                            break;
+
+                        case PropertyID.CODE39_LENGTH1: {
+                            if (value < 10)
+                                cmdL1.append(" V0").append(value);
+                            else
+                                cmdL1.append(" V").append(value);
+                        }
+                            break;
+                        case PropertyID.CODE39_LENGTH2: {
+                            if (value < 10)
+                                cmdL2.append(" V0").append(value);
+                            else
+                                cmdL2.append(" V").append(value);
+                        }
+                            break;
+                        case PropertyID.TRIOPTIC_ENABLE: {
+                            if (value == 0) {
+                                disable = true;
+                            } else {
+                                command.append(OpticonCommand.TRIOPTIC);
+                            }
+                        }
+                            break;
+                        case PropertyID.CODE32_ENABLE: {
+                            if (value == 0) {
+                                if (mScanService.getPropertyInt(PropertyID.CODE39_ENABLE) == 1) {
+                                    command.append(OpticonCommand.CODE39_NORMAL);
+                                    if (mScanService.getPropertyInt(PropertyID.CODE39_FULL_ASCII) == 1)
+                                        command.append(OpticonCommand.CODE39_IF_FULL_ASCII);
+                                } else {
+                                    disable = true;
+                                }
+                            } else {
+                                if (mScanService.getPropertyInt(PropertyID.CODE39_ENABLE) == 1)
+                                    command.append(OpticonCommand.CODE39_IF_CODE32);
+                                else {
+                                    command.append(OpticonCommand.CODE39);
+                                    command.append(OpticonCommand.CODE39_ONLY_CODE32);
+
+                                }
+                            }
+                        }
+                            break;
+                        case PropertyID.D25_ENABLE: {
+                            if (value == 0) {
+                                disable = true;
+                            } else {
+                                command.append(OpticonCommand.DISCRETE25);
+                            }
+                        }
+                            break;
+                        case PropertyID.D25_LENGTH1: {
+                            if (value < 10)
+                                cmdL1.append(" O0").append(value);
+                            else
+                                cmdL1.append(" O").append(value);
+                        }
+                            break;
+                        case PropertyID.D25_LENGTH2: {
+                            if (value < 10)
+                                cmdL2.append(" O0").append(value);
+                            else
+                                cmdL2.append(" O").append(value);
+                        }
+                            break;
+                        case PropertyID.M25_ENABLE: {
+                            if (value == 0) {
+                                disable = true;
+                            } else {
+                                command.append(OpticonCommand.MATRIX25);
+                            }
+                        }
+                            break;
+                        case PropertyID.I25_ENABLE: {
+                            if (value == 0) {
+                                disable = true;
+                            } else {
+                                command.append(OpticonCommand.INTERLEAVED25);
+                            }
+                        }
+                            break;
+                        case PropertyID.I25_ENABLE_CHECK: {
+                            if (value == 0) {
+                                command.append(OpticonCommand.I25_NO_CHECK_CD);
+                            } else {
+                                command.append(OpticonCommand.I25_CHECK_CD);
+                            }
+                        }
+                            break;
+                        case PropertyID.I25_SEND_CHECK: {
+                            if (value == 0) {
+                                command.append(OpticonCommand.I25_NO_CD);
+                            } else {
+                                command.append(OpticonCommand.I25_CD);
+                            }
+                        }
+                            break;
+                        case PropertyID.I25_LENGTH1: {
+                            if (value < 10)
+                                cmdL1.append(" N0").append(value);
+                            else
+                                cmdL1.append(" N").append(value);
+                        }
+                            break;
+                        case PropertyID.I25_LENGTH2: {
+                                if(value < 10)
+                                    cmdL2.append(" N0").append(value);
+                                else
+                                    cmdL2.append(" N").append(value);
+                        }
+                                break;
+                            case PropertyID.CODABAR_ENABLE:
+                                if(value == 0) {
+                                    disable = true;
+                                } else {
+                                    command.append(OpticonCommand.CODABAR);
+                                }
+                                break;
+                            /*case PropertyID.CODABAR_ENABLE_CHECK:
+                                if(value == 0) {
+                                    command.append(OpticonCommand.CODABAR_NO_CHECK_CD);
+                                } else {
+                                    command.append(OpticonCommand.CODABAR_CHECK_CD);
+                                }
+                                break;
+                            case PropertyID.CODABAR_SEND_CHECK:
+                                if(value == 0) {
+                                    command.append(OpticonCommand.CODABAR_NO_TRAN_CD);
+                                } else {
+                                    command.append(OpticonCommand.CODABAR_TRAN_CD);
+                                }
+                                break;
+                            case PropertyID.CODABAR_SEND_START:
+                                if(value == 0) {
+                                    command.append(OpticonCommand.CODABAR_DIS_ST_SP);
+                                } else {
+                                    command.append(OpticonCommand.CODABAR_abcd_STSP);
+                                }
+                                break;*/
+                            case PropertyID.CODABAR_CLSI:
+                                if(value == 0) {
+                                    command.append(OpticonCommand.CODABAR_DIS_CLSI);
+                                } else {
+                                    command.append(OpticonCommand.CODABAR_EN_CLSI);
+                                }
+                                break;
+                            case PropertyID.CODABAR_LENGTH1:
+                                if(value < 10)
+                                    cmdL1.append(" R0").append(value);
+                                else
+                                    cmdL1.append(" R").append(value);
+                            case PropertyID.CODABAR_LENGTH2:
+                                if(value < 10)
+                                    cmdL2.append(" R0").append(value);
+                                else
+                                    cmdL2.append(" R").append(value);
+                                break;
+                            case PropertyID.CODE93_ENABLE:
+                                if(value == 0) {
+                                    disable = true;
+                                } else {
+                                    command.append(OpticonCommand.CODE93);
+                                }
+                                break;
+                            case PropertyID.CODE93_LENGTH1:
+                                if(value < 10)
+                                    cmdL1.append(" U0").append(value);
+                                else
+                                    cmdL1.append(" U").append(value);
+                                break;
+                            case PropertyID.CODE93_LENGTH2:
+                                if(value < 10)
+                                    cmdL2.append(" U0").append(value);
+                                else
+                                    cmdL2.append(" U").append(value);
+                                break;
+                            case PropertyID.CODE128_ENABLE:
+                                if(value == 0) {
+                                    disable = true;
+                                } else {
+                                    if (mScanService.getPropertyInt(PropertyID.CODE128_GS1_ENABLE) == 1) {
+                                        command.append(OpticonCommand.CODE128);
+                                        command.append(OpticonCommand.GS1_128_IF);
+                                    } else {
+                                        command.append(OpticonCommand.CODE128);
+                                        command.append(OpticonCommand.GS1_128_DIS);
+                                        
+                                    }
+                                }
+                                break;
+                            case PropertyID.CODE128_LENGTH1:
+                                if(value < 10)
+                                    cmdL1.append(" T0").append(value);
+                                else
+                                    cmdL1.append(" T").append(value);
+                                break;
+                            case PropertyID.CODE128_LENGTH2:
+                                if(value < 10)
+                                    cmdL2.append(" T0").append(value);
+                                else
+                                    cmdL2.append(" T").append(value);
+                                break;
+                            case PropertyID.CODE128_GS1_ENABLE:
+                                if(value == 0) {
+                                    command.append(OpticonCommand.GS1_128_DIS);
+                                } else {
+                                    if (mScanService.getPropertyInt(PropertyID.CODE128_ENABLE) == 1)
+                                        command.append(OpticonCommand.GS1_128_IF);
+                                    else {
+                                        command.append(OpticonCommand.CODE128);
+                                        command.append(OpticonCommand.GS1_128_ONLY);
+                                    }
+                                }
+                                break;
+                            case PropertyID.UPCA_ENABLE:
+                                if(value == 0) {
+                                    disable = true;
+                                } else {
+                                    command.append(OpticonCommand.CODE93);
+                                }
+                                break;
+                            case PropertyID.UPCA_SEND_CHECK:
+                                if(value == 0) {
+                                    if (mScanService.getPropertyInt(PropertyID.UPCA_SEND_SYS) == 1)
+                                        command.append(OpticonCommand.UPCA_ZERO_NO_CD);
+                                    else 
+                                        command.append(OpticonCommand.UPCA_NO_ZERO_NO_CD);
+                                } else {
+                                    if (mScanService.getPropertyInt(PropertyID.UPCA_SEND_SYS) == 1)
+                                        command.append(OpticonCommand.UPCA_ZERO_SEND_CD);
+                                    else 
+                                        command.append(OpticonCommand.UPCA_NO_ZERO_SEND_CD);
+                                }
+                                break;
+                            case PropertyID.UPCA_SEND_SYS:
+                                if(value == 0) {
+                                    if (mScanService.getPropertyInt(PropertyID.UPCA_SEND_SYS) == 1)
+                                        command.append(OpticonCommand.UPCA_NO_ZERO_SEND_CD);
+                                    else 
+                                        command.append(OpticonCommand.UPCA_NO_ZERO_NO_CD);
+                                } else {
+                                    if (mScanService.getPropertyInt(PropertyID.UPCA_SEND_SYS) == 1)
+                                        command.append(OpticonCommand.UPCA_ZERO_SEND_CD);
+                                    else 
+                                        command.append(OpticonCommand.UPCA_ZERO_NO_CD);
+                                }
+                                break;
+                            case PropertyID.UPCE_ENABLE:
+                                if(value == 0) {
+                                    disable = true;
+                                } else {
+                                    command.append(OpticonCommand.UPCE);
+                                }
+                                break;
+                            case PropertyID.UPCE_SEND_CHECK:
+                                if(value == 0) {
+                                    if (mScanService.getPropertyInt(PropertyID.UPCE_SEND_SYS) == 1)
+                                        command.append(OpticonCommand.UPCE_ZERO_NO_CD);
+                                    else 
+                                        command.append(OpticonCommand.UPCE_NO_ZERO_NO_CD);
+                                } else {
+                                    if (mScanService.getPropertyInt(PropertyID.UPCE_SEND_SYS) == 1)
+                                        command.append(OpticonCommand.UPCE_ZERO_SEND_CD);
+                                    else 
+                                        command.append(OpticonCommand.UPCE_NO_ZERO_SEND_CD);
+                                }
+                                break;
+                            case PropertyID.UPCE_SEND_SYS:
+                                if(value == 0) {
+                                    if (mScanService.getPropertyInt(PropertyID.UPCE_SEND_CHECK) == 1)
+                                        command.append(OpticonCommand.UPCE_NO_ZERO_SEND_CD);
+                                    else 
+                                        command.append(OpticonCommand.UPCE_NO_ZERO_NO_CD);
+                                } else {
+                                    if (mScanService.getPropertyInt(PropertyID.UPCE_SEND_CHECK) == 1)
+                                        command.append(OpticonCommand.UPCE_ZERO_SEND_CD);
+                                    else 
+                                        command.append(OpticonCommand.UPCE_ZERO_NO_CD);
+                                }
+                                break;
+                            case PropertyID.UPCE_TO_UPCA:
+                                if(value == 0) {
+                                    command.append(OpticonCommand.UPCE_AS);
+                                } else {
+                                    command.append(OpticonCommand.UPCE_AS_UPCA);
+                                }
+                                break;
+                            case PropertyID.EAN13_ENABLE:
+                                if(value == 0) {
+                                    disable = true;
+                                } else {
+                                    command.append(OpticonCommand.EAN13);
+                                }
+                                break;
+                             
+                            case PropertyID.EAN13_BOOKLANDEAN:
+                                if(value == 0) {
+                                    command.append(OpticonCommand.ENA13_DIS_ISBN);
+                                } else {
+                                    command.append(OpticonCommand.ENA13_IF_ISBN);
+                                }
+                                break;
+                            case PropertyID.EAN8_ENABLE:
+                                if(value == 0) {
+                                    disable = true;
+                                } else {
+                                    command.append(OpticonCommand.EAN8);
+                                }
+                             
+                                break;
+                            case PropertyID.EAN_EXT_ENABLE_2_5_DIGIT:
+                                if(value == 0) {
+                                    disable = true;
+                                } else {
+                                    command.append(OpticonCommand.UPC_2).append(OpticonCommand.EAN_2);
+                                    command.append(OpticonCommand.UPC_5).append(OpticonCommand.EAN_5);
+                                }
+                                break;
+                            case PropertyID.MSI_ENABLE:
+                                if(value == 0) {
+                                    disable = true;
+                                } else {
+                                    command.append(OpticonCommand.MSI);
+                                }
+                                break;
+                            case PropertyID.MSI_REQUIRE_2_CHECK:
+                                if(value == 0) {
+                                    command.append(OpticonCommand.MSI_CHECK_1CD_MOD10);
+                                } else {
+                                    command.append(OpticonCommand.MSI_CHECK_2CD_MOD10_10);
+                                }
+                                break;
+                            case PropertyID.MSI_SEND_CHECK:
+                                if(value == 0) {
+                                    command.append(OpticonCommand.MSI_NO_TRAN_CD);
+                                } else {
+                                    if (mScanService.getPropertyInt(PropertyID.MSI_REQUIRE_2_CHECK) == 1)
+                                        command.append(OpticonCommand.MSI_TRAN_CD12);
+                                    else 
+                                        command.append(OpticonCommand.MSI_TRAN_CD1);
+                                }
+                                break;
+                            case PropertyID.MSI_CHECK_2_MOD_11:
+                                if(value == 0) {
+                                    if (mScanService.getPropertyInt(PropertyID.MSI_REQUIRE_2_CHECK) == 1)
+                                        command.append(OpticonCommand.MSI_CHECK_2CD_MOD10_10);
+                                    else 
+                                        command.append(OpticonCommand.MSI_CHECK_1CD_MOD10);
+                                    //command.append(OpticonCommand.MSI_CHECK_1CD_MOD10);
+                                } else {
+                                    command.append(OpticonCommand.MSI_CHECK_2CD_MOD10_11);
+                                }
+                                break;
+                            case PropertyID.MSI_LENGTH1:
+                                if(value < 10)
+                                    cmdL1.append(" Z0").append(value);
+                                else
+                                    cmdL1.append(" Z").append(value);
+                                break;
+                            case PropertyID.MSI_LENGTH2:
+                                if(value < 10)
+                                    cmdL2.append(" Z0").append(value);
+                                else
+                                    cmdL2.append(" Z").append(value);
+                                break;
+                            case PropertyID.GS1_14_ENABLE:
+                                if(value == 0) {
+                                    disable = true;
+                                } else {
+                                    command.append(OpticonCommand.GS1_14);
+                                }
+                                break;
+                            case PropertyID.GS1_LIMIT_ENABLE:
+                                if(value == 0) {
+                                    disable = true;
+                                } else {
+                                    command.append(OpticonCommand.GS1_LIMIT);
+                                }
+                                break;
+                            case PropertyID.GS1_EXP_ENABLE:
+                                if(value == 0) {
+                                    disable = true;
+                                } else {
+                                    command.append(OpticonCommand.GS1_EXP);
+                                }
+                                break;
+                            case PropertyID.GS1_EXP_LENGTH1:
+                                if(value < 10)
+                                    cmdL1.append(" y0").append(value);
+                                else
+                                    cmdL1.append(" y").append(value);
+                                break;
+                            case PropertyID.GS1_EXP_LENGTH2:
+                                if(value < 10)
+                                    cmdL2.append(" y0").append(value);
+                                else
+                                    cmdL2.append(" y").append(value);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            if(disable) {
+                String resetComd = getCurrentEnable();
+                if(!resetComd.equals(OpticonCommand.DISABLE_ALL_CODE))
+                    //ScanNative.setOptionParams(resetComd);
+                
+                Log.i(TAG, "-setOptionParams--resetComd---------------" + resetComd);
+             }
+             
+             String minLength = cmdL1.toString();
+             if(!minLength.equals(OpticonCommand.FIXED_SEL_MIN)) {
+                 //ScanNative.setOptionParams(minLength);
+                 Log.i(TAG, "-setOptionParams--minLength---------------" + minLength);
+             }
+                 
+             String maxLength = cmdL2.toString();
+             if(!maxLength.equals(OpticonCommand.FIXED_SEL_MAX)) {
+                 //ScanNative.setOptionParams(maxLength);
+                 Log.i(TAG, "-setOptionParams--maxLength---------------" + maxLength);
+             }
+             
+             String comd = command.toString();
+             if(!comd.equals("")) {
+                 //ScanNative.setOptionParams(comd);
+                 Log.i(TAG, "-setOptionParams--command---------------" + comd); 
+             }
+            return 0;
+        }
+    }
+    private String getCurrentEnable() {
+        StringBuffer cur = new StringBuffer(OpticonCommand.DISABLE_ALL_CODE);
+        int len = OPTICON_ENABLE_INDEX.length;
+        for(int i = 0; i < len; i++) {
+            if (mScanService.getPropertyInt(OPTICON_ENABLE_INDEX[i]) == 1) {
+                cur.append(OPTICON_ENABLE_COMMD[i]);
+            }
+                
+        }
+        if (mScanService.getPropertyInt(PropertyID.CODE128_ENABLE) == 0) {
+            cur.append(OpticonCommand.CODE128);
+            cur.append(OpticonCommand.GS1_128_ONLY);
+        }
+        if (mScanService.getPropertyInt(PropertyID.CODE39_ENABLE) == 0) {
+            if (mScanService.getPropertyInt(PropertyID.CODE32_ENABLE) == 1) {
+                cur.append(OpticonCommand.CODE39);
+                cur.append(OpticonCommand.CODE39_ONLY_CODE32);
+            }
+            
+            
+        }
+        return cur.toString();
+    }
+    @Override
+    public void setDefaults() {
+        // TODO Auto-generated method stub
+        /*
+         * ScanNative.doOpTiConSet();
+         * ScanNative.setOptionParams(OpticonCommand.DEF_ENABLE_COMD);
+         * ScanNative.setOptionParams(OpticonCommand.DEF_MINLEN_COMD);
+         * ScanNative.setOptionParams(OpticonCommand.DEF_MAXLEN_COMD);
+         */
+    }
+
+    /**
+     * 955 Engine Internally defined param index id value is -1,engine no
+     * support the param setting NOTE: some symbology type no find Param id from
+     * the 955 user doc, so set -1
+     */
+    // NOTE temp set some values = SPECIAL_VALUE
+    private static final int OPTICON_RESERVED_VALUE = 0x00;
+
+    static class OpticonParamIndex {
+        public static final int IMAGE_PICKLIST_MODE = RESERVED_VALUE;
+
+        public static final int IMAGE_ONE_D_INVERSE = RESERVED_VALUE;
+
+        public final static int LASER_ON_TIME = 0x88;// 0x01-0x63 df 0x1e * 100
+                                                     // ms
+
+        public final static int TIMEOUT_BETWEEN_SAME_SYMBOL = 0x89;// 0x01-0x63
+                                                                   // df 0x30
+
+        public final static int LINEAR_CODE_TYPE_SECURITY_LEVEL = 0x4e;// 1 2 3
+                                                                       // 4
+
+        public static final int FUZZY_1D_PROCESSING = RESERVED_VALUE;
+
+        public static final int MULTI_DECODE_MODE = RESERVED_VALUE;
+
+        public static final int BAR_CODES_TO_READ = RESERVED_VALUE;
+
+        public static final int FULL_READ_MODE = RESERVED_VALUE;
+
+        public static final int CODE39_ENABLE = OPTICON_RESERVED_VALUE;
+
+        public static final int CODE39_LEVEL = RESERVED_VALUE;// 0x4e;
+
+        public static final int CODE39_ENABLE_CHECK = OPTICON_RESERVED_VALUE;
+
+        public static final int CODE39_SEND_CHECK = OPTICON_RESERVED_VALUE;// TODO
+                                                                           // 2d
+                                                                           // 1d
+
+        public static final int CODE39_FULL_ASCII = OPTICON_RESERVED_VALUE;
+
+        public static final int CODE39_LENGTH1 = OPTICON_RESERVED_VALUE;
+
+        public static final int CODE39_LENGTH2 = OPTICON_RESERVED_VALUE;
+
+        public static final int CODE39_REDUNDANCY = RESERVED_VALUE;
+
+        public static final int TRIOPTIC_ENABLE = OPTICON_RESERVED_VALUE;
+
+        public static final int TRIOPTIC_LEVEL = RESERVED_VALUE;// 0x4e;
+
+        public static final int TRIOPTIC_REDUNDANCY = RESERVED_VALUE;
+
+        public static final int CODE32_ENABLE = OPTICON_RESERVED_VALUE;// code32
+                                                                       // //TODO
+                                                                       // 2d 1d
+                                                                       // need
+                                                                       // enable
+                                                                       // code39
+
+        public static final int CODE32_SEND_CHECK = SPECIAL_VALUE; // TODO 2d 1d
+
+        public static final int CODE32_SEND_START = OPTICON_RESERVED_VALUE;// TODO
+                                                                           // 2d
+                                                                           // 1d
+                                                                           // adding
+                                                                           // the
+                                                                           // prefix
+                                                                           // character
+                                                                           // "A"
+                                                                           // to
+                                                                           // all
+                                                                           // Code
+                                                                           // 32
+                                                                           // bar
+                                                                           // codes
+
+        public static final int C25_ENABLE = OPTICON_RESERVED_VALUE;
+
+        public final static int CODE11_ENABLE = OPTICON_RESERVED_VALUE;
+
+        public final static int CODE11_ENABLE_CHECK = OPTICON_RESERVED_VALUE;
+
+        public final static int CODE11_SEND_CHECK = OPTICON_RESERVED_VALUE;
+
+        public final static int CODE11_LENGTH1 = OPTICON_RESERVED_VALUE;// min 2
+
+        public final static int CODE11_LENGTH2 = OPTICON_RESERVED_VALUE;// max
+                                                                        // 14
+
+        public static final int D25_ENABLE = OPTICON_RESERVED_VALUE;// TODO 2d
+                                                                    // 1d
+                                                                    // discrete
+                                                                    // 2 of 5
+
+        public static final int D25_LEVEL = RESERVED_VALUE;
+        public static final int D25_ENABLE_CHECK = SPECIAL_VALUE; // TODO 2d 1d
+
+        public static final int D25_SEND_CHECK = SPECIAL_VALUE; // TODO 2d 1d
+
+        public static final int D25_2_BAR_START = SPECIAL_VALUE;
+
+        public static final int D25_LENGTH1 = OPTICON_RESERVED_VALUE;// TODO 2d
+                                                                     // 1d
+        public static final int D25_LENGTH2 = OPTICON_RESERVED_VALUE;// TODO 2d
+                                                                     // 1d
+        public static final int D25_REDUNDANCY = RESERVED_VALUE;// TODO 2d 1d
+        public static final int M25_ENABLE = OPTICON_RESERVED_VALUE;// TODO 2d
+                                                                    // matrix2of5
+        public static final int M25_LEVEL = RESERVED_VALUE;
+        public static final int M25_ENABLE_CHECK = SPECIAL_VALUE;// TODO 2d
+        public static final int M25_SEND_CHECK = SPECIAL_VALUE;// TODO 2d
+        public static final int M25_LENGTH1 = OPTICON_RESERVED_VALUE;// TODO 2d
+        public static final int M25_LENGTH2 = OPTICON_RESERVED_VALUE;// TODO 2d
+        public static final int M25_REDUNDANCY = RESERVED_VALUE;// TODO 2d
+        public static final int I25_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int I25_LEVEL = RESERVED_VALUE;
+        public static final int I25_ENABLE_CHECK = OPTICON_RESERVED_VALUE;
+        public static final int I25_SEND_CHECK = OPTICON_RESERVED_VALUE;
+        public static final int I25_CASE_CODE = SPECIAL_VALUE;
+        public final static int I25_TO_EAN13 = OPTICON_RESERVED_VALUE;
+        public static final int I25_LENGTH1 = OPTICON_RESERVED_VALUE;
+        public static final int I25_LENGTH2 = OPTICON_RESERVED_VALUE;
+        public static final int I25_REDUNDANCY = RESERVED_VALUE;
+        public static final int CODABAR_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int CODABAR_LEVEL = RESERVED_VALUE;
+        public static final int CODABAR_ENABLE_CHECK = OPTICON_RESERVED_VALUE;
+        public static final int CODABAR_SEND_CHECK = OPTICON_RESERVED_VALUE;
+        public static final int CODABAR_SEND_START = OPTICON_RESERVED_VALUE;
+        public static final int CODABAR_CLSI = OPTICON_RESERVED_VALUE;
+        public static final int CODABAR_NOTIS = OPTICON_RESERVED_VALUE;
+        public static final int CODABAR_WIDE_GAPS = SPECIAL_VALUE;
+        public static final int CODABAR_LENGTH1 = OPTICON_RESERVED_VALUE;
+        public static final int CODABAR_LENGTH2 = OPTICON_RESERVED_VALUE;
+        public static final int CODABAR_REDUNDANCY = RESERVED_VALUE;
+        public static final int CODE93_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int CODE93_LEVEL = RESERVED_VALUE;
+        public static final int CODE93_LENGTH1 = OPTICON_RESERVED_VALUE;
+        public static final int CODE93_LENGTH2 = OPTICON_RESERVED_VALUE;
+        public static final int CODE93_REDUNDANCY = RESERVED_VALUE;
+        public static final int CODE128_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int CODE128_LEVEL = RESERVED_VALUE;
+        public static final int CODE128_ENABLE_GS1_128 = OPTICON_RESERVED_VALUE;
+        public static final int CODE128_EXT_ASCII = SPECIAL_VALUE;
+        public static final int CODE128_LENGTH1 = OPTICON_RESERVED_VALUE;
+        public static final int CODE128_LENGTH2 = OPTICON_RESERVED_VALUE;
+        public static final int CODE_ISBT_128 = OPTICON_RESERVED_VALUE;
+        public static final int CODE128_REDUNDANCY = RESERVED_VALUE;
+        public static final int CODE128_GS1_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int CODE128_GS1_LENGTH1 = OPTICON_RESERVED_VALUE;
+        public static final int CODE128_GS1_LENGTH2 = OPTICON_RESERVED_VALUE;
+        public static final int UPCA_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int UPCA_LEVEL = RESERVED_VALUE;
+        public static final int UPCA_SEND_CHECK = OPTICON_RESERVED_VALUE;
+        public static final int UPCA_SEND_SYS = OPTICON_RESERVED_VALUE;
+        public static final int UPCA_TO_EAN13 = OPTICON_RESERVED_VALUE;
+        public static final int UPCA_REDUNDANCY = RESERVED_VALUE;
+        public static final int UPCE_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int UPCE_LEVEL = RESERVED_VALUE;
+        public static final int UPCE_SEND_CHECK = OPTICON_RESERVED_VALUE;
+        public static final int UPCE_SEND_SYS = OPTICON_RESERVED_VALUE;
+        public static final int UPCE_TO_UPCA = OPTICON_RESERVED_VALUE;
+        public static final int UPCE_REDUNDANCY = RESERVED_VALUE;
+        public final static int UPCE1_ENABLE = OPTICON_RESERVED_VALUE;
+        public final static int UPCE1_SEND_CHECK = OPTICON_RESERVED_VALUE;
+        public final static int UPCE1_SEND_SYS = OPTICON_RESERVED_VALUE;
+        public final static int UPCE1_TO_UPCA = OPTICON_RESERVED_VALUE;
+        public static final int EAN13_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int EAN13_LEVEL = RESERVED_VALUE;
+        public static final int EAN13_SEND_CHECK = OPTICON_RESERVED_VALUE;
+        public static final int EAN13_SEND_SYS = SPECIAL_VALUE;
+        public static final int EAN13_TO_ISBN = OPTICON_RESERVED_VALUE;
+        public static final int EAN13_TO_ISSN = OPTICON_RESERVED_VALUE;
+        public static final int EAN13_4_DIGIT_CHECK = SPECIAL_VALUE;
+        public static final int EAN13_5_DIGIT_CHECK = SPECIAL_VALUE;
+        public static final int EAN13_REDUNDANCY = RESERVED_VALUE;
+        public final static int EAN13_BOOKLANDEAN = OPTICON_RESERVED_VALUE;// BOOKLANDEAN
+        public final static int EAN13_BOOKLAND_FORMAT = OPTICON_RESERVED_VALUE;// df
+                                                                               // 0x00
+                                                                               // ISBN-10;0x01
+                                                                               // ISBN-13
+        public static final int EAN8_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int EAN8_LEVEL = SPECIAL_VALUE;
+        public static final int EAN8_SEND_CHECK = OPTICON_RESERVED_VALUE;
+        public static final int EAN8_TO_EAN13 = OPTICON_RESERVED_VALUE;
+        public static final int EAN_EXT_ENABLE_2_5_DIGIT = OPTICON_RESERVED_VALUE;// TODO
+                                                                                  // to
+                                                                                  // see
+                                                                                  // upc-a
+                                                                                  // upc-e
+                                                                                  // ena-13
+                                                                                  // ena-8
+                                                                                  // ??????????????
+
+        public final static int UPC_EAN_SECURITY_LEVEL = OPTICON_RESERVED_VALUE;// 0
+                                                                                // 1
+                                                                                // 2
+                                                                                // 3
+        public final static int UCC_COUPON_EXT_CODE = OPTICON_RESERVED_VALUE;
+        public static final int MSI_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int MSI_LEVEL = RESERVED_VALUE;
+        public static final int MSI_REQUIRE_2_CHECK = OPTICON_RESERVED_VALUE;
+        public static final int MSI_SEND_CHECK = OPTICON_RESERVED_VALUE;
+        public static final int MSI_CHECK_2_MOD_11 = OPTICON_RESERVED_VALUE;
+        public static final int MSI_LENGTH1 = OPTICON_RESERVED_VALUE;
+        public static final int MSI_LENGTH2 = OPTICON_RESERVED_VALUE;
+        public static final int MSI_REDUNDANCY = RESERVED_VALUE;
+        public static final int GS1_14_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int GS1_14_TO_UPC_EAN = OPTICON_RESERVED_VALUE; // RESERVED_VALUE;//0xf0<<8|0x8d;//TODO-
+        public static final int GS1_14_LEVEL = RESERVED_VALUE;
+        public static final int GS1_14_TO_GS1_128 = SPECIAL_VALUE;
+        public static final int GS1_14_REQUIRE_2D = SPECIAL_VALUE;
+        public static final int GS1_14_REDUNDANCY = RESERVED_VALUE;
+        public static final int GS1_LIMIT_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int GS1_LIMIT_LEVEL = RESERVED_VALUE;
+        public static final int GS1_LIMIT_TO_GS1_128 = SPECIAL_VALUE;
+        public static final int GS1_LIMIT_REQUIRE_2D = SPECIAL_VALUE;
+        public static final int GS1_LIMIT_REDUNDANCY = RESERVED_VALUE;
+        public static final int GS1_EXP_ENABLE = OPTICON_RESERVED_VALUE;
+        public static final int GS1_EXP_LEVEL = RESERVED_VALUE;
+        public static final int GS1_EXP_TO_GS1_128 = SPECIAL_VALUE;
+        public static final int GS1_EXP_REQUIRE_2D = RESERVED_VALUE;
+        public static final int GS1_EXP_LENGTH1 = OPTICON_RESERVED_VALUE;
+        public static final int GS1_EXP_LENGTH2 = OPTICON_RESERVED_VALUE;
+        public static final int GS1_EXP_REDUNDANCY = RESERVED_VALUE;
+        public static final int US_POSTNET_ENABLE = RESERVED_VALUE;
+        public static final int US_PLANET_ENABLE = RESERVED_VALUE;
+        public static final int US_POSTAL_SEND_CHECK = RESERVED_VALUE;
+        public static final int USPS_4STATE_ENABLE = RESERVED_VALUE;
+        public static final int UPU_FICS_ENABLE = RESERVED_VALUE;
+        public static final int ROYAL_MAIL_ENABLE = RESERVED_VALUE;
+        public static final int ROYAL_MAIL_SEND_CHECK = RESERVED_VALUE;
+        public static final int AUSTRALIAN_POST_ENABLE = RESERVED_VALUE;
+        public static final int KIX_CODE_ENABLE = RESERVED_VALUE;
+        public static final int JAPANESE_POST_ENABLE = RESERVED_VALUE;
+        public static final int PDF417_ENABLE = RESERVED_VALUE;
+        public static final int PDF417_LENGTH1 = RESERVED_VALUE;
+        public static final int PDF417_LENGTH2 = RESERVED_VALUE;
+        public static final int MICROPDF417_ENABLE = RESERVED_VALUE;
+        public static final int MICROPDF417_LENGTH1 = RESERVED_VALUE;
+        public static final int MICROPDF417_LENGTH2 = RESERVED_VALUE;
+        public static final int COMPOSITE_ENABLE = RESERVED_VALUE;
+        public static final int COMPOSITE_TO_GS1_128 = RESERVED_VALUE;
+        public static final int COMPOSITE_LENGTH1 = RESERVED_VALUE;
+        public static final int COMPOSITE_LENGTH2 = RESERVED_VALUE;
+        public static final int COMPOSITE_CC_AB_ENABLE = RESERVED_VALUE; // composite-cc_ab
+        public static final int COMPOSITE_CC_AB_LENGTH1 = RESERVED_VALUE;
+        public static final int COMPOSITE_CC_AB_LENGTH2 = RESERVED_VALUE;
+        public static final int COMPOSITE_CC_C_ENABLE = RESERVED_VALUE; // composite-cc_c
+        public static final int COMPOSITE_CC_C_LENGTH1 = RESERVED_VALUE;
+        public static final int COMPOSITE_CC_C_LENGTH2 = RESERVED_VALUE;
+        public final static int COMPOSITE_TLC39_ENABLE = RESERVED_VALUE;
+        public static final int HANXIN_ENABLE = RESERVED_VALUE;
+        public static final int HANXIN_INVERSE = RESERVED_VALUE;
+        public static final int DATAMATRIX_ENABLE = RESERVED_VALUE;
+        public static final int DATAMATRIX_LENGTH1 = RESERVED_VALUE;
+        public static final int DATAMATRIX_LENGTH2 = RESERVED_VALUE;
+        public static final int DATAMATRIX_INVERSE = RESERVED_VALUE;
+        public static final int MAXICODE_ENABLE = RESERVED_VALUE;
+        public static final int MAXICODE_LENGTH1 = RESERVED_VALUE;
+        public static final int MAXICODE_LENGTH2 = RESERVED_VALUE;
+        public static final int QRCODE_ENABLE = RESERVED_VALUE; // 2d
+        public static final int QRCODE_INVERSE = RESERVED_VALUE;
+        public static final int MICROQRCODE_ENABLE = RESERVED_VALUE; // 2d
+        public static final int AZTEC_ENABLE = RESERVED_VALUE;            //2d
+        public static final int AZTEC_INVERSE = RESERVED_VALUE;
+    }
+   
+    private final int[] VALUE_PARAM_INDEX = {
+            OpticonParamIndex.IMAGE_PICKLIST_MODE,
+            OpticonParamIndex.IMAGE_ONE_D_INVERSE,
+            OpticonParamIndex.LASER_ON_TIME,
+            OpticonParamIndex.TIMEOUT_BETWEEN_SAME_SYMBOL,
+            OpticonParamIndex.LINEAR_CODE_TYPE_SECURITY_LEVEL,
+            OpticonParamIndex.FUZZY_1D_PROCESSING,
+            OpticonParamIndex.MULTI_DECODE_MODE,
+            OpticonParamIndex.BAR_CODES_TO_READ,
+            OpticonParamIndex.FULL_READ_MODE,
+            OpticonParamIndex.CODE39_ENABLE,
+            OpticonParamIndex.CODE39_ENABLE_CHECK,
+            OpticonParamIndex.CODE39_SEND_CHECK,
+            OpticonParamIndex.CODE39_FULL_ASCII,
+            OpticonParamIndex.CODE39_LENGTH1,
+            OpticonParamIndex.CODE39_LENGTH2,
+            OpticonParamIndex.TRIOPTIC_ENABLE,
+            OpticonParamIndex.CODE32_ENABLE,
+            OpticonParamIndex.CODE32_SEND_START,
+            OpticonParamIndex.C25_ENABLE,
+            OpticonParamIndex.D25_ENABLE, 
+            OpticonParamIndex.D25_LENGTH1,
+            OpticonParamIndex.D25_LENGTH2,
+            OpticonParamIndex.M25_ENABLE,
+            OpticonParamIndex.CODE11_ENABLE,
+            OpticonParamIndex.CODE11_ENABLE_CHECK,
+            OpticonParamIndex.CODE11_SEND_CHECK,
+            OpticonParamIndex.CODE11_LENGTH1,
+            OpticonParamIndex.CODE11_LENGTH2,
+            OpticonParamIndex.I25_ENABLE,
+            OpticonParamIndex.I25_ENABLE_CHECK,
+            OpticonParamIndex.I25_SEND_CHECK,
+            OpticonParamIndex.I25_LENGTH1,
+            OpticonParamIndex.I25_LENGTH2,
+            OpticonParamIndex.I25_TO_EAN13,
+            OpticonParamIndex.CODABAR_ENABLE,
+            OpticonParamIndex.CODABAR_NOTIS,
+            OpticonParamIndex.CODABAR_CLSI,
+            OpticonParamIndex.CODABAR_LENGTH1,
+            OpticonParamIndex.CODABAR_LENGTH2,
+            OpticonParamIndex.CODE93_ENABLE,
+            OpticonParamIndex.CODE93_LENGTH1,
+            OpticonParamIndex.CODE93_LENGTH2,
+            OpticonParamIndex.CODE128_ENABLE,
+            OpticonParamIndex.CODE128_LENGTH1,
+            OpticonParamIndex.CODE128_LENGTH2,
+            OpticonParamIndex.CODE_ISBT_128,
+            OpticonParamIndex.CODE128_GS1_ENABLE,
+            OpticonParamIndex.UPCA_ENABLE, 
+            OpticonParamIndex.UPCA_SEND_CHECK,
+            OpticonParamIndex.UPCA_SEND_SYS,
+            OpticonParamIndex.UPCE_ENABLE,
+            OpticonParamIndex.UPCE_SEND_CHECK,
+            OpticonParamIndex.UPCE_SEND_SYS,
+            OpticonParamIndex.UPCE_TO_UPCA,
+            OpticonParamIndex.UPCE1_ENABLE,
+            OpticonParamIndex.UPCE1_SEND_CHECK,
+            OpticonParamIndex.UPCE1_SEND_SYS,
+            OpticonParamIndex.UPCE1_TO_UPCA,
+            OpticonParamIndex.EAN13_ENABLE,
+            OpticonParamIndex.EAN13_BOOKLANDEAN,
+            OpticonParamIndex.EAN13_BOOKLAND_FORMAT,
+            OpticonParamIndex.EAN8_ENABLE,
+            OpticonParamIndex.EAN8_TO_EAN13,
+            OpticonParamIndex.EAN_EXT_ENABLE_2_5_DIGIT,
+            OpticonParamIndex.UPC_EAN_SECURITY_LEVEL,
+            OpticonParamIndex.UCC_COUPON_EXT_CODE,
+            OpticonParamIndex.MSI_ENABLE,
+            OpticonParamIndex.MSI_REQUIRE_2_CHECK,
+            OpticonParamIndex.MSI_SEND_CHECK,
+            OpticonParamIndex.MSI_CHECK_2_MOD_11,
+            OpticonParamIndex.MSI_LENGTH1,
+            OpticonParamIndex.MSI_LENGTH2,
+            OpticonParamIndex.GS1_14_ENABLE,
+            OpticonParamIndex.GS1_14_TO_UPC_EAN,
+            OpticonParamIndex.GS1_LIMIT_ENABLE,
+            OpticonParamIndex.GS1_EXP_ENABLE,
+            OpticonParamIndex.GS1_EXP_LENGTH1,
+            OpticonParamIndex.GS1_EXP_LENGTH2,
+            OpticonParamIndex.US_POSTNET_ENABLE,
+            OpticonParamIndex.US_PLANET_ENABLE,
+            OpticonParamIndex.US_POSTAL_SEND_CHECK,
+            OpticonParamIndex.USPS_4STATE_ENABLE,
+            OpticonParamIndex.UPU_FICS_ENABLE,
+            OpticonParamIndex.ROYAL_MAIL_ENABLE,
+            OpticonParamIndex.ROYAL_MAIL_SEND_CHECK,
+            OpticonParamIndex.AUSTRALIAN_POST_ENABLE,
+            OpticonParamIndex.KIX_CODE_ENABLE,
+            OpticonParamIndex.JAPANESE_POST_ENABLE,
+            OpticonParamIndex.PDF417_ENABLE,
+            OpticonParamIndex.MICROPDF417_ENABLE,
+            OpticonParamIndex.COMPOSITE_CC_AB_ENABLE,
+            OpticonParamIndex.COMPOSITE_CC_C_ENABLE,
+            OpticonParamIndex.COMPOSITE_TLC39_ENABLE,
+            OpticonParamIndex.HANXIN_ENABLE,
+            OpticonParamIndex.HANXIN_INVERSE,
+            OpticonParamIndex.DATAMATRIX_ENABLE,
+            OpticonParamIndex.DATAMATRIX_LENGTH1,
+            OpticonParamIndex.DATAMATRIX_LENGTH2,
+            OpticonParamIndex.DATAMATRIX_INVERSE,
+            OpticonParamIndex.MAXICODE_ENABLE,
+            OpticonParamIndex.QRCODE_ENABLE,
+            OpticonParamIndex.QRCODE_INVERSE,
+            OpticonParamIndex.MICROQRCODE_ENABLE,
+            OpticonParamIndex.AZTEC_ENABLE,
+            OpticonParamIndex.AZTEC_INVERSE,
+    };
+
+    // default enable symbology: B2R8R9B3B6R1R4JXOG
+    // R1 R4 B2 B3 R8 R9 B6 OG JX
+    // code identifiers: V O Q N R U T C D B A Z y y y Y T
+
+    public static String CURRENT_COMD = "BO";
+
+    static class OpticonCommand {
+        public static final String STOPDECODE_CMD = "Y";// de-trigger the reader
+
+        public static final String DEF_ENABLE_COMD = "B0C1D8B2D5HEF0R8B3E1E8E4G0B6OGR46HOGR46JHNIBE9E9R16QE4E2B54B4B4GDRJXJY";
+
+        public static final String DEF_MINLEN_COMD = "HL Q06 O06 N06 R04 V01 Z04 T02 U02 T02 y01";
+
+        public static final String DEF_MAXLEN_COMD = "HM Q10 O10 N10 R20 V20 Z10 T40 U20 T40 y74";
+
+        public static final String ENABLE_ALL_COMD = "B2R7BBJSWHR8R9B3B5B6R1R4B7JXJYDRJZD7OG";
+
+        public static final String ENABLE_ALL_CODE = "[BCM";
+
+        public static final String DISABLE_ALL_CODE = "B0";
+
+        // enable of readable codes
+        public static final String CODE39 = "B2";
+
+        public static final String DISCRETE25 = "R7";
+
+        public static final String MATRIX25 = "BB";
+
+        public static final String CHINESE_POST_MATRIX25 = "JS";
+
+        public static final String KOREAN_POSTAL_AUTHORITY = "WH";
+
+        public static final String INTERLEAVED25 = "R8";
+
+        public static final String CODABAR = "B3";
+
+        public static final String CODE93 = "B5";
+
+        public static final String CODE128 = "B6";
+
+        public static final String CODABLOCK_F = "[D4P";// add [ code128
+
+        public static final String ALL_ADD_ON = "A0";
+
+        public static final String UPCA = "R1";
+
+        public static final String UPCE = "R1";
+
+        public static final String UPC = "R1";
+
+        public static final String UPC_2 = "R2";
+
+        public static final String UPC_5 = "R3";
+
+        public static final String EAN13 = "R4";
+
+        public static final String EAN8 = "R4";
+
+        public static final String EAN = "R4";
+
+        public static final String EAN_2 = "R5";
+
+        public static final String EAN_5 = "R6";
+
+        public static final String IATA = "B4";
+
+        public static final String MSI = "B7";
+
+        public static final String GS1_14 = "JX";
+
+        public static final String GS1_LIMIT = "JY";
+
+        public static final String GS1_EXP = "DR";
+
+        public static final String TRIOPTIC = "JZ";
+
+        public static final String CODE32 = "D7";// It. Pharmaceutical if
+                                                 // possible //D6 It.
+                                                 // Pharmaceutical only
+
+        public static final String GS1_128 = "OG";
+
+        public static final String TELEPEN = "B9";
+
+        public static final String UK_PLESSEY = "B1";
+
+        public static final String S_CODE = "R9";
+
+        public static final String CODE11 = "[BLC";
+        public static final String CODE_NO_CHK = "[BLF";
+        public static final String CODE_CHK = "[BLI";
+        public static final String CODE_SEND_CHK = "[BLK";
+        public static final String CODE_NOSEND_CHK  = "[BLJ";
+        public static final String CHINESE25= "[D4L";
+
+        // CODE length
+        public static final String FIXED_OFF_ALL = "H0";// fixed length OFF all
+                                                        // codes
+
+        public static final String FIXED_ON_ALL = "H1";
+
+        public static final String FIXED_ON_SELECTED = "HK";// FIXED length ON
+                                                            // for selected
+                                                            // codes
+
+        public static final String FIXED_SEL_MIN = "HL";// minmum length for
+                                                        // selected codes
+
+        public static final String FIXED_SEL_MAX = "HM";
+
+        // setting code specific options
+        public static final String UPCA_NO_ZERO_SEND_CD = "E3";// no leading
+                                                               // digit,
+                                                               // transmit CD
+
+        public static final String UPCA_ZERO_SEND_CD = "E2";
+
+        public static final String UPCA_NO_ZERO_NO_CD = "E5";
+
+        public static final String UPCA_ZERO_NO_CD = "E4";
+
+        public static final String UPCE_NO_ZERO_SEND_CD = "E7";// no leading
+                                                               // digit,
+                                                               // transmit CD
+
+        public static final String UPCE_ZERO_SEND_CD = "E6";// send system digit
+                                                            // and cd
+
+        public static final String UPCE_NO_ZERO_NO_CD = "E9";
+
+        public static final String UPCE_ZERO_NO_CD = "E8";
+
+        public static final String UPCE_AS = "6Q";
+
+        public static final String UPCE_AS_UPCA = "6P";
+
+        public static final String ENA13_NO_CD = "6J";// NO SEND CD
+
+        public static final String ENA13_CD = "6K";// df
+
+        public static final String ENA13_DIS_ISBN = "IB";// df
+
+        public static final String ENA13_EN_ISBN = "IA";
+
+        public static final String ENA13_IF_ISBN = "IK";// enable isbn if
+                                                        // possible
+
+        public static final String ENA13_DIS_ISSN = "HN";// df
+
+        public static final String ENA13_EN_ISSN = "HO";
+
+        public static final String ENA13_IF_ISSN = "4V";// enable issn if
+                                                        // possible
+
+        public static final String ENA13_DIS_ISMN = "IO";// df
+
+        public static final String ENA13_EN_ISMN = "IP";
+
+        public static final String ENA13_IF_ISMN = "IQ";// enable issn if
+                                                        // possible
+
+        public static final String ENA8_NO_CD = "6H";
+
+        public static final String ENA8_CD = "6I";// df
+
+        public static final String CODE39_NORMAL = "D5";// df
+
+        public static final String CODE39_FULL_ASCII = "D4";
+
+        public static final String CODE39_IF_FULL_ASCII = "+K";
+
+        public static final String CODE39_NO_CHECK_CD = "C1";
+
+        public static final String CODE39_CHECK_CD = "C0";
+
+        public static final String CODE39_ONLY_CODE32 = "D6";
+
+        public static final String CODE39_IF_CODE32 = "D7";
+
+        public static final String CODE39_NO_CD = "D8";
+
+        public static final String CODE39_CD = "D9";// DF
+
+        public static final String CODE39_ST_SP = "D0";// df
+
+        public static final String CODE39_NO_ST_SP = "D1";
+
+        public static final String CODE39_NO_ID_A_CODE32 = "DA";
+
+        public static final String CODE39_ID_A_CODE32 = "DB";
+
+        public static final String CODABAR_NORMAL = "HA";// df
+
+        public static final String CODABAR_ONLY_ABC = "H4";
+
+        public static final String CODABAR_ONLY_CX = "H5";
+
+        public static final String CODABAR_ABC_CX = "H3";
+
+        public static final String CODABAR_NO_CHECK_CD = "H7";// df
+
+        public static final String CODABAR_CHECK_CD = "H6";
+
+        public static final String CODABAR_NO_TRAN_CD = "H9";
+
+        public static final String CODABAR_TRAN_CD = "H8";
+
+        public static final String CODABAR_DIS_CLSI = "HE";// df disable space
+                                                           // insertion
+
+        public static final String CODABAR_EN_CLSI = "HD";
+
+        public static final String CODABAR_DIS_ST_SP = "F0";// df
+
+        public static final String CODABAR_ABCD_STSP = "F3";// ABCD/ABCD
+
+        public static final String CODABAR_abcd_STSP = "F4";// abcd/abcd
+
+        public static final String CODABAR_ABCD_STSP_TN = "F1";// ABCD/TN*E
+
+        public static final String CODABAR_abcd_STSP_tn = "F2";// abcd/tn*e
+
+        public static final String CODABAR_DC_STSP = "HJ";// <DC1><DC2><DC3><DC4>/<DC1><DC2><DC3><DC4>
+
+        public static final String I25_NO_CD = "E1";
+
+        public static final String I25_CD = "E0";
+
+        public static final String I25_NO_CHECK_CD = "G0";// DF
+
+        public static final String I25_CHECK_CD = "G1";
+
+        public static final String MSI_NO_CHECK_CD = "4A";
+
+        public static final String MSI_CHECK_1CD_MOD10 = "4B";// DF
+
+        public static final String MSI_CHECK_2CD_MOD10_10 = "4C";
+
+        public static final String MSI_CHECK_2CD_MOD10_11 = "4D";
+
+        public static final String MSI_CHECK_2CD_MOD11_10 = "4R";
+
+        public static final String MSI_NO_TRAN_CD = "4G";
+
+        public static final String MSI_TRAN_CD1 = "4E";// DF
+
+        public static final String MSI_TRAN_CD12 = "4F";
+
+        public static final String GS1_128_DIS = "OF";// DF
+
+        public static final String GS1_128_ONLY = "JF";// If the data does not
+                                                       // comply with the
+                                                       // GS1-128 format, then
+                                                       // the label is rejected
+
+        public static final String GS1_128_IF = "OG";// enable gs1-128 if
+                                                     // possible
+
+        public static final String CODE93_NO_CHECK_CD = "9Q";
+
+        public static final String CODE93_CHECK_CD = "AC";// df
+
+        public static final String CODE93_NO_TRAN_CD = "DZ";// df
+
+        public static final String CODE93_TRAN_CD = "DY";
+
+        public static final String GS1_DATABAR_NO_TRAN_CD = "DM";
+
+        public static final String GS1_DATABAR_TRAN_CD = "DL";// df
+
+        public static final String GS1_DATABAR_NO_TRAN_INDEN = "DT";
+
+        public static final String GS1_DATABAR_TRAN_INDEN = "DS";// dfTransmit
+                                                                 // Application
+                                                                 // Identifier
+
+    }
+
+    private String[] OPTICON_ENABLE_COMMD = new String[] {
+            OpticonCommand.CODE39, OpticonCommand.DISCRETE25, OpticonCommand.MATRIX25,
+            OpticonCommand.INTERLEAVED25, OpticonCommand.CODABAR, OpticonCommand.CODE93,
+            OpticonCommand.CODE128, OpticonCommand.UPCA, OpticonCommand.UPCE, OpticonCommand.EAN13,
+            OpticonCommand.EAN8, OpticonCommand.MSI, OpticonCommand.GS1_14,
+            OpticonCommand.GS1_LIMIT, OpticonCommand.GS1_EXP,
+            OpticonCommand.ALL_ADD_ON,// MAYBE todo
+            OpticonCommand.TRIOPTIC, OpticonCommand.CODE39 + OpticonCommand.CODE32,
+            OpticonCommand.CODE128 + OpticonCommand.GS1_128,
+    };
+
+    private int[] OPTICON_ENABLE_INDEX = new int[] {
+            PropertyID.CODE39_ENABLE, // Code39 definitions
+            PropertyID.D25_ENABLE, // discrete 2/5
+            PropertyID.M25_ENABLE, // matrix 2/5
+            PropertyID.I25_ENABLE, // interleaved 2/5
+            PropertyID.CODABAR_ENABLE, // codebar
+            PropertyID.CODE93_ENABLE, // code 93
+            PropertyID.CODE128_ENABLE, // code128
+            PropertyID.UPCA_ENABLE, // uspa
+            PropertyID.UPCE_ENABLE, // uspe
+            PropertyID.EAN13_ENABLE, // ean13
+            PropertyID.EAN8_ENABLE, // ean8
+            PropertyID.MSI_ENABLE, // msi
+            PropertyID.GS1_14_ENABLE, // rss
+            PropertyID.GS1_LIMIT_ENABLE, // rss limit
+            PropertyID.GS1_EXP_ENABLE, // rss exp
+            PropertyID.EAN_EXT_ENABLE_2_5_DIGIT, // UPC/EAN Extensions
+                                                 // definitions
+            PropertyID.TRIOPTIC_ENABLE, // trioptic
+            PropertyID.CODE32_ENABLE, // code 32 also see pharmacode 39
+            PropertyID.CODE128_GS1_ENABLE, // gs1-128
+
+    };
+}

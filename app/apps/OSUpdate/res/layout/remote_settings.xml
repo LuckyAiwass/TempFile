@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright  2011 Qualcomm Technologies, Inc.
+ All Rights Reserved.
+ Qualcomm Technologies Proprietary and Confidential.
+ Developed by QRD Engineering team.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingLeft="24dip"
+    android:paddingRight="24dip" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_server_url"
+        android:textSize="15dip"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/server_url"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_server_url" />
+
+    <LinearLayout
+        android:id="@+id/tms_server_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tms_server_url"
+            android:textSize="15dip"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/tms_server_url"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tms_server_port"
+            android:textSize="15dip"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/tms_server_port"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

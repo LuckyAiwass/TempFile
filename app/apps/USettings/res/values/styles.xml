@@ -1,0 +1,7 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<style name="AppTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+ <item name="android:colorPrimary">#488fe1</item>
+  <item name="android:colorPrimaryDark">#488fe1</item>
+    <item name="android:colorAccent">#488fe1</item>
+</style>
+</resources>

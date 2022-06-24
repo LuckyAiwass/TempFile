@@ -1,0 +1,12 @@
+
+java_library {
+    name: "com.ubx.services",
+    installable: true,
+    srcs: [
+        "src/**/*.java",
+        "src/**/I*.aidl",
+    ],
+
+    libs:["services","com.ubx.platform"],
+}
+

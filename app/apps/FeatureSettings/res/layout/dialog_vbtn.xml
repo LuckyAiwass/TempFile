@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 虚拟按钮自定义dialog -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true"
+    android:background="@drawable/dialog_vbtn_shape"
+    android:orientation="vertical"
+    android:padding="20.0dip" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+		android:id="@+id/key_vbtn_title"
+		android:textColor="#000000"
+		android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/title_vbtn"
+            android:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/cb_vbtn_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        style = "@style/CheckBox"
+        android:textColor="#737373"
+        android:layout_gravity="center"
+            android:text="@string/str_vbtn_left" />
+    
+    <CheckBox
+        android:id="@+id/cb_vbtn_middle"
+        android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:textSize="20sp"
+	android:layout_marginTop="20dp"
+	android:layout_gravity="center"
+	android:textColor="#737373"
+	style = "@style/CheckBox"
+	    android:text="@string/str_vbtn_middle" />
+	
+    <CheckBox
+        android:id="@+id/cb_vbtn_right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        style = "@style/CheckBox"
+                android:textColor="#737373"
+            android:text="@string/str_vbtn_right" />
+
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+ 	    android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="#ffffff"
+	    android:gravity="center"
+	    android:layout_marginTop="30dp"
+            android:orientation="horizontal" >
+
+	    <Button
+		android:id="@+id/key_vbtn_cancel"
+                android:layout_width="100dp"
+		android:layout_height="35dp"
+		android:layout_marginRight="20dp"
+		android:textSize="13sp"
+		android:background="@drawable/false_button_shape"
+		android:textStyle="bold"
+		android:text="@string/str_cancel"/>
+
+	<Button
+		android:id="@+id/key_vbtn_ok"
+                android:layout_width="100dp"
+		android:layout_height="35dp"
+		android:layout_marginLeft="20dp"
+                android:textSize="13sp"
+		android:background="@drawable/ture_button_shape"
+		android:textColor="#ffffff"
+		android:text="@string/str_ok"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

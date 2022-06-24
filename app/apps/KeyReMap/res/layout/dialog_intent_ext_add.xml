@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/intent_ext_key_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/intent_ext_key_text"
+            style="@style/titleTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="2"
+            android:text="@string/intent_ext_key"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:id="@+id/intent_ext_key_edit"
+            style="@style/titleTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="3"
+            android:background="@drawable/common_shape_edit_bg"
+            android:hint="input extra key"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorTextSummary" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/deliver"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_below="@+id/intent_ext_key_ly"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@android:color/darker_gray" />
+
+    <LinearLayout
+        android:id="@+id/intent_ext_value_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/deliver">
+
+        <TextView
+            android:id="@+id/intent_ext_value_text"
+            style="@style/titleTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="2"
+            android:text="@string/intent_ext_value"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:id="@+id/intent_ext_value_edit"
+            style="@style/titleTextTheme"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="3"
+            android:background="@drawable/common_shape_edit_bg"
+            android:hint="input extra value"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorTextSummary" />
+    </LinearLayout>
+
+</RelativeLayout>

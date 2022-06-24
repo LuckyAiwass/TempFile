@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+     Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:google="http://google.com"
+    android:title="@string/scanner_formatting">
+
+    <PreferenceCategory
+        android:key="scanner_format"
+        android:title="@string/scanner_formatting">
+        <ListPreference
+            android:entries="@array/send_lable_fix_entries"
+            android:entryValues="@array/send_lable_fix_values"
+            android:key="send_lable_fix"
+            android:persistent="false"
+            android:title="@string/scanner_send_lable_fix" />
+        <Preference
+            android:key="edit_lable_prefix"
+            android:title="@string/scanner_lable_prefix" />
+        <Preference
+            android:key="edit_lable_suffix"
+            android:title="@string/scanner_lable_suffix" />
+        <Preference
+            android:key="edit_lable_pattern"
+            android:title="@string/scanner_lable_pattern" />
+        <Preference
+            android:key="edit_lable_replace"
+            android:title="@string/scanner_lable_replace" />
+        <CheckBoxPreference
+            android:key="remove_non_printable_chars"
+            android:persistent="false"
+            android:title="@string/remove_non_printable_chars" />
+        <CheckBoxPreference
+            android:key="enable_edit_lable_separator"
+            android:persistent="false"
+            android:summary="@string/lable_application_identifier_summary"
+            android:title="@string/lable_application_identifier" />
+        <Preference
+            android:dependency="enable_edit_lable_separator"
+            android:key="edit_lable_separator"
+            android:title="@string/lable_application_identifier_edit" />
+	    <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/code_id_type_entries"
+            android:entryValues="@array/code_id_type_values"
+            android:key="scanner_reader_codeid_type"
+            android:title="@string/scanner_reader_codeid_type" />
+    </PreferenceCategory>
+    <!-- <PreferenceCategory
+        android:key="scanner_cache_config"
+        android:title="@string/scanner_cache_config" >
+        
+        <CheckBoxPreference
+            android:key="scanner_cache_mode"
+            android:persistent="false"
+            android:title="@string/scanner_cache_mode" />
+        <EditTextPreference 
+            android:title="@string/scanner_cache_limit_time"
+            android:key="scanner_cache_limit_time"
+            android:inputType="number"
+            android:dependency="scanner_cache_mode"/>
+    </PreferenceCategory>-->
+    <!-- <PreferenceScreen 
+        android:title="Exposure Settings"
+        android:summary="Select to configure exposure settings"
+        android:dependency="exposure_settings_enable">
+        
+        DEC_ES_EXPOSURE_METHOD
+        <EditTextPreference 
+            android:title="Method"
+            android:summary="Sets the exposure method"
+            android:key="exposure_method"
+            android:inputType="number"
+            android:defaultValue="0"
+            android:dependency="exposure_settings_enable" />
+        DEC_ES_TARGET_VALUE
+        <EditTextPreference 
+            android:title="White Target"
+            android:summary="Sets the white target level"
+            android:key="exposure_target_value"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_TARGET_PERCENTILE
+        <EditTextPreference 
+            android:title="Target Percentile"
+            android:summary="Sets the white target percentile level"
+            android:key="exposure_target_percentile"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_TARGET_ACCEPT_GAP
+        <EditTextPreference 
+            android:title="Target Gap"
+            android:summary="Sets the target acceptance gap"
+            android:key="exposure_target_acceptance_gap"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_MAX_EXP
+        <EditTextPreference 
+            android:title="Max Exposure"
+            android:summary="Sets the maximum exposure"
+            android:key="exposure_max_exposure"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_MAX_GAIN
+        <EditTextPreference 
+            android:title="Max Gain"
+            android:summary="Sets the maximum gain"
+            android:key="exposure_max_gain"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_FRAME_RATE
+        <EditTextPreference 
+            android:title="Frame Rate"
+            android:summary="Sets the frame rate"
+            android:key="exposure_frame_rate"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_CONFORM_IMAGE
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="exposure_conform"
+            android:summary="Select to enable image must conform"
+            android:title="Must Conform"
+            android:dependency="exposure_settings_enable" >
+         </CheckBoxPreference> 
+        DEC_ES_CONFORM_TRIES
+        <EditTextPreference 
+            android:title="Conform Tries"
+            android:summary="Sets the conform tries"
+            android:key="exposure_conform_tries"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_SPECULAR_EXCLUSION
+        <EditTextPreference 
+            android:title="Conform Tries"
+            android:summary="Sets the conform tries"
+            android:key="exposure_specular_exclusion"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_SPECULAR_SAT
+        <EditTextPreference 
+            android:title="Specular Saturation"
+            android:summary="Sets the specular saturation"
+            android:key="exposure_specular_saturation"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_SPECULAR_LIMIT
+        <EditTextPreference 
+            android:title="Specular Limit"
+            android:summary="Sets the specular limit"
+            android:key="exposure_specular_limit"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_FIXED_EXP
+        <EditTextPreference 
+            android:title="Fixed Exposure"
+            android:summary="Sets the fixed exposure"
+            android:key="exposure_fixed_exposure"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_FIXED_GAIN
+        <EditTextPreference 
+            android:title="Fixed Gain"
+            android:summary="Sets the fixed gain"
+            android:key="exposure_fixed_gain"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        DEC_ES_FIXED_FRAMERATE
+        <EditTextPreference 
+            android:title="Fixed Frame Rate"
+            android:summary="Sets the fixed frame rate"
+            android:key="exposure_fixed_frame_rate"
+            android:inputType="number"
+            android:defaultValue="0" 
+            android:dependency="exposure_settings_enable"/>
+        
+    </PreferenceScreen> -->
+</PreferenceScreen>

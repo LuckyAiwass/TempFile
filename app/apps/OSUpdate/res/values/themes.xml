@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (c) 2012 Qualcomm Technologies, Inc.  All Rights Reserved.
+ Qualcomm Technologies Proprietary and Confidential.
+ -->
+<resources>
+    <style name="NoDisplay" parent="@android:style/Theme.Holo">
+        <item name="android:windowNoDisplay">true</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="updateDialog" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item> <!-- 是否浮现在activity之上 -->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="Dialogstyle">
+        <!--设置dialog的背景-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--设置Dialog的windowFrame框为无-->
+        <item name="android:windowFrame">@null</item>
+        <!--设置无标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否半透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--设置窗口内容不覆盖-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--设置动画，在这里使用让它继承系统的Animation.Dialog-->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <!--背景是否模糊显示-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+    </style>
+
+    <style name="MmsNewStyleTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
+       <item name="android:actionMenuTextAppearance">
+           @style/MMSTextAppearance.Holo.Widget.ActionBar.Menu
+       </item>
+       <item name="android:spinnerDropDownItemStyle">@style/CustomDropDownItemStyle</item>
+       <item name="android:actionModeBackground">@color/action_mode_background</item>
+       <item name="android:actionModeCloseDrawable">@drawable/back_black</item>
+       <item name="android:actionBarWidgetTheme">@style/MyActionBarWidgetTheme</item>
+       <item name="android:actionBarStyle">@style/MyActionBar</item>
+       <item name="android:colorPrimary">@color/default_actionabr_background</item>
+       <item name="android:colorPrimaryDark">@color/primary_color_dark</item>
+       <item name="android:actionOverflowButtonStyle">@style/OverFlow</item>
+    </style>
+    <style name="CustomDropDownItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textAppearance">@style/CustomDropDownItemTextStyle</item>
+    </style>
+    <style name="CustomDropDownItemTextStyle" >
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="MMSTextAppearance.Holo.Widget.ActionBar.Menu"
+        parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Menu">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="MyActionBarWidgetTheme" parent="@android:style/Theme.Material.Light">
+        <item name="*android:searchResultListItemHeight">61dp</item>
+    </style>
+    <style name="MyActionBar" parent="@android:style/Widget.Material.Light.ActionBar">
+        <item name="android:background">#0288d1</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitleTextStyleTheme</item>
+        <item name="android:subtitleTextStyle">@style/ActionBarSubTitleTextStyleTheme</item>
+    </style>
+    <style name="ActionBarTitleTextStyleTheme"
+        parent="android:TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="ActionBarSubTitleTextStyleTheme"
+        parent="android:TextAppearance.Material.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="OverFlow" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/more</item>
+    </style>
+    <style name="XToastDialogStyle"  parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>
+
+

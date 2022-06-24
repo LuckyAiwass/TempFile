@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/urovo_settings" >
+
+    <ListPreference
+        android:entries="@array/n6603_multiple_decode_values_titles"
+        android:entryValues="@array/n6603_multiple_decode_values"
+        android:key="n6603_multiple_decode_mode"
+        android:persistent="true"
+        android:title="@string/n6603_multiple_decode_mode" />
+
+    <!-- MultiRead Count -->
+    <EditTextPreference
+        android:defaultValue="2"
+        android:inputType="number"
+        android:key="n6603_multiple_decode_count"
+        android:summary="@string/n6603_multiple_decode_count_sum"
+        android:title="@string/n6603_multiple_decode_count" />
+    <EditTextPreference
+        android:dialogMessage="@string/n6603_multiple_decode_timeout_sum"
+        android:inputType="number"
+        android:key="n6603_multiple_decode_timeout"
+        android:summary="@string/n6603_multiple_decode_timeout_sum"
+        android:title="@string/n6603_multiple_decode_timeout" />
+    <!-- MutiScan Interval, add by tao.he 20190314-->
+    <EditTextPreference
+        android:inputType="number"
+        android:key="n6603_multiple_decode_interval"
+        android:summary="@string/n6603_multiple_decode_interval_sum"
+        android:title="@string/n6603_multiple_decode_interval" />
+     <CheckBoxPreference
+        android:key="scanner_multiple_decode_mode"
+        android:persistent="false"
+        android:title="@string/scanner_multiple_decode_mode" />
+    <EditTextPreference
+        android:defaultValue="2"
+        android:inputType="number"
+        android:key="scanner_multiple_decode_count"
+        android:title="@string/scanner_multiple_decode_count" />
+    <CheckBoxPreference
+        android:key="scanner_multiple_full_read_mode"
+        android:persistent="false"
+        android:title="@string/scanner_multiple_full_read_mode"
+        android:summary="@string/scanner_multiple_full_read_mode_sum" />
+    <ListPreference
+        android:entries="@array/scanner_keyboard_type_entries"
+        android:entryValues="@array/scanner_keyboard_type_values"
+        android:key="scanner_multiple_decode_separator"
+        android:persistent="true"
+        android:title="@string/scanner_multiple_decode_separator" />
+</PreferenceScreen>

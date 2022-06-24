@@ -1,0 +1,23 @@
+LOCAL_PATH:= $(call my-dir)
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_TAGS := optional
+
+#LOCAL_SRC_FILES := $(call all-subdir-java-files)
+#LOCAL_SRC_FILES := $(call all-java-files-under, src)
+#LOCAL_JAVA_LIBRARIES := android.urovo.device
+LOCAL_SRC_FILES := $(call all-java-files-under, src) \
+	src/com/ubx/scanwedge/aidl/IScanWedgeEngine.aidl
+#	src/com/ubx/datawedge/aidl/IIMESCallback.aidl \
+#	src/com/ubx/datawedge/aidl/IKeyEventNotification.aidl
+
+LOCAL_JAVA_LIBRARIES := android.urovo.device
+LOCAL_MULTILIB := 32
+LOCAL_PACKAGE_NAME := ScanWedge
+LOCAL_CERTIFICATE := platform
+LOCAL_DEX_PREOPT := false
+
+LOCAL_PROGUARD_FLAG_FILES := proguard.flags
+
+include $(BUILD_PACKAGE)
+

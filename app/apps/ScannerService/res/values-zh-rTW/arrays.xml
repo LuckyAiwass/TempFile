@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="linear_security_level_entries">
+        <item>安全級別1</item>
+        <item>安全級別2</item>
+        <item>安全級別3</item>
+        <item>安全級別4</item>
+    </string-array>
+    <string-array name="image_inverse_decoder_entries">
+        <item>正常解碼</item>
+        <item>僅限反白</item>
+        <item>自動檢測</item>
+    </string-array>
+    <string-array name="scanner_triggermode_entries">
+        <item>自動模式</item>
+        <item>連續模式</item>
+        <item>手動模式</item>
+    </string-array>
+    <string-array name="image_bar_cades_to_read_entries">
+        <item>解碼 1 次</item>
+        <item>解碼 2 次</item>
+        <item>解碼 3 次</item>
+        <item>解碼 4 次</item>
+        <item>解碼 5 次</item>
+        <item>解碼 6 次</item>
+        <item>解碼 7 次</item>
+        <item>解碼 8 次</item>
+        <item>解碼 9 次</item>
+        <item>解碼 10 次</item>
+    </string-array>
+    <string-array name="send_lable_fix_entries">
+        <item>无</item>
+        <item>前綴</item>
+        <item>後缀</item>
+        <item>前缀和後缀</item>
+        <item>格式化</item>
+        <item>替換</item>
+        <item>替換和前缀，後缀</item>
+    </string-array>
+    <string-array name="save_image_mode">
+        <item>不保存图片</item>
+        <item>保存预览图片最后一张 </item>
+        <item>保存解码成功最后一张图片</item>
+        <item>保存所有预览图片</item>
+        <item>保存所有解码成功图片</item>
+    </string-array>
+    <string-array name="scanner_beep_entries" translatable="false">
+        <item>无</item>
+        <item>短促</item>
+        <item>尖銳</item>
+    </string-array>
+
+        <string-array name="wired_scan_entries" translatable="false">
+        <item>一維</item>
+        <item>二維</item>
+    </string-array> 
+</resources>

@@ -1,0 +1,115 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:id="@+id/key_code_text_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:textSize="22sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:text="@string/text_title_keycode" />
+
+        <TextView
+            android:id="@+id/key_code"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:textSize="22sp"
+            android:layout_gravity="center"
+            android:layout_marginRight="22dp"
+            android:layout_weight="2"
+            android:text="@string/text_title_keycode_hint" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/key_text_deliver_ly"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/darker_gray" />
+         
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="@string/text_title_function" />
+       
+    <View
+        android:id="@+id/key_text_deliver_ly"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/darker_gray" />
+      
+    <LinearLayout
+        android:id="@+id/key_code_a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:text="@string/text_title_scan" />
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="@string/CheckBox1" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/key_text_deliver_ly"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/darker_gray" />
+
+    <LinearLayout
+        android:id="@+id/key_code_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:text="@string/text_title_rfid" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="@string/CheckBox1" />
+    </LinearLayout>
+    
+    <View
+        android:id="@+id/key_text_deliver_ly"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/darker_gray" />   
+    </LinearLayout>

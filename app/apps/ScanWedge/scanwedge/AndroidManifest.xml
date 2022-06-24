@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ubx.scanwedge"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="2108"
+    android:versionName="V2.1.8_20210401">
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INJECT_EVENTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- ActivityManager -->
+    <uses-permission android:name="android.permission.REAL_GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_DETAILED_TASKS" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.REMOVE_TASKS" />
+    <uses-permission android:name="android.permission.STOP_APP_SWITCHES" />
+    <uses-permission android:name="android.permission.SET_SCREEN_COMPATIBILITY" />
+    <uses-permission android:name="android.permission.START_ANY_ACTIVITY" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.GET_TOP_ACTIVITY_INFO" />
+    <uses-permission android:name="android.permission.MANAGE_ACTIVITY_STACKS" />
+    <uses-permission android:name="android.permission.START_TASKS_FROM_RECENTS" />
+    <uses-permission android:name="android.permission.GET_INTENT_SENDER_INTENT" />
+
+    <!-- WindowManager -->
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_FRAME_BUFFER" />
+    <uses-permission android:name="android.permission.MANAGE_APP_TOKENS" />
+    <uses-permission android:name="android.permission.REGISTER_WINDOW_MANAGER_LISTENERS" />
+    <uses-permission android:name="android.permission.SET_ORIENTATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+    <application
+        android:name="com.ubx.scanwedge.service.ScanWedgeApplication"
+        android:icon="@drawable/launcher_icon"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Settings">
+        <activity
+            android:name=".settings.activity.ScanWedgeProfileSubSettings"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensor"
+            android:taskAffinity="com.ubx.scanwedge">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- add by for insert as settings tile -->
+            <intent-filter android:priority="-4">
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+                <action android:name="com.android.settings.action.SETTINGS" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.homepage" />
+            <meta-data
+                android:name="com.android.settings.title"
+                android:resource="@string/scanner_settings" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_scan_wedge" />
+        </activity>
+        <activity
+            android:name=".settings.activity.Settings"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensor"
+            android:taskAffinity="com.ubx.scanwedge">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+        </activity>
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <activity
+            android:name=".settings.activity.SubSettings"
+            android:parentActivityName="settings.activity.Settings"
+            android:screenOrientation="sensor"
+            android:taskAffinity="com.ubx.scanwedge"></activity>
+        <activity
+            android:name=".settings.activity.Settings$ScannerSettingsActivity"
+            android:icon="@drawable/launcher_icon"
+            android:label="@string/scanner_settings"
+            android:screenOrientation="sensor">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.android.intent.action.SCANNER_SETTINGS" />
+                <action android:name="action.INTERNAL_SCANNER_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.ubx.scanwedge.SCANNER_SETTINGS" />
+                <action android:name="com.ubx.barcode.action.DEFAULT_SCANNER_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            </intent-filter>
+            <meta-data
+                android:name="com.ubx.scanwedge.FRAGMENT_CLASS"
+                android:value="com.ubx.scanwedge.settings.fragments.ScannerSettings" />
+            <meta-data
+                android:name="com.ubx.scanwedge.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/scanner_settings" />
+        </activity>
+        <!--<activity
+            android:name="com.ubx.scanwedge.settings.activities.Settings"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.ubx.scanwedge.settings.activities.SubSettings"
+            android:parentActivityName="com.ubx.scanwedge.settings.activities.Settings"
+            android:screenOrientation="sensor"
+            android:taskAffinity="com.ubx.scanwedge">
+        </activity>
+
+        <activity
+            android:name="com.ubx.scanwedge.settings.activities.Settings$ScannerSettingsActivity"
+            android:icon="@drawable/launcher_icon"
+            android:label="@string/scanner_settings"
+            android:screenOrientation="sensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.ubx.scanwedge.PROFILE_SETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.ubx.scanwedge.FRAGMENT_CLASS"
+                android:value="com.ubx.scanwedge.settings.fragments.ScannerSettings"/>
+        </activity>-->
+
+        <!--<activity
+            android:name="com.ubx.scanwedge.settings.ScannerTypeSettings"
+            android:icon="@drawable/ic_settings_scanner"
+            android:label="@string/scan_type"
+            android:screenOrientation="sensor" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.SCANNER_TYPE_SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>-->
+        <activity
+            android:name="com.ubx.scanwedge.settings.activity.ScanWedgeSettings"
+            android:label="@string/scan_type"
+            android:screenOrientation="sensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.ubx.scanwedge.SCANWEDGE_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.ubx.scanwedge.service.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.SUSPENSION_BUTTON" />
+            </intent-filter>
+        </receiver>
+        <provider
+            android:name="com.ubx.database.provider.ScannerProvider"
+            android:authorities="com.ubx.scanwedge.provider"
+            android:exported="true" />
+
+        <service
+            android:name="com.ubx.scanwedge.service.FxService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.ubx.scanwedge.VIRTUAL_BUTTOM_SERVICE" />
+                <action android:name="com.ubx.scanwedge.DOCK_BUTTOM" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.ubx.scanwedge.service.ScanWedgeService"
+            android:exported="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.ubx.scanwedge.SCANWEDGE_SERVICE"/>
+                <action android:name="com.ubx.scanwedge.IME_DATAOUT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.ubx.scanwedge.service.ImportExoprtService">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.ubx.scanwedge.EXPORT_IMPORT_SCANNER_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.ubx.scanwedge.service.ImportExoprtReceiver">
+            <intent-filter>
+                <action android:name="com.ubx.scanwedge.EXPORT_SCANNER_CONFIG" />
+                <action android:name="com.ubx.scanwedge.IMPORT_SCANNER_CONFIG" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

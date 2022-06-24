@@ -1,0 +1,38 @@
+LOCAL_PATH:= $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_TAGS := optional
+
+LOCAL_SRC_FILES := $(call all-java-files-under,src)
+
+# TODO: Remove dependency of application on the test runner (android.test.runner)
+# library.
+#LOCAL_JAVA_LIBRARIES := android.test.runner android.urovo.device
+LOCAL_JAVA_LIBRARIES := android.test.runner
+LOCAL_STATIC_JAVA_LIBRARIES := \
+    usdk
+
+LOCAL_PACKAGE_NAME := OSUpdate
+
+ifeq ($(URV_OSUPDATE_DISPLAY_ICON_IN_MENU), true)
+$(shell cp $(LOCAL_PATH)/replace/DisplayIconInMenu/AndroidManifest.xml $(LOCAL_PATH)/AndroidManifest.xml)
+endif
+
+ifeq ($(URV_OSUPDATE_HIDE_ENTRY_IN_SETTINGS), true)
+$(shell cp $(LOCAL_PATH)/replace/HideEntryInSettings/AndroidManifest.xml $(LOCAL_PATH)/AndroidManifest.xml)
+endif
+
+LOCAL_PRIVATE_PLATFORM_APIS := true
+
+LOCAL_CERTIFICATE := platform
+
+include $(BUILD_PACKAGE)
+
+# Use the following include to make our test apk.
+include $(call all-makefiles-under,$(LOCAL_PATH))
+
+include $(CLEAR_VARS)
+LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
+    usdk:libs/usdk.jar
+include $(BUILD_MULTI_PREBUILT)

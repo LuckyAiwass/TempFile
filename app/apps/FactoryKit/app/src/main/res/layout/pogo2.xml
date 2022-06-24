@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  Copyright (c) 2011-2013, Qualcomm Technologies, Inc. All Rights Reserved.
+  Qualcomm Technologies Proprietary and Confidential.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- POGO PIN OTG -->
+            <TextView
+                android:id="@+id/pogo2_pin_t1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pogo_pin_test_01"
+                android:textSize="@dimen/pogo_tv_size" />
+
+            <TextView
+                android:id="@+id/pogo2_otg_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/pogo_tv_size_result" />
+
+            <!--  POGO PIN key  -->
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="2dp"
+                android:background="#e0e0e0" />
+
+            <TextView
+                android:id="@+id/pogo2_pin_t2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pogo_pin_test_02"
+                android:textSize="@dimen/pogo_tv_size" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pogo2_key_hint_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
+                    android:text="@string/pogo_key_mind"
+                    android:textSize="@dimen/pogo_tv_size_result" />
+
+                <TextView
+                    android:id="@+id/pogo2_key_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:text="12PIN_KEY1"
+                    android:textSize="@dimen/pogo_tv_size_result" />
+                <TextView
+                    android:id="@+id/pogo2_key_02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12PIN_KEY2"
+                    android:textSize="@dimen/pogo_tv_size_result" />
+            </LinearLayout>
+            <!--  POGO PIN Serial  -->
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="2dp"
+                android:background="#e0e0e0" />
+
+            <!--<LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pogo2_pin_t3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pogo_pin_test_03"
+                    android:textSize="@dimen/pogo_tv_size" />
+
+                <Button
+                    android:id="@+id/pogo2_serial_btn"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pogo_serila_send_txt"
+                    android:textSize="20dip" />
+
+                <TextView
+                    android:id="@+id/pogo2_serial_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/pogo_tv_size_result" />
+            </LinearLayout>-->
+
+            <!--  POGO PIN Charge -->
+            <!--View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="2dp"
+                android:background="#e0e0e0" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pogo_pin_t4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pogo_pin_test_04"
+                    android:textSize="@dimen/pogo_tv_size" />
+
+                <Button
+                    android:id="@+id/pogo_charge_btn"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pogo_charge_send_txt"
+                    android:textSize="20dip" />
+
+                <TextView
+                    android:id="@+id/pogo_charge_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pogo_charge_result_txt"
+                    android:textSize="@dimen/pogo_tv_size_result" />
+            </LinearLayout-->
+
+
+            <!--  POGO PIN key  -->
+            <View
+                android:id="@+id/pogo2_key_btn_divide_view"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="2dp"
+                android:background="#e0e0e0" />
+
+            <LinearLayout
+                android:id="@+id/pogo2_key_btn_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pogo2_pin_t5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pogo_pin_test_06"
+                    android:textSize="@dimen/pogo_tv_size" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/pogo2_key_btn_01"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pogo_key_send_txt"
+                        android:textSize="20dip" />
+
+                    <TextView
+                        android:id="@+id/pogo2_key_hint_01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pogo_key_result_txt_scl"
+                        android:textSize="@dimen/pogo_tv_size_result" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/pogo2_key_btn_02"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pogo_key_send_txt"
+                        android:textSize="20dip" />
+
+                    <TextView
+                        android:id="@+id/pogo2_key_hint_02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pogo_key_result_txt_sda"
+                        android:textSize="@dimen/pogo_tv_size_result" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="2dp"
+                android:background="#e0e0e0" /-->
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="15sp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/pass"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/pass"
+            android:textSize="20dip"></Button>
+
+        <Button
+            android:id="@+id/fail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/fail"
+            android:textSize="20dip"></Button>
+    </LinearLayout>
+</LinearLayout>
